@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Culture Capsules — The French Atelier by Acadomia</title>
+<meta name="description" content="Culture Capsules — short, cinematic cultural French lessons. Each capsule tells the story of one icon, one movement, one idea that shaped France and its language. The story behind the words you are learning to speak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/fa.css?v=1789022625">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+<style>
+/* ============================================================
+   CULTURE CAPSULES — luxury editorial page
+   Reuses fa.css tokens: --navy --navy-deep --gold --gold-soft
+   --gold-deep --ivory --paper --on-dark --serif --sans, .wrap etc.
+   ============================================================ */
+
+.cap-page{background:var(--navy-deep);color:var(--on-dark)}
+
+/* Thin gold inset frame, like the deck slides */
+.gold-frame{position:relative}
+.gold-frame::before{
+  content:"";position:absolute;inset:1.4rem;
+  border:1px solid var(--gold-line);pointer-events:none;z-index:4;
+}
+@media(max-width:640px){.gold-frame::before{inset:.9rem}}
+
+/* Eyebrow / kicker — letterspaced caps */
+.cap-kicker{
+  font-family:var(--sans);font-size:.7rem;font-weight:600;
+  letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft);
+  display:inline-flex;align-items:center;gap:.85rem;
+}
+.cap-kicker.dark{color:var(--gold-deep)}
+.cap-kicker .k-rule{width:34px;height:1px;background:var(--gold-line);display:inline-block}
+
+/* slide-number motif */
+.slide-no{font-family:var(--serif);color:var(--gold-soft);font-size:1.1rem;letter-spacing:.05em}
+.slide-no .sn-small{font-size:.7rem;color:var(--on-dark-faint);letter-spacing:.18em;vertical-align:super;margin-left:.35rem}
+
+/* gold-italic accent (on dark + on light) */
+.gi{font-style:italic;color:var(--gold-soft);font-weight:500}
+.bg-ivory .gi,.bg-paper .gi{color:var(--gold-deep)}
+
+/* ---------------- HERO ---------------- */
+.cap-hero{
+  position:relative;min-height:92vh;display:flex;align-items:flex-end;
+  background:var(--navy-deep);overflow:hidden;padding-top:5rem;
+}
+.cap-hero-bg{position:absolute;inset:0;z-index:0}
+.cap-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cap-hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,31,.62) 0%,rgba(0,0,31,.30) 38%,rgba(0,0,31,.74) 78%,rgba(0,0,31,.94) 100%);
+}
+.cap-hero .wrap{position:relative;z-index:5;width:100%;padding-bottom:5.5rem;padding-top:9rem}
+.cap-hero-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:auto}
+.cap-hero h1{
+  font-size:clamp(3.4rem,10vw,8rem);line-height:.94;margin:1.4rem 0 1.5rem;
+  color:var(--on-dark);font-weight:600;letter-spacing:-.015em;
+}
+.cap-hero-sub{
+  font-family:var(--sans);font-weight:300;font-size:clamp(1.05rem,1.5vw,1.28rem);
+  line-height:1.6;max-width:52ch;color:var(--on-dark-soft);margin-bottom:0;
+}
+.cap-hero-meta{
+  display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:2.6rem;
+  padding-top:1.7rem;border-top:1px solid var(--dark-line);
+}
+.cap-hero-meta .m-item .m-k{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--on-dark-faint);margin-bottom:.35rem}
+.cap-hero-meta .m-item .m-v{font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);line-height:1}
+
+/* ---------------- DEFINITION FOLD ---------------- */
+.cap-def{background:var(--ivory);color:var(--on-light)}
+.cap-def .def-head{max-width:760px;margin-bottom:3.4rem}
+.cap-def h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.06;margin:1.3rem 0 0;color:var(--navy)}
+.def-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
+.def-points{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem 2.6rem}
+.def-point{border-top:1px solid var(--gold-line);padding-top:1.2rem}
+.def-point .dp-no{font-family:var(--serif);font-size:1.2rem;color:var(--gold-deep);font-style:italic}
+.def-point h3{font-family:var(--serif);font-size:1.45rem;color:var(--navy);margin:.45rem 0 .55rem;line-height:1.12}
+.def-point p{font-size:.95rem;line-height:1.62;color:var(--on-light-soft);margin:0}
+.def-figure{position:relative}
+.def-figure img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.def-figure .fig-tag{
+  position:absolute;top:1.1rem;left:1.1rem;background:var(--ivory);
+  font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--navy);
+  padding:.35rem .85rem;letter-spacing:.02em;
+}
+.def-figure .fig-frame{position:absolute;inset:.85rem;border:1px solid rgba(243,238,227,.55);pointer-events:none}
+
+/* ---------------- THE COLLECTION ---------------- */
+.cap-collection{background:var(--navy-deep);color:var(--on-dark)}
+.coll-head{max-width:780px;margin-bottom:3.6rem}
+.coll-head h2{font-size:clamp(2.1rem,4.2vw,3.5rem);line-height:1.05;margin:1.3rem 0 1.1rem;color:var(--on-dark)}
+.coll-head p{color:var(--on-dark-soft);font-weight:300;font-size:1.1rem;max-width:60ch;margin:0}
+
+.coll-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem;max-width:1480px;margin:0 auto}
+.cap-card{
+  display:flex;flex-direction:column;background:var(--navy);
+  border:1px solid var(--dark-line);overflow:hidden;border-radius:8px;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease);
+  box-shadow:0 20px 50px -20px rgba(0,0,30,.6);
+}
+.cap-card:hover{transform:translateY(-7px);border-color:var(--gold-line);box-shadow:0 40px 80px rgba(0,0,20,.65)}
+.cc-img{position:relative;aspect-ratio:4/3.6;overflow:hidden;flex:0 0 auto}
+.cc-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.cap-card:hover .cc-img img{transform:scale(1.06)}
+.cc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,31,0) 45%,rgba(0,0,31,.55) 100%)}
+.cc-no{
+  position:absolute;top:1.2rem;left:1.2rem;z-index:2;
+  font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--gold-soft);
+  background:rgba(0,0,31,.6);backdrop-filter:blur(3px);
+  padding:.4rem 1rem;border:1px solid var(--gold-line);letter-spacing:.04em;
+}
+.cc-body{padding:2.3rem 2rem 2.2rem;display:flex;flex-direction:column;flex:1 1 auto}
+.cc-eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1rem}
+.cc-title{font-family:var(--serif);font-size:2.25rem;line-height:1.1;color:var(--on-dark);margin-bottom:1.1rem;font-weight:600}
+.cc-desc{font-size:1.04rem;line-height:1.64;color:var(--on-dark-soft);margin:0 0 1.8rem;font-weight:300;flex:1 1 auto}
+.cc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:1.3rem;border-top:1px solid var(--dark-line);margin-top:auto}
+.cc-foot .cf-meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-faint)}
+.cc-foot .cf-link{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);display:inline-flex;align-items:center;gap:.45rem}
+.cc-foot .cf-link svg{width:15px;height:9px;transition:transform .4s var(--ease)}
+.cap-card:hover .cf-link svg{transform:translateX(4px)}
+
+/* ---------------- PULL-QUOTE EDITORIAL ---------------- */
+.cap-quote{position:relative;background:var(--navy-deep);overflow:hidden}
+.cap-quote-bg{position:absolute;inset:0;z-index:0}
+.cap-quote-bg img{width:100%;height:100%;object-fit:cover}
+.cap-quote-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,31,.92) 0%,rgba(0,0,31,.72) 55%,rgba(0,0,31,.55) 100%)}
+.cap-quote .wrap{position:relative;z-index:5}
+.cap-quote-inner{max-width:880px}
+.cap-quote .q-mark{font-family:var(--serif);font-size:5rem;line-height:.5;color:var(--gold-soft);display:block;height:2.4rem}
+.cap-quote blockquote{
+  font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.16;
+  color:var(--on-dark);font-weight:500;margin:0 0 1.8rem;letter-spacing:-.01em;
+}
+.cap-quote cite{font-style:normal;font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);display:inline-flex;align-items:center;gap:.85rem}
+.cap-quote cite::before{content:"";width:34px;height:1px;background:var(--gold-line)}
+
+/* ---------------- MORE / UPCOMING ---------------- */
+.cap-more{background:var(--paper);color:var(--on-light)}
+.more-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.4rem;margin-bottom:3rem}
+.more-head h2{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.06;color:var(--navy);margin:1rem 0 0}
+.more-head .mh-note{font-size:.95rem;color:var(--on-light-soft);max-width:34ch;font-weight:300}
+.more-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.more-item{
+  background:var(--white);border:1px solid var(--light-line);border-radius:8px;
+  padding:1.7rem 1.5rem 1.6rem;display:flex;flex-direction:column;
+  transition:border-color .4s var(--ease),transform .4s var(--ease);
+}
+.more-item:hover{border-color:var(--gold-line);transform:translateY(-4px)}
+.more-item .mi-no{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--gold-deep);margin-bottom:.9rem}
+.more-item h3{font-family:var(--serif);font-size:1.3rem;line-height:1.14;color:var(--navy);margin:0 0 .6rem;font-weight:600}
+.more-item p{font-size:.88rem;line-height:1.55;color:var(--on-light-soft);margin:0 0 1.2rem;font-weight:300;flex:1 1 auto}
+.more-item .mi-tag{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);padding-top:1rem;border-top:1px solid var(--light-line);margin-top:auto}
+
+/* ---------------- CTA BAND ---------------- */
+.cap-cta{position:relative;background:var(--navy-deep);overflow:hidden}
+.cap-cta-bg{position:absolute;inset:0;z-index:0}
+.cap-cta-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.cap-cta-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,31,.86),rgba(0,0,31,.78))}
+.cap-cta .wrap{position:relative;z-index:5;text-align:center}
+.cap-cta h2{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.05;color:var(--on-dark);margin:1.3rem auto 1.3rem;max-width:18ch}
+.cap-cta p{color:var(--on-dark-soft);font-weight:300;font-size:1.12rem;max-width:54ch;margin:0 auto 2.4rem}
+.cap-cta .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cap-cta .cap-kicker{justify-content:center}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width:980px){
+  .def-grid{grid-template-columns:1fr;gap:2.6rem}
+  .def-figure{order:-1}
+  .def-figure img{aspect-ratio:16/10}
+  .coll-grid{grid-template-columns:1fr;gap:1.6rem;max-width:520px}
+  .more-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .cap-hero .wrap{padding-bottom:3.4rem;padding-top:7rem}
+  .cap-hero-meta{gap:1.6rem}
+  .def-points{grid-template-columns:1fr;gap:1.6rem}
+  .more-grid{grid-template-columns:1fr}
+  .cap-hero-top .slide-no{display:none}
+}
+</style>
+<link rel="stylesheet" href="css/mobile-fix.css?v=1789022625"><link rel="stylesheet" href="css/homepage-mobile-polish.css?v=1789032106">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body class="cap-page">
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="nav-logo" href="index.html">
+      <img class="nav-logo-img" src="assets/logo/logo-white.png" alt="The French Atelier by Acadomia" width="527" height="165" decoding="async" fetchpriority="high" decoding="async">
+    </a>
+    <nav class="nav-menu" aria-label="Primary">
+      <div class="nav-item">
+        <a class="nav-link" href="courses.html">Courses <svg class="nav-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.4"/></svg></a>
+        <div class="nav-dropdown nav-dropdown-wide">
+          <div class="nav-dd-col">
+            <span class="nav-dd-head">French Atelier &middot; Structured &middot; A0&rarr;A2.2</span>
+            <a href="courses/fa-foundation.html">FA Foundation <em>A0&rarr;A1.1</em></a>
+            <a href="courses/fa-beginner.html">FA Beginner <em>A1.1&rarr;A1.2</em></a>
+            <a href="courses/fa-elementary.html">FA Elementary <em>A1.2&rarr;A2.1</em></a>
+            <a href="courses/fa-intermediate.html">FA Intermediate <em>A2.1&rarr;A2.2</em></a>
+            <a href="capsules.html" class="nav-dd-comingsoon">Culture Capsules <span class="cs-tag">Coming Soon</span></a>
+          </div>
+          <div class="nav-dd-col">
+            <span class="nav-dd-head">Let&rsquo;s Speak French &middot; Spoken &middot; Conversation</span>
+            <a href="courses/lsf-foundation.html">LSF Foundation <em>Spoken</em></a>
+            <a href="courses/lsf-beginner.html">LSF Beginner <em>Spoken</em></a>
+            <a href="courses/lsf-elementary.html">LSF Elementary <em>Spoken</em></a>
+
+            <span class="nav-dd-divide"></span>
+            <a href="courses.html">All Courses</a>
+            <a href="map.html">Interactive Map of France</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></div>
+      
+      <div class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></div>
+      
+      <div class="nav-item"><a class="nav-link" href="method.html">Our Method</a></div>
+      
+      <div class="nav-item"><a class="nav-link" href="juliane.html">Julien AI Tutor</a></div>
+      
+      <div class="nav-item"><a class="nav-link" href="culture.html">French Culture</a></div>
+      <div class="nav-item">
+        <a class="nav-link" href="about.html">About Us <svg class="nav-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.4"/></svg></a>
+        <div class="nav-dropdown">
+          <a href="about.html">About French Atelier</a>
+          <a href="acadomia.html">The Acadomia Group</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      
+      
+      <a class="btn btn-gold nav-cta" href="pricing.html">Enroll Now</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-drawer" aria-hidden="true">
+  <button class="nav-drawer-close" aria-label="Close menu">&times;</button>
+  <span class="drawer-group-label">Courses</span>
+  <div class="drawer-sub">
+    <a href="courses.html">All Courses</a>
+    <a href="courses/fa-foundation.html">FA Foundation</a>
+    <a href="courses/fa-beginner.html">FA Beginner</a>
+    <a href="courses/fa-elementary.html">FA Elementary</a>
+    <a href="courses/fa-intermediate.html">FA Intermediate</a>
+    <a href="courses/lsf-foundation.html">LSF Foundation</a>
+    <a href="courses/lsf-beginner.html">LSF Beginner</a>
+    <a href="courses/lsf-elementary.html">LSF Elementary</a>
+    <a href="map.html">Interactive Map of France</a>
+      <a href="capsules.html" class="drawer-comingsoon">Culture Capsules <span class="cs-tag">Coming Soon</span></a>
+  </div>
+  <span class="drawer-group-label">About Us</span>
+  <div class="drawer-sub">
+    <a href="about.html">About French Atelier</a>
+    <a href="acadomia.html">The Acadomia Group</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="method.html">Our Method</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="juliane.html">Julien AI Tutor</a>
+  <a href="culture.html">French Culture</a>
+  <a href="pricing.html" class="btn btn-gold" style="margin-top:1.6rem">Enroll Now</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="cap-hero gold-frame">
+  <div class="cap-hero-bg"><img src="assets/capsules/hero-versailles.jpg" alt="The Hall of Mirrors at Versailles bathed in golden-hour light" decoding="async"></div>
+  <div class="wrap">
+    <div class="cap-hero-top">
+      <span class="cap-kicker"><span class="k-rule"></span>Culture Capsules &middot; A Collection</span>
+      <span class="slide-no">01<span class="sn-small">/ 30</span></span>
+    </div>
+    <h1>Culture <span class="gi">Capsules</span></h1>
+    <p class="cap-hero-sub">Short, cinematic cultural lessons in French. Each capsule is a bite-sized episode devoted to one icon, one movement, one idea that shaped France — and the language with it. The story behind the words you are learning to speak.</p>
+    <div class="cap-hero-meta">
+      <div class="m-item"><div class="m-k">Format</div><div class="m-v">~15 min</div></div>
+      <div class="m-item"><div class="m-k">Delivered</div><div class="m-v">Live &middot; narrated</div></div>
+      <div class="m-item"><div class="m-k">Pairs with</div><div class="m-v">Any course</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT IS A CAPSULE ===== -->
+<section class="cap-def section-pad">
+  <div class="wrap">
+    <div class="def-head">
+      <span class="cap-kicker dark"><span class="k-rule"></span>What is a capsule?</span>
+      <h2>A bite-sized cultural French lesson — <span class="gi">in about fifteen minutes.</span></h2>
+    </div>
+    <div class="def-grid">
+      <div class="def-points">
+        <div class="def-point">
+          <div class="dp-no">i.</div>
+          <h3>One story, beautifully told</h3>
+          <p>Each capsule takes a single cultural icon — a king, a couturière, a movement — and tells its story cinematically, in clear, graded French with English support.</p>
+        </div>
+        <div class="def-point">
+          <div class="dp-no">ii.</div>
+          <h3>About fifteen minutes</h3>
+          <p>Short enough to hold your full attention, long enough to leave a mark. A complete cultural episode in the time it takes to make a coffee.</p>
+        </div>
+        <div class="def-point">
+          <div class="dp-no">iii.</div>
+          <h3>Living vocabulary</h3>
+          <p>You leave with the words culture actually uses — grandeur, silhouette, lumière — anchored in the story that gave them their weight.</p>
+        </div>
+        <div class="def-point">
+          <div class="dp-no">iv.</div>
+          <h3>Built for your course</h3>
+          <p>Capsules pair with any French Atelier course. Where your lessons build the language, the capsules build the world those words come from.</p>
+        </div>
+      </div>
+      <figure class="def-figure">
+        <img src="assets/gen/hero-paris.webp" alt="A Parisian rooftop at golden hour with the Eiffel Tower in the distance" loading="lazy" decoding="async">
+        <span class="fig-tag">N&deg; i</span>
+        <span class="fig-frame"></span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE COLLECTION ===== -->
+<section class="cap-collection section-pad">
+  <div class="wrap">
+    <div class="coll-head">
+      <span class="cap-kicker"><span class="k-rule"></span>The Collection &middot; First Trio</span>
+      <h2>Three doorways into <span class="gi">French luxury.</span></h2>
+      <p>A first trio of capsules, tracing the thread of taste from the court of Versailles to the studios of the Impressionists.</p>
+    </div>
+    <div class="coll-grid">
+
+      <article class="cap-card">
+        <div class="cc-img">
+          <span class="cc-no">N&deg; I</span>
+          <img src="assets/capsules/capsule-louis.jpg" alt="Opulent gilded baroque interior evoking Louis XIV and Versailles" loading="lazy" decoding="async">
+        </div>
+        <div class="cc-body">
+          <div class="cc-eyebrow">Power &middot; Versailles &middot; 17ᵉ siècle</div>
+          <h3 class="cc-title">Louis XIV — <span class="gi">The Inventor of Luxury</span></h3>
+          <p class="cc-desc">Before Versailles, magnificence was scattered. The Sun King gathered it, staged it, and made it the language of a nation. From the Hall of Mirrors to the etiquette of the court, this capsule follows the vocabulary of grandeur — the words, gestures and rituals that turned a king into a sun.</p>
+          <div class="cc-foot">
+            <span class="cf-meta">~15 min &middot; Live</span>
+            <span class="cf-link">Explore <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h21M16 1l6 6-6 6"/></svg></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cap-card">
+        <div class="cc-img">
+          <span class="cc-no">N&deg; II</span>
+          <img src="assets/capsules/capsule-chanel.jpg" alt="A little black dress and pearls in a 1920s Parisian atelier, black and white" loading="lazy" decoding="async">
+        </div>
+        <div class="cc-body">
+          <div class="cc-eyebrow">Liberty &middot; Couture &middot; 20ᵉ siècle</div>
+          <h3 class="cc-title">The <span class="gi">Chanel</span> Revolution</h3>
+          <p class="cc-desc">Two centuries after Louis XIV, a girl raised in the orphanage of Aubazine rewrote the rules of luxury. Gabrielle Chanel took elegance off the pedestal and onto the moving body — jersey instead of corsets, black instead of excess. This capsule traces the vocabulary of that revolution: liberty, line, and the modern French silhouette.</p>
+          <div class="cc-foot">
+            <span class="cf-meta">~15 min &middot; Live</span>
+            <span class="cf-link">Explore <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h21M16 1l6 6-6 6"/></svg></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cap-card">
+        <div class="cc-img">
+          <span class="cc-no">N&deg; III</span>
+          <img src="assets/capsules/capsule-impressionism.jpg" alt="An Impressionist painting of a sunlit French garden by the Seine" loading="lazy" decoding="async">
+        </div>
+        <div class="cc-body">
+          <div class="cc-eyebrow">Light &middot; Painting &middot; 1874</div>
+          <h3 class="cc-title">Impressionism &amp; <span class="gi">the Light of France</span></h3>
+          <p class="cc-desc">In 1874 a group of painters refused the Salon and hung their work in a photographer's studio. Critics called them Impressionists, and meant it as mockery. Within a generation they had transformed seeing itself. This capsule traces the vocabulary of light, colour and sensation that Monet, Renoir and Degas gave to French.</p>
+          <div class="cc-foot">
+            <span class="cf-meta">~15 min &middot; Live</span>
+            <span class="cf-link">Explore <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h21M16 1l6 6-6 6"/></svg></span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PULL-QUOTE EDITORIAL ===== -->
+<section class="cap-quote section-pad gold-frame">
+  <div class="cap-quote-bg"><img src="assets/capsules/bg-salon.jpg" alt="A candlelit Parisian salon at night" loading="lazy" decoding="async"></div>
+  <div class="wrap">
+    <div class="cap-quote-inner">
+      <span class="q-mark">&ldquo;</span>
+      <blockquote>She did not soften fashion. She emptied it — and gave women back their <span class="gi">bodies.</span></blockquote>
+      <cite>The Chanel Revolution &middot; An Opening Provocation</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MORE / UPCOMING ===== -->
+<section class="cap-more section-pad">
+  <div class="wrap">
+    <div class="more-head">
+      <div>
+        <span class="cap-kicker dark"><span class="k-rule"></span>The Series Continues</span>
+        <h2>More capsules, <span class="gi">coming soon.</span></h2>
+      </div>
+      <p class="mh-note">New episodes are added each season. A few of the stories already in the studio.</p>
+    </div>
+    <div class="more-grid">
+      <div class="more-item">
+        <div class="mi-no">N&deg; IV</div>
+        <h3>The Birth of the Restaurant</h3>
+        <p>How a post-Revolution Paris invented the menu, the maître d', and the very idea of dining out.</p>
+        <span class="mi-tag">Gastronomy</span>
+      </div>
+      <div class="more-item">
+        <div class="mi-no">N&deg; V</div>
+        <h3>The Café &amp; the Idea</h3>
+        <p>Where Sartre, Beauvoir and a century of French thought were poured, argued, and written.</p>
+        <span class="mi-tag">Philosophy</span>
+      </div>
+      <div class="more-item">
+        <div class="mi-no">N&deg; VI</div>
+        <h3>Haussmann's Paris</h3>
+        <p>The boulevards, the zinc rooftops, the light — how a city was rebuilt into a work of art.</p>
+        <span class="mi-tag">Architecture</span>
+      </div>
+      <div class="more-item">
+        <div class="mi-no">N&deg; VII</div>
+        <h3>The Language of Perfume</h3>
+        <p>Grasse, the nose, and the vocabulary of scent — France's most invisible export.</p>
+        <span class="mi-tag">Craft</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cap-cta section-pad gold-frame">
+  <div class="cap-cta-bg"><img src="assets/capsules/bg-rooftops.jpg" alt="Parisian rooftops at golden-hour twilight" loading="lazy" decoding="async"></div>
+  <div class="wrap">
+    <span class="cap-kicker"><span class="k-rule"></span>Step beyond the lesson</span>
+    <h2>Pair a capsule with <span class="gi">your French course.</span></h2>
+    <p>Every French Atelier course can be enriched with Culture Capsules — the cinematic context that turns vocabulary into a world. Speak the language, and live the culture it comes from.</p>
+    <div class="cta-btns">
+      <a href="pricing.html" class="btn btn-gold btn-lg">View Pricing &amp; Enroll</a>
+      <a href="contact.html" class="btn btn-ghost-dark btn-lg">Talk to an Advisor</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo-img" src="assets/logo/logo-white.png" alt="The French Atelier by Acadomia" width="527" height="165" style="height:54px;width:auto;margin-bottom:.9rem;display:block" loading="lazy" decoding="async">
+        <p>Culture speaks French. What about you? An exclusive, culturally immersive, certified, live French language program — presented by one of France's leading private education groups.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <a href="courses/fa-foundation.html">FA Foundation</a>
+        <a href="courses/fa-beginner.html">FA Beginner</a>
+        <a href="courses/fa-elementary.html">FA Elementary</a>
+        <a href="courses/fa-intermediate.html">FA Intermediate</a>
+        <a href="courses.html">Let's Speak French</a>
+        <a href="map.html">Map of France</a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="method.html">Our Method</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="juliane.html">Julien · AI Tutor</a>
+        <a href="teachers.html">Our Teachers</a>
+        <a href="culture.html">French Culture</a>
+        <a href="blog.html">Cultural Journal</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="acadomia.html">Acadomia Group</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>7 rue de la Baume, 75008 Paris, France &nbsp;·&nbsp; +1-888-230-5110 &nbsp;·&nbsp; advisor@eTeacherGroup.com</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61577106456673" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.8.3-1.5 1.5-1.5H18V.2C17.5.1 16.3 0 15 0c-2.7 0-4.5 1.6-4.5 4.6V6H8v3h2.5v9H14V9z"/></svg></a>
+        <a href="https://www.instagram.com/livefrenchatelier" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.youtube.com/@FrenchbyAtelier" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5s-.2-1.6-.9-2.3c-.8-.9-1.8-.9-2.2-1C16.8 4 12 4 12 4s-4.8 0-7.9.2c-.4.1-1.4.1-2.2 1C1.2 5.9 1 7.5 1 7.5S.8 9.4.8 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.1 7.7.2 7.7.2s4.8 0 7.9-.2c.4-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8v-1.4c0-1.9-.2-3.8-.2-3.8zM9.7 15V9l5.2 3-5.2 3z"/></svg></a>
+      </div>
+    </div>
+    <p style="color:var(--on-dark-faint);font-size:.78rem;text-align:center;margin-top:1.6rem">Copyright ACADOMIA © 2026. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="js/fa.js?v=1785313247" defer></script>
+<script src="js/eteacher-leads.js?v=1" defer></script>
+</body>
+</html>
