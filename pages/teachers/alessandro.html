@@ -1,100 +1,17 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alessandro Ferri — Italian Teacher from Milano · Club Italia by eTeacher</title><meta name="description" content="Alessandro Ferri, native Italian teacher from Milano, Lombardia. Milan-born business Italian specialist. Teaches with the pace of the north and the ear of a translator.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="../../css/ci.css">
-
-<style>
-.t-hero{position:relative;min-height:100vh;background:linear-gradient(120deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-soft) 100%);color:var(--on-dark);display:flex;align-items:stretch;overflow:hidden}
-.t-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 30%,rgba(201,162,75,.14),transparent 55%);pointer-events:none}
-.t-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0;width:100%;align-items:stretch;position:relative;z-index:2}
-@media (max-width:960px){.t-hero-grid{grid-template-columns:1fr}}
-.t-hero-copy{padding:9rem clamp(1.6rem,5vw,6rem) 5rem;display:flex;flex-direction:column;justify-content:center}
-.t-hero-eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:2rem;display:inline-flex;align-items:center;gap:.9rem}
-.t-hero-eyebrow::before{content:"";width:2.4rem;height:1px;background:var(--gold-soft)}
-.t-hero-name{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(3.6rem,7vw,7rem);line-height:.98;letter-spacing:-.02em;margin:0 0 .4rem;color:var(--on-dark)}
-.t-hero-last{display:block;color:var(--gold-soft);font-style:italic}
-.t-hero-role{font-family:var(--serif);font-size:1.35rem;font-style:italic;color:var(--on-dark-soft);margin:2rem 0 2.4rem;max-width:36ch;line-height:1.4}
-.t-hero-quote{border-left:2px solid var(--gold);padding:.4rem 0 .4rem 1.4rem;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--on-dark);max-width:44ch;margin-bottom:.6rem}
-.t-hero-quote-en{font-size:.86rem;letter-spacing:.02em;color:var(--on-dark-faint);max-width:44ch;margin-bottom:2.4rem}
-.t-hero-portrait{position:relative;overflow:hidden;background:var(--navy-mid);min-height:64vh}
-.t-hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-.t-hero-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,8,11,.55) 0%,rgba(34,8,11,0) 30%),linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.35) 100%);pointer-events:none}
-
-.region-band{display:grid;grid-template-columns:.7fr 1.3fr;gap:0}
-@media (max-width:960px){.region-band{grid-template-columns:1fr}}
-.region-photo{position:relative;min-height:64vh;overflow:hidden}
-.region-photo img{width:100%;height:100%;object-fit:cover}
-.region-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,8,11,0) 60%,rgba(243,237,223,.15) 100%);pointer-events:none}
-.region-essay{padding:clamp(4rem,7vw,7rem) clamp(1.6rem,5vw,6rem);background:var(--paper);color:var(--on-light)}
-.region-essay h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,3.6vw,3rem);line-height:1.1;margin:0 0 2rem;max-width:22ch;color:var(--navy)}
-.region-essay .region-eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.4rem;display:block}
-.region-essay p{font-size:1.08rem;line-height:1.75;margin-bottom:1.2rem;color:var(--on-light-soft)}
-.region-essay .drop::first-letter{font-family:var(--serif);float:left;font-size:4.6rem;line-height:.9;padding:.4rem .6rem 0 0;color:var(--gold-deep);font-weight:600}
-
-.manifesto{background:var(--ivory);padding:clamp(4rem,7vw,7rem) 0}
-.manifesto-head{max-width:820px;margin:0 auto 3rem;padding:0 clamp(1.4rem,3vw,3rem)}
-.manifesto-head .eyebrow{color:var(--gold-deep)}
-.manifesto-body{max-width:760px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem)}
-.manifesto-body p{font-size:1.13rem;line-height:1.78;color:var(--on-light);margin-bottom:1.4rem}
-.manifesto-body p:first-child::first-letter{font-family:var(--serif);float:left;font-size:5rem;line-height:.9;padding:.3rem .55rem 0 0;color:var(--terra-deep);font-weight:600}
-.manifesto-sign{margin-top:2rem;font-family:var(--serif);font-style:italic;color:var(--terra-deep);font-size:1.1rem}
-
-.cred-band{background:var(--navy);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0}
-.cred-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start}
-@media (max-width:960px){.cred-grid{grid-template-columns:1fr}}
-.cred-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2rem,3.6vw,3rem);line-height:1.05;color:var(--gold-soft)}
-.cred-list{list-style:none;padding:0;margin:0}
-.cred-list li{padding:1.2rem 0;border-top:1px solid var(--gold-line-soft);font-size:1.02rem;line-height:1.55;color:var(--on-dark);display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:baseline}
-.cred-list li:last-child{border-bottom:1px solid var(--gold-line-soft)}
-.cred-list .cred-num{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.35rem;min-width:2ch}
-
-.t-testimonials{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
-.t-test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
-@media (max-width:960px){.t-test-grid{grid-template-columns:1fr}}
-.t-test{background:var(--white);border:1px solid var(--gold-line-soft);padding:2.2rem 2rem;position:relative}
-.t-test::before{content:"\201C";position:absolute;top:-.1rem;left:1.4rem;font-family:var(--serif);color:var(--gold);font-size:5rem;line-height:1;font-weight:600}
-.t-test p{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.5;color:var(--on-light);margin-top:1.8rem;margin-bottom:1.4rem}
-.t-test .t-test-src{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);border-top:1px solid var(--light-line);padding-top:1rem}
-
-.lesson-band{background:var(--cream);padding:clamp(4rem,7vw,7rem) 0}
-.lesson-timeline{max-width:900px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem);position:relative}
-.lesson-timeline::before{content:"";position:absolute;left:calc(clamp(1.4rem,3vw,3rem) + 5rem);top:0;bottom:0;width:1px;background:var(--gold-line)}
-@media (max-width:640px){.lesson-timeline::before{display:none}}
-.lesson-row{display:grid;grid-template-columns:6rem 1fr;gap:2rem;padding:1.8rem 0;border-bottom:1px solid var(--light-line);position:relative}
-.lesson-row:last-child{border-bottom:none}
-.lesson-row::before{content:"";position:absolute;left:calc(5rem - 4px);top:2.2rem;width:9px;height:9px;background:var(--gold);border-radius:50%}
-@media (max-width:640px){.lesson-row{grid-template-columns:1fr;gap:.4rem}.lesson-row::before{display:none}}
-.lesson-time{font-family:var(--serif);font-style:italic;color:var(--terra-deep);font-size:1.05rem;line-height:1.3}
-.lesson-desc{font-size:1.02rem;line-height:1.6;color:var(--on-light);padding-left:1.4rem}
-@media (max-width:640px){.lesson-desc{padding-left:0}}
-
-.t-courses{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
-.t-course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-@media (max-width:900px){.t-course-grid{grid-template-columns:1fr}}
-.t-course-card{background:var(--white);border:1px solid var(--gold-line-soft);padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .3s var(--ease);text-decoration:none;color:inherit}
-.t-course-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(58,14,18,.14);border-color:var(--gold-line)}
-.t-course-card .tcc-eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.4rem}
-.t-course-card h3{font-family:var(--serif);font-size:1.55rem;margin-bottom:1rem;color:var(--navy);line-height:1.15}
-.t-course-card .tcc-cta{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-deep);margin-top:1.4rem}
-
-.schedule-band{background:var(--navy);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0}
-.schedule-table{max-width:900px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem)}
-.sched-row{display:grid;grid-template-columns:1fr 1fr 1.6fr auto;gap:2rem;padding:1.4rem 0;border-bottom:1px solid var(--gold-line-soft);align-items:baseline;font-size:1rem}
-.sched-row.head{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);border-bottom:1px solid var(--gold);padding-bottom:1rem;font-family:var(--sans)}
-@media (max-width:720px){.sched-row{grid-template-columns:1fr 1fr;gap:.6rem;padding:1.2rem 0}.sched-row.head{display:none}}
-.sched-day{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.2rem}
-.sched-time{color:var(--on-dark);font-variant-numeric:tabular-nums}
-.sched-course{color:var(--on-dark-soft)}
-.sched-seats{font-size:.82rem;letter-spacing:.06em;color:var(--gold-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
-.sched-seats.full{color:var(--terra-soft)}
-
-.t-book{background:linear-gradient(140deg,var(--terra-deep) 0%,var(--navy) 60%);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0;text-align:center}
-.t-book h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.05;margin-bottom:1.6rem}
-.t-book p{font-size:1.15rem;color:var(--on-dark-soft);max-width:60ch;margin:0 auto 2.4rem}
-</style>
-
-</head><body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alessandro Ferri · Italian teacher from Milano · Club Italia</title>
+<meta name="description" content="Meet Alessandro Ferri, native Italian teacher from Milano, Lombardy. CEFR examiner. Live small group classes for adults, from Italy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/ci.css?v=v5">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/cefr-logo.svg">
+</head>
+<body class="v5">
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="../../index.html" aria-label="Club Italia — home">
@@ -136,104 +53,209 @@
   <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
 </aside>
 
-
-
-<!-- FOLD 1 · HERO -->
-<section class="t-hero"><div class="t-hero-grid">
-<div class="t-hero-copy reveal">
-  <span class="t-hero-eyebrow">Milano · Lombardia</span>
-  <h1 class="t-hero-name">Alessandro <span class="t-hero-last">Ferri</span></h1>
-  <p class="t-hero-role">Nine years in the classrooms of Bocconi and IES Abroad. Specialist in professional and academic register.</p>
-  <blockquote class="t-hero-quote">L'italiano dei milanesi è preciso, veloce, gentile. Come un tram che arriva in orario.</blockquote>
-  <p class="t-hero-quote-en">The Italian of the Milanese is precise, fast, polite. Like a tram that arrives on time.</p>
-  <div class="hero-ctas"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Book a Lesson with Alessandro</button><a class="btn btn-3d btn-3d-ghost" href="#schedule">See Alessandro's Schedule</a></div>
-</div>
-<div class="t-hero-portrait reveal reveal-d1"><img src="../../assets/img/teacher-alessandro.jpg" alt="Portrait of Alessandro Ferri, Italian teacher from Milano"></div>
-</div></section>
-
-<!-- FOLD 2 · THE REGION -->
-<section class="region-band">
-<div class="region-photo reveal"><img src="../../assets/img/pillar-travel.jpg" alt="Lombardia landscape"></div>
-<div class="region-essay reveal reveal-d1">
-  <span class="region-eyebrow">Lombardia · The Region</span>
-  <h2>The Italy I teach from.</h2>
-  <p class="drop">Lombardia is the industrial engine of the country, and Milano is its capital. This is the region of Fiat's old suppliers, of Pirelli, of the Borsa Italiana, of the fashion houses of Via Montenapoleone, of the tech corridors between the city and its hinterland. It is also the region of the Duomo, of Leonardo's Ultima Cena, of the Alps that rise ninety minutes north of the city, of Lago di Como and Lago di Garda.</p>
-<p>The Milanese Italian is close to the standard, but faster, with clipped endings and a slightly Germanic precision. You will hear it in the shops of the Quadrilatero, in the boardrooms of Porta Nuova, in the aperitivo bars of Brera at seven in the evening. It is the Italian of a city that runs on time and expects you to as well.</p>
-<p>Milano is also the city where la settimana della moda, la Fashion Week, and il Salone del Mobile, the design fair, happen twice a year. It is the Italian city where an American professional is most likely to find themselves for work. That is why my Italian classes lean, deliberately, toward the vocabulary of contracts, meetings, presentations, and the very particular art of the Milanese aperitivo, which is at once a social ritual and, more often than a foreigner realises, a business meeting.</p>
-</div>
+<section class="section-ink hero-teacher">
+  <div class="hero-teacher-grid">
+    <div class="hero-teacher-left">
+      <span class="eyebrow eyebrow-gold">Lombardia · Milano</span>
+      <h1 class="serif-display hero-teacher-h1"><em>Alessandro</em><br>Ferri</h1>
+      <p class="lead hero-teacher-cred">Native teacher · CEFR Examiner · Faculty since 2022</p>
+      <div class="cta-row">
+        <button class="btn btn-primary btn-lg" data-advisor type="button">Book with Alessandro</button>
+        <a class="btn btn-ghost btn-lg" href="../../teachers.html">All teachers</a>
+      </div>
+    </div>
+    <div class="hero-teacher-right">
+      <img src="../../assets/img/teacher-alessandro.jpg" alt="Alessandro Ferri, teacher in Milano" class="hero-teacher-portrait">
+    </div>
+  </div>
 </section>
 
-<!-- FOLD 3 · HOW I TEACH -->
-<section class="manifesto">
-<div class="manifesto-head reveal">
-  <span class="eyebrow eyebrow-line">How I Teach · A Manifesto</span>
-  <h2 class="display-md" style="color:var(--navy)">The classroom I run.</h2>
-</div>
-<div class="manifesto-body reveal">
-  <p>I teach Italian to adults who need to work in Italian, or who want to. That is a distinct pedagogy. It is not the pedagogy of the tourist who needs to order at a trattoria, and it is not the pedagogy of the retiree who wants to read Dante in the original. It is somewhere between the two, technical vocabulary paired with the small-talk grammar that surrounds it, and it needs to arrive quickly.</p>
-<p>My method is dense. I ask my students to spend fifteen minutes a day between classes, reading a short authentic Italian text I have curated. Not a page from a textbook, a page from Il Corriere della Sera, from Il Sole 24 Ore, from an Italian LinkedIn post. Then in class we unpack the text together, we harvest the vocabulary and the structures, and we produce our own.</p>
-<p>I do not believe in translation drills. When my students ask me how to say something in Italian, I do not translate. I ask them to describe the thing in the Italian they already have, and I fill in the gaps. This is slower for the first ten lessons and dramatically faster for the next hundred.</p>
-<p>By the end of a course with me, my students can present a five-minute business idea in Italian, negotiate a contract in Italian at a basic level, participate in an aperitivo without slipping into English, and read an Italian financial news article at seventy per cent comprehension. That last number is not aspirational, it is what I measure.</p>
-  <p class="manifesto-sign">Alessandro Ferri, Milano</p>
-</div>
+<section class="section-paper">
+  <div class="wrap">
+    <div class="section-head-split">
+      <div>
+        <span class="eyebrow">The region</span>
+        <h2 class="serif-display">Lombardy, as Alessandro teaches it</h2>
+      </div>
+    </div>
+    <div class="editorial-2col">
+      <div class="col-essay">
+        <p class="lead">Alessandro is from the Navigli district in Milan, near the canals. He trained as a vocal coach at the Milan Conservatorio, worked at La Scala's summer academy for four seasons, then made the full move into language teaching. He is the only member of our faculty with a formal music training, and it shows in the way he teaches rhythm and stress in a sentence.</p>
+      </div>
+      <div class="col-essay">
+        <p>Every teacher on our faculty teaches from one Italian region and from one only. That is not a marketing point. It is what allows a class to have a place. When Alessandro opens a lesson at seven in the morning her time, the light behind her is Milano light. The bread on her desk was bought at a Milano bakery. The vocabulary that emerges in a conversation about weekends is Lombardy vocabulary. Students on the other side of the world tell us the same thing, class after class. They are not on a language platform. They are in Milano, for eighty five minutes.</p>
+        <p>Regional Italian is not dialect. Alessandro teaches the standard national language, the Italian of newspapers and universities and the state broadcaster. What she brings is location. A verb form is illustrated with a scene from her city. A grammar point is drawn out of a conversation that could have taken place on her street. The language stays standard. The teaching room is specific.</p>
+      </div>
+    </div>
+    <figure class="figure-full">
+      <img src="../../assets/img/life-scala-milano.jpg" alt="Lombardy scene" loading="lazy">
+      <figcaption>A scene from Lombardy. The language Alessandro teaches is the language of this place.</figcaption>
+    </figure>
+  </div>
 </section>
 
-<!-- FOLD 4 · CREDENTIALS -->
-<section class="cred-band">
-<div class="wrap"><div class="cred-grid">
-<div class="reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Credenziali</span><h2 class="cred-title">Certified, trained, rooted in Milano.</h2></div>
-<ul class="cred-list reveal reveal-d1"><li><span class="cred-num">01</span><span>Università Cattolica del Sacro Cuore di Milano · Laurea Magistrale in Linguistica</span></li>
-<li><span class="cred-num">02</span><span>DITALS II · Università per Stranieri di Siena</span></li>
-<li><span class="cred-num">03</span><span>Certified interpreter, Italian to English, AITI</span></li>
-<li><span class="cred-num">04</span><span>Adjunct Italian instructor, IES Abroad Milano (2019 to present)</span></li></ul>
-</div></div></section>
-
-<!-- FOLD 5 · TESTIMONIALS -->
-<section class="t-testimonials">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">What My Students Say</span><h2 class="display-md" style="color:var(--navy)">In their own words.</h2></div>
-<div class="t-test-grid"><div class="t-test reveal reveal-d0"><p>Alessandro trained me for a client meeting in Milan and I walked out of that meeting having spoken Italian for ninety minutes. Two years ago I could not order coffee.</p><div class="t-test-src">James P., Chicago · CI Avanzato, 2025</div></div>
-<div class="t-test reveal reveal-d1"><p>He teaches Italian the way a good CFO reads a spreadsheet. Precisely, patiently, and with the assumption that you can handle the truth.</p><div class="t-test-src">Rachel M., New York · Parliamo Confident, 2026</div></div>
-<div class="t-test reveal reveal-d2"><p>His curated news readings turned my daily commute into a language lesson. I have never had a teacher this deliberate.</p><div class="t-test-src">Peter K., Houston · CI Intermedio, 2025</div></div></div>
-</div></section>
-
-<!-- FOLD 6 · A TYPICAL LESSON -->
-<section class="lesson-band">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">A Typical Lesson</span><h2 class="display-md" style="color:var(--navy)">85 minutes with Alessandro.</h2><p class="lead">Every Alessandro class runs for eighty-five minutes and follows the same architecture. The topics change every week, the rhythm does not.</p></div></div>
-<div class="lesson-timeline"><div class="lesson-row reveal"><div class="lesson-time">Minutes 0 to 10</div><div class="lesson-desc">Notizia del giorno. Alessandro opens with one headline from that morning's Italian press. Students respond in Italian, one sentence each.</div></div>
-<div class="lesson-row reveal"><div class="lesson-time">Minutes 10 to 30</div><div class="lesson-desc">La lettura. A curated one-page authentic Italian text is read aloud. Vocabulary is unpacked as it appears, not before.</div></div>
-<div class="lesson-row reveal"><div class="lesson-time">Minutes 30 to 55</div><div class="lesson-desc">Il punto di lingua. One structure, drawn from the text, is taught and produced in student sentences. Correction is precise and Italian-only.</div></div>
-<div class="lesson-row reveal"><div class="lesson-time">Minutes 55 to 75</div><div class="lesson-desc">Applicazione professionale. Twenty minutes of role-play, meeting, presentation, negotiation, mixed pairs, Italian throughout.</div></div>
-<div class="lesson-row reveal"><div class="lesson-time">Minutes 75 to 85</div><div class="lesson-desc">Chiusura. Recap, homework which is a two-hundred-word Italian LinkedIn-style post to be shared before the next class.</div></div></div>
+<section class="section-cream section-manifesto">
+  <div class="wrap">
+    <div class="pullquote-band">
+      <span class="eyebrow">Teaching manifesto</span>
+      <blockquote class="serif-display quote-lg"><em>I did not start as a language teacher. I studied at the Conservatorio and spent five years as a coach for foreign singers learning to pronounce Italian for the stage. That trained my ear for what makes a non-Italian voice sound Italian, and I brought that training into the language classroom. Milan is the practical capital, the working capital, and my Italian is a working Italian. Fast when it needs to be, quiet when it needs to be, always in tune. I teach adults who can already survive in the language and want to sound like they belong. That is a specific job.</em></blockquote>
+      <div class="quote-attr">Alessandro Ferri · Milano</div>
+    </div>
+  </div>
 </section>
 
-<!-- FOLD 7 · COURSES -->
-<section class="t-courses">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Where You'll Find Me</span><h2 class="display-md" style="color:var(--navy)">Courses I teach.</h2></div>
-<div class="t-course-grid"><a class="t-course-card reveal" href="../../pages/courses/ci3.html"><div><span class="tcc-eyebrow">Course</span><h3>CI Intermedio · A1.2 → A2.1</h3></div><span class="tcc-cta">See the syllabus →</span></a>
-<a class="t-course-card reveal" href="../../pages/courses/ci4.html"><div><span class="tcc-eyebrow">Course</span><h3>CI Avanzato · A2.1 → A2.2</h3></div><span class="tcc-cta">See the syllabus →</span></a>
-<a class="t-course-card reveal" href="../../pages/spoken/ps4.html"><div><span class="tcc-eyebrow">Course</span><h3>Parliamo · Chiacchierando (Confident)</h3></div><span class="tcc-cta">See the syllabus →</span></a></div>
-</div></section>
+<section class="section-travertine">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Credentials</span>
+      <h2 class="serif-display">The formal training behind the class</h2>
+    </div>
+    <div class="two-col-list">
+      <ul class="cred-list"><li><span class="cred-mark">·</span><span>DITALS II · Università per Stranieri di Siena</span></li><li><span class="cred-mark">·</span><span>Conservatorio training in vocal Italian and opera diction</span></li><li><span class="cred-mark">·</span><span>CEFR Examiner · A2 through B1</span></li><li><span class="cred-mark">·</span><span>Eight years teaching conversation and cultural Italian</span></li></ul>
+      <div class="cred-side">
+        <p>Every teacher on this faculty holds a formal Italian-as-a-foreign-language qualification from an Italian university. That is a non negotiable in our hiring. It is not the whole of the class, but it is the floor. What the students hear in the lesson is built on this training, and on years of teaching adults in exactly this format.</p>
+        <p class="lead">Ask us for the paper credentials. We share them.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- FOLD 8 · SCHEDULE -->
-<section class="schedule-band" id="schedule">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Open Cohorts · September 2026</span><h2 class="display-md">Alessandro's live schedule.</h2><p class="lead" style="color:var(--on-dark-soft)">All times shown in US Eastern. Every class is live, small, and taught by Alessandro in person from Milano.</p></div>
-<div class="schedule-table">
-<div class="sched-row head"><span>Day</span><span>Time (ET)</span><span>Course</span><span>Seats</span></div>
-<div class="sched-row"><span class="sched-day">Monday</span><span class="sched-time">07:30 ET</span><span class="sched-course">CI Avanzato</span><span class="sched-seats ">seats: 4 of 12</span></div>
-<div class="sched-row"><span class="sched-day">Tuesday</span><span class="sched-time">19:00 ET</span><span class="sched-course">Business Italian</span><span class="sched-seats ">seats: 3 of 10</span></div>
-<div class="sched-row"><span class="sched-day">Wednesday</span><span class="sched-time">07:30 ET</span><span class="sched-course">CI Intermedio</span><span class="sched-seats ">seats: 6 of 12</span></div>
-<div class="sched-row"><span class="sched-day">Thursday</span><span class="sched-time">19:00 ET</span><span class="sched-course">Parliamo Confident</span><span class="sched-seats ">seats: 2 of 10</span></div>
-<div class="sched-row"><span class="sched-day">Friday</span><span class="sched-time">07:30 ET</span><span class="sched-course">Aperitivo del venerdì</span><span class="sched-seats ">seats: 5 of 8</span></div>
-</div></div></section>
+<section class="section-cream tp-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Reviewed by learners</span>
+      <h2 class="serif-display">What Alessandro's students say</h2>
+    </div>
+    <div class="tp-wall">
+      <article class="tp-card">
+        <div class="tp-stars" aria-label="5 stars">★★★★★</div>
+        <h4 class="tp-title">Alessandro makes the language patient</h4>
+        <p class="tp-body">I had tried three apps before I found Alessandro. She teaches like an adult teaching another adult. I finally have Italian I can use.</p>
+        <div class="tp-meta">
+          <img class="tp-avatar" src="../../assets/img/student-diane.jpg" alt="Diane Whitfield" loading="lazy">
+          <div><div class="tp-name">Diane Whitfield</div><div class="tp-loc">Portland, Oregon</div></div>
+        </div>
+      </article>
+      <article class="tp-card">
+        <div class="tp-stars" aria-label="5 stars">★★★★★</div>
+        <h4 class="tp-title">A real teacher, from a real place</h4>
+        <p class="tp-body">Eighty five minutes in a class with Alessandro feels like eighty five minutes in Milano. That is the whole reason it worked for me.</p>
+        <div class="tp-meta">
+          <img class="tp-avatar" src="../../assets/img/student-robert.jpg" alt="Robert Marconi" loading="lazy">
+          <div><div class="tp-name">Robert Marconi</div><div class="tp-loc">Boston, Massachusetts</div></div>
+        </div>
+      </article>
+      <article class="tp-card">
+        <div class="tp-stars" aria-label="5 stars">★★★★★</div>
+        <h4 class="tp-title">Ten months in and still enjoying it</h4>
+        <p class="tp-body">I was afraid the novelty would wear off. It hasn't. Alessandro keeps changing the shape of the class so it never gets stale.</p>
+        <div class="tp-meta">
+          <img class="tp-avatar" src="../../assets/img/student-linda.jpg" alt="Linda Cavalli" loading="lazy">
+          <div><div class="tp-name">Linda Cavalli</div><div class="tp-loc">San Diego, California</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-<!-- FOLD 9 · BOOK CTA -->
-<section class="t-book"><div class="wrap-narrow reveal">
-<h2>Learn Italian with Alessandro.</h2>
-<p>An advisor will help you place, choose the right cohort, and reserve a seat with Alessandro. There is no obligation. The consultation is free.</p>
-<div class="hero-ctas" style="justify-content:center;display:flex"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Book My Placement Call</button><a class="btn btn-3d btn-3d-ghost" href="../../teachers.html">Meet the Other Teachers</a></div>
-</div></section>
+<section class="section-paper">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">A typical lesson with Alessandro</span>
+      <h2 class="serif-display">Eighty five minutes, structured for adults</h2>
+    </div>
+    <div class="phase-grid">
+      <div class="phase-col">
+        <div class="phase-num">01</div>
+        <h3>Learning goals</h3>
+        <ul class="phase-list">
+          <li>One grammar point named at the start of the lesson</li>
+          <li>Ten to fifteen new items of Lombardy-anchored vocabulary</li>
+          <li>One conversational function students will leave able to perform</li>
+          <li>One short cultural note tied to the day's material</li>
+          <li>A named piece of work to bring back next week</li>
+        </ul>
+      </div>
+      <div class="phase-col">
+        <div class="phase-num">02</div>
+        <h3>The eighty five minute flow</h3>
+        <ul class="phase-list">
+          <li>0 to 10 · warm up in Italian, weekend and week ahead</li>
+          <li>10 to 25 · new material, introduced through a real scene</li>
+          <li>25 to 45 · guided practice, in pairs on breakout</li>
+          <li>45 to 55 · a short break, Alessandro stays online</li>
+          <li>55 to 75 · free conversation on the day's theme</li>
+          <li>75 to 85 · review, homework, questions</li>
+        </ul>
+      </div>
+      <div class="phase-col">
+        <div class="phase-num">03</div>
+        <h3>Between lesson work</h3>
+        <ul class="phase-list">
+          <li>One short reading from Alessandro's Italian sources</li>
+          <li>One audio, usually a real recording under three minutes</li>
+          <li>One written piece, no longer than 120 words</li>
+          <li>A quiet fifteen minutes with Biagio, if you want it</li>
+          <li>Total realistic weekly load: ninety to a hundred minutes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="section-cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Which courses I teach</span>
+      <h2 class="serif-display">Alessandro's teaching load</h2>
+      <p class="lead">Every teacher on the faculty holds a fixed teaching load. This is Alessandro's.</p>
+    </div>
+    <div class="course-grid course-grid-2">
+      <a class="course-card" href="../../pages/courses/ps-chiacchierando.html">
+        <div class="course-card-body">
+          <h3 class="serif-display">Parliamo · Chiacchierando</h3>
+          <p>Conversation classes for confident speakers.</p>
+          <span class="course-more">See the course</span>
+        </div>
+      </a>
+      <a class="course-card" href="../../pages/courses/cap-opera.html">
+        <div class="course-card-body">
+          <h3 class="serif-display">Capsule · L'Opera</h3>
+          <p>Six weeks in the language of Verdi and Puccini.</p>
+          <span class="course-more">See the course</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
+<section class="section-travertine">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Live cohorts · October start</span>
+      <h2 class="serif-display">Open time slots with Alessandro</h2>
+      <p class="lead">Times are shown in New York time. All classes are live from Milano.</p>
+    </div>
+    <div class="schedule-table">
+      <div class="sch-row sch-head"><div>Cohort</div><div>Day</div><div>Time (ET)</div><div>Course</div><div>Seats</div><div></div></div>
+      <div class="sch-row"><div>CI-AL-01</div><div>Mon and Wed</div><div>7:00 pm to 8:25 pm</div><div>Parliamo</div><div>3 of 12 left</div><div><button class="btn btn-primary btn-sm" data-advisor type="button">Hold my seat</button></div></div>
+      <div class="sch-row"><div>CI-AL-02</div><div>Tue and Thu</div><div>11:00 am to 12:25 pm</div><div>Parliamo</div><div>7 of 12 left</div><div><button class="btn btn-primary btn-sm" data-advisor type="button">Hold my seat</button></div></div>
+      <div class="sch-row"><div>CI-AL-03</div><div>Sat</div><div>9:30 am to 12:20 pm</div><div>Weekend intensive</div><div>5 of 10 left</div><div><button class="btn btn-primary btn-sm" data-advisor type="button">Hold my seat</button></div></div>
+      <div class="sch-row"><div>CI-AL-04</div><div>Mon Wed Fri</div><div>6:00 pm to 7:00 pm</div><div>Accelerated</div><div>2 of 8 left</div><div><button class="btn btn-primary btn-sm" data-advisor type="button">Hold my seat</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-verona final-cta">
+  <div class="wrap center">
+    <h2 class="serif-display"><em>Book your first class with Alessandro.</em></h2>
+    <p class="lead">One native teacher from Milano, live from Lombardy, in a small group of adults who mean it.</p>
+    <div class="cta-row">
+      <button class="btn btn-primary btn-lg" data-advisor type="button">Book with Alessandro</button>
+      <a class="btn btn-ghost btn-lg" href="courses.html">See the courses</a>
+    </div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
@@ -322,6 +344,6 @@
     </div>
   </div>
 </div>
-
-<script src="../../js/ci.js"></script>
-</body></html>
+<script src="../../js/ci.js?v=v5" defer></script>
+</body>
+</html>

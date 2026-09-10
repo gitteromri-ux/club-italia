@@ -1,100 +1,17 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Francesca Zeno — Italian Teacher from Venezia · Club Italia by eTeacher</title><meta name="description" content="Francesca Zeno, native Italian teacher from Venezia, Veneto. Venetian-born literature scholar. Teaches Italian with the patience of a lagoon and the precision of a librarian.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="../../css/ci.css">
-
-<style>
-.t-hero{position:relative;min-height:100vh;background:linear-gradient(120deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-soft) 100%);color:var(--on-dark);display:flex;align-items:stretch;overflow:hidden}
-.t-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 30%,rgba(201,162,75,.14),transparent 55%);pointer-events:none}
-.t-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0;width:100%;align-items:stretch;position:relative;z-index:2}
-@media (max-width:960px){.t-hero-grid{grid-template-columns:1fr}}
-.t-hero-copy{padding:9rem clamp(1.6rem,5vw,6rem) 5rem;display:flex;flex-direction:column;justify-content:center}
-.t-hero-eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:2rem;display:inline-flex;align-items:center;gap:.9rem}
-.t-hero-eyebrow::before{content:"";width:2.4rem;height:1px;background:var(--gold-soft)}
-.t-hero-name{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(3.6rem,7vw,7rem);line-height:.98;letter-spacing:-.02em;margin:0 0 .4rem;color:var(--on-dark)}
-.t-hero-last{display:block;color:var(--gold-soft);font-style:italic}
-.t-hero-role{font-family:var(--serif);font-size:1.35rem;font-style:italic;color:var(--on-dark-soft);margin:2rem 0 2.4rem;max-width:36ch;line-height:1.4}
-.t-hero-quote{border-left:2px solid var(--gold);padding:.4rem 0 .4rem 1.4rem;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--on-dark);max-width:44ch;margin-bottom:.6rem}
-.t-hero-quote-en{font-size:.86rem;letter-spacing:.02em;color:var(--on-dark-faint);max-width:44ch;margin-bottom:2.4rem}
-.t-hero-portrait{position:relative;overflow:hidden;background:var(--navy-mid);min-height:64vh}
-.t-hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-.t-hero-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,8,11,.55) 0%,rgba(34,8,11,0) 30%),linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.35) 100%);pointer-events:none}
-
-.region-band{display:grid;grid-template-columns:.7fr 1.3fr;gap:0}
-@media (max-width:960px){.region-band{grid-template-columns:1fr}}
-.region-photo{position:relative;min-height:64vh;overflow:hidden}
-.region-photo img{width:100%;height:100%;object-fit:cover}
-.region-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,8,11,0) 60%,rgba(243,237,223,.15) 100%);pointer-events:none}
-.region-essay{padding:clamp(4rem,7vw,7rem) clamp(1.6rem,5vw,6rem);background:var(--paper);color:var(--on-light)}
-.region-essay h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,3.6vw,3rem);line-height:1.1;margin:0 0 2rem;max-width:22ch;color:var(--navy)}
-.region-essay .region-eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.4rem;display:block}
-.region-essay p{font-size:1.08rem;line-height:1.75;margin-bottom:1.2rem;color:var(--on-light-soft)}
-.region-essay .drop::first-letter{font-family:var(--serif);float:left;font-size:4.6rem;line-height:.9;padding:.4rem .6rem 0 0;color:var(--gold-deep);font-weight:600}
-
-.manifesto{background:var(--ivory);padding:clamp(4rem,7vw,7rem) 0}
-.manifesto-head{max-width:820px;margin:0 auto 3rem;padding:0 clamp(1.4rem,3vw,3rem)}
-.manifesto-head .eyebrow{color:var(--gold-deep)}
-.manifesto-body{max-width:760px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem)}
-.manifesto-body p{font-size:1.13rem;line-height:1.78;color:var(--on-light);margin-bottom:1.4rem}
-.manifesto-body p:first-child::first-letter{font-family:var(--serif);float:left;font-size:5rem;line-height:.9;padding:.3rem .55rem 0 0;color:var(--terra-deep);font-weight:600}
-.manifesto-sign{margin-top:2rem;font-family:var(--serif);font-style:italic;color:var(--terra-deep);font-size:1.1rem}
-
-.cred-band{background:var(--navy);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0}
-.cred-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start}
-@media (max-width:960px){.cred-grid{grid-template-columns:1fr}}
-.cred-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2rem,3.6vw,3rem);line-height:1.05;color:var(--gold-soft)}
-.cred-list{list-style:none;padding:0;margin:0}
-.cred-list li{padding:1.2rem 0;border-top:1px solid var(--gold-line-soft);font-size:1.02rem;line-height:1.55;color:var(--on-dark);display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:baseline}
-.cred-list li:last-child{border-bottom:1px solid var(--gold-line-soft)}
-.cred-list .cred-num{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.35rem;min-width:2ch}
-
-.t-testimonials{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
-.t-test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
-@media (max-width:960px){.t-test-grid{grid-template-columns:1fr}}
-.t-test{background:var(--white);border:1px solid var(--gold-line-soft);padding:2.2rem 2rem;position:relative}
-.t-test::before{content:"\201C";position:absolute;top:-.1rem;left:1.4rem;font-family:var(--serif);color:var(--gold);font-size:5rem;line-height:1;font-weight:600}
-.t-test p{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.5;color:var(--on-light);margin-top:1.8rem;margin-bottom:1.4rem}
-.t-test .t-test-src{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);border-top:1px solid var(--light-line);padding-top:1rem}
-
-.lesson-band{background:var(--cream);padding:clamp(4rem,7vw,7rem) 0}
-.lesson-timeline{max-width:900px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem);position:relative}
-.lesson-timeline::before{content:"";position:absolute;left:calc(clamp(1.4rem,3vw,3rem) + 5rem);top:0;bottom:0;width:1px;background:var(--gold-line)}
-@media (max-width:640px){.lesson-timeline::before{display:none}}
-.lesson-row{display:grid;grid-template-columns:6rem 1fr;gap:2rem;padding:1.8rem 0;border-bottom:1px solid var(--light-line);position:relative}
-.lesson-row:last-child{border-bottom:none}
-.lesson-row::before{content:"";position:absolute;left:calc(5rem - 4px);top:2.2rem;width:9px;height:9px;background:var(--gold);border-radius:50%}
-@media (max-width:640px){.lesson-row{grid-template-columns:1fr;gap:.4rem}.lesson-row::before{display:none}}
-.lesson-time{font-family:var(--serif);font-style:italic;color:var(--terra-deep);font-size:1.05rem;line-height:1.3}
-.lesson-desc{font-size:1.02rem;line-height:1.6;color:var(--on-light);padding-left:1.4rem}
-@media (max-width:640px){.lesson-desc{padding-left:0}}
-
-.t-courses{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
-.t-course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-@media (max-width:900px){.t-course-grid{grid-template-columns:1fr}}
-.t-course-card{background:var(--white);border:1px solid var(--gold-line-soft);padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .3s var(--ease);text-decoration:none;color:inherit}
-.t-course-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(58,14,18,.14);border-color:var(--gold-line)}
-.t-course-card .tcc-eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.4rem}
-.t-course-card h3{font-family:var(--serif);font-size:1.55rem;margin-bottom:1rem;color:var(--navy);line-height:1.15}
-.t-course-card .tcc-cta{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-deep);margin-top:1.4rem}
-
-.schedule-band{background:var(--navy);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0}
-.schedule-table{max-width:900px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem)}
-.sched-row{display:grid;grid-template-columns:1fr 1fr 1.6fr auto;gap:2rem;padding:1.4rem 0;border-bottom:1px solid var(--gold-line-soft);align-items:baseline;font-size:1rem}
-.sched-row.head{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);border-bottom:1px solid var(--gold);padding-bottom:1rem;font-family:var(--sans)}
-@media (max-width:720px){.sched-row{grid-template-columns:1fr 1fr;gap:.6rem;padding:1.2rem 0}.sched-row.head{display:none}}
-.sched-day{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.2rem}
-.sched-time{color:var(--on-dark);font-variant-numeric:tabular-nums}
-.sched-course{color:var(--on-dark-soft)}
-.sched-seats{font-size:.82rem;letter-spacing:.06em;color:var(--gold-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
-.sched-seats.full{color:var(--terra-soft)}
-
-.t-book{background:linear-gradient(140deg,var(--terra-deep) 0%,var(--navy) 60%);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0;text-align:center}
-.t-book h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.05;margin-bottom:1.6rem}
-.t-book p{font-size:1.15rem;color:var(--on-dark-soft);max-width:60ch;margin:0 auto 2.4rem}
-</style>
-
-</head><body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Francesca Zeno · Italian teacher from Venezia · Club Italia</title>
+<meta name="description" content="Meet Francesca Zeno, native Italian teacher from Venezia, Veneto. CEFR examiner. Live small group classes for adults, from Italy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/ci.css?v=v5">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/cefr-logo.svg">
+</head>
+<body class="v5">
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="../../index.html" aria-label="Club Italia — home">
@@ -136,104 +53,202 @@
   <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
 </aside>
 
-
-
-<!-- FOLD 1 · HERO -->
-<section class="t-hero"><div class="t-hero-grid">
-<div class="t-hero-copy reveal">
-  <span class="t-hero-eyebrow">Venezia · Veneto</span>
-  <h1 class="t-hero-name">Francesca <span class="t-hero-last">Zeno</span></h1>
-  <p class="t-hero-role">Eleven years at Ca' Foscari, seven of them coordinating Italian-for-foreigners. Specialist in literary Italian.</p>
-  <blockquote class="t-hero-quote">A Venezia si impara ad ascoltare prima di parlare. La città è fatta di silenzi.</blockquote>
-  <p class="t-hero-quote-en">In Venice you learn to listen before you speak. The city is made of silences.</p>
-  <div class="hero-ctas"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Book a Lesson with Francesca</button><a class="btn btn-3d btn-3d-ghost" href="#schedule">See Francesca's Schedule</a></div>
-</div>
-<div class="t-hero-portrait reveal reveal-d1"><img src="../../assets/img/teacher-francesca.jpg" alt="Portrait of Francesca Zeno, Italian teacher from Venezia"></div>
-</div></section>
-
-<!-- FOLD 2 · THE REGION -->
-<section class="region-band">
-<div class="region-photo reveal"><img src="../../assets/img/pillar-opera.jpg" alt="Veneto landscape"></div>
-<div class="region-essay reveal reveal-d1">
-  <span class="region-eyebrow">Veneto · The Region</span>
-  <h2>The Italy I teach from.</h2>
-  <p class="drop">Veneto is the region of the lagoon, of the Dolomites, of the plains that Napoleon crossed in 1797 and that gave Italy Palladio, Tiziano, Tintoretto, Veronese, Canaletto, Goldoni, and Casanova. It is also, quietly, one of the most economically productive regions of the country, and one of the most linguistically complex, the venetian dialect, or veneto, is not a corruption of Italian but a sibling of it, with its own literature stretching back to the 1200s.</p>
-<p>Venezia is my city and I have to declare, gently, that Venezia is unlike anywhere else, not just in Italy, in the world. It is the only major European city where the streets are water, where the only vehicle is a boat, where the daily rhythm is set by tides and by the vaporetti. Learning Italian from a Venetian is learning to speak more slowly, to leave pauses, to notice light.</p>
-<p>The venetian dialect is a joy and a hazard. My students will hear ciao, invented in Venice from the phrase s-ciavo vostro, your servant, and its softened venetian form s'ciào. They will hear campi and campielli instead of piazze. They will notice that Venetians address their friends with tu but their acquaintances with the archaic voi rather than lei, a pattern the rest of Italy discarded in the twentieth century. I teach my students to hear these things, to smile at them, and to speak standard Italian throughout.</p>
-</div>
+<section class="section-ink hero-teacher">
+  <div class="hero-teacher-grid">
+    <div class="hero-teacher-left">
+      <span class="eyebrow eyebrow-gold">Veneto · Venezia</span>
+      <h1 class="serif-display hero-teacher-h1"><em>Francesca</em><br>Zeno</h1>
+      <p class="lead hero-teacher-cred">Native teacher · CEFR Examiner · Faculty since 2022</p>
+      <div class="cta-row">
+        <button class="btn btn-primary btn-lg" data-advisor type="button">Book with Francesca</button>
+        <a class="btn btn-ghost btn-lg" href="../../teachers.html">All teachers</a>
+      </div>
+    </div>
+    <div class="hero-teacher-right">
+      <img src="../../assets/img/teacher-francesca.jpg" alt="Francesca Zeno, teacher in Venezia" class="hero-teacher-portrait">
+    </div>
+  </div>
 </section>
 
-<!-- FOLD 3 · HOW I TEACH -->
-<section class="manifesto">
-<div class="manifesto-head reveal">
-  <span class="eyebrow eyebrow-line">How I Teach · A Manifesto</span>
-  <h2 class="display-md" style="color:var(--navy)">The classroom I run.</h2>
-</div>
-<div class="manifesto-body reveal">
-  <p>I teach Italian slowly. I do not mean I teach it inefficiently, I mean I teach it at the pace at which language is best absorbed by an adult mind, which is roughly the pace at which a Venetian walks along the Zattere on a Sunday morning, unhurried, attentive, willing to stop.</p>
-<p>My method is grounded in reading. Not in the childish reading of a graded textbook, in the real reading of adapted but authentic Italian prose, from the first month. A beginner does not begin with a page of Manzoni, but they do begin with the first two paragraphs of an Italian short story I have chosen, and by the end of six months they are reading Buzzati, Ginzburg, Calvino in the original, at their level.</p>
-<p>I also teach with theatre. Venice gave the world Carlo Goldoni, the reformer of the commedia dell'arte, and a Goldoni play is, unexpectedly, a magnificent teaching text, spoken language, real registers, comic timing, and dialogue that adults can read aloud without feeling patronised. Once a semester my students perform a five-minute Goldoni scene together, in Italian, on video. They remember the scene for years.</p>
-<p>By the end of a year with me, my students read Italian literature at their level with pleasure, hold a sustained conversation on almost any topic, and, most importantly, have developed the habit of noticing Italian. Noticing a word in a Ferrante novel. Noticing a phrase in an interview. Noticing the way a friend from Padua says qua for qui. That habit is the thing that will make them lifelong Italian speakers.</p>
-  <p class="manifesto-sign">Francesca Zeno, Venezia</p>
-</div>
+<section class="section-paper">
+  <div class="wrap">
+    <div class="section-head-split">
+      <div>
+        <span class="eyebrow">The region</span>
+        <h2 class="serif-display">Veneto, as Francesca teaches it</h2>
+      </div>
+    </div>
+    <div class="editorial-2col">
+      <div class="col-essay">
+        <p class="lead">Francesca is Venetian. She grew up in the Cannaregio neighbourhood, took a first degree at Ca' Foscari, then trained specifically in the Italian of tourism and cultural travel. She teaches from an apartment overlooking a side canal. Her students often say the light behind her on the camera is enough on its own.</p>
+      </div>
+      <div class="col-essay">
+        <p>Every teacher on our faculty teaches from one Italian region and from one only. That is not a marketing point. It is what allows a class to have a place. When Francesca opens a lesson at seven in the morning her time, the light behind her is Venezia light. The bread on her desk was bought at a Venezia bakery. The vocabulary that emerges in a conversation about weekends is Veneto vocabulary. Students on the other side of the world tell us the same thing, class after class. They are not on a language platform. They are in Venezia, for eighty five minutes.</p>
+        <p>Regional Italian is not dialect. Francesca teaches the standard national language, the Italian of newspapers and universities and the state broadcaster. What she brings is location. A verb form is illustrated with a scene from her city. A grammar point is drawn out of a conversation that could have taken place on her street. The language stays standard. The teaching room is specific.</p>
+      </div>
+    </div>
+    <figure class="figure-full">
+      <img src="../../assets/img/life-gondola-venezia.jpg" alt="Veneto scene" loading="lazy">
+      <figcaption>A scene from Veneto. The language Francesca teaches is the language of this place.</figcaption>
+    </figure>
+  </div>
 </section>
 
-<!-- FOLD 4 · CREDENTIALS -->
-<section class="cred-band">
-<div class="wrap"><div class="cred-grid">
-<div class="reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Credenziali</span><h2 class="cred-title">Certified, trained, rooted in Venezia.</h2></div>
-<ul class="cred-list reveal reveal-d1"><li><span class="cred-num">01</span><span>Università Ca' Foscari di Venezia · Dottorato in Italianistica</span></li>
-<li><span class="cred-num">02</span><span>CEDILS · Ca' Foscari, senior examiner</span></li>
-<li><span class="cred-num">03</span><span>Coordinator, Corsi di Italiano per Stranieri, Ca' Foscari (2020 to 2024)</span></li>
-<li><span class="cred-num">04</span><span>Author of scholarly work on Carlo Goldoni and eighteenth-century Venetian theatre</span></li></ul>
-</div></div></section>
-
-<!-- FOLD 5 · TESTIMONIALS -->
-<section class="t-testimonials">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">What My Students Say</span><h2 class="display-md" style="color:var(--navy)">In their own words.</h2></div>
-<div class="t-test-grid"><div class="t-test reveal reveal-d0"><p>Francesca gave me a reading life in Italian. I now read Ferrante in the original on the train home. I did not know that was going to be possible.</p><div class="t-test-src">Elena D., Boston · CI Avanzato, 2025</div></div>
-<div class="t-test reveal reveal-d1"><p>Her Goldoni performance week is the most fun I have ever had learning any language. I am fifty-eight and I have never done anything like it.</p><div class="t-test-src">Anna G., Los Angeles · Culture Capsule, 2026</div></div>
-<div class="t-test reveal reveal-d2"><p>She is patient in a way that made me stop apologising for my Italian. That was the shift I needed.</p><div class="t-test-src">Robert H., Philadelphia · CI Intermedio, 2025</div></div></div>
-</div></section>
-
-<!-- FOLD 6 · A TYPICAL LESSON -->
-<section class="lesson-band">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">A Typical Lesson</span><h2 class="display-md" style="color:var(--navy)">85 minutes with Francesca.</h2><p class="lead">Every Francesca class runs for eighty-five minutes and follows the same architecture. The topics change every week, the rhythm does not.</p></div></div>
-<div class="lesson-timeline"><div class="lesson-row reveal"><div class="lesson-time">Minutes 0 to 10</div><div class="lesson-desc">Lettura silenziosa. Students receive a short authentic Italian paragraph and read it silently while Francesca reads it aloud, once.</div></div>
-<div class="lesson-row reveal"><div class="lesson-time">Minutes 10 to 30</div><div class="lesson-desc">La lettura ad alta voce. Each student reads a portion aloud. Francesca corrects rhythm and pronunciation, not vocabulary.</div></div>
-<div class="lesson-row reveal"><div class="lesson-time">Minutes 30 to 55</div><div class="lesson-desc">Il punto di lingua. One structure, drawn from the text, is taught and produced in student sentences, spoken and written.</div></div>
-<div class="lesson-row reveal"><div class="lesson-time">Minutes 55 to 75</div><div class="lesson-desc">Interpretazione. Twenty minutes of role-play or short dramatic reading, in pairs, in Italian.</div></div>
-<div class="lesson-row reveal"><div class="lesson-time">Minutes 75 to 85</div><div class="lesson-desc">Chiusura. Recap, homework which is to read one more page of the same author, plus a five-minute audio reflection.</div></div></div>
+<section class="section-cream section-manifesto">
+  <div class="wrap">
+    <div class="pullquote-band">
+      <span class="eyebrow">Teaching manifesto</span>
+      <blockquote class="serif-display quote-lg"><em>Travel Italian is often taught badly. It is taught as a list of phrases you memorise and then forget the moment a real Italian speaks back to you. I teach it as language for a specific trip. Each of my students tells me in the first week where they are going and when, and the class bends around those trips. We rehearse arrivals, we rehearse the awkward middle days, we rehearse the small conversations that will decide whether the trip felt like a vacation or like a place you actually visited. Venice is my classroom because Venice is a city that survives on travellers. I know exactly how a well-prepared foreign speaker is received here, and how a badly prepared one is treated.</em></blockquote>
+      <div class="quote-attr">Francesca Zeno · Venezia</div>
+    </div>
+  </div>
 </section>
 
-<!-- FOLD 7 · COURSES -->
-<section class="t-courses">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Where You'll Find Me</span><h2 class="display-md" style="color:var(--navy)">Courses I teach.</h2></div>
-<div class="t-course-grid"><a class="t-course-card reveal" href="../../pages/courses/ci3.html"><div><span class="tcc-eyebrow">Course</span><h3>CI Intermedio · A1.2 → A2.1</h3></div><span class="tcc-cta">See the syllabus →</span></a>
-<a class="t-course-card reveal" href="../../pages/courses/ci4.html"><div><span class="tcc-eyebrow">Course</span><h3>CI Avanzato · A2.1 → A2.2</h3></div><span class="tcc-cta">See the syllabus →</span></a>
-<a class="t-course-card reveal" href="../../pages/culture/cap-opera.html"><div><span class="tcc-eyebrow">Course</span><h3>Culture Capsule · L'Opera</h3></div><span class="tcc-cta">See the syllabus →</span></a></div>
-</div></section>
+<section class="section-travertine">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Credentials</span>
+      <h2 class="serif-display">The formal training behind the class</h2>
+    </div>
+    <div class="two-col-list">
+      <ul class="cred-list"><li><span class="cred-mark">·</span><span>DITALS II · Università per Stranieri di Siena</span></li><li><span class="cred-mark">·</span><span>Master in Italian for tourism and cultural travel</span></li><li><span class="cred-mark">·</span><span>CEFR Examiner · A1 through A2</span></li><li><span class="cred-mark">·</span><span>Seven years teaching travel-focused Italian</span></li></ul>
+      <div class="cred-side">
+        <p>Every teacher on this faculty holds a formal Italian-as-a-foreign-language qualification from an Italian university. That is a non negotiable in our hiring. It is not the whole of the class, but it is the floor. What the students hear in the lesson is built on this training, and on years of teaching adults in exactly this format.</p>
+        <p class="lead">Ask us for the paper credentials. We share them.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- FOLD 8 · SCHEDULE -->
-<section class="schedule-band" id="schedule">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Open Cohorts · September 2026</span><h2 class="display-md">Francesca's live schedule.</h2><p class="lead" style="color:var(--on-dark-soft)">All times shown in US Eastern. Every class is live, small, and taught by Francesca in person from Venezia.</p></div>
-<div class="schedule-table">
-<div class="sched-row head"><span>Day</span><span>Time (ET)</span><span>Course</span><span>Seats</span></div>
-<div class="sched-row"><span class="sched-day">Monday</span><span class="sched-time">13:00 ET</span><span class="sched-course">CI Avanzato</span><span class="sched-seats ">seats: 5 of 12</span></div>
-<div class="sched-row"><span class="sched-day">Tuesday</span><span class="sched-time">20:00 ET</span><span class="sched-course">Lettura italiana</span><span class="sched-seats ">seats: 3 of 10</span></div>
-<div class="sched-row"><span class="sched-day">Wednesday</span><span class="sched-time">13:00 ET</span><span class="sched-course">CI Intermedio</span><span class="sched-seats full">seats: full · waitlist</span></div>
-<div class="sched-row"><span class="sched-day">Thursday</span><span class="sched-time">20:00 ET</span><span class="sched-course">Capsule · L'Opera</span><span class="sched-seats ">seats: 4 of 10</span></div>
-<div class="sched-row"><span class="sched-day">Saturday</span><span class="sched-time">11:00 ET</span><span class="sched-course">Goldoni Reading Circle</span><span class="sched-seats ">seats: 2 of 8</span></div>
-</div></div></section>
+<section class="section-cream tp-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Reviewed by learners</span>
+      <h2 class="serif-display">What Francesca's students say</h2>
+    </div>
+    <div class="tp-wall">
+      <article class="tp-card">
+        <div class="tp-stars" aria-label="5 stars">★★★★★</div>
+        <h4 class="tp-title">Francesca makes the language patient</h4>
+        <p class="tp-body">I had tried three apps before I found Francesca. She teaches like an adult teaching another adult. I finally have Italian I can use.</p>
+        <div class="tp-meta">
+          <img class="tp-avatar" src="../../assets/img/student-diane.jpg" alt="Diane Whitfield" loading="lazy">
+          <div><div class="tp-name">Diane Whitfield</div><div class="tp-loc">Portland, Oregon</div></div>
+        </div>
+      </article>
+      <article class="tp-card">
+        <div class="tp-stars" aria-label="5 stars">★★★★★</div>
+        <h4 class="tp-title">A real teacher, from a real place</h4>
+        <p class="tp-body">Eighty five minutes in a class with Francesca feels like eighty five minutes in Venezia. That is the whole reason it worked for me.</p>
+        <div class="tp-meta">
+          <img class="tp-avatar" src="../../assets/img/student-robert.jpg" alt="Robert Marconi" loading="lazy">
+          <div><div class="tp-name">Robert Marconi</div><div class="tp-loc">Boston, Massachusetts</div></div>
+        </div>
+      </article>
+      <article class="tp-card">
+        <div class="tp-stars" aria-label="5 stars">★★★★★</div>
+        <h4 class="tp-title">Ten months in and still enjoying it</h4>
+        <p class="tp-body">I was afraid the novelty would wear off. It hasn't. Francesca keeps changing the shape of the class so it never gets stale.</p>
+        <div class="tp-meta">
+          <img class="tp-avatar" src="../../assets/img/student-linda.jpg" alt="Linda Cavalli" loading="lazy">
+          <div><div class="tp-name">Linda Cavalli</div><div class="tp-loc">San Diego, California</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-<!-- FOLD 9 · BOOK CTA -->
-<section class="t-book"><div class="wrap-narrow reveal">
-<h2>Learn Italian with Francesca.</h2>
-<p>An advisor will help you place, choose the right cohort, and reserve a seat with Francesca. There is no obligation. The consultation is free.</p>
-<div class="hero-ctas" style="justify-content:center;display:flex"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Book My Placement Call</button><a class="btn btn-3d btn-3d-ghost" href="../../teachers.html">Meet the Other Teachers</a></div>
-</div></section>
+<section class="section-paper">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">A typical lesson with Francesca</span>
+      <h2 class="serif-display">Eighty five minutes, structured for adults</h2>
+    </div>
+    <div class="phase-grid">
+      <div class="phase-col">
+        <div class="phase-num">01</div>
+        <h3>Learning goals</h3>
+        <ul class="phase-list">
+          <li>One grammar point named at the start of the lesson</li>
+          <li>Ten to fifteen new items of Veneto-anchored vocabulary</li>
+          <li>One conversational function students will leave able to perform</li>
+          <li>One short cultural note tied to the day's material</li>
+          <li>A named piece of work to bring back next week</li>
+        </ul>
+      </div>
+      <div class="phase-col">
+        <div class="phase-num">02</div>
+        <h3>The eighty five minute flow</h3>
+        <ul class="phase-list">
+          <li>0 to 10 · warm up in Italian, weekend and week ahead</li>
+          <li>10 to 25 · new material, introduced through a real scene</li>
+          <li>25 to 45 · guided practice, in pairs on breakout</li>
+          <li>45 to 55 · a short break, Francesca stays online</li>
+          <li>55 to 75 · free conversation on the day's theme</li>
+          <li>75 to 85 · review, homework, questions</li>
+        </ul>
+      </div>
+      <div class="phase-col">
+        <div class="phase-num">03</div>
+        <h3>Between lesson work</h3>
+        <ul class="phase-list">
+          <li>One short reading from Francesca's Italian sources</li>
+          <li>One audio, usually a real recording under three minutes</li>
+          <li>One written piece, no longer than 120 words</li>
+          <li>A quiet fifteen minutes with Biagio, if you want it</li>
+          <li>Total realistic weekly load: ninety to a hundred minutes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="section-cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Which courses I teach</span>
+      <h2 class="serif-display">Francesca's teaching load</h2>
+      <p class="lead">Every teacher on the faculty holds a fixed teaching load. This is Francesca's.</p>
+    </div>
+    <div class="course-grid course-grid-1">
+      <a class="course-card" href="../../pages/courses/ps-viaggio.html">
+        <div class="course-card-body">
+          <h3 class="serif-display">Parliamo · In viaggio</h3>
+          <p>Speaking Italian on Italian trips.</p>
+          <span class="course-more">See the course</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
+<section class="section-travertine">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Live cohorts · October start</span>
+      <h2 class="serif-display">Open time slots with Francesca</h2>
+      <p class="lead">Times are shown in New York time. All classes are live from Venezia.</p>
+    </div>
+    <div class="schedule-table">
+      <div class="sch-row sch-head"><div>Cohort</div><div>Day</div><div>Time (ET)</div><div>Course</div><div>Seats</div><div></div></div>
+      <div class="sch-row"><div>CI-FR-01</div><div>Mon and Wed</div><div>7:00 pm to 8:25 pm</div><div>Parliamo</div><div>3 of 12 left</div><div><button class="btn btn-primary btn-sm" data-advisor type="button">Hold my seat</button></div></div>
+      <div class="sch-row"><div>CI-FR-02</div><div>Tue and Thu</div><div>11:00 am to 12:25 pm</div><div>Parliamo</div><div>7 of 12 left</div><div><button class="btn btn-primary btn-sm" data-advisor type="button">Hold my seat</button></div></div>
+      <div class="sch-row"><div>CI-FR-03</div><div>Sat</div><div>9:30 am to 12:20 pm</div><div>Weekend intensive</div><div>5 of 10 left</div><div><button class="btn btn-primary btn-sm" data-advisor type="button">Hold my seat</button></div></div>
+      <div class="sch-row"><div>CI-FR-04</div><div>Mon Wed Fri</div><div>6:00 pm to 7:00 pm</div><div>Accelerated</div><div>2 of 8 left</div><div><button class="btn btn-primary btn-sm" data-advisor type="button">Hold my seat</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-verona final-cta">
+  <div class="wrap center">
+    <h2 class="serif-display"><em>Book your first class with Francesca.</em></h2>
+    <p class="lead">One native teacher from Venezia, live from Veneto, in a small group of adults who mean it.</p>
+    <div class="cta-row">
+      <button class="btn btn-primary btn-lg" data-advisor type="button">Book with Francesca</button>
+      <a class="btn btn-ghost btn-lg" href="courses.html">See the courses</a>
+    </div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
@@ -322,6 +337,6 @@
     </div>
   </div>
 </div>
-
-<script src="../../js/ci.js"></script>
-</body></html>
+<script src="../../js/ci.js?v=v5" defer></script>
+</body>
+</html>

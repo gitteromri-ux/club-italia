@@ -2,59 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cultural Journal · Club Italia by eTeacher</title>
-<meta name="description" content="Dispatches from Italy on cuisine, language, travel, cinema, opera, and the art of living.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cultural Journal · Club Italia</title>
+<meta name="description" content="Essays from the Club Italia faculty. Italian language, culture, teaching and life, written from seven Italian cities.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="css/ci.css">
-<style>
-.blog-hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:var(--on-dark);overflow:hidden}
-.blog-hero .hero-bg{position:absolute;inset:0;z-index:0}
-.blog-hero .hero-bg video,.blog-hero .hero-bg img{width:100%;height:100%;object-fit:cover}
-.blog-hero .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(34,8,11,.88),rgba(34,8,11,.4) 60%,rgba(34,8,11,.2))}
-.blog-hero .hero-content{position:relative;z-index:2;padding:8rem clamp(1.4rem,5vw,6rem) 5rem;width:100%}
-.blog-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(3.6rem,9vw,7.4rem);line-height:.98;letter-spacing:-.02em;color:var(--on-dark);max-width:18ch}
-.blog-hero .kicker{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.4rem);color:var(--gold-soft);margin-bottom:1.4rem}
-.blog-hero p.lead{color:var(--on-dark-soft);font-size:1.3rem;max-width:56ch;margin-top:1.6rem;font-weight:300}
-.editorial-featured{padding:7rem 0}
-.editorial-featured .feat-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;max-width:1280px;margin:0 auto;padding:0 clamp(1.4rem,4vw,3rem)}
-@media (max-width:920px){.editorial-featured .feat-wrap{grid-template-columns:1fr}}
-.editorial-featured .fm-img{aspect-ratio:4/3;overflow:hidden;position:relative}
-.editorial-featured .fm-img img{width:100%;height:100%;object-fit:cover}
-.editorial-featured .fm-img .fm-cat{position:absolute;top:1.6rem;left:1.6rem;background:var(--gold);color:var(--navy);padding:.5rem 1rem;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
-.editorial-featured .fm-copy .eyebrow{color:var(--gold-deep)}
-.editorial-featured .fm-copy h2{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.02;margin:1rem 0;letter-spacing:-.014em}
-.editorial-featured .fm-copy p.desc{font-size:1.2rem;color:var(--on-light-soft);line-height:1.55;margin-bottom:2rem;max-width:52ch}
-.editorial-featured .fm-copy .fm-meta{display:flex;gap:1.4rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-light-faint);margin-bottom:1.6rem}
-.editorial-featured .fm-copy .read-link{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-deep);border-bottom:1px solid var(--gold);padding-bottom:.2rem}
-.essay-grid{padding:6rem 0;background:var(--ivory)}
-.essay-grid .eg-wrap{max-width:1280px;margin:0 auto;padding:0 clamp(1.4rem,4vw,3rem)}
-.essay-grid .eg-head{margin-bottom:3rem;text-align:center}
-.essay-grid .eg-head h2{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.4rem);line-height:1.04}
-.essay-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem}
-@media (max-width:940px){.essay-cards{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.essay-cards{grid-template-columns:1fr}}
-.essay-card{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--gold-line-soft);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.essay-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(58,14,18,.14)}
-.essay-card .ec-img{aspect-ratio:4/3;overflow:hidden;position:relative}
-.essay-card .ec-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-.essay-card:hover .ec-img img{transform:scale(1.05)}
-.essay-card .ec-img .ec-cat{position:absolute;top:1rem;left:1rem;background:var(--navy);color:var(--gold-soft);padding:.4rem .8rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase}
-.essay-card .ec-body{padding:1.8rem 1.6rem 2rem;flex:1;display:flex;flex-direction:column}
-.essay-card .ec-meta{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-light-faint);margin-bottom:.6rem}
-.essay-card .ec-title{font-family:var(--serif);font-size:1.5rem;line-height:1.15;margin-bottom:.6rem}
-.essay-card .ec-sub{font-size:.94rem;color:var(--on-light-soft);line-height:1.5;flex:1}
-.essay-card .ec-read{margin-top:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold-deep);border-top:1px solid var(--light-line);padding-top:1rem}
-.subscribe-band{padding:6rem 0;text-align:center;background:var(--navy);color:var(--on-dark)}
-.subscribe-band h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);color:var(--on-dark);max-width:20ch;margin:0 auto 1rem}
-.subscribe-band p{color:var(--on-dark-soft);max-width:52ch;margin:0 auto 2rem}
-.subscribe-band form{display:flex;gap:.8rem;max-width:440px;margin:0 auto;flex-wrap:wrap;justify-content:center}
-.subscribe-band input{flex:1;min-width:220px;padding:.9rem 1rem;background:var(--navy-mid);border:1px solid var(--dark-line);color:var(--on-dark);font-family:var(--sans)}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ci.css?v=v5">
+<link rel="icon" type="image/svg+xml" href="assets/img/cefr-logo.svg">
 </head>
-<body>
-
+<body class="v5">
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="index.html" aria-label="Club Italia — home">
@@ -96,51 +53,133 @@
   <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
 </aside>
 
-
-<section class="hero" style="min-height:88vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;color:#FBFAF6">
-  <div class="hero-bg" style="position:absolute;inset:0;z-index:0">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/img/life-caffe-roma.jpg" style="width:100%;height:100%;object-fit:cover"><source src="assets/video/bologna-portici.mp4" type="video/mp4"></video>
-    <div style="position:absolute;inset:0;background:linear-gradient(150deg,rgba(11,11,13,.86),rgba(11,11,13,.4) 55%,rgba(11,11,13,.7))"></div>
+<section class="section-ink hero-page hero-page-short">
+  <div class="hero-bg">
+    <img src="assets/img/life-uffizi-hall.jpg" alt="" loading="lazy">
+    <div class="hero-scrim"></div>
   </div>
-  <div class="hero-content" style="position:relative;z-index:2;padding:9rem clamp(1.6rem,5vw,6rem) 6rem;width:100%;max-width:1440px;margin:0 auto">
-    <p style="font-family:Inter,sans-serif;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:#E6C99B;margin-bottom:1.4rem">Live from Italy · by eTeacher Group</p>
-    <h1 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(4rem,10vw,9rem);line-height:1;letter-spacing:-.022em;color:#FBFAF6;max-width:20ch;margin:0">Dispatches<br><em style="font-style:italic;font-weight:500;color:#E6C99B">from Italy.</em></h1>
-    <p style="font-family:Inter,sans-serif;font-size:clamp(1.25rem,1.7vw,1.55rem);color:rgba(251,250,246,.82);max-width:52ch;margin-top:1.8rem;font-weight:300;line-height:1.55">Essays on gastronomy, language, travel, cinema, opera and the art of living, written by our teachers from their kitchens and caffè in real Italian cities.</p>
-    <div style="display:flex;gap:1rem;margin-top:2.4rem;flex-wrap:wrap"><button class="btn btn-primary" data-advisor type="button">Reserve My Placement Call</button><a class="btn btn-ghost" href="sample-class.html">Watch a Real Class</a></div>
+  <div class="wrap hero-page-body">
+    <span class="eyebrow eyebrow-gold">Cultural journal</span>
+    <h1 class="serif-display hero-h1">The Club Italia<br><em>Cultural Journal</em></h1>
+    <p class="lead">Essays from the faculty. Language, culture, teaching, and Italian life, written from Firenze, Roma, Bologna, Milano, Venezia, Napoli and Palermo.</p>
   </div>
 </section>
 
-
-<section class="editorial-featured">
-  <div class="feat-wrap">
-    <div class="fm-img"><img src="assets/img/pillar-cinema.jpg" alt=""><span class="fm-cat">Cinema</span></div>
-    <div class="fm-copy">
-      <span class="eyebrow eyebrow-line">Featured essay</span>
-      <h2>The Golden Age of Italian Cinema</h2>
-      <div class="fm-meta"><span>10 Sep 2026</span><span>8 min read</span><span>Cinema</span></div>
-      <p class="desc">How Fellini, Visconti and Rossellini rewrote what film could be</p>
-      <a href="pages/blog/italian-golden-age.html" class="read-link">Read the essay ›</a>
-    </div>
-  </div>
-</section>
-
-<section class="essay-grid">
-  <div class="eg-wrap">
-    <div class="eg-head"><span class="eyebrow eyebrow-line" style="margin-bottom:1.4rem">All essays</span><h2>Ten more dispatches <span class="gold-ital">from Italy</span></h2></div>
-    <div class="essay-cards">
-      <a href="pages/blog/americans-italy.html" class="essay-card"><div class="ec-img"><img src="assets/img/pillar-travel.jpg" alt=""><span class="ec-cat">Travel</span></div><div class="ec-body"><div class="ec-meta">24 Aug 2026 · 7 min read</div><h3 class="ec-title">7.5 Million Americans, One Italy</h3><p class="ec-sub">Why U.S. travellers made Italy their second-most-visited country</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/passato-prossimo.html" class="essay-card"><div class="ec-img"><img src="assets/img/course-ci2.jpg" alt=""><span class="ec-cat">Language</span></div><div class="ec-body"><div class="ec-meta">12 Aug 2026 · 6 min read</div><h3 class="ec-title">The Passato Prossimo Is Not the Enemy</h3><p class="ec-sub">Why the Italian past tense is the friendliest tense you will meet</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/ragu-alla-bolognese.html" class="essay-card"><div class="ec-img"><img src="assets/img/pillar-food.jpg" alt=""><span class="ec-cat">Cuisine</span></div><div class="ec-body"><div class="ec-meta">28 Jul 2026 · 7 min read</div><h3 class="ec-title">The Real Ragù alla Bolognese</h3><p class="ec-sub">And the eight things it is not</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/dual-citizenship.html" class="essay-card"><div class="ec-img"><img src="assets/img/pillar-tradition.jpg" alt=""><span class="ec-cat">Culture</span></div><div class="ec-body"><div class="ec-meta">15 Jul 2026 · 9 min read</div><h3 class="ec-title">Italian Dual Citizenship, 2026</h3><p class="ec-sub">What the March 2025 reform means for Italian-descent Americans</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/verdi-life.html" class="essay-card"><div class="ec-img"><img src="assets/img/pillar-opera.jpg" alt=""><span class="ec-cat">Opera</span></div><div class="ec-body"><div class="ec-meta">01 Jul 2026 · 10 min read</div><h3 class="ec-title">Verdi in a Life</h3><p class="ec-sub">Six operas that shaped a nation and still shape Italian</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/tuscan-italian.html" class="essay-card"><div class="ec-img"><img src="assets/img/course-ci2.jpg" alt=""><span class="ec-cat">Language</span></div><div class="ec-body"><div class="ec-meta">18 Jun 2026 · 7 min read</div><h3 class="ec-title">Why Italian Is Really Tuscan</h3><p class="ec-sub">Dante, Boccaccio, Petrarch and the accident of the standard</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/neapolitan-humour.html" class="essay-card"><div class="ec-img"><img src="assets/img/course-ci4.jpg" alt=""><span class="ec-cat">Culture</span></div><div class="ec-body"><div class="ec-meta">02 Jun 2026 · 6 min read</div><h3 class="ec-title">Neapolitan Humour, Explained</h3><p class="ec-sub">The philosophy underneath the world's most laughed-in city</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/italian-coffee.html" class="essay-card"><div class="ec-img"><img src="assets/img/cap-food.jpg" alt=""><span class="ec-cat">Cuisine</span></div><div class="ec-body"><div class="ec-meta">18 May 2026 · 6 min read</div><h3 class="ec-title">Italian Coffee Is Not What You Think</h3><p class="ec-sub">A history of espresso, from Naples 1901 to your kitchen</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/uffizi-italian.html" class="essay-card"><div class="ec-img"><img src="assets/img/cap-art.jpg" alt=""><span class="ec-cat">Art</span></div><div class="ec-body"><div class="ec-meta">05 May 2026 · 8 min read</div><h3 class="ec-title">How to Read an Uffizi Wall Label</h3><p class="ec-sub">The five Italian words that unlock the museum</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/aperitivo.html" class="essay-card"><div class="ec-img"><img src="assets/img/spoken-ps4.jpg" alt=""><span class="ec-cat">Culture</span></div><div class="ec-body"><div class="ec-meta">22 Apr 2026 · 6 min read</div><h3 class="ec-title">The Milanese Aperitivo, Decoded</h3><p class="ec-sub">When it started, what it costs, what you actually eat</p><div class="ec-read">Read the essay ›</div></div></a>
-    </div>
-  </div>
-</section>
-
-<section class="subscribe-band">
+<section class="section-paper">
   <div class="wrap">
-    <h2>Read the journal. <span class="gold-ital">Then speak the language.</span></h2>
-    <p>New essays every second week, from our teachers, direct from Italy. No spam, one link, unsubscribe with one click.</p>
-    <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Grazie';"><input type="email" placeholder="you@email.com" required><button class="btn btn-3d btn-3d-primary" type="submit">Subscribe</button></form>
+    <article class="feat-essay">
+      <figure class="feat-fig"><img src="assets/img/life-caffe-roma.jpg" alt="A Roman coffee bar" loading="lazy"></figure>
+      <div class="feat-body">
+        <span class="eyebrow">Featured essay · 11 September 2026</span>
+        <h2 class="serif-display">Why we open every beginners class with a coffee bar</h2>
+        <p class="lead">There is a reason the first vocabulary of every Club Italia beginner course is set inside a bar. It is not sentiment. It is the fastest route from silence into speech.</p>
+        <p class="feat-attr">By Marco Rinaldi · Roma · 12 minutes read</p>
+        <a class="btn btn-primary" href="pages/blog/coffee-bar.html">Read the essay</a>
+      </div>
+    </article>
   </div>
 </section>
 
+<section class="section-cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">All essays</span>
+      <h2 class="serif-display">The cultural journal, in full</h2>
+    </div>
+    <div class="posts-grid">
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/pillar-art.jpg" alt="Reading Ferrante in her own city" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Chiara Bellini</span>
+        <h3 class="serif-display">Reading Ferrante in her own city</h3>
+        <p>On teaching L'amica geniale at CI Elementare, from a Florentine classroom, to adults who have only read Ferrante in translation.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/pillar-food.jpg" alt="Ragù as a grammar lesson" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Giulia Moretti</span>
+        <h3 class="serif-display">Ragù as a grammar lesson</h3>
+        <p>How the imperative and the past participle come alive when a whole class is cooking together on a Wednesday evening.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/pillar-opera.jpg" alt="Learning Italian at La Scala" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Alessandro Ferri</span>
+        <h3 class="serif-display">Learning Italian at La Scala</h3>
+        <p>What five seasons of coaching foreign singers taught me about how English speakers should breathe when they speak Italian.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/pillar-travel.jpg" alt="Rehearsing a trip to Venice" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Francesca Zeno</span>
+        <h3 class="serif-display">Rehearsing a trip to Venice</h3>
+        <p>The awkward middle days of a trip are where most travellers give up on their new Italian. Here is how we prepare for them in class.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/city-napoli.jpg" alt="The passage from A2 to B1" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Luca De Simone</span>
+        <h3 class="serif-display">The passage from A2 to B1</h3>
+        <p>On the hardest month of the course ladder, and how we hold students through it, from a study in Naples.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/city-palermo.jpg" alt="Sicily is not a dialect" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Sofia Mazzara</span>
+        <h3 class="serif-display">Sicily is not a dialect</h3>
+        <p>On the Italian I teach from Palermo, and why standard Italian in Sicily is a chosen language, spoken with care.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/hero-italian-life.jpg" alt="Why we opened Club Italia in 2022" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Head of School</span>
+        <h3 class="serif-display">Why we opened Club Italia in 2022</h3>
+        <p>The eighteen months of hiring, curriculum writing and faculty building that preceded the first live cohort.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/env-marco-desk.jpg" alt="What an adult beginner actually needs" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Marco Rinaldi</span>
+        <h3 class="serif-display">What an adult beginner actually needs</h3>
+        <p>Notes from nine years of teaching absolute beginners in the first fifteen minutes of the first class.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/env-giulia-kitchen.jpg" alt="The Emilia Romagna kitchen, in a Zoom window" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Giulia Moretti</span>
+        <h3 class="serif-display">The Emilia Romagna kitchen, in a Zoom window</h3>
+        <p>On teaching food language from a real kitchen, and why the room behind the teacher is part of the syllabus.</p>
+      </div>
+    </a>
+    <a class="post-card" href="pages/blog/">
+      <figure><img src="assets/img/teacher-chiara.jpg" alt="On patience" loading="lazy"></figure>
+      <div class="post-body">
+        <span class="post-author">Chiara Bellini</span>
+        <h3 class="serif-display">On patience</h3>
+        <p>One of the most underrated skills of an adult language teacher, and how I learned it.</p>
+      </div>
+    </a>
+    </div>
+    <div class="subscribe-band">
+      <div>
+        <h3 class="serif-display">Have the journal delivered.</h3>
+        <p>One essay a fortnight, in your inbox. Written by the faculty, no marketing.</p>
+      </div>
+      <form class="sub-form" novalidate>
+        <input type="email" name="email" placeholder="Your email" required aria-label="Email">
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
@@ -229,7 +268,6 @@
     </div>
   </div>
 </div>
-
-<script src="js/ci.js"></script>
+<script src="js/ci.js?v=v5" defer></script>
 </body>
 </html>
