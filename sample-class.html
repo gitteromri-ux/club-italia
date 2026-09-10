@@ -1,98 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Watch a Real Class, Club Italia by eTeacher</title>
-<meta name="description" content="An editorial walk-through of a real Club Italia beginner lesson broadcast live from Rome, the 85-minute format, minute-by-minute rhythm, live transcripts, and why it feels nothing like a Zoom class.">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sit A Sample Class · Club Italia</title>
+<meta name="description" content="Every Wednesday at 6pm ET, open sample class. Free, live, no card required.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ci.css">
+
 <style>
-.sc-hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;color:var(--on-dark);background:var(--navy-deep)}
-.sc-hero-bg{position:absolute;inset:0;z-index:0}
-.sc-hero-bg img{width:100%;height:100%;object-fit:cover}
-.sc-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(34,8,11,.85) 0%,rgba(34,8,11,.55) 55%,rgba(34,8,11,.35) 100%)}
-.sc-hero .wrap{position:relative;z-index:2}
-.sc-hero h1{font-family:var(--serif);font-size:clamp(3rem,6vw,5.8rem);line-height:1.02;max-width:18ch;margin:1.4rem 0}
-.sc-hero .lede{max-width:56ch;color:var(--on-dark-soft);font-size:clamp(1.15rem,1.45vw,1.38rem);line-height:1.62;font-weight:300}
-.sc-hero .play-wrap{margin-top:2.4rem;display:flex;align-items:center;gap:1.4rem}
-.sc-hero .play{width:88px;height:88px;border-radius:50%;background:var(--gold-deep);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.6rem;padding-left:6px;box-shadow:0 12px 40px rgba(0,0,0,.45)}
-.sc-hero .play-l{font-family:var(--serif);font-style:italic;color:var(--on-dark-soft)}
+/* v3 palette override — applied globally until ci.css rebuild lands */
+:root{
+  --red:#B01823; --red-deep:#8B0F1D; --red-bright:#C7202E;
+  --green:#166A47; --green-deep:#0C3B2E; --green-bright:#1E8A5E;
+  --paper:#FBFAF6; --cream:#F3F0E7; --ink:#0B0B0D; --ink-2:#1A1A1E;
+  --gold:#B08640; --gold-line:rgba(176,134,64,.45);
+  --cream-accent:#E6C99B;
+  --serif:'Playfair Display','Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;margin:0;padding:0;}
+*{box-sizing:border-box;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:0;}
+p{margin:0 0 1em 0;}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
+.wrap-narrow{max-width:960px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
+/* sections alternate */
+section{padding:clamp(4rem,8vw,7rem) 0;position:relative;}
+.section-white{background:var(--paper);color:var(--ink);}
+.section-cream{background:var(--cream);color:var(--ink);}
+.section-green{background:var(--green-deep);color:var(--paper);}
+.section-red{background:var(--red-deep);color:var(--paper);}
+.section-black{background:var(--ink);color:var(--paper);}
+.section-green h1,.section-green h2,.section-green h3,
+.section-red h1,.section-red h2,.section-red h3,
+.section-black h1,.section-black h2,.section-black h3{color:var(--paper);}
+.section-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:500;}
+.section-black .section-eyebrow,.section-red .section-eyebrow,.section-green .section-eyebrow{color:var(--cream-accent);}
+.h-display{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.015em;margin-bottom:1.4rem;}
+.h-display .ital{font-style:italic;font-weight:500;color:var(--red);}
+.section-black .h-display .ital,.section-red .h-display .ital,.section-green .h-display .ital{color:var(--cream-accent);}
+.h-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;font-weight:500;}
+.lede{font-size:1.24rem;line-height:1.55;color:var(--ink-2);max-width:62ch;font-weight:300;}
+.section-green .lede,.section-red .lede,.section-black .lede{color:rgba(251,250,246,.86);}
 
-.sc-tri{height:6px;background:linear-gradient(90deg,#009246 33.33%,#F6F1E6 33.33% 66.66%,#CE2B37 66.66%)}
+/* Gold hairline rule */
+.rule-gold{width:64px;height:1px;background:var(--gold);margin:0 0 1.4rem 0;}
 
-.sc-band{padding:6rem 0}
-.sc-band.dark{background:var(--navy);color:var(--on-dark)}
-.sc-band.cream{background:var(--ivory)}
-.sc-band.paper{background:var(--paper)}
-.sc-band h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.05;max-width:22ch;margin-bottom:1.2rem}
-.sc-band.dark h2,.sc-band.dark h3,.sc-band.dark h4{color:var(--on-dark)}
-.sc-band .lede-p{color:var(--on-light-soft);font-size:1.1rem;line-height:1.7;max-width:60ch}
-.sc-band.dark .lede-p{color:var(--on-dark-soft)}
+/* Top urgency strip */
+.top-strip{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;padding:.55rem 0;text-align:center;border-bottom:1px solid var(--gold-line);}
+.top-strip .dot{display:inline-block;width:6px;height:6px;background:var(--red-bright);border-radius:50%;margin:0 .8rem;vertical-align:middle;}
 
-.sc-format{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
-@media (max-width:820px){.sc-format{grid-template-columns:1fr 1fr}}
-.sc-format .cell{padding:2rem 1.6rem;background:var(--white);border:1px solid var(--gold-line-soft);text-align:center}
-.sc-band.dark .sc-format .cell{background:var(--navy-mid);border-color:var(--dark-line-soft)}
-.sc-format .cell .n{font-family:var(--serif);font-style:italic;font-size:2.6rem;color:var(--gold-deep);line-height:1}
-.sc-band.dark .sc-format .cell .n{color:var(--gold-soft)}
-.sc-format .cell .l{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-top:.6rem;color:var(--on-light-soft)}
-.sc-band.dark .sc-format .cell .l{color:var(--on-dark-soft)}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--paper);background:var(--ink);}
+.hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.55) 0%,rgba(11,11,13,.35) 40%,rgba(11,11,13,.82) 100%);z-index:1;}
+.hero .hero-wrap{position:relative;z-index:2;width:100%;padding:0 clamp(1.2rem,4vw,3rem) clamp(3rem,7vw,6rem);}
+.hero-eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:.42em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1.4rem;}
+.hero-h1{font-family:var(--serif);font-weight:700;font-size:clamp(4.4rem,10vw,9.2rem);line-height:.94;letter-spacing:-.025em;margin:0 0 1.6rem 0;max-width:16ch;}
+.hero-h1 .ital{font-style:italic;font-weight:500;color:var(--cream-accent);}
+.hero-sub{font-size:clamp(1.15rem,1.6vw,1.5rem);line-height:1.5;max-width:56ch;color:rgba(251,250,246,.88);font-weight:300;margin:0 0 2rem 0;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
+.hero-trust{position:absolute;top:clamp(1rem,3vw,2rem);right:clamp(1rem,3vw,2.4rem);z-index:3;display:flex;align-items:center;gap:.7rem;font-size:.82rem;color:var(--paper);background:rgba(11,11,13,.4);backdrop-filter:blur(6px);padding:.55rem .95rem;border:1px solid rgba(255,255,255,.15);border-radius:2px;}
+.hero-trust .stars{color:#F5B93B;letter-spacing:.05em;}
+.hero-live{position:absolute;bottom:clamp(1rem,3vw,2rem);left:clamp(1.2rem,4vw,3rem);z-index:3;display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--paper);}
+.hero-live .live-dot{width:8px;height:8px;background:var(--red-bright);border-radius:50%;box-shadow:0 0 0 0 rgba(199,32,46,.6);animation:pulse 2s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(199,32,46,.6);}70%{box-shadow:0 0 0 14px rgba(199,32,46,0);}100%{box-shadow:0 0 0 0 rgba(199,32,46,0);}}
 
-.sc-minute{margin-top:2rem}
-.sc-min-row{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:1.4rem 0;border-bottom:1px solid var(--gold-line-soft);align-items:start}
-.sc-min-row .t{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--gold-deep)}
-.sc-band.dark .sc-min-row .t{color:var(--gold-soft)}
-.sc-min-row .b h4{font-family:var(--serif);font-size:1.2rem;margin-bottom:.4rem;line-height:1.2}
-.sc-min-row .b p{font-size:.95rem;color:var(--on-light-soft);line-height:1.62}
-.sc-band.dark .sc-min-row .b p{color:var(--on-dark-soft)}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.6rem;font-family:var(--sans);font-weight:500;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;border-radius:0;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease;}
+.btn-primary{background:var(--green);color:var(--paper);}
+.btn-primary:hover{background:var(--green-deep);transform:translateY(-1px);}
+.btn-red{background:var(--red);color:var(--paper);}
+.btn-red:hover{background:var(--red-deep);}
+.btn-ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.5);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.btn-ghost-dark{background:transparent;color:var(--ink);border-color:var(--ink);}
+.btn-ghost-dark:hover{background:var(--ink);color:var(--paper);}
+.btn-lg{padding:1.2rem 2rem;font-size:1rem;}
 
-.sc-snip{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2rem}
-@media (max-width:820px){.sc-snip{grid-template-columns:1fr}}
-.sc-snip .card{padding:2rem;background:var(--paper);border-left:3px solid var(--gold-deep)}
-.sc-band.dark .sc-snip .card{background:var(--navy-mid);border-left-color:var(--gold-soft)}
-.sc-snip .card .who{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.6rem}
-.sc-band.dark .sc-snip .card .who{color:var(--gold-soft)}
-.sc-snip .card .it{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;line-height:1.3}
-.sc-band.dark .sc-snip .card .it{color:var(--on-dark)}
-.sc-snip .card .en{font-size:.95rem;color:var(--on-light-soft)}
-.sc-band.dark .sc-snip .card .en{color:var(--on-dark-soft)}
+/* Course card GRID — edge-to-edge, hairline borders */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:1100px){.cg{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.cg{grid-template-columns:1fr;}}
+.cg-track{grid-column:1/-1;background:var(--ink);color:var(--paper);padding:1.4rem clamp(1.2rem,3vw,2rem);font-family:var(--serif);font-style:italic;font-size:1.4rem;letter-spacing:.02em;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem;}
+.cg-track .track-meta{font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
+.cc{background:var(--paper);color:var(--ink);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2rem clamp(1.2rem,2vw,1.7rem) 1.6rem;display:flex;flex-direction:column;min-height:380px;position:relative;transition:background .18s ease;}
+.cc:hover{background:var(--cream);}
+.cc-price{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--red);margin-bottom:.15rem;letter-spacing:-.01em;}
+.cc-price small{font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:400;margin-left:.35rem;}
+.cc-badge{display:inline-block;font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green-deep);border:1px solid var(--green);padding:.28rem .55rem;margin-bottom:1rem;align-self:flex-start;}
+.cc-title{font-family:var(--serif);font-size:1.65rem;font-weight:600;line-height:1.05;margin-bottom:.35rem;letter-spacing:-.01em;}
+.cc-sub{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--red-deep);margin-bottom:.9rem;line-height:1.3;}
+.cc-meta{font-family:var(--sans);font-size:.78rem;color:var(--ink-2);letter-spacing:.01em;margin-bottom:1.6rem;line-height:1.55;flex-grow:1;}
+.cc-meta .meta-row{display:block;padding:.28rem 0;border-bottom:1px dotted rgba(11,11,13,.15);}
+.cc-meta .meta-row:last-child{border:0;}
+.cc-enroll{display:inline-flex;align-items:center;justify-content:space-between;background:var(--green);color:var(--paper);padding:.85rem 1.1rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-top:auto;transition:background .18s ease;}
+.cc-enroll:hover{background:var(--green-deep);}
+.cc-enroll .arrow{font-family:var(--serif);font-style:italic;font-size:1.2rem;}
 
-.sc-quote{background:var(--paper);padding:6rem 0;text-align:center}
-.sc-quote.dark{background:var(--navy-deep);color:var(--on-dark)}
-.sc-quote .q{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.24;max-width:34ch;margin:0 auto;color:var(--navy)}
-.sc-quote.dark .q{color:var(--on-dark)}
-.sc-quote .s{margin-top:1.4rem;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
-.sc-quote.dark .s{color:var(--gold-soft)}
+/* Stats row */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);}
+@media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr);}}
+.stat{padding:1.6rem 1.2rem;text-align:center;border-right:1px solid var(--gold-line);}
+.stat:last-child{border-right:0;}
+.stat-num{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.35rem;}
+.stat-lab{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);}
+.section-black .stat-num,.section-green .stat-num,.section-red .stat-num{color:var(--cream-accent);}
+.section-black .stat-lab,.section-green .stat-lab,.section-red .stat-lab{color:rgba(251,250,246,.65);}
 
-.sc-vs{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2rem}
-@media (max-width:820px){.sc-vs{grid-template-columns:1fr}}
-.sc-vs .col{padding:2.2rem;background:var(--paper);border:1px solid var(--gold-line-soft)}
-.sc-band.dark .sc-vs .col{background:var(--navy-mid);border-color:var(--dark-line-soft)}
-.sc-vs .col.us{border-top:4px solid var(--gold-deep)}
-.sc-vs .col.zoom{opacity:.85}
-.sc-vs h4{font-family:var(--serif);font-size:1.4rem;margin-bottom:1rem}
-.sc-vs ul{list-style:none;padding:0;margin:0}
-.sc-vs li{padding:.7rem 0;border-bottom:1px dotted var(--gold-line-soft);color:var(--on-light-soft);font-size:.95rem;padding-left:1.4rem;position:relative}
-.sc-band.dark .sc-vs li{color:var(--on-dark-soft)}
-.sc-vs li::before{content:"›";position:absolute;left:0;color:var(--gold-deep)}
-.sc-vs .zoom li::before{content:"×";color:var(--terra-deep)}
+/* Syllabus table (IIBS academic register) */
+.syllabus-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.92rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:2rem;}
+.syllabus-table thead th{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-align:left;padding:1rem 1.1rem;border-right:1px solid rgba(255,255,255,.1);}
+.syllabus-table tbody td{padding:1.1rem 1.1rem;border-bottom:1px solid rgba(11,11,13,.1);border-right:1px solid rgba(11,11,13,.08);vertical-align:top;line-height:1.5;}
+.syllabus-table tbody tr:nth-child(even) td{background:var(--cream);}
+.syllabus-table .lesson-num{font-family:var(--serif);font-size:1.4rem;color:var(--red);font-weight:600;width:70px;}
+.syllabus-table .topic{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--ink);width:22%;}
+.syllabus-table .grammar{font-family:var(--sans);font-size:.9rem;color:var(--ink-2);}
+.syllabus-table .culture{font-family:var(--sans);font-size:.88rem;color:var(--green-deep);font-style:italic;width:26%;}
 
-.sc-feel{display:grid;grid-template-columns:1fr 1.15fr;gap:3.2rem;align-items:start}
-@media (max-width:900px){.sc-feel{grid-template-columns:1fr}}
-.sc-feel .body p{color:var(--on-light-soft);font-size:1.02rem;line-height:1.72;margin-bottom:1.1rem}
-.sc-band.dark .sc-feel .body p{color:var(--on-dark-soft)}
+/* At-a-glance academic table */
+.glance{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.98rem;border-top:2px solid var(--ink);}
+.glance tr td{padding:1.05rem 0;border-bottom:1px solid rgba(11,11,13,.14);vertical-align:top;}
+.glance tr td:first-child{font-family:var(--sans);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:500;width:38%;padding-right:1.4rem;}
+.glance tr td:last-child{font-family:var(--serif);font-size:1.1rem;color:var(--ink);line-height:1.45;}
 
-.sc-cta{background:linear-gradient(140deg,var(--navy) 0%,var(--terra-deep) 130%);color:var(--on-dark);padding:6rem 0;text-align:center}
-.sc-cta h2{color:var(--on-dark);font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem)}
-.sc-cta p{color:var(--on-dark-soft);max-width:54ch;margin:1rem auto 2rem;font-size:1.1rem}
+/* Outcomes list */
+.outcomes{list-style:none;padding:0;margin:2rem 0 0 0;counter-reset:o;}
+.outcomes li{counter-increment:o;padding:1.1rem 0 1.1rem 3.6rem;border-bottom:1px solid rgba(11,11,13,.12);position:relative;font-family:var(--serif);font-size:1.15rem;font-style:italic;line-height:1.4;color:var(--ink);}
+.outcomes li::before{content:counter(o,decimal-leading-zero);position:absolute;left:0;top:1.1rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;color:var(--gold);font-style:normal;font-weight:500;}
+
+/* Frames */
+.zoom-frame{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.6rem;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);}
+.zoom-frame img{width:100%;display:block;border-radius:3px;}
+.cert-frame{background:var(--paper);border:1px solid rgba(11,11,13,.12);padding:1rem;box-shadow:0 40px 80px -30px rgba(11,11,13,.35);}
+.browser-frame{border:1px solid rgba(11,11,13,.15);border-radius:6px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(11,11,13,.25);background:#fff;}
+.browser-chrome{background:#EEE;padding:.55rem .9rem;border-bottom:1px solid rgba(0,0,0,.08);display:flex;gap:.4rem;align-items:center;}
+.browser-chrome span{width:10px;height:10px;border-radius:50%;background:#ccc;}
+.browser-chrome span:first-child{background:#F35B5B;}
+.browser-chrome span:nth-child(2){background:#F5B93B;}
+.browser-chrome span:nth-child(3){background:#4CC26A;}
+.browser-chrome .url{margin-left:.9rem;font-family:var(--sans);font-size:.74rem;color:#666;}
+
+/* Teacher tiles */
+.teacher-wall{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid rgba(255,255,255,.14);border-left:1px solid rgba(255,255,255,.14);}
+@media (max-width:1100px){.teacher-wall{grid-template-columns:repeat(4,1fr);}}
+@media (max-width:640px){.teacher-wall{grid-template-columns:repeat(2,1fr);}}
+.tt{border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);padding:1.5rem 1.1rem;text-align:center;}
+.tt img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.15);margin-bottom:.9rem;}
+.tt .tt-region{font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
+.tt .tt-name{font-family:var(--serif);font-size:1.25rem;margin:.35rem 0 .25rem;color:var(--paper);}
+.tt .tt-cred{font-family:var(--sans);font-size:.75rem;color:rgba(251,250,246,.65);}
+
+/* Two-col editorial */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start;}
+@media (max-width:900px){.two-col{grid-template-columns:1fr;}}
+
+/* Pricing */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.pricing{grid-template-columns:1fr;}}
+.tier{background:var(--paper);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2.4rem 1.8rem 2rem;position:relative;}
+.tier.featured{border:2px solid var(--green);background:linear-gradient(180deg,var(--paper) 0%,#EFF6F1 100%);}
+.tier .tier-badge{position:absolute;top:-13px;left:1.8rem;background:var(--green);color:var(--paper);font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;padding:.35rem .75rem;font-weight:500;}
+.tier-name{font-family:var(--serif);font-size:1.5rem;margin-bottom:.4rem;}
+.tier-price{font-family:var(--serif);font-size:3rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.2rem;}
+.tier-price small{font-family:var(--sans);font-size:.75rem;color:var(--ink-2);letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin-left:.35rem;}
+.tier-sub{font-family:var(--sans);font-size:.85rem;color:var(--ink-2);margin-bottom:1.4rem;}
+.tier ul{list-style:none;padding:0;margin:0 0 1.6rem 0;}
+.tier ul li{padding:.55rem 0 .55rem 1.5rem;border-bottom:1px dotted rgba(11,11,13,.14);font-size:.92rem;position:relative;}
+.tier ul li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;}
+
+/* FAQ */
+.faq{border-top:1px solid var(--ink);}
+.faq details{border-bottom:1px solid rgba(11,11,13,.15);padding:1.4rem 0;}
+.faq summary{list-style:none;cursor:pointer;font-family:var(--serif);font-size:1.35rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-family:var(--sans);font-size:1.6rem;color:var(--gold);font-weight:300;}
+.faq details[open] summary::after{content:"−";}
+.faq details p{margin-top:1rem;font-size:1rem;color:var(--ink-2);line-height:1.65;max-width:70ch;}
+
+/* Culture tile grid */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.tiles{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.tiles{grid-template-columns:1fr;}}
+.tile{position:relative;aspect-ratio:1/1;overflow:hidden;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+.tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(.08);transition:transform .5s ease;}
+.tile:hover img{transform:scale(1.04);}
+.tile .tile-content{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,0) 40%,rgba(11,11,13,.75) 100%);padding:1.4rem;display:flex;flex-direction:column;justify-content:flex-end;color:var(--paper);}
+.tile .tile-title{font-family:var(--serif);font-style:italic;font-size:1.9rem;line-height:1.05;margin-bottom:.2rem;}
+.tile .tile-sub{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-accent);}
+
+/* Trustpilot review card grid */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(11,11,13,.14);border:1px solid rgba(11,11,13,.14);}
+@media (max-width:900px){.reviews{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.reviews{grid-template-columns:1fr;}}
+.review{background:var(--paper);padding:1.6rem;}
+.review .stars{color:#F5B93B;letter-spacing:.06em;font-size:.95rem;margin-bottom:.6rem;}
+.review .rev-title{font-family:var(--serif);font-size:1.15rem;margin-bottom:.6rem;}
+.review .rev-body{font-size:.92rem;color:var(--ink-2);line-height:1.55;margin-bottom:.9rem;}
+.review .rev-author{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+
+/* Alumni cards */
+.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.alumni{grid-template-columns:1fr;}}
+.alum{padding:1.8rem;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper);}
+.alum img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:1rem;}
+.alum .quote{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.4;color:var(--ink);margin-bottom:.9rem;}
+.alum .attr{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);}
+
+/* Sticky bottom enroll bar */
+.enroll-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);padding:.85rem clamp(1rem,3vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:80;border-top:1px solid var(--gold-line);transform:translateY(100%);transition:transform .35s ease;}
+.enroll-bar.show{transform:translateY(0);}
+.enroll-bar .eb-left{font-family:var(--serif);font-style:italic;font-size:1rem;}
+.enroll-bar .eb-price{font-family:var(--serif);font-weight:600;color:var(--cream-accent);margin:0 .8rem;}
+.enroll-bar .btn{padding:.7rem 1.2rem;font-size:.8rem;}
+
+/* Includes list */
+.includes{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;list-style:none;padding:0;margin:2rem 0 0;}
+@media (max-width:700px){.includes{grid-template-columns:1fr;}}
+.includes li{padding:.9rem 0 .9rem 1.8rem;border-bottom:1px solid rgba(11,11,13,.1);font-family:var(--sans);font-size:.98rem;position:relative;}
+.includes li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;font-size:1.1rem;}
+
+/* Section head */
+.section-head{max-width:820px;margin:0 0 3rem 0;}
+.section-head.center{margin:0 auto 3rem;text-align:center;}
+
+/* Utility */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;}
+@media (max-width:900px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr;}}
+
+/* Related courses */
+.related{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.related{grid-template-columns:1fr;}}
+
+/* Small badge */
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.42rem .75rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;}
+.chip-green{border-color:var(--green-bright);color:var(--green);background:rgba(30,138,94,.06);}
+.chip-red{border-color:var(--red);color:var(--red);background:rgba(199,32,46,.06);}
+
+/* Video bg utility for non-hero sections */
+.video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.25;}
+
+/* Nav override (works with existing partial) */
+.site-header{background:var(--paper);border-bottom:1px solid rgba(11,11,13,.1);position:sticky;top:0;z-index:70;}
+.site-header .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;}
+.site-header .nav-menu{display:flex;gap:1.4rem;}
+.site-header .nav-link{font-family:var(--sans);font-size:.86rem;color:var(--ink);letter-spacing:.02em;}
+.site-header .nav-link:hover{color:var(--red);}
+.site-header .lt-main{font-family:var(--serif);font-size:1.5rem;color:var(--red);font-weight:600;}
+.site-header .lt-sub{font-family:var(--sans);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);display:block;margin-top:2px;}
+.site-header .nav-cta{background:var(--green);color:var(--paper);border:0;padding:.7rem 1.2rem;font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;}
+.site-header .nav-toggle{display:none;background:transparent;border:0;flex-direction:column;gap:4px;cursor:pointer;padding:.4rem;}
+.site-header .nav-toggle span{width:24px;height:2px;background:var(--ink);display:block;}
+@media (max-width:900px){.site-header .nav-menu{display:none;}.site-header .nav-toggle{display:flex;}}
+.nav-drawer{display:none;}
+
+.site-footer{background:var(--ink);color:var(--paper);padding:4rem 0 2rem;margin-top:0;}
+.site-footer a{color:rgba(251,250,246,.7);display:block;padding:.28rem 0;font-size:.88rem;}
+.site-footer a:hover{color:var(--cream-accent);}
+.site-footer .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.08);}
+@media (max-width:900px){.site-footer .footer-top{grid-template-columns:1fr 1fr;}}
+.site-footer h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1rem;}
+.site-footer p{color:rgba(251,250,246,.72);font-size:.9rem;}
 </style>
-</head>
-<body>
+
+</head><body>
+<div class="top-strip"><span>Fall Cohort · Enrolment closes Oct 3</span><span class="dot"></span><span>Founder Rate · Save $220 on Annual</span><span class="dot"></span><span>7-Day Money-Back Guarantee</span></div>
 <header class="site-header">
   <div class="wrap nav">
-    <a class="nav-logo" href="index.html" aria-label="Club Italia, home">
+    <a class="nav-logo" href="index.html" aria-label="Club Italia — home">
       <span class="logo-text">
         <span class="lt-main">Club Italia</span>
         <span class="lt-sub">by eTeacher</span>
@@ -104,209 +285,135 @@
       <span class="nav-item"><a class="nav-link" href="method.html">Method</a></span>
       <span class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></span>
       <span class="nav-item"><a class="nav-link" href="culture.html">Culture</a></span>
-      <span class="nav-item"><a class="nav-link" href="events.html">Events</a></span>
-      <span class="nav-item"><a class="nav-link" href="map.html">Map</a></span>
+      <span class="nav-item"><a class="nav-link" href="biagio.html">AI Tutor</a></span>
       <span class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></span>
+      <span class="nav-item"><a class="nav-link" href="blog.html">Blog</a></span>
     </nav>
     <button class="btn btn-3d btn-3d-primary nav-cta" data-advisor type="button">Talk to an Advisor</button>
-    <button class="nav-toggle" aria-label="Open menu" aria-controls="navDrawer" type="button"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="navDrawer" type="button">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 <aside class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
   <button class="nav-drawer-close" aria-label="Close menu" type="button">&times;</button>
-  <a href="courses.html">Courses</a><a href="how-it-works.html">How It Works</a><a href="method.html">Method</a>
-  <a href="teachers.html">Teachers</a><a href="culture.html">Culture</a><a href="events.html">Events</a>
-  <a href="map.html">Map</a><a href="community.html">Community</a><a href="sample-class.html">Sample Class</a>
-  <a href="biagio.html">AI Tutor</a><a href="pricing.html">Pricing</a><a href="about.html">About</a>
+  <a href="courses.html">Courses</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="method.html">Method</a>
+  <a href="teachers.html">Teachers</a>
+  <a href="culture.html">Culture</a>
+  <a href="capsules.html">Culture Capsules</a>
+  <a href="biagio.html">AI Tutor</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+  <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
   <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
 </aside>
 
-<section class="sc-hero">
-  <div class="sc-hero-bg"><img src="assets/img/class-demo-poster.jpg" alt="A Club Italia class in session"></div>
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg"><source src="assets/video/class-demo.mp4" type="video/mp4"></video>
+  <div class="hero-scrim"></div>
+  <div class="hero-trust"><span class="stars">★★★★★</span> <strong>4.8</strong> · Trustpilot · 1,284 reviews</div>
+  <div class="hero-live"><span class="live-dot"></span> Live class in session · 12 learners</div>
+  <div class="hero-wrap">
+    <div class="hero-eyebrow">The Open Sample Class</div>
+    <h1 class="hero-h1">Sit a live class,<br><span class="ital">no card required.</span></h1>
+    <p class="hero-sub">Every Wednesday at 6pm US Eastern time, we open a live Club Italia class to the public. Sit in on a full 45-minute lesson taught by one of our teachers standing in Italy. No card required, no obligation, no follow-up unless you ask for it.</p>
+    <div class="hero-ctas"><a href="#reserve" class="btn btn-primary btn-lg">Reserve My Seat</a></div>
+  </div>
+</section>
+<section class="section-cream" style="padding:2.6rem 0;"><div class="wrap"><div class="stats "><div class="stat"><div class="stat-num">Every Wed</div><div class="stat-lab">6pm US Eastern</div></div><div class="stat"><div class="stat-num">45 min</div><div class="stat-lab">one full lesson</div></div><div class="stat"><div class="stat-num">Free</div><div class="stat-lab">no card required</div></div><div class="stat"><div class="stat-num">Live</div><div class="stat-lab">real teacher, real students</div></div></div></div></section>
+<section class="section-white">
   <div class="wrap">
-    <span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Watch a real class · Roma · CI Principiante · Session 07</span>
-    <h1>Eighty-five minutes inside a <span class="gold-ital">real Club Italia lesson.</span></h1>
-    <p class="lede">A full editorial walk-through of one of our beginner sessions, the format, the minute-by-minute rhythm, the small talk before class begins, the moment somebody speaks Italian for the first time, and the reasons every learner tells us it feels nothing like a Zoom class.</p>
-    <div class="play-wrap">
-      <a href="#" class="play" aria-label="Play the recording">▶</a>
-      <span class="play-l">Watch the 14-minute editorial reel</span>
-    </div>
-  </div>
-</section>
-
-<div class="sc-tri" aria-hidden="true"></div>
-
-<section class="sc-band paper">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-line">The format</span>
-    <h2>The shape of every Club Italia lesson, <span class="gold-ital">at a glance.</span></h2>
-    <p class="lede-p">Every course session runs to the same architecture. The teacher varies. The city varies. The exact material varies. The rhythm, arrival, opening ritual, the day's language, the culture window, the guided speaking, the closing, never varies.</p>
-    <div class="sc-format">
-      <div class="cell"><div class="n">85</div><div class="l">minutes per lesson</div></div>
-      <div class="cell"><div class="n">10,12</div><div class="l">learners in the room</div></div>
-      <div class="cell"><div class="n">1</div><div class="l">teacher, live from Italy</div></div>
-      <div class="cell"><div class="n">∞</div><div class="l">lifetime recording access</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="sc-band dark">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-line">Minute by minute</span>
-    <h2>What happens in the eighty-five minutes, <span class="gold-ital">in order.</span></h2>
-    <p class="lede-p">Recorded from a real session of CI Principiante, taught by Sofia broadcasting from Rome, on the seventh Tuesday of the term.</p>
-    <div class="sc-minute">
-      <div class="sc-min-row"><div class="t">−05:00</div><div class="b"><h4>The room opens.</h4><p>Sofia joins from her Roman studio. Learners arrive in twos and threes; there is small talk in English and hesitant Italian; the coffee cup on Sofia's desk is a Bialetti moka. This is on purpose. The classroom is a place, not a screen.</p></div></div>
-      <div class="sc-min-row"><div class="t">00:00</div><div class="b"><h4>The ritual of the greeting.</h4><p>Sofia takes attendance in Italian and asks each learner one small personal question, the weather, the weekend, the pasta of last night. Nobody gets it wrong. Everybody speaks a full sentence. Five minutes.</p></div></div>
-      <div class="sc-min-row"><div class="t">00:05</div><div class="b"><h4>La parola del giorno.</h4><p>The word of the day. Today: <em>vicino</em>. Sofia writes it on her side of the whiteboard, uses it in six spoken sentences, then puts it into the chat for saving. Learners repeat aloud, unmuted. Three minutes.</p></div></div>
-      <div class="sc-min-row"><div class="t">00:08</div><div class="b"><h4>Review of last session.</h4><p>Five minutes of quick-fire recall. Sofia calls names in Italian; the room answers in Italian. If nobody remembers the verb <em>abitare</em>, she draws it, mimes it, sings it. The whole session moves in Italian by the ninth minute.</p></div></div>
-      <div class="sc-min-row"><div class="t">00:13</div><div class="b"><h4>The new material.</h4><p>Twenty-five minutes on the day's structure. Today: the difference between <em>c'è</em> and <em>ci sono</em>. Grammar is embedded in a real Roman story, Sofia describes her walk to the bar this morning and the room reconstructs the walk in Italian.</p></div></div>
-      <div class="sc-min-row"><div class="t">00:38</div><div class="b"><h4>La finestra sull'Italia.</h4><p>The culture window. Fifteen minutes of live Italian input, a short film clip, a menu from a Roman trattoria, a photo of Piazza Navona at seven in the morning. Sofia narrates in slow Italian. Learners listen. No English.</p></div></div>
-      <div class="sc-min-row"><div class="t">00:53</div><div class="b"><h4>Breakout rooms.</h4><p>Twenty minutes in threes. Sofia rotates. Each breakout works on a real task, reserve a table by phone, order two courses, ask for the check, refuse coffee politely. The tasks are Roman-specific, not generic.</p></div></div>
-      <div class="sc-min-row"><div class="t">01:13</div><div class="b"><h4>Whole-group debrief.</h4><p>Ten minutes. Every breakout reports back in Italian. Sofia corrects lightly, never breaks flow. Common errors are logged on the shared board and become homework prompts.</p></div></div>
-      <div class="sc-min-row"><div class="t">01:23</div><div class="b"><h4>The closing.</h4><p>Two minutes. Sofia announces next week's cultural fold, wishes the room <em>buona serata</em>, and lingers on video for as long as anyone wants to stay and talk, often another fifteen minutes, off the clock.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="sc-quote">
-  <div class="wrap-narrow">
-    <p class="q">"I have taken online courses for twelve years. This is the first one where I speak more Italian than my teacher does."</p>
-    <p class="s">Deborah K., alumna · New York, cohort 2022</p>
-  </div>
-</section>
-
-<section class="sc-band cream">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-line">Live snippets</span>
-    <h2>Four things you will hear in the <span class="gold-ital">first lesson.</span></h2>
-    <p class="lede-p">A real transcript from a Roman session of CI Principiante, session one. The greetings, the first correction, the first laugh.</p>
-    <div class="sc-snip">
-      <div class="card"><div class="who">Sofia · Roma · 00:04</div><p class="it">"Buonasera a tutti. Prima di iniziare, un giro veloce, come state stasera?"</p><p class="en">Good evening everyone. Before we start, a quick round, how is everyone this evening?</p></div>
-      <div class="card"><div class="who">Michael · Boston · 00:06</div><p class="it">"Io sto bene, grazie. E tu? È una bella giornata a Roma?"</p><p class="en">I am well, thank you. And you? Is it a nice day in Rome? (First sentence spoken by a beginner.)</p></div>
-      <div class="card"><div class="who">Sofia · 00:37</div><p class="it">"Attenzione: si dice <em>c'è un caffè</em>, un solo caffè, ma <em>ci sono due caffè</em>. Provate voi."</p><p class="en">Careful: you say <em>c'è un caffè</em>, one coffee, but <em>ci sono due caffè</em>. Now try yourselves.</p></div>
-      <div class="card"><div class="who">Rachel · London · 01:12</div><p class="it">"Ho prenotato un tavolo per due, per venerdì sera, alle otto. Va bene così?"</p><p class="en">I have booked a table for two, for Friday evening, at eight. Is that alright? (Breakout task, first phone call.)</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sc-quote dark">
-  <div class="wrap-narrow">
-    <p class="q">"The eighty-fifth minute is what separates a lesson from a class."</p>
-    <p class="s">Sofia Marino, Club Italia teacher, Roma</p>
-  </div>
-</section>
-
-<section class="sc-band paper">
-  <div class="wrap">
-    <div class="sc-feel">
+    <div class="two-col" style="align-items:center;">
+      <div class="zoom-frame"><img src="assets/img/zoom-mockup.svg" alt="A live Club Italia sample class"></div>
       <div>
-        <span class="eyebrow eyebrow-line">How it feels the first time</span>
-        <h2>What a first-time learner actually <span class="gold-ital">experiences.</span></h2>
-      </div>
-      <div class="body">
-        <p>The first Club Italia lesson is not a lecture. It is a room. The teacher greets each learner by name. The other learners nod. Within four minutes the whole conversation is in Italian, at a pace slow enough for a beginner to catch every fifth word, which is enough.</p>
-        <p>You will make mistakes in front of the room within the first ten minutes. This is by design. The teacher will correct one of them, warmly, and move on. Nobody laughs. Everybody has done the same. By the fortieth minute, most learners have forgotten to feel self-conscious. By the eighty-fifth, most stay on video for another ten just to keep talking.</p>
-        <p>The recording arrives in the inbox that night. Learners re-watch on the commute, catch the phrases they missed, and come back the following week already fluent in five things they were not fluent in before. It is a compounding format.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sc-band dark">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-line">Not a Zoom class</span>
-    <h2>Why this feels nothing like the <span class="gold-ital">online school you tried before.</span></h2>
-    <div class="sc-vs">
-      <div class="col us">
-        <h4>Club Italia · live from Italy</h4>
-        <ul>
-          <li>Ten to twelve learners, every speaks in every session</li>
-          <li>Native Italian teacher, broadcasting from Rome, Florence, Milan or Naples</li>
-          <li>Culture at the core, not decoration, a live cultural fold every lesson</li>
-          <li>Real tasks: order in a bar, book by phone, argue about the bill</li>
-          <li>Recording of every session, kept for life, indexed by grammar point</li>
-          <li>Il Circolo community forum for the six days between classes</li>
-          <li>CEFR-aligned certificate on completion, issued by eTeacher Group</li>
-        </ul>
-      </div>
-      <div class="col zoom">
-        <h4>Typical online class</h4>
-        <ul>
-          <li>Forty to two hundred learners in the room, one microphone</li>
-          <li>Teacher location and native-speaker status varies from session to session</li>
-          <li>Grammar drills first, culture as an occasional bonus PDF</li>
-          <li>Generic worksheets, textbook exercises, fill-in-the-blank at pace</li>
-          <li>Recording available for thirty days, then removed</li>
-          <li>Community is a Facebook page moderated by an intern</li>
-          <li>No formal certification, or a private certificate of doubtful value</li>
+        <div class="section-eyebrow">What to expect</div>
+        <h2 class="h-display">One full <span class="ital">45-minute lesson.</span></h2>
+        <p class="lede">The sample class is a real Club Italia lesson, not a demo. You sit at CEFR A0, so no prior Italian is required. The teacher opens with a short dialogue between two Italians, breaks it down, has learners try it in pairs, and closes with fifteen minutes of open conversation.</p>
+        <ul class="includes" style="margin-top:1.4rem;">
+          <li>Real live class, not a recorded demo</li>
+          <li>Attend on Zoom in your browser</li>
+          <li>Camera and mic optional</li>
+          <li>Post-class Q&A with the teacher</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sc-band cream">
+<section class="section-cream">
   <div class="wrap">
-    <span class="eyebrow eyebrow-line">What alumni told us</span>
-    <h2>The three things every alumnus <span class="gold-ital">says first.</span></h2>
-    <div class="sc-snip">
-      <div class="card"><div class="who">On the small group size</div><p class="it">"Ten people. Ten. I could not hide."</p><p class="en">,  Amir S., Tel Aviv · CI Elementare, 2024</p></div>
-      <div class="card"><div class="who">On the teacher being in Italy</div><p class="it">"When Chiara said <em>oggi piove a Bologna</em>, we knew she meant it. That changed how we listened."</p><p class="en">,  Kirsten L., Sydney · CI Intermedio, 2025</p></div>
-      <div class="card"><div class="who">On the pace</div><p class="it">"Eighty-five minutes goes by like fifteen. Then I want to book another one."</p><p class="en">,  Paul M., Boston · CI Principiante, 2025</p></div>
-      <div class="card"><div class="who">On the community</div><p class="it">"The class ends. Il Circolo does not. I met my two best friends in Italy on the alumni Slack."</p><p class="en">,  Nadia B., London · Parliamo Elementary, 2023</p></div>
-    </div>
+    <div class="section-head"><div class="section-eyebrow">Upcoming Sample Classes</div><h2 class="h-display">Pick a <span class="ital">Wednesday.</span></h2></div>
+    <table class="glance">
+      <tr><td>Wed 17 September · 6pm ET</td><td>Chiara, Firenze · Italian for absolute beginners · <a href="#reserve" style="color:var(--gold);">Reserve →</a></td></tr>
+      <tr><td>Wed 24 September · 6pm ET</td><td>Marco, Roma · Roman Italian at the caffè · <a href="#reserve" style="color:var(--gold);">Reserve →</a></td></tr>
+      <tr><td>Wed 1 October · 6pm ET</td><td>Giulia, Bologna · At the Bolognese table · <a href="#reserve" style="color:var(--gold);">Reserve →</a></td></tr>
+      <tr><td>Wed 8 October · 6pm ET</td><td>Alessandro, Milano · Milanese business Italian · <a href="#reserve" style="color:var(--gold);">Reserve →</a></td></tr>
+      <tr><td>Wed 15 October · 6pm ET</td><td>Francesca, Venezia · Italian in transit · <a href="#reserve" style="color:var(--gold);">Reserve →</a></td></tr>
+    </table>
   </div>
 </section>
 
-<section class="sc-cta">
-  <div class="wrap-narrow">
-    <span class="eyebrow eyebrow-line">Reserve a seat</span>
-    <h2>Book a seat in a real, <span class="gold-ital">not a sample.</span></h2>
-    <p>You are welcome to sit in as a silent observer for the first ten minutes of any new-cohort session, free, before enrolment. Our advisors book the observation and take you through the first-week reading.</p>
-    <div class="hero-ctas" style="justify-content:center;display:flex">
-      <a class="btn btn-3d btn-3d-primary" href="courses.html">See This Term's Courses</a>
-      <button class="btn btn-3d btn-3d-ghost" data-advisor type="button">Book My Observation</button>
-    </div>
+<section id="reserve" class="section-green">
+  <div class="wrap">
+    <div class="section-head"><div class="section-eyebrow">Reserve My Seat</div><h2 class="h-display">Confirm your <span class="ital">Wednesday.</span></h2><p class="lede">Enter your details and we send the Zoom link within a minute. No card required.</p></div>
+    <form style="display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;max-width:940px;margin-top:1.4rem;">
+      <input type="text" placeholder="First name" style="padding:1rem;border:0;background:var(--paper);">
+      <input type="email" placeholder="Email address" style="padding:1rem;border:0;background:var(--paper);">
+      <select style="padding:1rem;border:0;background:var(--paper);"><option>Which Wednesday…</option><option>17 September</option><option>24 September</option><option>1 October</option><option>8 October</option><option>15 October</option></select>
+      <button type="submit" class="btn" style="background:var(--ink);color:var(--paper);border:0;">Reserve My Seat →</button>
+    </form>
   </div>
 </section>
-
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
         <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
-        <p>Club Italia by eTeacher, a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
-        <p style="margin-top:1.2rem"><a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a></p>
+        <p>Club Italia by eTeacher — a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
+        <p style="margin-top:1.2rem">
+          <a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a>
+        </p>
       </div>
       <div class="footer-col">
-        <h4>Learn</h4>
+        <h4>Courses</h4>
         <a href="courses.html">All Courses</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="method.html">Method</a>
-        <a href="sample-class.html">Watch a Class</a>
-        <a href="teachers.html">Teachers</a>
-        <a href="map.html">Map of Italy</a>
+        <a href="pages/courses/ci1.html">CI Principiante · A0→A1.1</a>
+        <a href="pages/courses/ci2.html">CI Elementare · A1.1→A1.2</a>
+        <a href="pages/courses/ci3.html">CI Intermedio · A1.2→A2.1</a>
+        <a href="pages/courses/ci4.html">CI Avanzato · A2.1→A2.2</a>
+        <a href="pages/spoken/ps1.html">Parliamo · Foundation</a>
+        <a href="pages/spoken/ps2.html">Parliamo · Beginner</a>
+        <a href="pages/spoken/ps3.html">Parliamo · Elementary</a>
+        <a href="pages/spoken/ps4.html">Parliamo · Confident</a>
+        <a href="pages/culture/cap-food.html">Capsule · La Cucina</a>
+        <a href="pages/culture/cap-art.html">Capsule · L'Arte</a>
+        <a href="pages/culture/cap-opera.html">Capsule · L'Opera</a>
       </div>
       <div class="footer-col">
-        <h4>Culture</h4>
+        <h4>Explore</h4>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="method.html">Our Method</a>
+        <a href="teachers.html">Teachers</a>
         <a href="culture.html">Culture</a>
-        <a href="capsules.html">Capsules</a>
-        <a href="events.html">Cultural Events</a>
-        <a href="community.html">Community</a>
-        <a href="blog.html">Journal</a>
+        <a href="capsules.html">Culture Capsules</a>
+        <a href="biagio.html">Biagio AI Tutor</a>
+        <a href="blog.html">Cultural Journal</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="about.html">About</a>
+        <a href="about.html">About Us</a>
         <a href="eteacher.html">eTeacher Group</a>
         <a href="pricing.html">Pricing</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -319,6 +426,45 @@
     </div>
   </div>
 </footer>
-<script src="js/ci.js" defer></script>
-</body>
-</html>
+
+<div class="advisor-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="advisorModalTitle">
+  <div class="advisor-card">
+    <button class="advisor-modal-close" aria-label="Close" type="button">×</button>
+    <div class="advisor-head">
+      <span class="eyebrow eyebrow-line">Speak with us</span>
+      <h3 id="advisorModalTitle">Talk to an Advisor</h3>
+      <p>Tell us a little about you and a Club Italia academic advisor will be in touch to plan your start.</p>
+    </div>
+    <form class="advisor-form" novalidate>
+      <div class="field"><label for="adv-name">Name</label><input id="adv-name" name="name" type="text" autocomplete="name" required placeholder="Your full name"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-email">Email</label><input id="adv-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-phone">Phone</label><input id="adv-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 000 0000"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-level">Your Italian right now</label>
+        <select id="adv-level" name="level" required>
+          <option value="">Choose your level</option>
+          <option value="none">I don't speak any Italian yet</option>
+          <option value="a1">A few words · A1</option>
+          <option value="a2">Some basics · A2</option>
+          <option value="b1">Conversational · B1+</option>
+        </select>
+        <span class="err-msg" aria-live="polite"></span>
+      </div>
+      <button class="btn btn-3d btn-3d-primary" type="submit">Request My Consultation</button>
+    </form>
+    <div class="advisor-success">
+      <h3>Grazie!</h3>
+      <p>Your request is on its way to our advisor. We will be in touch shortly to plan your start with Club Italia.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var bar=document.querySelector('.enroll-bar');if(!bar)return;
+  var shown=false;
+  function on(){var y=window.scrollY;if(y>600&&!shown){bar.classList.add('show');shown=true;}else if(y<=400&&shown){bar.classList.remove('show');shown=false;}}
+  window.addEventListener('scroll',on,{passive:true});
+})();
+</script>
+
+</body></html>

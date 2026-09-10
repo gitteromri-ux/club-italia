@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40">
+<rect x="5" y="10" width="20" height="20" fill="#00B67A"/>
+<path d="M 15 14 L 16.8 18 L 21 18 L 17.5 21 L 19 26 L 15 23.5 L 11 26 L 12.5 21 L 9 18 L 13.2 18 Z" fill="#fff"/>
+<rect x="27" y="10" width="20" height="20" fill="#00B67A"/>
+<path d="M 37 14 L 38.8 18 L 43 18 L 39.5 21 L 41 26 L 37 23.5 L 33 26 L 34.5 21 L 31 18 L 35.2 18 Z" fill="#fff"/>
+<rect x="49" y="10" width="20" height="20" fill="#00B67A"/>
+<path d="M 59 14 L 60.8 18 L 65 18 L 61.5 21 L 63 26 L 59 23.5 L 55 26 L 56.5 21 L 53 18 L 57.2 18 Z" fill="#fff"/>
+<rect x="71" y="10" width="20" height="20" fill="#00B67A"/>
+<path d="M 81 14 L 82.8 18 L 87 18 L 83.5 21 L 85 26 L 81 23.5 L 77 26 L 78.5 21 L 75 18 L 79.2 18 Z" fill="#fff"/>
+<rect x="93" y="10" width="20" height="20" fill="#00B67A"/>
+<path d="M 103 14 L 104.8 18 L 109 18 L 105.5 21 L 107 26 L 103 23.5 L 99 26 L 100.5 21 L 97 18 L 101.2 18 Z" fill="#fff"/>
+<text x="128" y="26" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#191919">Trustpilot</text>
+</svg>

@@ -1,125 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Club Italia, an Italian school for adults who mean it</title>
-<meta name="description" content="Club Italia is the Italian faculty of eTeacher Group, a serious, live, small-group Italian school for adults, taught by native Italian teachers broadcasting from Rome, Florence, Milan, Bologna and Naples.">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Club Italia · by eTeacher</title>
+<meta name="description" content="Club Italia by eTeacher is a live, culturally immersive Italian language school for adult learners.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ci.css">
+
 <style>
-.dp-hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:var(--on-dark);overflow:hidden;background:var(--navy-deep)}
-.dp-hero-bg{position:absolute;inset:0;z-index:0}
-.dp-hero-bg img{width:100%;height:100%;object-fit:cover}
-.dp-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(34,8,11,.82) 0%,rgba(34,8,11,.6) 55%,rgba(34,8,11,.35) 100%)}
-.dp-hero .wrap{position:relative;z-index:2;padding:10rem 0 5rem}
-.dp-hero h1{font-family:var(--serif);font-size:clamp(3rem,6.4vw,6.2rem);line-height:1;max-width:16ch;margin:1.4rem 0}
-.dp-hero .lede{max-width:58ch;color:var(--on-dark-soft);font-size:clamp(1.15rem,1.5vw,1.4rem);line-height:1.6;font-weight:300}
-.dp-hero .meta{display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:2.8rem;padding-top:2rem;border-top:1px solid var(--gold-line-soft)}
-.dp-hero .meta > div small{display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:.4rem}
-.dp-hero .meta > div strong{font-family:var(--serif);font-size:1.4rem;color:var(--gold-soft);font-weight:500}
+/* v3 palette override — applied globally until ci.css rebuild lands */
+:root{
+  --red:#B01823; --red-deep:#8B0F1D; --red-bright:#C7202E;
+  --green:#166A47; --green-deep:#0C3B2E; --green-bright:#1E8A5E;
+  --paper:#FBFAF6; --cream:#F3F0E7; --ink:#0B0B0D; --ink-2:#1A1A1E;
+  --gold:#B08640; --gold-line:rgba(176,134,64,.45);
+  --cream-accent:#E6C99B;
+  --serif:'Playfair Display','Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;margin:0;padding:0;}
+*{box-sizing:border-box;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:0;}
+p{margin:0 0 1em 0;}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
+.wrap-narrow{max-width:960px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
+/* sections alternate */
+section{padding:clamp(4rem,8vw,7rem) 0;position:relative;}
+.section-white{background:var(--paper);color:var(--ink);}
+.section-cream{background:var(--cream);color:var(--ink);}
+.section-green{background:var(--green-deep);color:var(--paper);}
+.section-red{background:var(--red-deep);color:var(--paper);}
+.section-black{background:var(--ink);color:var(--paper);}
+.section-green h1,.section-green h2,.section-green h3,
+.section-red h1,.section-red h2,.section-red h3,
+.section-black h1,.section-black h2,.section-black h3{color:var(--paper);}
+.section-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:500;}
+.section-black .section-eyebrow,.section-red .section-eyebrow,.section-green .section-eyebrow{color:var(--cream-accent);}
+.h-display{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.015em;margin-bottom:1.4rem;}
+.h-display .ital{font-style:italic;font-weight:500;color:var(--red);}
+.section-black .h-display .ital,.section-red .h-display .ital,.section-green .h-display .ital{color:var(--cream-accent);}
+.h-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;font-weight:500;}
+.lede{font-size:1.24rem;line-height:1.55;color:var(--ink-2);max-width:62ch;font-weight:300;}
+.section-green .lede,.section-red .lede,.section-black .lede{color:rgba(251,250,246,.86);}
 
-.dp-tri{height:6px;background:linear-gradient(90deg,#009246 33.33%,#F6F1E6 33.33% 66.66%,#CE2B37 66.66%)}
+/* Gold hairline rule */
+.rule-gold{width:64px;height:1px;background:var(--gold);margin:0 0 1.4rem 0;}
 
-.dp-band{padding:6rem 0}
-.dp-band.dark{background:var(--navy);color:var(--on-dark)}
-.dp-band.cream{background:var(--ivory)}
-.dp-band.paper{background:var(--paper)}
-.dp-band h2{font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.4rem);line-height:1.05;max-width:22ch;margin-bottom:1.2rem}
-.dp-band.dark h2,.dp-band.dark h3,.dp-band.dark h4{color:var(--on-dark)}
-.dp-band .lede-p{color:var(--on-light-soft);font-size:1.1rem;line-height:1.7;max-width:60ch}
-.dp-band.dark .lede-p{color:var(--on-dark-soft)}
+/* Top urgency strip */
+.top-strip{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;padding:.55rem 0;text-align:center;border-bottom:1px solid var(--gold-line);}
+.top-strip .dot{display:inline-block;width:6px;height:6px;background:var(--red-bright);border-radius:50%;margin:0 .8rem;vertical-align:middle;}
 
-.dp-two{display:grid;grid-template-columns:1fr 1.15fr;gap:3.2rem;align-items:start}
-@media (max-width:900px){.dp-two{grid-template-columns:1fr}}
-.dp-two .body p{color:var(--on-light-soft);font-size:1.02rem;line-height:1.72;margin-bottom:1.1rem}
-.dp-band.dark .dp-two .body p{color:var(--on-dark-soft)}
-.dp-two .body em{color:var(--gold-deep);font-style:italic}
-.dp-band.dark .dp-two .body em{color:var(--gold-soft)}
-.dp-two .drop{font-family:var(--serif);font-style:italic;font-size:8rem;color:var(--gold-soft);opacity:.35;line-height:.9;display:block;margin-bottom:-3rem}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--paper);background:var(--ink);}
+.hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.55) 0%,rgba(11,11,13,.35) 40%,rgba(11,11,13,.82) 100%);z-index:1;}
+.hero .hero-wrap{position:relative;z-index:2;width:100%;padding:0 clamp(1.2rem,4vw,3rem) clamp(3rem,7vw,6rem);}
+.hero-eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:.42em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1.4rem;}
+.hero-h1{font-family:var(--serif);font-weight:700;font-size:clamp(4.4rem,10vw,9.2rem);line-height:.94;letter-spacing:-.025em;margin:0 0 1.6rem 0;max-width:16ch;}
+.hero-h1 .ital{font-style:italic;font-weight:500;color:var(--cream-accent);}
+.hero-sub{font-size:clamp(1.15rem,1.6vw,1.5rem);line-height:1.5;max-width:56ch;color:rgba(251,250,246,.88);font-weight:300;margin:0 0 2rem 0;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
+.hero-trust{position:absolute;top:clamp(1rem,3vw,2rem);right:clamp(1rem,3vw,2.4rem);z-index:3;display:flex;align-items:center;gap:.7rem;font-size:.82rem;color:var(--paper);background:rgba(11,11,13,.4);backdrop-filter:blur(6px);padding:.55rem .95rem;border:1px solid rgba(255,255,255,.15);border-radius:2px;}
+.hero-trust .stars{color:#F5B93B;letter-spacing:.05em;}
+.hero-live{position:absolute;bottom:clamp(1rem,3vw,2rem);left:clamp(1.2rem,4vw,3rem);z-index:3;display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--paper);}
+.hero-live .live-dot{width:8px;height:8px;background:var(--red-bright);border-radius:50%;box-shadow:0 0 0 0 rgba(199,32,46,.6);animation:pulse 2s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(199,32,46,.6);}70%{box-shadow:0 0 0 14px rgba(199,32,46,0);}100%{box-shadow:0 0 0 0 rgba(199,32,46,0);}}
 
-.dp-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.4rem}
-@media (max-width:820px){.dp-grid3{grid-template-columns:1fr}}
-.dp-card{padding:2.2rem 1.8rem;background:var(--paper);border:1px solid var(--gold-line-soft)}
-.dp-band.dark .dp-card{background:var(--navy-mid);border-color:var(--dark-line-soft)}
-.dp-card .rn{font-family:var(--serif);font-style:italic;font-size:1.8rem;color:var(--gold-deep);margin-bottom:.5rem}
-.dp-band.dark .dp-card .rn{color:var(--gold-soft)}
-.dp-card h4{font-family:var(--serif);font-size:1.3rem;margin-bottom:.5rem;line-height:1.18}
-.dp-card p{font-size:.95rem;color:var(--on-light-soft);line-height:1.6}
-.dp-band.dark .dp-card p{color:var(--on-dark-soft)}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.6rem;font-family:var(--sans);font-weight:500;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;border-radius:0;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease;}
+.btn-primary{background:var(--green);color:var(--paper);}
+.btn-primary:hover{background:var(--green-deep);transform:translateY(-1px);}
+.btn-red{background:var(--red);color:var(--paper);}
+.btn-red:hover{background:var(--red-deep);}
+.btn-ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.5);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.btn-ghost-dark{background:transparent;color:var(--ink);border-color:var(--ink);}
+.btn-ghost-dark:hover{background:var(--ink);color:var(--paper);}
+.btn-lg{padding:1.2rem 2rem;font-size:1rem;}
 
-.dp-stat{padding:4rem 0;background:var(--paper)}
-.dp-stat .grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-line-soft);border-bottom:1px solid var(--gold-line-soft)}
-@media (max-width:820px){.dp-stat .grid{grid-template-columns:1fr 1fr}}
-.dp-stat .cell{padding:2.2rem 1.6rem;text-align:center;border-right:1px solid var(--gold-line-soft)}
-.dp-stat .cell:last-child{border-right:none}
-.dp-stat .cell .n{font-family:var(--serif);font-style:italic;font-size:2.6rem;color:var(--gold-deep);line-height:1}
-.dp-stat .cell .l{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-top:.6rem;color:var(--on-light-soft)}
+/* Course card GRID — edge-to-edge, hairline borders */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:1100px){.cg{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.cg{grid-template-columns:1fr;}}
+.cg-track{grid-column:1/-1;background:var(--ink);color:var(--paper);padding:1.4rem clamp(1.2rem,3vw,2rem);font-family:var(--serif);font-style:italic;font-size:1.4rem;letter-spacing:.02em;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem;}
+.cg-track .track-meta{font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
+.cc{background:var(--paper);color:var(--ink);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2rem clamp(1.2rem,2vw,1.7rem) 1.6rem;display:flex;flex-direction:column;min-height:380px;position:relative;transition:background .18s ease;}
+.cc:hover{background:var(--cream);}
+.cc-price{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--red);margin-bottom:.15rem;letter-spacing:-.01em;}
+.cc-price small{font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:400;margin-left:.35rem;}
+.cc-badge{display:inline-block;font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green-deep);border:1px solid var(--green);padding:.28rem .55rem;margin-bottom:1rem;align-self:flex-start;}
+.cc-title{font-family:var(--serif);font-size:1.65rem;font-weight:600;line-height:1.05;margin-bottom:.35rem;letter-spacing:-.01em;}
+.cc-sub{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--red-deep);margin-bottom:.9rem;line-height:1.3;}
+.cc-meta{font-family:var(--sans);font-size:.78rem;color:var(--ink-2);letter-spacing:.01em;margin-bottom:1.6rem;line-height:1.55;flex-grow:1;}
+.cc-meta .meta-row{display:block;padding:.28rem 0;border-bottom:1px dotted rgba(11,11,13,.15);}
+.cc-meta .meta-row:last-child{border:0;}
+.cc-enroll{display:inline-flex;align-items:center;justify-content:space-between;background:var(--green);color:var(--paper);padding:.85rem 1.1rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-top:auto;transition:background .18s ease;}
+.cc-enroll:hover{background:var(--green-deep);}
+.cc-enroll .arrow{font-family:var(--serif);font-style:italic;font-size:1.2rem;}
 
-.dp-quote{background:var(--paper);padding:6rem 0;text-align:center}
-.dp-quote.dark{background:var(--navy-deep);color:var(--on-dark)}
-.dp-quote .q{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.24;max-width:34ch;margin:0 auto;color:var(--navy)}
-.dp-quote.dark .q{color:var(--on-dark)}
-.dp-quote .s{margin-top:1.4rem;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
-.dp-quote.dark .s{color:var(--gold-soft)}
+/* Stats row */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);}
+@media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr);}}
+.stat{padding:1.6rem 1.2rem;text-align:center;border-right:1px solid var(--gold-line);}
+.stat:last-child{border-right:0;}
+.stat-num{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.35rem;}
+.stat-lab{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);}
+.section-black .stat-num,.section-green .stat-num,.section-red .stat-num{color:var(--cream-accent);}
+.section-black .stat-lab,.section-green .stat-lab,.section-red .stat-lab{color:rgba(251,250,246,.65);}
 
-.dp-timeline{margin-top:2rem}
-.dp-tl-row{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:1.4rem 0;border-bottom:1px solid var(--gold-line-soft);align-items:start}
-.dp-tl-row .yr{font-family:var(--serif);font-style:italic;font-size:1.8rem;color:var(--gold-deep)}
-.dp-band.dark .dp-tl-row .yr{color:var(--gold-soft)}
-.dp-tl-row h4{font-family:var(--serif);font-size:1.25rem;margin-bottom:.4rem;line-height:1.18}
-.dp-tl-row p{font-size:.95rem;color:var(--on-light-soft);line-height:1.62}
-.dp-band.dark .dp-tl-row p{color:var(--on-dark-soft)}
+/* Syllabus table (IIBS academic register) */
+.syllabus-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.92rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:2rem;}
+.syllabus-table thead th{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-align:left;padding:1rem 1.1rem;border-right:1px solid rgba(255,255,255,.1);}
+.syllabus-table tbody td{padding:1.1rem 1.1rem;border-bottom:1px solid rgba(11,11,13,.1);border-right:1px solid rgba(11,11,13,.08);vertical-align:top;line-height:1.5;}
+.syllabus-table tbody tr:nth-child(even) td{background:var(--cream);}
+.syllabus-table .lesson-num{font-family:var(--serif);font-size:1.4rem;color:var(--red);font-weight:600;width:70px;}
+.syllabus-table .topic{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--ink);width:22%;}
+.syllabus-table .grammar{font-family:var(--sans);font-size:.9rem;color:var(--ink-2);}
+.syllabus-table .culture{font-family:var(--sans);font-size:.88rem;color:var(--green-deep);font-style:italic;width:26%;}
 
-.dp-faculty{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;margin-top:2rem}
-@media (max-width:820px){.dp-faculty{grid-template-columns:1fr 1fr 1fr}}
-.dp-fac{padding:1.4rem 1rem;text-align:center;background:var(--navy-mid);border:1px solid var(--dark-line-soft)}
-.dp-fac .flag{font-family:var(--serif);font-size:1.6rem;color:var(--gold-soft);margin-bottom:.4rem}
-.dp-fac .n{font-family:var(--serif);font-size:1.1rem;color:var(--on-dark);line-height:1.15}
-.dp-fac .l{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-soft);margin-top:.4rem}
+/* At-a-glance academic table */
+.glance{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.98rem;border-top:2px solid var(--ink);}
+.glance tr td{padding:1.05rem 0;border-bottom:1px solid rgba(11,11,13,.14);vertical-align:top;}
+.glance tr td:first-child{font-family:var(--sans);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:500;width:38%;padding-right:1.4rem;}
+.glance tr td:last-child{font-family:var(--serif);font-size:1.1rem;color:var(--ink);line-height:1.45;}
 
-.dp-leader-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.4rem}
-@media (max-width:820px){.dp-leader-grid{grid-template-columns:1fr}}
-.dp-leader{padding:2rem;background:var(--paper);border:1px solid var(--gold-line-soft);text-align:center}
-.dp-leader .av{width:96px;height:96px;border-radius:50%;background:linear-gradient(180deg,var(--gold-soft),var(--gold-deep));color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.2rem;font-style:italic;margin:0 auto 1rem}
-.dp-leader h4{font-family:var(--serif);font-size:1.3rem;line-height:1.15;margin-bottom:.3rem}
-.dp-leader .role{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.9rem}
-.dp-leader p{font-size:.9rem;color:var(--on-light-soft);line-height:1.55}
+/* Outcomes list */
+.outcomes{list-style:none;padding:0;margin:2rem 0 0 0;counter-reset:o;}
+.outcomes li{counter-increment:o;padding:1.1rem 0 1.1rem 3.6rem;border-bottom:1px solid rgba(11,11,13,.12);position:relative;font-family:var(--serif);font-size:1.15rem;font-style:italic;line-height:1.4;color:var(--ink);}
+.outcomes li::before{content:counter(o,decimal-leading-zero);position:absolute;left:0;top:1.1rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;color:var(--gold);font-style:normal;font-weight:500;}
 
-.dp-cta{background:linear-gradient(140deg,var(--navy) 0%,var(--terra-deep) 130%);color:var(--on-dark);padding:6rem 0;text-align:center}
-.dp-cta h2{color:var(--on-dark);font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem)}
-.dp-cta p{color:var(--on-dark-soft);max-width:54ch;margin:1rem auto 2rem;font-size:1.1rem}
+/* Frames */
+.zoom-frame{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.6rem;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);}
+.zoom-frame img{width:100%;display:block;border-radius:3px;}
+.cert-frame{background:var(--paper);border:1px solid rgba(11,11,13,.12);padding:1rem;box-shadow:0 40px 80px -30px rgba(11,11,13,.35);}
+.browser-frame{border:1px solid rgba(11,11,13,.15);border-radius:6px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(11,11,13,.25);background:#fff;}
+.browser-chrome{background:#EEE;padding:.55rem .9rem;border-bottom:1px solid rgba(0,0,0,.08);display:flex;gap:.4rem;align-items:center;}
+.browser-chrome span{width:10px;height:10px;border-radius:50%;background:#ccc;}
+.browser-chrome span:first-child{background:#F35B5B;}
+.browser-chrome span:nth-child(2){background:#F5B93B;}
+.browser-chrome span:nth-child(3){background:#4CC26A;}
+.browser-chrome .url{margin-left:.9rem;font-family:var(--sans);font-size:.74rem;color:#666;}
 
-/* CONTACT specifics */
-.ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.4rem}
-@media (max-width:820px){.ct-grid{grid-template-columns:1fr}}
-.ct-card{padding:2.2rem 1.8rem;background:var(--paper);border:1px solid var(--gold-line-soft)}
-.ct-card .rn{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:.9rem;letter-spacing:.06em;margin-bottom:.5rem}
-.ct-card h4{font-family:var(--serif);font-size:1.35rem;margin-bottom:.6rem;line-height:1.18}
-.ct-card p{font-size:.98rem;color:var(--on-light-soft);line-height:1.55}
-.ct-card a{color:var(--navy);border-bottom:1px solid var(--gold-line)}
+/* Teacher tiles */
+.teacher-wall{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid rgba(255,255,255,.14);border-left:1px solid rgba(255,255,255,.14);}
+@media (max-width:1100px){.teacher-wall{grid-template-columns:repeat(4,1fr);}}
+@media (max-width:640px){.teacher-wall{grid-template-columns:repeat(2,1fr);}}
+.tt{border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);padding:1.5rem 1.1rem;text-align:center;}
+.tt img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.15);margin-bottom:.9rem;}
+.tt .tt-region{font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
+.tt .tt-name{font-family:var(--serif);font-size:1.25rem;margin:.35rem 0 .25rem;color:var(--paper);}
+.tt .tt-cred{font-family:var(--sans);font-size:.75rem;color:rgba(251,250,246,.65);}
 
-.ct-regions{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
-@media (max-width:820px){.ct-regions{grid-template-columns:1fr 1fr}}
-.ct-region{padding:1.4rem 1.2rem;background:var(--navy-mid);border:1px solid var(--dark-line-soft)}
-.ct-region .flag{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--gold-soft);margin-bottom:.5rem}
-.ct-region h4{color:var(--on-dark);font-family:var(--serif);font-size:1.1rem;line-height:1.15;margin-bottom:.4rem}
-.ct-region p{font-size:.82rem;color:var(--on-dark-soft);margin:0;line-height:1.5}
-.ct-region .h{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-top:.6rem}
+/* Two-col editorial */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start;}
+@media (max-width:900px){.two-col{grid-template-columns:1fr;}}
 
-.ct-faq-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
-@media (max-width:820px){.ct-faq-links{grid-template-columns:1fr}}
-.ct-faq-link{padding:1.4rem 1.4rem;background:var(--paper);border:1px solid var(--gold-line-soft);display:flex;justify-content:space-between;align-items:center;transition:background .25s ease}
-.ct-faq-link:hover{background:var(--white)}
-.ct-faq-link h4{font-family:var(--serif);font-size:1.05rem;margin:0;line-height:1.2}
-.ct-faq-link span{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:1.2rem}
+/* Pricing */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.pricing{grid-template-columns:1fr;}}
+.tier{background:var(--paper);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2.4rem 1.8rem 2rem;position:relative;}
+.tier.featured{border:2px solid var(--green);background:linear-gradient(180deg,var(--paper) 0%,#EFF6F1 100%);}
+.tier .tier-badge{position:absolute;top:-13px;left:1.8rem;background:var(--green);color:var(--paper);font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;padding:.35rem .75rem;font-weight:500;}
+.tier-name{font-family:var(--serif);font-size:1.5rem;margin-bottom:.4rem;}
+.tier-price{font-family:var(--serif);font-size:3rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.2rem;}
+.tier-price small{font-family:var(--sans);font-size:.75rem;color:var(--ink-2);letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin-left:.35rem;}
+.tier-sub{font-family:var(--sans);font-size:.85rem;color:var(--ink-2);margin-bottom:1.4rem;}
+.tier ul{list-style:none;padding:0;margin:0 0 1.6rem 0;}
+.tier ul li{padding:.55rem 0 .55rem 1.5rem;border-bottom:1px dotted rgba(11,11,13,.14);font-size:.92rem;position:relative;}
+.tier ul li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;}
+
+/* FAQ */
+.faq{border-top:1px solid var(--ink);}
+.faq details{border-bottom:1px solid rgba(11,11,13,.15);padding:1.4rem 0;}
+.faq summary{list-style:none;cursor:pointer;font-family:var(--serif);font-size:1.35rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-family:var(--sans);font-size:1.6rem;color:var(--gold);font-weight:300;}
+.faq details[open] summary::after{content:"−";}
+.faq details p{margin-top:1rem;font-size:1rem;color:var(--ink-2);line-height:1.65;max-width:70ch;}
+
+/* Culture tile grid */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.tiles{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.tiles{grid-template-columns:1fr;}}
+.tile{position:relative;aspect-ratio:1/1;overflow:hidden;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+.tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(.08);transition:transform .5s ease;}
+.tile:hover img{transform:scale(1.04);}
+.tile .tile-content{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,0) 40%,rgba(11,11,13,.75) 100%);padding:1.4rem;display:flex;flex-direction:column;justify-content:flex-end;color:var(--paper);}
+.tile .tile-title{font-family:var(--serif);font-style:italic;font-size:1.9rem;line-height:1.05;margin-bottom:.2rem;}
+.tile .tile-sub{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-accent);}
+
+/* Trustpilot review card grid */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(11,11,13,.14);border:1px solid rgba(11,11,13,.14);}
+@media (max-width:900px){.reviews{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.reviews{grid-template-columns:1fr;}}
+.review{background:var(--paper);padding:1.6rem;}
+.review .stars{color:#F5B93B;letter-spacing:.06em;font-size:.95rem;margin-bottom:.6rem;}
+.review .rev-title{font-family:var(--serif);font-size:1.15rem;margin-bottom:.6rem;}
+.review .rev-body{font-size:.92rem;color:var(--ink-2);line-height:1.55;margin-bottom:.9rem;}
+.review .rev-author{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+
+/* Alumni cards */
+.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.alumni{grid-template-columns:1fr;}}
+.alum{padding:1.8rem;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper);}
+.alum img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:1rem;}
+.alum .quote{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.4;color:var(--ink);margin-bottom:.9rem;}
+.alum .attr{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);}
+
+/* Sticky bottom enroll bar */
+.enroll-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);padding:.85rem clamp(1rem,3vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:80;border-top:1px solid var(--gold-line);transform:translateY(100%);transition:transform .35s ease;}
+.enroll-bar.show{transform:translateY(0);}
+.enroll-bar .eb-left{font-family:var(--serif);font-style:italic;font-size:1rem;}
+.enroll-bar .eb-price{font-family:var(--serif);font-weight:600;color:var(--cream-accent);margin:0 .8rem;}
+.enroll-bar .btn{padding:.7rem 1.2rem;font-size:.8rem;}
+
+/* Includes list */
+.includes{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;list-style:none;padding:0;margin:2rem 0 0;}
+@media (max-width:700px){.includes{grid-template-columns:1fr;}}
+.includes li{padding:.9rem 0 .9rem 1.8rem;border-bottom:1px solid rgba(11,11,13,.1);font-family:var(--sans);font-size:.98rem;position:relative;}
+.includes li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;font-size:1.1rem;}
+
+/* Section head */
+.section-head{max-width:820px;margin:0 0 3rem 0;}
+.section-head.center{margin:0 auto 3rem;text-align:center;}
+
+/* Utility */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;}
+@media (max-width:900px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr;}}
+
+/* Related courses */
+.related{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.related{grid-template-columns:1fr;}}
+
+/* Small badge */
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.42rem .75rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;}
+.chip-green{border-color:var(--green-bright);color:var(--green);background:rgba(30,138,94,.06);}
+.chip-red{border-color:var(--red);color:var(--red);background:rgba(199,32,46,.06);}
+
+/* Video bg utility for non-hero sections */
+.video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.25;}
+
+/* Nav override (works with existing partial) */
+.site-header{background:var(--paper);border-bottom:1px solid rgba(11,11,13,.1);position:sticky;top:0;z-index:70;}
+.site-header .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;}
+.site-header .nav-menu{display:flex;gap:1.4rem;}
+.site-header .nav-link{font-family:var(--sans);font-size:.86rem;color:var(--ink);letter-spacing:.02em;}
+.site-header .nav-link:hover{color:var(--red);}
+.site-header .lt-main{font-family:var(--serif);font-size:1.5rem;color:var(--red);font-weight:600;}
+.site-header .lt-sub{font-family:var(--sans);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);display:block;margin-top:2px;}
+.site-header .nav-cta{background:var(--green);color:var(--paper);border:0;padding:.7rem 1.2rem;font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;}
+.site-header .nav-toggle{display:none;background:transparent;border:0;flex-direction:column;gap:4px;cursor:pointer;padding:.4rem;}
+.site-header .nav-toggle span{width:24px;height:2px;background:var(--ink);display:block;}
+@media (max-width:900px){.site-header .nav-menu{display:none;}.site-header .nav-toggle{display:flex;}}
+.nav-drawer{display:none;}
+
+.site-footer{background:var(--ink);color:var(--paper);padding:4rem 0 2rem;margin-top:0;}
+.site-footer a{color:rgba(251,250,246,.7);display:block;padding:.28rem 0;font-size:.88rem;}
+.site-footer a:hover{color:var(--cream-accent);}
+.site-footer .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.08);}
+@media (max-width:900px){.site-footer .footer-top{grid-template-columns:1fr 1fr;}}
+.site-footer h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1rem;}
+.site-footer p{color:rgba(251,250,246,.72);font-size:.9rem;}
 </style>
-</head>
-<body>
+
+</head><body>
+<div class="top-strip"><span>Fall Cohort · Enrolment closes Oct 3</span><span class="dot"></span><span>Founder Rate · Save $220 on Annual</span><span class="dot"></span><span>7-Day Money-Back Guarantee</span></div>
 <header class="site-header">
   <div class="wrap nav">
-    <a class="nav-logo" href="index.html" aria-label="Club Italia, home">
+    <a class="nav-logo" href="index.html" aria-label="Club Italia — home">
       <span class="logo-text">
         <span class="lt-main">Club Italia</span>
         <span class="lt-sub">by eTeacher</span>
@@ -131,229 +285,126 @@
       <span class="nav-item"><a class="nav-link" href="method.html">Method</a></span>
       <span class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></span>
       <span class="nav-item"><a class="nav-link" href="culture.html">Culture</a></span>
-      <span class="nav-item"><a class="nav-link" href="events.html">Events</a></span>
-      <span class="nav-item"><a class="nav-link" href="map.html">Map</a></span>
+      <span class="nav-item"><a class="nav-link" href="biagio.html">AI Tutor</a></span>
       <span class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></span>
+      <span class="nav-item"><a class="nav-link" href="blog.html">Blog</a></span>
     </nav>
     <button class="btn btn-3d btn-3d-primary nav-cta" data-advisor type="button">Talk to an Advisor</button>
-    <button class="nav-toggle" aria-label="Open menu" aria-controls="navDrawer" type="button"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="navDrawer" type="button">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 <aside class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
   <button class="nav-drawer-close" aria-label="Close menu" type="button">&times;</button>
-  <a href="courses.html">Courses</a><a href="how-it-works.html">How It Works</a><a href="method.html">Method</a>
-  <a href="teachers.html">Teachers</a><a href="culture.html">Culture</a><a href="events.html">Events</a>
-  <a href="map.html">Map</a><a href="community.html">Community</a><a href="sample-class.html">Sample Class</a>
-  <a href="biagio.html">AI Tutor</a><a href="pricing.html">Pricing</a><a href="about.html">About</a>
+  <a href="courses.html">Courses</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="method.html">Method</a>
+  <a href="teachers.html">Teachers</a>
+  <a href="culture.html">Culture</a>
+  <a href="capsules.html">Culture Capsules</a>
+  <a href="biagio.html">AI Tutor</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+  <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
   <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
 </aside>
 
-<section class="dp-hero">
-  <div class="dp-hero-bg"><img src="assets/img/hero-poster.jpg" alt=""></div>
-  <div class="wrap">
-    <span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">About Club Italia</span>
-    <h1>An Italian school for <span class="gold-ital">adults who mean it.</span></h1>
-    <p class="lede">Club Italia is the Italian faculty of eTeacher Group, a live-online school for adult learners in the United States, the United Kingdom, Israel and around the world who want to learn Italian the way it is actually spoken, taught by the people who live it.</p>
-    <div class="meta">
-      <div><small>Live from</small><strong>Rome, Florence, Milan, Naples</strong></div>
-      <div><small>Learners per class</small><strong>10,12</strong></div>
-      <div><small>Backing</small><strong>eTeacher Group, since 2000</strong></div>
-    </div>
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg"><source src="assets/video/roma-piazza.mp4" type="video/mp4"></video>
+  <div class="hero-scrim"></div>
+  <div class="hero-trust"><span class="stars">★★★★★</span> <strong>4.8</strong> · Trustpilot · 1,284 reviews</div>
+  <div class="hero-live"><span class="live-dot"></span> Live class in session · 12 learners</div>
+  <div class="hero-wrap">
+    <div class="hero-eyebrow">About Club Italia</div>
+    <h1 class="hero-h1">A school,<br>not an <span class="ital">app.</span></h1>
+    <p class="hero-sub">Club Italia by eTeacher is a live Italian language school for adult learners, built on the eTeacher Group platform that has taught Hebrew, Yiddish, Spanish and Arabic to over four hundred thousand learners since 2000.</p>
+    <div class="hero-ctas"><a href="teachers.html" class="btn btn-primary btn-lg">Meet The Teachers</a></div>
   </div>
 </section>
-
-<div class="dp-tri" aria-hidden="true"></div>
-
-<!--FOLD 2 · ORIGIN STORY-->
-<section class="dp-band paper">
-  <div class="wrap">
-    <div class="dp-two">
-      <div>
-        <span class="drop">01</span>
-        <span class="eyebrow eyebrow-line">The origin story</span>
-        <h2>Between an American traveller and an Italian classroom, <span class="gold-ital">nothing serious existed.</span></h2>
-      </div>
-      <div class="body">
-        <p>Between 2020 and 2025, more than seven and a half million Americans travelled to Italy every year. Thousands more began the years-long journey toward Italian dual citizenship. Millions more fell in love with a plate of <em>cacio e pepe</em>, a Fellini film, a Verdi aria, a Tuscan wine, a wedding in Puglia. And yet, for the American adult who wanted to learn Italian seriously, live, in a small group, from real Italians in Italy, the options were remarkably thin.</p>
-        <p>There were self-serve apps. There were university night classes. There were expensive private tutors booked one at a time. There were group Zoom classes of forty or more, taught out of a textbook by a non-native. Nothing that combined the smallness, the liveness, the cultural depth and the institutional seriousness that our audience actually wanted. Club Italia was built to fill that gap.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--FOLD 3 · WHY ITALY-->
-<section class="dp-band dark">
-  <div class="wrap">
-    <div class="dp-two">
-      <div>
-        <span class="drop">02</span>
-        <span class="eyebrow eyebrow-line">Why Italy</span>
-        <h2>Because no other country offers <span class="gold-ital">this exact bundle.</span></h2>
-      </div>
-      <div class="body">
-        <p>Italian is not a small language. It is spoken by seventy million people, and it is the working language of Vatican City, San Marino, the FAO, and half the world's opera houses. But its cultural weight is disproportionate to its speaker count. There is no other language whose grammar unlocks the food, the visual arts, the theatre, the cinema, the science of the Renaissance, the modern design tradition, the music of Verdi and Puccini and Morricone, and the daily life of one of the most-visited countries on earth.</p>
-        <p>To learn Italian is to buy the ticket to a civilisation. Our adult learners understand this instinctively. They come to us because they have already spent time in Italy, or plan to; they know the country deserves the seriousness of study. We meet them on that basis.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--FOLD 4 · BELIEF SYSTEM-->
-<section class="dp-band cream">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-line">Our belief system</span>
-    <h2>Three convictions that shape <span class="gold-ital">everything we do.</span></h2>
-    <div class="dp-grid3">
-      <div class="dp-card"><div class="rn">i</div><h4>Culture is the syllabus.</h4><p>Not the reward for learning Italian. Not the bonus module. The syllabus itself. Grammar is embedded in a plate of Roman pasta, a Venetian mask, a Sicilian mosaic, never abstract.</p></div>
-      <div class="dp-card"><div class="rn">ii</div><h4>Live cannot be faked.</h4><p>Every class is live, unscripted, and broadcast in real time from Italy. The teacher's kitchen light is behind them because it is actually evening in Rome. This is the whole method.</p></div>
-      <div class="dp-card"><div class="rn">iii</div><h4>Small groups, real speaking.</h4><p>Ten to twelve learners is the mathematical floor of real progress. Every learner speaks Italian, aloud, in every session. We do not go above twelve.</p></div>
-    </div>
-  </div>
-</section>
-
-<!--FOLD 5 · PULL QUOTE-->
-<section class="dp-quote">
+<section class="section-cream" style="padding:2.6rem 0;"><div class="wrap"><div class="stats "><div class="stat"><div class="stat-num">2016</div><div class="stat-lab">Club Italia founded</div></div><div class="stat"><div class="stat-num">400,000+</div><div class="stat-lab">eTeacher learners since 2000</div></div><div class="stat"><div class="stat-num">7</div><div class="stat-lab">certified teachers in Italy</div></div><div class="stat"><div class="stat-num">18</div><div class="stat-lab">countries in our student body</div></div></div></div></section>
+<section class="section-white">
   <div class="wrap-narrow">
-    <p class="q">"You do not learn Italian to speak Italian. You learn Italian to be able to hear Italy."</p>
-    <p class="s">Giulia Riva, Dean, Club Italia · Milano</p>
+    <div class="section-eyebrow">The Story</div>
+    <h2 class="h-display">A twenty-year <span class="ital">school.</span></h2>
+    <p style="font-size:1.2rem;line-height:1.7;color:var(--ink);">eTeacher Group opened its first online classroom in the year 2000, teaching Hebrew, one lesson at a time, to families in the diaspora. Twenty-six years later, we run live online schools in five languages and have taught more than four hundred thousand adult learners across the world.</p>
+    <p style="font-size:1.2rem;line-height:1.7;color:var(--ink);">Club Italia was founded in 2016 by a small team of Italian teachers who had grown tired of two things at once: apps that treated their language as a game, and traditional online academies that treated it as a spreadsheet. Club Italia was the answer: live classes, real teachers, small cohorts, city anchors, and an academic register that a serious adult learner recognises on sight.</p>
+    <p style="font-size:1.2rem;line-height:1.7;color:var(--ink);">Every teacher on staff lives in the Italian city that anchors the course they teach. Every syllabus is written against the CEFR. Every certificate we issue is signed by the teacher who taught the level.</p>
   </div>
 </section>
 
-<!--FOLD 6 · THE METHOD-->
-<section class="dp-band paper">
+<section class="section-black">
   <div class="wrap">
-    <div class="dp-two">
-      <div>
-        <span class="drop">03</span>
-        <span class="eyebrow eyebrow-line">The method, summarised</span>
-        <h2>Live from Italy. Small group. Culture at <span class="gold-ital">the core.</span></h2>
-      </div>
-      <div class="body">
-        <p>Every Club Italia session runs for eighty-five minutes, live, in a small classroom of ten to twelve, taught by a native Italian teacher broadcasting from one of our seven resident-teacher cities. Every session opens with a short Italian ritual, moves through the day's grammar embedded in a piece of real Italian culture, opens into small-group speaking, and closes in real Italian.</p>
-        <p>Every session is recorded. Every recording is kept for life, indexed by grammar point, searchable and downloadable. The curriculum is CEFR-aligned from A0 through B1, and a certificate is issued on completion of each course, backed by eTeacher Group's twenty-five-year institutional record.</p>
-        <p>The full method is written up in detail on our <a href="method.html" style="color:var(--gold-deep);border-bottom:1px solid var(--gold-line)">Method page</a>, and the shape of a real lesson is walked through in the <a href="sample-class.html" style="color:var(--gold-deep);border-bottom:1px solid var(--gold-line)">Sample Class page</a>.</p>
-      </div>
+    <div class="section-eyebrow">What We Stand For</div>
+    <h2 class="h-display">Three <span class="ital">commitments.</span></h2>
+    <div class="grid-3" style="margin-top:2.4rem;">
+      <div><h3 style="font-family:var(--serif);font-size:1.7rem;color:var(--cream-accent);">Live, always.</h3><p style="font-size:1rem;color:rgba(251,250,246,.78);line-height:1.6;">Club Italia does not sell pre-recorded courses. Every class is live, on the calendar, taught by a teacher standing in Italy. That is the school.</p></div>
+      <div><h3 style="font-family:var(--serif);font-size:1.7rem;color:var(--cream-accent);">Small by design.</h3><p style="font-size:1rem;color:rgba(251,250,246,.78);line-height:1.6;">Twelve learners per CI class. Eight per PS spoken circle. We do not scale by putting more students in the room. We scale by adding cohorts.</p></div>
+      <div><h3 style="font-family:var(--serif);font-size:1.7rem;color:var(--cream-accent);">CEFR, honestly.</h3><p style="font-size:1rem;color:rgba(251,250,246,.78);line-height:1.6;">Every syllabus, every certificate and every advisor conversation references the CEFR. We do not invent proprietary levels; we align to the standard.</p></div>
     </div>
   </div>
 </section>
 
-<!--FOLD 7 · THE TECHNOLOGY-->
-<section class="dp-band dark">
+<section class="section-cream">
   <div class="wrap">
-    <div class="dp-two">
-      <div>
-        <span class="drop">04</span>
-        <span class="eyebrow eyebrow-line">The technology</span>
-        <h2>Built by <span class="gold-ital">language people, not video people.</span></h2>
-      </div>
-      <div class="body">
-        <p>We deliver every lesson on a live videoconferencing platform tuned specifically for language teaching, with break-out rooms for small-group speaking, a synchronised whiteboard the teacher writes on in real time, an in-line dictionary for the learners' side of the screen, and a chat that stores every phrase the teacher types for later review.</p>
-        <p>Every session is recorded in full HD, transcribed automatically in slow Italian, indexed by grammar point (subjunctive, conditional, preposizione articolata), and pushed into each learner's private lifetime library within four hours of the class ending. Our Biagio AI tutor lives on top of this library and can quiz you on anything you have covered, in Italian, at any hour.</p>
-      </div>
-    </div>
+    <div class="section-head"><div class="section-eyebrow">Institutional Partners</div><h2 class="h-display">Who we work <span class="ital">with.</span></h2></div>
+    <table class="glance">
+      <tr><td>Certification alignment</td><td>Common European Framework of Reference for Languages · Council of Europe (2020 Companion Volume)</td></tr>
+      <tr><td>Examiner training</td><td>Università per Stranieri di Perugia · CELI examinations</td></tr>
+      <tr><td>Teacher qualifications</td><td>Università per Stranieri di Siena (DITALS I & II) · Ca' Foscari University of Venice (CEDILS)</td></tr>
+      <tr><td>Cultural partners</td><td>Società Dante Alighieri · Comitato di New York · Comitato di Chicago</td></tr>
+      <tr><td>Operator</td><td>eTeacher Group · online-schools operator since 2000 · 400,000+ learners taught to date</td></tr>
+    </table>
   </div>
 </section>
-
-<!--FOLD 8 · FACULTY-->
-<section class="dp-band cream">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-line">The faculty</span>
-    <h2>Native Italian teachers, <span class="gold-ital">broadcasting from Italy.</span></h2>
-    <p class="lede-p">Every Club Italia teacher is a native speaker of Italian, holds a formal teaching qualification, and broadcasts from a resident classroom in one of our seven Italian cities. The full profile of every teacher is on the <a href="teachers.html" style="color:var(--gold-deep);border-bottom:1px solid var(--gold-line)">Teachers page</a>.</p>
-    <div class="dp-grid3">
-      <div class="dp-card"><div class="rn">Roma</div><h4>Sofia · Marco · Alessandro</h4><p>Three resident teachers broadcasting from studios near Trastevere, Monti and the Aventino.</p></div>
-      <div class="dp-card"><div class="rn">Firenze</div><h4>Giulia · Francesca</h4><p>Two Florentine teachers, both PhD-trained in Italian language pedagogy at the Università degli Studi di Firenze.</p></div>
-      <div class="dp-card"><div class="rn">Milano · Bologna</div><h4>Luca · Chiara</h4><p>Northern-Italian resident teachers, specialists in contemporary Italian and business Italian respectively.</p></div>
-    </div>
-  </div>
-</section>
-
-<!--FOLD 9 · PHILOSOPHY OF SMALL GROUPS-->
-<section class="dp-band paper">
-  <div class="wrap">
-    <div class="dp-two">
-      <div>
-        <span class="drop">05</span>
-        <span class="eyebrow eyebrow-line">The philosophy of small live groups</span>
-        <h2>Twelve is the number where a language <span class="gold-ital">becomes speakable.</span></h2>
-      </div>
-      <div class="body">
-        <p>Below eight learners, a group loses the collective momentum that makes speaking practice self-sustaining. Above twelve, individual speaking time collapses. Between eight and twelve, with an experienced teacher, every learner speaks in every session, every learner hears every other learner, and the room develops a small-group identity that carries through the six months of the course.</p>
-        <p>We have run this classroom size across every eTeacher Group faculty for twenty-five years. It works. We are not going above twelve, ever, on any Club Italia course, whatever the commercial pressure.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--FOLD 10 · PROMISE + METRICS + CTA-->
-<section class="dp-band dark">
-  <div class="wrap">
-    <span class="eyebrow eyebrow-line">Our promise · our numbers</span>
-    <h2>What we <span class="gold-ital">commit to.</span></h2>
-    <div class="dp-grid3">
-      <div class="dp-card"><div class="rn">01</div><h4>Never more than 12.</h4><p>Every Club Italia class capped at twelve learners, forever. A published, contractual promise.</p></div>
-      <div class="dp-card"><div class="rn">02</div><h4>Every teacher is Italian.</h4><p>Not a heritage speaker. Not fluent. Italian, born, credentialed, broadcasting from Italy today.</p></div>
-      <div class="dp-card"><div class="rn">03</div><h4>Lifetime recordings.</h4><p>Every session yours to keep, for the rest of your life, indexed and searchable. If we ever change our platform, we migrate them for you.</p></div>
-    </div>
-    <div class="dp-faculty" style="margin-top:3rem">
-      <div class="dp-fac"><div class="n" style="font-size:2rem;color:var(--gold-soft)">4.8</div><div class="l">Trustpilot average</div></div>
-      <div class="dp-fac"><div class="n" style="font-size:2rem;color:var(--gold-soft)">94%</div><div class="l">Course completion</div></div>
-      <div class="dp-fac"><div class="n" style="font-size:2rem;color:var(--gold-soft)">85%</div><div class="l">Continue to next level</div></div>
-      <div class="dp-fac"><div class="n" style="font-size:2rem;color:var(--gold-soft)">2,300</div><div class="l">Active learners</div></div>
-      <div class="dp-fac"><div class="n" style="font-size:2rem;color:var(--gold-soft)">7</div><div class="l">Italian cities on air</div></div>
-      <div class="dp-fac"><div class="n" style="font-size:2rem;color:var(--gold-soft)">120+</div><div class="l">Learner countries</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="dp-cta">
-  <div class="wrap-narrow">
-    <span class="eyebrow eyebrow-line">Benvenuti in Club Italia</span>
-    <h2>Choose a course. Meet the <span class="gold-ital">teacher. Begin.</span></h2>
-    <p>The first orientation call is free. Our advisors will listen to what you want your Italian for, walk you through the level placement, and put you in front of the teacher whose Italian you will hear for the next six months.</p>
-    <div class="hero-ctas" style="justify-content:center;display:flex">
-      <a class="btn btn-3d btn-3d-primary" href="courses.html">Explore the Courses</a>
-      <button class="btn btn-3d btn-3d-ghost" data-advisor type="button">Talk to an Advisor</button>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
+<section class="section-green"><div class="wrap"><div class="section-head"><h2 class="h-display">Come <span class="ital">study with us.</span></h2><p class="lede">Reserve a twenty-minute placement call this week.</p></div><div style="margin-top:2rem;"><a href="pricing.html" class="btn btn-primary btn-lg" style="background:var(--paper);color:var(--green-deep);">See Pricing →</a></div></div></section><footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
         <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
-        <p>Club Italia by eTeacher, a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
-        <p style="margin-top:1.2rem"><a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a></p>
+        <p>Club Italia by eTeacher — a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
+        <p style="margin-top:1.2rem">
+          <a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a>
+        </p>
       </div>
       <div class="footer-col">
-        <h4>Learn</h4>
+        <h4>Courses</h4>
         <a href="courses.html">All Courses</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="method.html">Method</a>
-        <a href="sample-class.html">Watch a Class</a>
-        <a href="teachers.html">Teachers</a>
-        <a href="map.html">Map of Italy</a>
+        <a href="pages/courses/ci1.html">CI Principiante · A0→A1.1</a>
+        <a href="pages/courses/ci2.html">CI Elementare · A1.1→A1.2</a>
+        <a href="pages/courses/ci3.html">CI Intermedio · A1.2→A2.1</a>
+        <a href="pages/courses/ci4.html">CI Avanzato · A2.1→A2.2</a>
+        <a href="pages/spoken/ps1.html">Parliamo · Foundation</a>
+        <a href="pages/spoken/ps2.html">Parliamo · Beginner</a>
+        <a href="pages/spoken/ps3.html">Parliamo · Elementary</a>
+        <a href="pages/spoken/ps4.html">Parliamo · Confident</a>
+        <a href="pages/culture/cap-food.html">Capsule · La Cucina</a>
+        <a href="pages/culture/cap-art.html">Capsule · L'Arte</a>
+        <a href="pages/culture/cap-opera.html">Capsule · L'Opera</a>
       </div>
       <div class="footer-col">
-        <h4>Culture</h4>
+        <h4>Explore</h4>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="method.html">Our Method</a>
+        <a href="teachers.html">Teachers</a>
         <a href="culture.html">Culture</a>
-        <a href="capsules.html">Capsules</a>
-        <a href="events.html">Cultural Events</a>
-        <a href="community.html">Community</a>
-        <a href="blog.html">Journal</a>
+        <a href="capsules.html">Culture Capsules</a>
+        <a href="biagio.html">Biagio AI Tutor</a>
+        <a href="blog.html">Cultural Journal</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="about.html">About</a>
+        <a href="about.html">About Us</a>
         <a href="eteacher.html">eTeacher Group</a>
         <a href="pricing.html">Pricing</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -366,6 +417,45 @@
     </div>
   </div>
 </footer>
-<script src="js/ci.js" defer></script>
-</body>
-</html>
+
+<div class="advisor-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="advisorModalTitle">
+  <div class="advisor-card">
+    <button class="advisor-modal-close" aria-label="Close" type="button">×</button>
+    <div class="advisor-head">
+      <span class="eyebrow eyebrow-line">Speak with us</span>
+      <h3 id="advisorModalTitle">Talk to an Advisor</h3>
+      <p>Tell us a little about you and a Club Italia academic advisor will be in touch to plan your start.</p>
+    </div>
+    <form class="advisor-form" novalidate>
+      <div class="field"><label for="adv-name">Name</label><input id="adv-name" name="name" type="text" autocomplete="name" required placeholder="Your full name"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-email">Email</label><input id="adv-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-phone">Phone</label><input id="adv-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 000 0000"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-level">Your Italian right now</label>
+        <select id="adv-level" name="level" required>
+          <option value="">Choose your level</option>
+          <option value="none">I don't speak any Italian yet</option>
+          <option value="a1">A few words · A1</option>
+          <option value="a2">Some basics · A2</option>
+          <option value="b1">Conversational · B1+</option>
+        </select>
+        <span class="err-msg" aria-live="polite"></span>
+      </div>
+      <button class="btn btn-3d btn-3d-primary" type="submit">Request My Consultation</button>
+    </form>
+    <div class="advisor-success">
+      <h3>Grazie!</h3>
+      <p>Your request is on its way to our advisor. We will be in touch shortly to plan your start with Club Italia.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var bar=document.querySelector('.enroll-bar');if(!bar)return;
+  var shown=false;
+  function on(){var y=window.scrollY;if(y>600&&!shown){bar.classList.add('show');shown=true;}else if(y<=400&&shown){bar.classList.remove('show');shown=false;}}
+  window.addEventListener('scroll',on,{passive:true});
+})();
+</script>
+
+</body></html>

@@ -1,105 +1,276 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biagio — Your AI Italian Tutor · Club Italia by eTeacher</title><meta name="description" content="Meet Biagio, your 24-hour AI Italian coach. Conversation, correction, pronunciation and cultural questions, all in Italian, engineered for adult learners.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Biagio · Your AI Italian Tutor · Club Italia</title>
+<meta name="description" content="Between live classes, Italian on demand. Biagio, our in-house AI tutor, corrects your grammar in real time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ci.css">
 
 <style>
-.b-hero{position:relative;min-height:100vh;background:linear-gradient(140deg,var(--navy-deep) 0%,var(--navy) 55%,var(--terra-deep) 130%);color:var(--on-dark);overflow:hidden;display:flex;align-items:center}
-.b-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 22% 30%,rgba(201,162,75,.20),transparent 55%),radial-gradient(circle at 78% 70%,rgba(182,85,56,.18),transparent 50%);pointer-events:none}
-.b-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:0;width:100%;position:relative;z-index:2;align-items:center}
-@media (max-width:960px){.b-hero-grid{grid-template-columns:1fr}}
-.b-hero-copy{padding:9rem clamp(1.6rem,5vw,6rem) 5rem}
-.b-hero-copy .eyebrow{color:var(--gold-soft)}
-.b-hero-copy h1{font-family:var(--serif);font-weight:500;font-size:clamp(3rem,6vw,6rem);line-height:1;letter-spacing:-.018em;margin:1.4rem 0 1.4rem;max-width:20ch}
-.b-hero-copy h1 em{font-style:italic;color:var(--gold-soft)}
-.b-hero-copy .b-tag{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.4rem;margin-bottom:2rem}
-.b-hero-copy p.b-sub{font-size:1.18rem;color:var(--on-dark-soft);max-width:52ch;line-height:1.6;margin-bottom:2.4rem}
-.b-portrait{padding:0 clamp(1.6rem,4vw,4rem);position:relative}
-.b-portrait img{width:100%;max-width:520px;margin:0 auto;display:block;border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(201,162,75,.25) inset}
+/* v3 palette override — applied globally until ci.css rebuild lands */
+:root{
+  --red:#B01823; --red-deep:#8B0F1D; --red-bright:#C7202E;
+  --green:#166A47; --green-deep:#0C3B2E; --green-bright:#1E8A5E;
+  --paper:#FBFAF6; --cream:#F3F0E7; --ink:#0B0B0D; --ink-2:#1A1A1E;
+  --gold:#B08640; --gold-line:rgba(176,134,64,.45);
+  --cream-accent:#E6C99B;
+  --serif:'Playfair Display','Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;margin:0;padding:0;}
+*{box-sizing:border-box;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:0;}
+p{margin:0 0 1em 0;}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
+.wrap-narrow{max-width:960px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
+/* sections alternate */
+section{padding:clamp(4rem,8vw,7rem) 0;position:relative;}
+.section-white{background:var(--paper);color:var(--ink);}
+.section-cream{background:var(--cream);color:var(--ink);}
+.section-green{background:var(--green-deep);color:var(--paper);}
+.section-red{background:var(--red-deep);color:var(--paper);}
+.section-black{background:var(--ink);color:var(--paper);}
+.section-green h1,.section-green h2,.section-green h3,
+.section-red h1,.section-red h2,.section-red h3,
+.section-black h1,.section-black h2,.section-black h3{color:var(--paper);}
+.section-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:500;}
+.section-black .section-eyebrow,.section-red .section-eyebrow,.section-green .section-eyebrow{color:var(--cream-accent);}
+.h-display{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.015em;margin-bottom:1.4rem;}
+.h-display .ital{font-style:italic;font-weight:500;color:var(--red);}
+.section-black .h-display .ital,.section-red .h-display .ital,.section-green .h-display .ital{color:var(--cream-accent);}
+.h-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;font-weight:500;}
+.lede{font-size:1.24rem;line-height:1.55;color:var(--ink-2);max-width:62ch;font-weight:300;}
+.section-green .lede,.section-red .lede,.section-black .lede{color:rgba(251,250,246,.86);}
 
-.b-pull{background:var(--ivory);text-align:center;padding:clamp(4rem,6vw,6rem) 0}
-.b-pull p{font-family:var(--serif);font-style:italic;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;max-width:26ch;margin:0 auto;color:var(--navy)}
-.b-pull p em{color:var(--terra-deep)}
+/* Gold hairline rule */
+.rule-gold{width:64px;height:1px;background:var(--gold);margin:0 0 1.4rem 0;}
 
-.b-pillars{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
-.b-pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
-@media (max-width:960px){.b-pillar-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:640px){.b-pillar-grid{grid-template-columns:1fr}}
-.b-pillar{background:var(--white);border:1px solid var(--gold-line-soft);padding:2.2rem 2rem;position:relative}
-.b-pillar .b-pillar-num{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--gold-deep);position:absolute;top:1.6rem;right:1.6rem}
-.b-pillar h3{font-family:var(--serif);font-size:1.5rem;color:var(--navy);margin-bottom:.8rem;line-height:1.15;max-width:14ch}
-.b-pillar p{font-size:1rem;line-height:1.6;color:var(--on-light-soft)}
+/* Top urgency strip */
+.top-strip{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;padding:.55rem 0;text-align:center;border-bottom:1px solid var(--gold-line);}
+.top-strip .dot{display:inline-block;width:6px;height:6px;background:var(--red-bright);border-radius:50%;margin:0 .8rem;vertical-align:middle;}
 
-.b-corrections{background:var(--cream);padding:clamp(4rem,7vw,7rem) 0}
-.b-corr{max-width:820px;margin:0 auto 2rem;background:var(--white);border:1px solid var(--gold-line-soft);padding:2rem 2.4rem;box-shadow:0 8px 24px rgba(58,14,18,.06)}
-.b-corr .b-corr-user{background:var(--paper);padding:.9rem 1.1rem;border-left:3px solid var(--terra);font-family:var(--sans);color:var(--on-light);margin-bottom:1rem;font-size:1rem}
-.b-corr .b-corr-user::before{content:"You";display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra-deep);margin-bottom:.35rem;font-weight:600}
-.b-corr .b-corr-bot{background:var(--navy);color:var(--on-dark);padding:.9rem 1.1rem;border-left:3px solid var(--gold-soft);font-family:var(--serif);font-style:italic;font-size:1.05rem}
-.b-corr .b-corr-bot::before{content:"Biagio";display:block;font-family:var(--sans);font-style:normal;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.35rem;font-weight:600}
-.b-corr .b-corr-note{margin-top:1rem;font-size:.9rem;color:var(--on-light-soft);border-top:1px dashed var(--light-line);padding-top:1rem}
-.b-corr .b-corr-note strong{color:var(--terra-deep);font-family:var(--serif);font-style:italic;font-weight:600}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--paper);background:var(--ink);}
+.hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.55) 0%,rgba(11,11,13,.35) 40%,rgba(11,11,13,.82) 100%);z-index:1;}
+.hero .hero-wrap{position:relative;z-index:2;width:100%;padding:0 clamp(1.2rem,4vw,3rem) clamp(3rem,7vw,6rem);}
+.hero-eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:.42em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1.4rem;}
+.hero-h1{font-family:var(--serif);font-weight:700;font-size:clamp(4.4rem,10vw,9.2rem);line-height:.94;letter-spacing:-.025em;margin:0 0 1.6rem 0;max-width:16ch;}
+.hero-h1 .ital{font-style:italic;font-weight:500;color:var(--cream-accent);}
+.hero-sub{font-size:clamp(1.15rem,1.6vw,1.5rem);line-height:1.5;max-width:56ch;color:rgba(251,250,246,.88);font-weight:300;margin:0 0 2rem 0;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
+.hero-trust{position:absolute;top:clamp(1rem,3vw,2rem);right:clamp(1rem,3vw,2.4rem);z-index:3;display:flex;align-items:center;gap:.7rem;font-size:.82rem;color:var(--paper);background:rgba(11,11,13,.4);backdrop-filter:blur(6px);padding:.55rem .95rem;border:1px solid rgba(255,255,255,.15);border-radius:2px;}
+.hero-trust .stars{color:#F5B93B;letter-spacing:.05em;}
+.hero-live{position:absolute;bottom:clamp(1rem,3vw,2rem);left:clamp(1.2rem,4vw,3rem);z-index:3;display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--paper);}
+.hero-live .live-dot{width:8px;height:8px;background:var(--red-bright);border-radius:50%;box-shadow:0 0 0 0 rgba(199,32,46,.6);animation:pulse 2s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(199,32,46,.6);}70%{box-shadow:0 0 0 14px rgba(199,32,46,0);}100%{box-shadow:0 0 0 0 rgba(199,32,46,0);}}
 
-.b-culture{background:var(--navy);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0}
-.b-culture-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-@media (max-width:900px){.b-culture-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.b-culture-grid{grid-template-columns:1fr}}
-.b-culture-tile{aspect-ratio:4/3;position:relative;overflow:hidden;border:1px solid var(--gold-line-soft);cursor:pointer}
-.b-culture-tile img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-.b-culture-tile:hover img{transform:scale(1.05)}
-.b-culture-tile .b-ct-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,8,11,.1) 40%,rgba(34,8,11,.85));display:flex;align-items:flex-end;padding:1.4rem 1.6rem}
-.b-culture-tile h4{font-family:var(--serif);font-style:italic;font-size:1.7rem;color:var(--gold-soft);line-height:1;margin:0}
-.b-culture-tile .b-ct-sub{position:absolute;top:1.4rem;left:1.6rem;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--on-dark-soft)}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.6rem;font-family:var(--sans);font-weight:500;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;border-radius:0;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease;}
+.btn-primary{background:var(--green);color:var(--paper);}
+.btn-primary:hover{background:var(--green-deep);transform:translateY(-1px);}
+.btn-red{background:var(--red);color:var(--paper);}
+.btn-red:hover{background:var(--red-deep);}
+.btn-ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.5);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.btn-ghost-dark{background:transparent;color:var(--ink);border-color:var(--ink);}
+.btn-ghost-dark:hover{background:var(--ink);color:var(--paper);}
+.btn-lg{padding:1.2rem 2rem;font-size:1rem;}
 
-.b-voice{background:var(--ivory);padding:clamp(4rem,7vw,7rem) 0}
-.b-voice-card{max-width:720px;margin:0 auto;background:var(--white);border:1px solid var(--gold-line-soft);padding:2.4rem;text-align:center}
-.b-voice-prompt{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--navy);margin-bottom:2rem;line-height:1.3}
-.b-voice-play{display:inline-flex;align-items:center;gap:1rem;background:var(--navy);color:var(--on-dark);padding:1.2rem 2rem;border:1px solid var(--gold-line);cursor:pointer;font-family:var(--sans);letter-spacing:.06em;text-transform:uppercase;font-size:.85rem}
-.b-voice-play:hover{background:var(--navy-soft)}
-.b-voice-play .b-play-icon{width:2.4rem;height:2.4rem;border:1px solid var(--gold-soft);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--gold-soft)}
-.b-voice-note{margin-top:2rem;font-size:.95rem;color:var(--on-light-soft);max-width:52ch;margin-left:auto;margin-right:auto}
+/* Course card GRID — edge-to-edge, hairline borders */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:1100px){.cg{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.cg{grid-template-columns:1fr;}}
+.cg-track{grid-column:1/-1;background:var(--ink);color:var(--paper);padding:1.4rem clamp(1.2rem,3vw,2rem);font-family:var(--serif);font-style:italic;font-size:1.4rem;letter-spacing:.02em;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem;}
+.cg-track .track-meta{font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
+.cc{background:var(--paper);color:var(--ink);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2rem clamp(1.2rem,2vw,1.7rem) 1.6rem;display:flex;flex-direction:column;min-height:380px;position:relative;transition:background .18s ease;}
+.cc:hover{background:var(--cream);}
+.cc-price{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--red);margin-bottom:.15rem;letter-spacing:-.01em;}
+.cc-price small{font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:400;margin-left:.35rem;}
+.cc-badge{display:inline-block;font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green-deep);border:1px solid var(--green);padding:.28rem .55rem;margin-bottom:1rem;align-self:flex-start;}
+.cc-title{font-family:var(--serif);font-size:1.65rem;font-weight:600;line-height:1.05;margin-bottom:.35rem;letter-spacing:-.01em;}
+.cc-sub{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--red-deep);margin-bottom:.9rem;line-height:1.3;}
+.cc-meta{font-family:var(--sans);font-size:.78rem;color:var(--ink-2);letter-spacing:.01em;margin-bottom:1.6rem;line-height:1.55;flex-grow:1;}
+.cc-meta .meta-row{display:block;padding:.28rem 0;border-bottom:1px dotted rgba(11,11,13,.15);}
+.cc-meta .meta-row:last-child{border:0;}
+.cc-enroll{display:inline-flex;align-items:center;justify-content:space-between;background:var(--green);color:var(--paper);padding:.85rem 1.1rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-top:auto;transition:background .18s ease;}
+.cc-enroll:hover{background:var(--green-deep);}
+.cc-enroll .arrow{font-family:var(--serif);font-style:italic;font-size:1.2rem;}
 
-.b-method{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
-.b-method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
-@media (max-width:960px){.b-method-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.b-method-grid{grid-template-columns:1fr}}
-.b-method-col{padding:2rem 1.6rem;border-top:2px solid var(--gold);background:var(--white)}
-.b-method-col .b-method-num{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:1.4rem;margin-bottom:.6rem}
-.b-method-col h3{font-family:var(--serif);font-size:1.35rem;color:var(--navy);margin-bottom:.6rem;line-height:1.15}
-.b-method-col p{font-size:.98rem;line-height:1.6;color:var(--on-light-soft)}
+/* Stats row */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);}
+@media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr);}}
+.stat{padding:1.6rem 1.2rem;text-align:center;border-right:1px solid var(--gold-line);}
+.stat:last-child{border-right:0;}
+.stat-num{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.35rem;}
+.stat-lab{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);}
+.section-black .stat-num,.section-green .stat-num,.section-red .stat-num{color:var(--cream-accent);}
+.section-black .stat-lab,.section-green .stat-lab,.section-red .stat-lab{color:rgba(251,250,246,.65);}
 
-.b-moments{background:var(--cream);padding:clamp(4rem,7vw,7rem) 0}
-.b-moments-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-@media (max-width:960px){.b-moments-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.b-moments-grid{grid-template-columns:1fr}}
-.b-moment{background:var(--white);border:1px solid var(--gold-line-soft);padding:2rem 1.6rem;position:relative}
-.b-moment .b-moment-time{font-family:var(--serif);font-style:italic;color:var(--terra-deep);font-size:1.1rem;margin-bottom:.6rem}
-.b-moment h3{font-family:var(--serif);font-size:1.35rem;color:var(--navy);margin-bottom:.6rem;line-height:1.2}
-.b-moment p{font-size:.95rem;line-height:1.6;color:var(--on-light-soft)}
+/* Syllabus table (IIBS academic register) */
+.syllabus-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.92rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:2rem;}
+.syllabus-table thead th{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-align:left;padding:1rem 1.1rem;border-right:1px solid rgba(255,255,255,.1);}
+.syllabus-table tbody td{padding:1.1rem 1.1rem;border-bottom:1px solid rgba(11,11,13,.1);border-right:1px solid rgba(11,11,13,.08);vertical-align:top;line-height:1.5;}
+.syllabus-table tbody tr:nth-child(even) td{background:var(--cream);}
+.syllabus-table .lesson-num{font-family:var(--serif);font-size:1.4rem;color:var(--red);font-weight:600;width:70px;}
+.syllabus-table .topic{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--ink);width:22%;}
+.syllabus-table .grammar{font-family:var(--sans);font-size:.9rem;color:var(--ink-2);}
+.syllabus-table .culture{font-family:var(--sans);font-size:.88rem;color:var(--green-deep);font-style:italic;width:26%;}
 
-.b-faq{background:var(--navy);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0}
-.b-faq-list{max-width:820px;margin:0 auto}
-.b-faq details{border-bottom:1px solid var(--gold-line-soft);padding:1.6rem 0}
-.b-faq summary{cursor:pointer;font-family:var(--serif);font-size:1.35rem;color:var(--gold-soft);list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
-.b-faq summary::-webkit-details-marker{display:none}
-.b-faq summary::after{content:"+";color:var(--gold-soft);font-size:1.5rem;font-family:var(--sans);font-weight:300}
-.b-faq details[open] summary::after{content:"−"}
-.b-faq details p{margin-top:1rem;font-size:1.05rem;line-height:1.7;color:var(--on-dark-soft)}
+/* At-a-glance academic table */
+.glance{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.98rem;border-top:2px solid var(--ink);}
+.glance tr td{padding:1.05rem 0;border-bottom:1px solid rgba(11,11,13,.14);vertical-align:top;}
+.glance tr td:first-child{font-family:var(--sans);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:500;width:38%;padding-right:1.4rem;}
+.glance tr td:last-child{font-family:var(--serif);font-size:1.1rem;color:var(--ink);line-height:1.45;}
 
-.b-relation{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
-.b-relation-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto}
-@media (max-width:820px){.b-relation-grid{grid-template-columns:1fr}}
-.b-tier{background:var(--white);border:1px solid var(--gold-line-soft);padding:2.6rem 2.2rem}
-.b-tier .b-tier-num{font-family:var(--serif);font-style:italic;font-size:2.6rem;color:var(--gold-deep);line-height:1;margin-bottom:.8rem}
-.b-tier h3{font-family:var(--serif);font-size:1.8rem;color:var(--navy);margin-bottom:1rem;line-height:1.1}
-.b-tier p{font-size:1.05rem;line-height:1.65;color:var(--on-light-soft);margin-bottom:1rem}
+/* Outcomes list */
+.outcomes{list-style:none;padding:0;margin:2rem 0 0 0;counter-reset:o;}
+.outcomes li{counter-increment:o;padding:1.1rem 0 1.1rem 3.6rem;border-bottom:1px solid rgba(11,11,13,.12);position:relative;font-family:var(--serif);font-size:1.15rem;font-style:italic;line-height:1.4;color:var(--ink);}
+.outcomes li::before{content:counter(o,decimal-leading-zero);position:absolute;left:0;top:1.1rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;color:var(--gold);font-style:normal;font-weight:500;}
 
-.b-final{background:linear-gradient(140deg,var(--terra-deep) 0%,var(--navy) 60%);color:var(--on-dark);text-align:center;padding:clamp(4rem,8vw,8rem) 0}
-.b-final h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.02;margin-bottom:1.4rem;max-width:22ch;margin-left:auto;margin-right:auto}
-.b-final p{font-size:1.2rem;color:var(--on-dark-soft);max-width:52ch;margin:0 auto 2.4rem;line-height:1.55}
+/* Frames */
+.zoom-frame{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.6rem;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);}
+.zoom-frame img{width:100%;display:block;border-radius:3px;}
+.cert-frame{background:var(--paper);border:1px solid rgba(11,11,13,.12);padding:1rem;box-shadow:0 40px 80px -30px rgba(11,11,13,.35);}
+.browser-frame{border:1px solid rgba(11,11,13,.15);border-radius:6px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(11,11,13,.25);background:#fff;}
+.browser-chrome{background:#EEE;padding:.55rem .9rem;border-bottom:1px solid rgba(0,0,0,.08);display:flex;gap:.4rem;align-items:center;}
+.browser-chrome span{width:10px;height:10px;border-radius:50%;background:#ccc;}
+.browser-chrome span:first-child{background:#F35B5B;}
+.browser-chrome span:nth-child(2){background:#F5B93B;}
+.browser-chrome span:nth-child(3){background:#4CC26A;}
+.browser-chrome .url{margin-left:.9rem;font-family:var(--sans);font-size:.74rem;color:#666;}
+
+/* Teacher tiles */
+.teacher-wall{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid rgba(255,255,255,.14);border-left:1px solid rgba(255,255,255,.14);}
+@media (max-width:1100px){.teacher-wall{grid-template-columns:repeat(4,1fr);}}
+@media (max-width:640px){.teacher-wall{grid-template-columns:repeat(2,1fr);}}
+.tt{border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);padding:1.5rem 1.1rem;text-align:center;}
+.tt img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.15);margin-bottom:.9rem;}
+.tt .tt-region{font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
+.tt .tt-name{font-family:var(--serif);font-size:1.25rem;margin:.35rem 0 .25rem;color:var(--paper);}
+.tt .tt-cred{font-family:var(--sans);font-size:.75rem;color:rgba(251,250,246,.65);}
+
+/* Two-col editorial */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start;}
+@media (max-width:900px){.two-col{grid-template-columns:1fr;}}
+
+/* Pricing */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.pricing{grid-template-columns:1fr;}}
+.tier{background:var(--paper);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2.4rem 1.8rem 2rem;position:relative;}
+.tier.featured{border:2px solid var(--green);background:linear-gradient(180deg,var(--paper) 0%,#EFF6F1 100%);}
+.tier .tier-badge{position:absolute;top:-13px;left:1.8rem;background:var(--green);color:var(--paper);font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;padding:.35rem .75rem;font-weight:500;}
+.tier-name{font-family:var(--serif);font-size:1.5rem;margin-bottom:.4rem;}
+.tier-price{font-family:var(--serif);font-size:3rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.2rem;}
+.tier-price small{font-family:var(--sans);font-size:.75rem;color:var(--ink-2);letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin-left:.35rem;}
+.tier-sub{font-family:var(--sans);font-size:.85rem;color:var(--ink-2);margin-bottom:1.4rem;}
+.tier ul{list-style:none;padding:0;margin:0 0 1.6rem 0;}
+.tier ul li{padding:.55rem 0 .55rem 1.5rem;border-bottom:1px dotted rgba(11,11,13,.14);font-size:.92rem;position:relative;}
+.tier ul li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;}
+
+/* FAQ */
+.faq{border-top:1px solid var(--ink);}
+.faq details{border-bottom:1px solid rgba(11,11,13,.15);padding:1.4rem 0;}
+.faq summary{list-style:none;cursor:pointer;font-family:var(--serif);font-size:1.35rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-family:var(--sans);font-size:1.6rem;color:var(--gold);font-weight:300;}
+.faq details[open] summary::after{content:"−";}
+.faq details p{margin-top:1rem;font-size:1rem;color:var(--ink-2);line-height:1.65;max-width:70ch;}
+
+/* Culture tile grid */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.tiles{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.tiles{grid-template-columns:1fr;}}
+.tile{position:relative;aspect-ratio:1/1;overflow:hidden;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+.tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(.08);transition:transform .5s ease;}
+.tile:hover img{transform:scale(1.04);}
+.tile .tile-content{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,0) 40%,rgba(11,11,13,.75) 100%);padding:1.4rem;display:flex;flex-direction:column;justify-content:flex-end;color:var(--paper);}
+.tile .tile-title{font-family:var(--serif);font-style:italic;font-size:1.9rem;line-height:1.05;margin-bottom:.2rem;}
+.tile .tile-sub{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-accent);}
+
+/* Trustpilot review card grid */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(11,11,13,.14);border:1px solid rgba(11,11,13,.14);}
+@media (max-width:900px){.reviews{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.reviews{grid-template-columns:1fr;}}
+.review{background:var(--paper);padding:1.6rem;}
+.review .stars{color:#F5B93B;letter-spacing:.06em;font-size:.95rem;margin-bottom:.6rem;}
+.review .rev-title{font-family:var(--serif);font-size:1.15rem;margin-bottom:.6rem;}
+.review .rev-body{font-size:.92rem;color:var(--ink-2);line-height:1.55;margin-bottom:.9rem;}
+.review .rev-author{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+
+/* Alumni cards */
+.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.alumni{grid-template-columns:1fr;}}
+.alum{padding:1.8rem;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper);}
+.alum img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:1rem;}
+.alum .quote{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.4;color:var(--ink);margin-bottom:.9rem;}
+.alum .attr{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);}
+
+/* Sticky bottom enroll bar */
+.enroll-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);padding:.85rem clamp(1rem,3vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:80;border-top:1px solid var(--gold-line);transform:translateY(100%);transition:transform .35s ease;}
+.enroll-bar.show{transform:translateY(0);}
+.enroll-bar .eb-left{font-family:var(--serif);font-style:italic;font-size:1rem;}
+.enroll-bar .eb-price{font-family:var(--serif);font-weight:600;color:var(--cream-accent);margin:0 .8rem;}
+.enroll-bar .btn{padding:.7rem 1.2rem;font-size:.8rem;}
+
+/* Includes list */
+.includes{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;list-style:none;padding:0;margin:2rem 0 0;}
+@media (max-width:700px){.includes{grid-template-columns:1fr;}}
+.includes li{padding:.9rem 0 .9rem 1.8rem;border-bottom:1px solid rgba(11,11,13,.1);font-family:var(--sans);font-size:.98rem;position:relative;}
+.includes li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;font-size:1.1rem;}
+
+/* Section head */
+.section-head{max-width:820px;margin:0 0 3rem 0;}
+.section-head.center{margin:0 auto 3rem;text-align:center;}
+
+/* Utility */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;}
+@media (max-width:900px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr;}}
+
+/* Related courses */
+.related{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.related{grid-template-columns:1fr;}}
+
+/* Small badge */
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.42rem .75rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;}
+.chip-green{border-color:var(--green-bright);color:var(--green);background:rgba(30,138,94,.06);}
+.chip-red{border-color:var(--red);color:var(--red);background:rgba(199,32,46,.06);}
+
+/* Video bg utility for non-hero sections */
+.video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.25;}
+
+/* Nav override (works with existing partial) */
+.site-header{background:var(--paper);border-bottom:1px solid rgba(11,11,13,.1);position:sticky;top:0;z-index:70;}
+.site-header .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;}
+.site-header .nav-menu{display:flex;gap:1.4rem;}
+.site-header .nav-link{font-family:var(--sans);font-size:.86rem;color:var(--ink);letter-spacing:.02em;}
+.site-header .nav-link:hover{color:var(--red);}
+.site-header .lt-main{font-family:var(--serif);font-size:1.5rem;color:var(--red);font-weight:600;}
+.site-header .lt-sub{font-family:var(--sans);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);display:block;margin-top:2px;}
+.site-header .nav-cta{background:var(--green);color:var(--paper);border:0;padding:.7rem 1.2rem;font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;}
+.site-header .nav-toggle{display:none;background:transparent;border:0;flex-direction:column;gap:4px;cursor:pointer;padding:.4rem;}
+.site-header .nav-toggle span{width:24px;height:2px;background:var(--ink);display:block;}
+@media (max-width:900px){.site-header .nav-menu{display:none;}.site-header .nav-toggle{display:flex;}}
+.nav-drawer{display:none;}
+
+.site-footer{background:var(--ink);color:var(--paper);padding:4rem 0 2rem;margin-top:0;}
+.site-footer a{color:rgba(251,250,246,.7);display:block;padding:.28rem 0;font-size:.88rem;}
+.site-footer a:hover{color:var(--cream-accent);}
+.site-footer .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.08);}
+@media (max-width:900px){.site-footer .footer-top{grid-template-columns:1fr 1fr;}}
+.site-footer h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1rem;}
+.site-footer p{color:rgba(251,250,246,.72);font-size:.9rem;}
 </style>
 
 </head><body>
+<div class="top-strip"><span>Fall Cohort · Enrolment closes Oct 3</span><span class="dot"></span><span>Founder Rate · Save $220 on Annual</span><span class="dot"></span><span>7-Day Money-Back Guarantee</span></div>
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="index.html" aria-label="Club Italia — home">
@@ -142,152 +313,53 @@
 </aside>
 
 
-
-<!-- FOLD 1 · HERO -->
-<section class="b-hero"><div class="b-hero-grid">
-<div class="b-hero-copy reveal">
-<span class="eyebrow eyebrow-line">Available 24 hours, in any timezone</span>
-<h1>Meet <em>Biagio,</em> your Italian coach.</h1>
-<p class="b-tag">Il tuo insegnante privato che non dorme mai.</p>
-<p class="b-sub">Biagio is your AI Italian tutor. A forty-two-year-old Roman with a warm voice, a strict method, and unlimited patience. He does not sleep, he does not lose interest, he does not switch to English when the going gets hard. He speaks Italian, and he speaks it with you.</p>
-<div class="hero-ctas"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button><a class="btn btn-3d btn-3d-ghost" href="#chat">Chat with Biagio</a></div>
-</div>
-<div class="b-portrait reveal reveal-d1"><img src="assets/img/biagio.png" alt="Portrait of Biagio, the AI Italian tutor of Club Italia"></div>
-</div></section>
-
-<!-- FOLD 2 · PULL QUOTE -->
-<section class="b-pull reveal">
-<p>Not a chatbot. <em>A precision Italian coach,</em> engineered for the way adults actually learn a language.</p>
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg"><source src="assets/video/roma-piazza.mp4" type="video/mp4"></video>
+  <div class="hero-scrim"></div>
+  <div class="hero-trust"><span class="stars">★★★★★</span> <strong>4.8</strong> · Trustpilot · 1,284 reviews</div>
+  <div class="hero-live"><span class="live-dot"></span> Live class in session · 12 learners</div>
+  <div class="hero-wrap">
+    <div class="hero-eyebrow">Biagio · The AI Tutor</div>
+    <h1 class="hero-h1">Italian on demand,<br><span class="ital">between classes.</span></h1>
+    <p class="hero-sub">Biagio is the Club Italia AI tutor. Trained on our own syllabus, calibrated to your CEFR level, and answering in Italian, twenty-four hours a day. When a class ends on Monday night, Biagio picks up the sentence you tripped on.</p>
+    <div class="hero-ctas"><a href="#try" class="btn btn-primary btn-lg">See Biagio in Action</a></div>
+  </div>
+</section>
+<section class="section-cream" style="padding:2.4rem 0;"><div class="wrap"><div class="stats "><div class="stat"><div class="stat-num">24/7</div><div class="stat-lab">in Italian</div></div><div class="stat"><div class="stat-num">A0-B2</div><div class="stat-lab">CEFR calibrated</div></div><div class="stat"><div class="stat-num">0.4 sec</div><div class="stat-lab">average response</div></div><div class="stat"><div class="stat-num">Included</div><div class="stat-lab">in every plan</div></div></div></div></section>
+<section class="section-white">
+  <div class="wrap">
+    <div class="two-col" style="align-items:center;">
+      <div class="zoom-frame"><img src="assets/img/screen-biagio.svg" alt="Biagio AI tutor chat interface"></div>
+      <div>
+        <div class="section-eyebrow">What Biagio is</div>
+        <h2 class="h-display">A tutor,<br>not a <span class="ital">chatbot.</span></h2>
+        <p class="lede">Biagio is fine-tuned on the full Club Italia syllabus, on twelve years of teacher corrections, and on the CEFR descriptors that anchor our certifications. When you make a mistake, Biagio does not guess the correction. Biagio names the grammar rule you missed, points at the descriptor it references, and asks you to try again.</p>
+        <ul class="includes" style="margin-top:1.4rem;">
+          <li>Real-time corrections in Italian</li>
+          <li>Grammar rule attached to every correction</li>
+          <li>Vocabulary drills at your CEFR level</li>
+          <li>Writing feedback on your homework</li>
+          <li>Voice mode for pronunciation practice</li>
+          <li>All conversations reviewed weekly by your teacher</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- FOLD 3 · 6 PILLARS -->
-<section class="b-pillars">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">What Biagio Does</span><h2 class="display-md" style="color:var(--navy)">Everything a private tutor does, and nothing they cannot.</h2></div>
-<div class="b-pillar-grid">
-<div class="b-pillar reveal"><span class="b-pillar-num">i</span><h3>Conversation Practice</h3><p>Free-form talk on any topic at your level, from the first minute. Biagio adapts to your vocabulary, not the other way around.</p></div>
-<div class="b-pillar reveal reveal-d1"><span class="b-pillar-num">ii</span><h3>Instant Correction</h3><p>Every mistake noted and corrected gently, in Italian, with the reason why. Never with a red pen. Always with an alternative.</p></div>
-<div class="b-pillar reveal reveal-d2"><span class="b-pillar-num">iii</span><h3>Pronunciation Coaching</h3><p>Speak into your microphone. Biagio hears you, models the correct sound, and asks you to try again until it sits right.</p></div>
-<div class="b-pillar reveal"><span class="b-pillar-num">iv</span><h3>Vocabulary in Context</h3><p>Culturally grounded vocabulary, always in a real sentence, always attached to a real Italian object. Never in flashcards.</p></div>
-<div class="b-pillar reveal reveal-d1"><span class="b-pillar-num">v</span><h3>Cultural Questions</h3><p>Ask about calcio, cinema, cucina, opera, arte, politica. Biagio answers in Italian, at your level, with a real Italian's point of view.</p></div>
-<div class="b-pillar reveal reveal-d2"><span class="b-pillar-num">vi</span><h3>Homework and Class Prep</h3><p>Preview tomorrow's live class, review yesterday's homework, or drill the one point that did not stick. Your teacher's ally, all week long.</p></div>
-</div></div></section>
-
-<!-- FOLD 4 · INTERACTIVE CHAT DEMO -->
-<section class="section-dark" id="chat">
-<div class="wrap-narrow">
-<div class="section-head reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Try it now</span><h2 class="display-md">Try Biagio for one minute.</h2><p class="lead" style="color:var(--on-dark-soft)">A short live demonstration of the way Biagio corrects, praises and guides. Type something below in Italian, or in English if you must.</p></div>
-<div class="form-card" style="background:var(--navy-soft);border-color:var(--gold-line);max-width:640px">
-<div id="biagio-chat-msgs" style="min-height:220px;max-height:400px;overflow-y:auto;background:var(--navy-deep);padding:1.2rem;margin-bottom:1rem;color:var(--on-dark);font-size:.98rem">
-<div class="chat-msg bot" style="padding:.6rem 0;color:var(--gold-soft);font-style:italic;font-family:var(--serif);font-size:1.1rem">Ciao! Sono Biagio. Try ordering an espresso in Italian.</div>
-</div>
-<form id="biagio-chat-form" style="display:flex;gap:.5rem"><input type="text" placeholder="Scrivi qui in italiano..." style="flex:1"><button class="btn btn-3d btn-3d-primary" type="submit">Send</button></form>
-</div>
-</div></section>
-
-<!-- FOLD 5 · HOW BIAGIO CORRECTS -->
-<section class="b-corrections">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">How Biagio Corrects</span><h2 class="display-md" style="color:var(--navy)">Three ways he moves you forward.</h2><p class="lead">Correction, done badly, kills a learner. Biagio was trained to correct the way a warm human tutor corrects, with an alternative, a reason, and one small next step.</p></div>
-
-<div class="b-corr reveal">
-<div class="b-corr-user">Io ho andato a Roma la settimana scorsa.</div>
-<div class="b-corr-bot">Quasi. Si dice sono andato, perché andare vuole l'ausiliare essere. Prova ancora, con la stessa frase.</div>
-<div class="b-corr-note"><strong>The pattern.</strong> Biagio never says "wrong." He offers the correct form, gives a one-line reason, and asks you to try again. The whole exchange happens in Italian.</div>
-</div>
-
-<div class="b-corr reveal reveal-d1">
-<div class="b-corr-user">Vorrei un espresso, per piacere.</div>
-<div class="b-corr-bot">Perfetto. Piccola nota, in Italia diciamo di solito per favore o per cortesia. Per piacere si capisce ma è raro. Ripetiamo, ordina anche un cornetto.</div>
-<div class="b-corr-note"><strong>The pattern.</strong> When you are technically right but not idiomatic, Biagio celebrates first, then nudges. He never withholds praise for a technical improvement.</div>
-</div>
-
-<div class="b-corr reveal reveal-d2">
-<div class="b-corr-user">Domani io vado al cinema con mio amico Marco.</div>
-<div class="b-corr-bot">Bene. Un piccolo dettaglio, con l'amico si dice il mio amico Marco, tranne quando è tuo padre, tua madre, tuo fratello. È una regola strana, lo so. Riprova.</div>
-<div class="b-corr-note"><strong>The pattern.</strong> When the rule is genuinely counterintuitive, Biagio names that it is counterintuitive. That single acknowledgement is what separates a good tutor from a good textbook.</div>
-</div>
-</div></section>
-
-<!-- FOLD 6 · CULTURAL RANGE -->
-<section class="b-culture">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Biagio's Cultural Range</span><h2 class="display-md">Six worlds. One conversation.</h2><p class="lead" style="color:var(--on-dark-soft)">Ask Biagio about any of these and he will answer in Italian, at your level, with a real Italian's opinion, not a search engine's summary.</p></div>
-<div class="b-culture-grid">
-<div class="b-culture-tile reveal"><img src="assets/img/pillar-tradition.jpg" alt="Calcio"><span class="b-ct-sub">01</span><div class="b-ct-overlay"><h4>Calcio</h4></div></div>
-<div class="b-culture-tile reveal reveal-d1"><img src="assets/img/pillar-cinema.jpg" alt="Cinema"><span class="b-ct-sub">02</span><div class="b-ct-overlay"><h4>Cinema</h4></div></div>
-<div class="b-culture-tile reveal reveal-d2"><img src="assets/img/pillar-food.jpg" alt="Cucina"><span class="b-ct-sub">03</span><div class="b-ct-overlay"><h4>Cucina</h4></div></div>
-<div class="b-culture-tile reveal"><img src="assets/img/pillar-opera.jpg" alt="Opera"><span class="b-ct-sub">04</span><div class="b-ct-overlay"><h4>Opera</h4></div></div>
-<div class="b-culture-tile reveal reveal-d1"><img src="assets/img/pillar-art.jpg" alt="Arte"><span class="b-ct-sub">05</span><div class="b-ct-overlay"><h4>Arte</h4></div></div>
-<div class="b-culture-tile reveal reveal-d2"><img src="assets/img/pillar-travel.jpg" alt="Politica"><span class="b-ct-sub">06</span><div class="b-ct-overlay"><h4>Politica</h4></div></div>
-</div></div></section>
-
-<!-- FOLD 7 · VOICE / PRONUNCIATION -->
-<section class="b-voice">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Voice and Pronunciation</span><h2 class="display-md" style="color:var(--navy)">Biagio hears you. Then he corrects you.</h2><p class="lead">Speak into your microphone. Biagio models the correct Italian phrasing, plays it back at your speed, and asks you to try it again. The whole loop takes ten seconds.</p></div>
-<div class="b-voice-card reveal">
-<p class="b-voice-prompt">"Vorrei un caffè macchiato, per favore."</p>
-<button class="b-voice-play" type="button"><span class="b-play-icon">▶</span><span>Listen to Biagio pronounce this</span></button>
-<p class="b-voice-note">Full voice interaction is available on desktop and mobile inside your Club Italia dashboard. This demo is a preview.</p>
-</div>
-</div></section>
-
-<!-- FOLD 8 · METHOD (4 PILLARS) -->
-<section class="b-method">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Biagio's Method</span><h2 class="display-md" style="color:var(--navy)">Four rules Biagio never breaks.</h2></div>
-<div class="b-method-grid">
-<div class="b-method-col reveal"><div class="b-method-num">i.</div><h3>Italian, always</h3><p>Biagio does not translate. When you do not know a word, he describes it in easier Italian. That constraint is what makes fluency happen.</p></div>
-<div class="b-method-col reveal reveal-d1"><div class="b-method-num">ii.</div><h3>Correction with an alternative</h3><p>He never says "wrong." He offers the correct form, a one-line reason, and asks you to try again. Confidence is a resource, and he protects it.</p></div>
-<div class="b-method-col reveal reveal-d2"><div class="b-method-num">iii.</div><h3>Culture inside every sentence</h3><p>The example sentences arrive from a real Italian life, a tabaccheria, a piazza, a nonna's kitchen. Vocabulary attached to place stays.</p></div>
-<div class="b-method-col reveal reveal-d3"><div class="b-method-num">iv.</div><h3>Small steps, held for years</h3><p>He remembers what you learned last week and reintroduces it this week. Spaced retrieval, quiet, deliberate, built into every conversation.</p></div>
-</div></div></section>
-
-<!-- FOLD 9 · WHEN BIAGIO HELPS -->
-<section class="b-moments">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">When Biagio Helps</span><h2 class="display-md" style="color:var(--navy)">He lives in the moments between class.</h2></div>
-<div class="b-moments-grid">
-<div class="b-moment reveal"><div class="b-moment-time">Before class</div><h3>Preview</h3><p>Ten minutes with Biagio before you sit down with your teacher. Pre-loaded with tomorrow's vocabulary so you arrive already warm.</p></div>
-<div class="b-moment reveal reveal-d1"><div class="b-moment-time">After class</div><h3>Review</h3><p>The point that did not click, drilled one on one, no other learners watching, at your own pace, for as long as you need.</p></div>
-<div class="b-moment reveal reveal-d2"><div class="b-moment-time">Between classes</div><h3>Practice</h3><p>Fifteen minutes a day of real conversation with Biagio doubles the effective speaking hours in your Italian week. Quietly, without ceremony.</p></div>
-<div class="b-moment reveal reveal-d3"><div class="b-moment-time">03:14 in your timezone</div><h3>Insomnia</h3><p>When the moment hits and you want to speak Italian, Biagio is awake, at his desk, coffee in hand, ready to talk about Sorrentino's latest film.</p></div>
-</div></div></section>
-
-<!-- FOLD 10 · FAQ -->
-<section class="b-faq">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Questions about Biagio</span><h2 class="display-md">The things everyone asks first.</h2></div>
-<div class="b-faq-list">
-<details reveal><summary>Is Biagio a real person?</summary><p>No. Biagio is an artificial tutor, engineered by our academic team and voiced by an Italian actor. He is designed to behave like a warm, patient Italian tutor from Roma, and he is with you at any hour. He is not, and does not pretend to be, a human being.</p></details>
-<details><summary>Can Biagio replace my live teacher?</summary><p>No, and we do not want him to. Biagio replaces the private tutor you cannot afford at four in the morning. Your live teacher, Chiara or Marco or Sofia, is the human presence that gives your week its shape. Biagio fills the gaps between.</p></details>
-<details><summary>Does Biagio speak English?</summary><p>Only in emergencies. Ninety-nine per cent of the time he answers in Italian, adjusted to your level. That constraint is deliberate. It is the single most important reason our students become fluent.</p></details>
-<details><summary>How does Biagio correct me?</summary><p>He offers the correct form, a one-line reason, and asks you to try again, all in Italian. He never says "wrong." He never withholds praise for a technical improvement.</p></details>
-<details><summary>Is Biagio included in my Club Italia enrolment?</summary><p>Yes. Every Club Italia student gets unlimited access to Biagio, on desktop and mobile, for the length of their enrolment. There is no additional fee and no separate app.</p></details>
-</div>
-</div></section>
-
-<!-- FOLD 11 · TWO TIERS -->
-<section class="b-relation">
-<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Biagio and Your Teacher</span><h2 class="display-md" style="color:var(--navy)">The two-tier relationship.</h2><p class="lead">Club Italia is designed as a partnership, a human teacher and an AI coach, each doing what the other cannot. This is the shape.</p></div>
-<div class="b-relation-grid">
-<div class="b-tier reveal">
-<div class="b-tier-num">01</div>
-<h3>Your live teacher</h3>
-<p>One hundred minutes a week with a certified native teacher, live, in a small group of no more than twelve. This is where the real learning arc happens, the syllabus, the culture, the correction that only a human eye can catch, the community of classmates who become friends.</p>
-<p>Your teacher knows your name, your work, your goals, the specific mistake you made three weeks ago. They plan the semester. They care about your outcome.</p>
-</div>
-<div class="b-tier reveal reveal-d1">
-<div class="b-tier-num">02</div>
-<h3>Biagio, your daily coach</h3>
-<p>Fifteen minutes a day, at any hour, on any device. This is where the between-class practice happens, the drills that would bore a live teacher, the third and fourth pass at yesterday's grammar, the free-form conversation at three in the morning.</p>
-<p>Biagio does not replace your teacher. He is the private tutor you could never otherwise afford, sitting between your live classes, making sure the hour with your teacher is spent on the hard work, not the housekeeping.</p>
-</div>
-</div></div></section>
-
-<!-- FOLD 12 · FINAL CTA -->
-<section class="b-final"><div class="wrap-narrow reveal">
-<h2>Biagio è sempre qui. <em>Anche adesso.</em></h2>
-<p>A Club Italia advisor will place you, match you with a live teacher, and open your Biagio access on the same day. The consultation is free and takes twenty minutes.</p>
-<div class="hero-ctas" style="justify-content:center;display:flex;flex-wrap:wrap"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button><a class="btn btn-3d btn-3d-ghost" href="#chat">Try Biagio First</a></div>
-</div></section>
-
-
-<footer class="site-footer">
+<section class="section-cream">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">What Biagio is not</div>
+      <h2 class="h-display">Not a replacement for a <span class="ital">teacher.</span></h2>
+    </div>
+    <div class="two-col">
+      <div><p class="lede">Biagio does not replace your Monday and Thursday live classes. Biagio does not write your homework for you. Biagio does not issue certificates. The pedagogy is a human teacher's; Biagio is the between-class practice partner.</p></div>
+      <div><p class="lede">Everything Biagio says is reviewed weekly, in aggregate, by a Club Italia teacher. If Biagio has been drilling you on a rule you have already mastered, your teacher hears about it. If a class of learners keeps making the same mistake with Biagio, the next live lesson adjusts.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section-white"><div class="wrap"><div class="section-head"><div class="section-eyebrow">Questions about Biagio</div><h2 class="h-display">Frequently <span class="ital">asked.</span></h2></div><div class="faq"><details><summary>Is Biagio just ChatGPT?</summary><p>No. Biagio uses a large-language-model backend but is fine-tuned on Club Italia's own syllabus, error corpus and CEFR descriptors. Its instructions, its Italian register and its correction style are Club Italia's.</p></details><details><summary>Will Biagio ever be wrong?</summary><p>Any AI tutor can be wrong. Every Biagio session is reviewed weekly by a Club Italia teacher. Errors flagged by learners are fixed within seven days.</p></details><details><summary>Is Biagio private?</summary><p>Yes. Your conversations with Biagio are visible only to you and to the reviewing teacher at your school. Transcripts are never used for advertising and are never sold.</p></details><details><summary>Which CEFR levels does Biagio cover?</summary><p>A0 through B2. C1 and C2 learners are matched to a human conversation coach instead.</p></details><details><summary>Does Biagio speak my language?</summary><p>Biagio always answers in Italian. If you ask a question in English, Biagio answers in Italian first, then offers a short English gloss on request.</p></details></div></div></section><section id="try" class="section-green"><div class="wrap"><div class="section-head"><div class="section-eyebrow">Meet Biagio</div><h2 class="h-display">Included in every <span class="ital">enrolment.</span></h2><p class="lede">Reserve your placement call. On enrolment, Biagio is on your dashboard from day one.</p></div><div style="margin-top:2rem;"><a href="pricing.html" class="btn btn-primary btn-lg" style="background:var(--paper);color:var(--green-deep);">See Pricing →</a></div></div></section><footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
@@ -376,5 +448,13 @@
   </div>
 </div>
 
-<script src="js/ci.js"></script>
+<script>
+(function(){
+  var bar=document.querySelector('.enroll-bar');if(!bar)return;
+  var shown=false;
+  function on(){var y=window.scrollY;if(y>600&&!shown){bar.classList.add('show');shown=true;}else if(y<=400&&shown){bar.classList.remove('show');shown=false;}}
+  window.addEventListener('scroll',on,{passive:true});
+})();
+</script>
+
 </body></html>

@@ -1,60 +1,276 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Teachers — Seven Native Italian Voices · Club Italia by eTeacher</title><meta name="description" content="Meet the seven certified native Italian teachers of Club Italia, each broadcasting live from a different Italian region — Firenze, Roma, Bologna, Milano, Venezia, Napoli, Palermo.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Our Teachers · Club Italia by eTeacher</title>
+<meta name="description" content="Seven certified Italian teachers, each in their own city. Meet the Club Italia faculty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ci.css">
 
 <style>
-.ti-hero{position:relative;min-height:80vh;background:linear-gradient(120deg,var(--navy-deep) 0%,var(--navy) 60%,var(--terra-deep) 130%);color:var(--on-dark);display:flex;align-items:center;overflow:hidden}
-.ti-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 35%,rgba(201,162,75,.14),transparent 55%);pointer-events:none}
-.ti-hero-content{position:relative;z-index:2;padding:9rem clamp(1.6rem,5vw,6rem) 6rem;max-width:1240px;margin:0 auto;width:100%}
-.ti-hero .eyebrow{color:var(--gold-soft)}
-.ti-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(3rem,6vw,6rem);line-height:1;letter-spacing:-.018em;max-width:22ch;margin:1.4rem 0 2rem}
-.ti-hero h1 em{font-style:italic;color:var(--gold-soft)}
-.ti-hero p{font-size:1.2rem;color:var(--on-dark-soft);max-width:54ch;line-height:1.55;margin-bottom:2rem}
+/* v3 palette override — applied globally until ci.css rebuild lands */
+:root{
+  --red:#B01823; --red-deep:#8B0F1D; --red-bright:#C7202E;
+  --green:#166A47; --green-deep:#0C3B2E; --green-bright:#1E8A5E;
+  --paper:#FBFAF6; --cream:#F3F0E7; --ink:#0B0B0D; --ink-2:#1A1A1E;
+  --gold:#B08640; --gold-line:rgba(176,134,64,.45);
+  --cream-accent:#E6C99B;
+  --serif:'Playfair Display','Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;margin:0;padding:0;}
+*{box-sizing:border-box;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:0;}
+p{margin:0 0 1em 0;}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
+.wrap-narrow{max-width:960px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
+/* sections alternate */
+section{padding:clamp(4rem,8vw,7rem) 0;position:relative;}
+.section-white{background:var(--paper);color:var(--ink);}
+.section-cream{background:var(--cream);color:var(--ink);}
+.section-green{background:var(--green-deep);color:var(--paper);}
+.section-red{background:var(--red-deep);color:var(--paper);}
+.section-black{background:var(--ink);color:var(--paper);}
+.section-green h1,.section-green h2,.section-green h3,
+.section-red h1,.section-red h2,.section-red h3,
+.section-black h1,.section-black h2,.section-black h3{color:var(--paper);}
+.section-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:500;}
+.section-black .section-eyebrow,.section-red .section-eyebrow,.section-green .section-eyebrow{color:var(--cream-accent);}
+.h-display{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.015em;margin-bottom:1.4rem;}
+.h-display .ital{font-style:italic;font-weight:500;color:var(--red);}
+.section-black .h-display .ital,.section-red .h-display .ital,.section-green .h-display .ital{color:var(--cream-accent);}
+.h-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;font-weight:500;}
+.lede{font-size:1.24rem;line-height:1.55;color:var(--ink-2);max-width:62ch;font-weight:300;}
+.section-green .lede,.section-red .lede,.section-black .lede{color:rgba(251,250,246,.86);}
 
-.regional-map{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0;overflow:hidden}
-.rm-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1240px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem)}
-@media (max-width:960px){.rm-grid{grid-template-columns:1fr}}
-.rm-map{position:relative;aspect-ratio:3/4;max-width:520px;margin:0 auto;width:100%}
-.rm-map svg{width:100%;height:100%;display:block}
-.rm-pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer}
-.rm-pin-dot{width:14px;height:14px;background:var(--gold-deep);border:2px solid var(--paper);border-radius:50%;box-shadow:0 3px 10px rgba(58,14,18,.35);animation:pulse-pin 2.2s infinite}
-@keyframes pulse-pin{0%,100%{box-shadow:0 3px 10px rgba(58,14,18,.35),0 0 0 0 rgba(201,162,75,.6)}50%{box-shadow:0 3px 10px rgba(58,14,18,.35),0 0 0 10px rgba(201,162,75,0)}}
-.rm-pin-label{position:absolute;top:100%;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--navy);margin-top:.35rem;background:var(--paper);padding:.15rem .6rem;border-radius:2px}
-.rm-copy h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.05;color:var(--navy);margin-bottom:1.6rem}
-.rm-copy h2 em{font-style:italic;color:var(--gold-deep)}
-.rm-copy p{font-size:1.1rem;line-height:1.7;color:var(--on-light-soft);margin-bottom:1.2rem}
+/* Gold hairline rule */
+.rule-gold{width:64px;height:1px;background:var(--gold);margin:0 0 1.4rem 0;}
 
-.t-grid{background:var(--ivory);padding:clamp(4rem,7vw,7rem) 0}
-.t-grid-inner{max-width:1240px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem)}
-.t-grid-head{max-width:820px;margin:0 auto 3.4rem;text-align:center}
-.t-grid-head .eyebrow{color:var(--gold-deep)}
-.t-grid-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,4.4vw,3.8rem);line-height:1.05;color:var(--navy);margin-top:1rem}
-.t-mag-row{display:grid;grid-template-columns:1.1fr 1fr;gap:0;align-items:stretch;background:var(--white);border:1px solid var(--gold-line-soft);margin-bottom:1.6rem;transition:box-shadow .35s var(--ease),transform .35s var(--ease);overflow:hidden;text-decoration:none;color:inherit}
-.t-mag-row:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(58,14,18,.14)}
-.t-mag-row.rev{grid-template-columns:1fr 1.1fr}
-.t-mag-row.rev .t-mag-photo{order:2}
-.t-mag-row.rev .t-mag-body{order:1}
-@media (max-width:820px){.t-mag-row,.t-mag-row.rev{grid-template-columns:1fr}.t-mag-row.rev .t-mag-photo{order:1}.t-mag-row.rev .t-mag-body{order:2}}
-.t-mag-photo{position:relative;min-height:440px;overflow:hidden;background:var(--cream)}
-.t-mag-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .8s var(--ease)}
-.t-mag-row:hover .t-mag-photo img{transform:scale(1.03)}
-.t-mag-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(34,8,11,.35));pointer-events:none}
-.t-mag-photo .t-mag-num{position:absolute;top:1.4rem;left:1.6rem;font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:2.2rem;z-index:2;text-shadow:0 2px 8px rgba(0,0,0,.4)}
-.t-mag-body{padding:clamp(2rem,4vw,3.4rem);display:flex;flex-direction:column;justify-content:center}
-.t-mag-body .t-mag-region{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.4rem}
-.t-mag-body h3{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1.02;color:var(--navy);margin-bottom:.4rem}
-.t-mag-body h3 em{font-style:italic;color:var(--terra-deep)}
-.t-mag-body .t-mag-teaches{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold-deep);margin-bottom:1.4rem}
-.t-mag-body .t-mag-bio{font-size:1.06rem;line-height:1.65;color:var(--on-light-soft);margin-bottom:1.6rem}
-.t-mag-body .t-mag-link{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);font-weight:600}
+/* Top urgency strip */
+.top-strip{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;padding:.55rem 0;text-align:center;border-bottom:1px solid var(--gold-line);}
+.top-strip .dot{display:inline-block;width:6px;height:6px;background:var(--red-bright);border-radius:50%;margin:0 .8rem;vertical-align:middle;}
 
-.ti-close{background:var(--navy);color:var(--on-dark);text-align:center;padding:clamp(4rem,7vw,7rem) 0}
-.ti-close p.big{font-family:var(--serif);font-style:italic;font-size:clamp(2.4rem,4.4vw,3.6rem);line-height:1.1;color:var(--gold-soft);max-width:26ch;margin:0 auto 2rem}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--paper);background:var(--ink);}
+.hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.55) 0%,rgba(11,11,13,.35) 40%,rgba(11,11,13,.82) 100%);z-index:1;}
+.hero .hero-wrap{position:relative;z-index:2;width:100%;padding:0 clamp(1.2rem,4vw,3rem) clamp(3rem,7vw,6rem);}
+.hero-eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:.42em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1.4rem;}
+.hero-h1{font-family:var(--serif);font-weight:700;font-size:clamp(4.4rem,10vw,9.2rem);line-height:.94;letter-spacing:-.025em;margin:0 0 1.6rem 0;max-width:16ch;}
+.hero-h1 .ital{font-style:italic;font-weight:500;color:var(--cream-accent);}
+.hero-sub{font-size:clamp(1.15rem,1.6vw,1.5rem);line-height:1.5;max-width:56ch;color:rgba(251,250,246,.88);font-weight:300;margin:0 0 2rem 0;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
+.hero-trust{position:absolute;top:clamp(1rem,3vw,2rem);right:clamp(1rem,3vw,2.4rem);z-index:3;display:flex;align-items:center;gap:.7rem;font-size:.82rem;color:var(--paper);background:rgba(11,11,13,.4);backdrop-filter:blur(6px);padding:.55rem .95rem;border:1px solid rgba(255,255,255,.15);border-radius:2px;}
+.hero-trust .stars{color:#F5B93B;letter-spacing:.05em;}
+.hero-live{position:absolute;bottom:clamp(1rem,3vw,2rem);left:clamp(1.2rem,4vw,3rem);z-index:3;display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--paper);}
+.hero-live .live-dot{width:8px;height:8px;background:var(--red-bright);border-radius:50%;box-shadow:0 0 0 0 rgba(199,32,46,.6);animation:pulse 2s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(199,32,46,.6);}70%{box-shadow:0 0 0 14px rgba(199,32,46,0);}100%{box-shadow:0 0 0 0 rgba(199,32,46,0);}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.6rem;font-family:var(--sans);font-weight:500;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;border-radius:0;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease;}
+.btn-primary{background:var(--green);color:var(--paper);}
+.btn-primary:hover{background:var(--green-deep);transform:translateY(-1px);}
+.btn-red{background:var(--red);color:var(--paper);}
+.btn-red:hover{background:var(--red-deep);}
+.btn-ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.5);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.btn-ghost-dark{background:transparent;color:var(--ink);border-color:var(--ink);}
+.btn-ghost-dark:hover{background:var(--ink);color:var(--paper);}
+.btn-lg{padding:1.2rem 2rem;font-size:1rem;}
+
+/* Course card GRID — edge-to-edge, hairline borders */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:1100px){.cg{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.cg{grid-template-columns:1fr;}}
+.cg-track{grid-column:1/-1;background:var(--ink);color:var(--paper);padding:1.4rem clamp(1.2rem,3vw,2rem);font-family:var(--serif);font-style:italic;font-size:1.4rem;letter-spacing:.02em;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem;}
+.cg-track .track-meta{font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
+.cc{background:var(--paper);color:var(--ink);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2rem clamp(1.2rem,2vw,1.7rem) 1.6rem;display:flex;flex-direction:column;min-height:380px;position:relative;transition:background .18s ease;}
+.cc:hover{background:var(--cream);}
+.cc-price{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--red);margin-bottom:.15rem;letter-spacing:-.01em;}
+.cc-price small{font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:400;margin-left:.35rem;}
+.cc-badge{display:inline-block;font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green-deep);border:1px solid var(--green);padding:.28rem .55rem;margin-bottom:1rem;align-self:flex-start;}
+.cc-title{font-family:var(--serif);font-size:1.65rem;font-weight:600;line-height:1.05;margin-bottom:.35rem;letter-spacing:-.01em;}
+.cc-sub{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--red-deep);margin-bottom:.9rem;line-height:1.3;}
+.cc-meta{font-family:var(--sans);font-size:.78rem;color:var(--ink-2);letter-spacing:.01em;margin-bottom:1.6rem;line-height:1.55;flex-grow:1;}
+.cc-meta .meta-row{display:block;padding:.28rem 0;border-bottom:1px dotted rgba(11,11,13,.15);}
+.cc-meta .meta-row:last-child{border:0;}
+.cc-enroll{display:inline-flex;align-items:center;justify-content:space-between;background:var(--green);color:var(--paper);padding:.85rem 1.1rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-top:auto;transition:background .18s ease;}
+.cc-enroll:hover{background:var(--green-deep);}
+.cc-enroll .arrow{font-family:var(--serif);font-style:italic;font-size:1.2rem;}
+
+/* Stats row */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);}
+@media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr);}}
+.stat{padding:1.6rem 1.2rem;text-align:center;border-right:1px solid var(--gold-line);}
+.stat:last-child{border-right:0;}
+.stat-num{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.35rem;}
+.stat-lab{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);}
+.section-black .stat-num,.section-green .stat-num,.section-red .stat-num{color:var(--cream-accent);}
+.section-black .stat-lab,.section-green .stat-lab,.section-red .stat-lab{color:rgba(251,250,246,.65);}
+
+/* Syllabus table (IIBS academic register) */
+.syllabus-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.92rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:2rem;}
+.syllabus-table thead th{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-align:left;padding:1rem 1.1rem;border-right:1px solid rgba(255,255,255,.1);}
+.syllabus-table tbody td{padding:1.1rem 1.1rem;border-bottom:1px solid rgba(11,11,13,.1);border-right:1px solid rgba(11,11,13,.08);vertical-align:top;line-height:1.5;}
+.syllabus-table tbody tr:nth-child(even) td{background:var(--cream);}
+.syllabus-table .lesson-num{font-family:var(--serif);font-size:1.4rem;color:var(--red);font-weight:600;width:70px;}
+.syllabus-table .topic{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--ink);width:22%;}
+.syllabus-table .grammar{font-family:var(--sans);font-size:.9rem;color:var(--ink-2);}
+.syllabus-table .culture{font-family:var(--sans);font-size:.88rem;color:var(--green-deep);font-style:italic;width:26%;}
+
+/* At-a-glance academic table */
+.glance{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.98rem;border-top:2px solid var(--ink);}
+.glance tr td{padding:1.05rem 0;border-bottom:1px solid rgba(11,11,13,.14);vertical-align:top;}
+.glance tr td:first-child{font-family:var(--sans);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:500;width:38%;padding-right:1.4rem;}
+.glance tr td:last-child{font-family:var(--serif);font-size:1.1rem;color:var(--ink);line-height:1.45;}
+
+/* Outcomes list */
+.outcomes{list-style:none;padding:0;margin:2rem 0 0 0;counter-reset:o;}
+.outcomes li{counter-increment:o;padding:1.1rem 0 1.1rem 3.6rem;border-bottom:1px solid rgba(11,11,13,.12);position:relative;font-family:var(--serif);font-size:1.15rem;font-style:italic;line-height:1.4;color:var(--ink);}
+.outcomes li::before{content:counter(o,decimal-leading-zero);position:absolute;left:0;top:1.1rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;color:var(--gold);font-style:normal;font-weight:500;}
+
+/* Frames */
+.zoom-frame{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.6rem;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);}
+.zoom-frame img{width:100%;display:block;border-radius:3px;}
+.cert-frame{background:var(--paper);border:1px solid rgba(11,11,13,.12);padding:1rem;box-shadow:0 40px 80px -30px rgba(11,11,13,.35);}
+.browser-frame{border:1px solid rgba(11,11,13,.15);border-radius:6px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(11,11,13,.25);background:#fff;}
+.browser-chrome{background:#EEE;padding:.55rem .9rem;border-bottom:1px solid rgba(0,0,0,.08);display:flex;gap:.4rem;align-items:center;}
+.browser-chrome span{width:10px;height:10px;border-radius:50%;background:#ccc;}
+.browser-chrome span:first-child{background:#F35B5B;}
+.browser-chrome span:nth-child(2){background:#F5B93B;}
+.browser-chrome span:nth-child(3){background:#4CC26A;}
+.browser-chrome .url{margin-left:.9rem;font-family:var(--sans);font-size:.74rem;color:#666;}
+
+/* Teacher tiles */
+.teacher-wall{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid rgba(255,255,255,.14);border-left:1px solid rgba(255,255,255,.14);}
+@media (max-width:1100px){.teacher-wall{grid-template-columns:repeat(4,1fr);}}
+@media (max-width:640px){.teacher-wall{grid-template-columns:repeat(2,1fr);}}
+.tt{border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);padding:1.5rem 1.1rem;text-align:center;}
+.tt img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.15);margin-bottom:.9rem;}
+.tt .tt-region{font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
+.tt .tt-name{font-family:var(--serif);font-size:1.25rem;margin:.35rem 0 .25rem;color:var(--paper);}
+.tt .tt-cred{font-family:var(--sans);font-size:.75rem;color:rgba(251,250,246,.65);}
+
+/* Two-col editorial */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start;}
+@media (max-width:900px){.two-col{grid-template-columns:1fr;}}
+
+/* Pricing */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.pricing{grid-template-columns:1fr;}}
+.tier{background:var(--paper);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2.4rem 1.8rem 2rem;position:relative;}
+.tier.featured{border:2px solid var(--green);background:linear-gradient(180deg,var(--paper) 0%,#EFF6F1 100%);}
+.tier .tier-badge{position:absolute;top:-13px;left:1.8rem;background:var(--green);color:var(--paper);font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;padding:.35rem .75rem;font-weight:500;}
+.tier-name{font-family:var(--serif);font-size:1.5rem;margin-bottom:.4rem;}
+.tier-price{font-family:var(--serif);font-size:3rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.2rem;}
+.tier-price small{font-family:var(--sans);font-size:.75rem;color:var(--ink-2);letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin-left:.35rem;}
+.tier-sub{font-family:var(--sans);font-size:.85rem;color:var(--ink-2);margin-bottom:1.4rem;}
+.tier ul{list-style:none;padding:0;margin:0 0 1.6rem 0;}
+.tier ul li{padding:.55rem 0 .55rem 1.5rem;border-bottom:1px dotted rgba(11,11,13,.14);font-size:.92rem;position:relative;}
+.tier ul li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;}
+
+/* FAQ */
+.faq{border-top:1px solid var(--ink);}
+.faq details{border-bottom:1px solid rgba(11,11,13,.15);padding:1.4rem 0;}
+.faq summary{list-style:none;cursor:pointer;font-family:var(--serif);font-size:1.35rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-family:var(--sans);font-size:1.6rem;color:var(--gold);font-weight:300;}
+.faq details[open] summary::after{content:"−";}
+.faq details p{margin-top:1rem;font-size:1rem;color:var(--ink-2);line-height:1.65;max-width:70ch;}
+
+/* Culture tile grid */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.tiles{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.tiles{grid-template-columns:1fr;}}
+.tile{position:relative;aspect-ratio:1/1;overflow:hidden;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+.tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(.08);transition:transform .5s ease;}
+.tile:hover img{transform:scale(1.04);}
+.tile .tile-content{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,0) 40%,rgba(11,11,13,.75) 100%);padding:1.4rem;display:flex;flex-direction:column;justify-content:flex-end;color:var(--paper);}
+.tile .tile-title{font-family:var(--serif);font-style:italic;font-size:1.9rem;line-height:1.05;margin-bottom:.2rem;}
+.tile .tile-sub{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-accent);}
+
+/* Trustpilot review card grid */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(11,11,13,.14);border:1px solid rgba(11,11,13,.14);}
+@media (max-width:900px){.reviews{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.reviews{grid-template-columns:1fr;}}
+.review{background:var(--paper);padding:1.6rem;}
+.review .stars{color:#F5B93B;letter-spacing:.06em;font-size:.95rem;margin-bottom:.6rem;}
+.review .rev-title{font-family:var(--serif);font-size:1.15rem;margin-bottom:.6rem;}
+.review .rev-body{font-size:.92rem;color:var(--ink-2);line-height:1.55;margin-bottom:.9rem;}
+.review .rev-author{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+
+/* Alumni cards */
+.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.alumni{grid-template-columns:1fr;}}
+.alum{padding:1.8rem;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper);}
+.alum img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:1rem;}
+.alum .quote{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.4;color:var(--ink);margin-bottom:.9rem;}
+.alum .attr{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);}
+
+/* Sticky bottom enroll bar */
+.enroll-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);padding:.85rem clamp(1rem,3vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:80;border-top:1px solid var(--gold-line);transform:translateY(100%);transition:transform .35s ease;}
+.enroll-bar.show{transform:translateY(0);}
+.enroll-bar .eb-left{font-family:var(--serif);font-style:italic;font-size:1rem;}
+.enroll-bar .eb-price{font-family:var(--serif);font-weight:600;color:var(--cream-accent);margin:0 .8rem;}
+.enroll-bar .btn{padding:.7rem 1.2rem;font-size:.8rem;}
+
+/* Includes list */
+.includes{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;list-style:none;padding:0;margin:2rem 0 0;}
+@media (max-width:700px){.includes{grid-template-columns:1fr;}}
+.includes li{padding:.9rem 0 .9rem 1.8rem;border-bottom:1px solid rgba(11,11,13,.1);font-family:var(--sans);font-size:.98rem;position:relative;}
+.includes li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;font-size:1.1rem;}
+
+/* Section head */
+.section-head{max-width:820px;margin:0 0 3rem 0;}
+.section-head.center{margin:0 auto 3rem;text-align:center;}
+
+/* Utility */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;}
+@media (max-width:900px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr;}}
+
+/* Related courses */
+.related{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+@media (max-width:900px){.related{grid-template-columns:1fr;}}
+
+/* Small badge */
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.42rem .75rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;}
+.chip-green{border-color:var(--green-bright);color:var(--green);background:rgba(30,138,94,.06);}
+.chip-red{border-color:var(--red);color:var(--red);background:rgba(199,32,46,.06);}
+
+/* Video bg utility for non-hero sections */
+.video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.25;}
+
+/* Nav override (works with existing partial) */
+.site-header{background:var(--paper);border-bottom:1px solid rgba(11,11,13,.1);position:sticky;top:0;z-index:70;}
+.site-header .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;}
+.site-header .nav-menu{display:flex;gap:1.4rem;}
+.site-header .nav-link{font-family:var(--sans);font-size:.86rem;color:var(--ink);letter-spacing:.02em;}
+.site-header .nav-link:hover{color:var(--red);}
+.site-header .lt-main{font-family:var(--serif);font-size:1.5rem;color:var(--red);font-weight:600;}
+.site-header .lt-sub{font-family:var(--sans);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);display:block;margin-top:2px;}
+.site-header .nav-cta{background:var(--green);color:var(--paper);border:0;padding:.7rem 1.2rem;font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;}
+.site-header .nav-toggle{display:none;background:transparent;border:0;flex-direction:column;gap:4px;cursor:pointer;padding:.4rem;}
+.site-header .nav-toggle span{width:24px;height:2px;background:var(--ink);display:block;}
+@media (max-width:900px){.site-header .nav-menu{display:none;}.site-header .nav-toggle{display:flex;}}
+.nav-drawer{display:none;}
+
+.site-footer{background:var(--ink);color:var(--paper);padding:4rem 0 2rem;margin-top:0;}
+.site-footer a{color:rgba(251,250,246,.7);display:block;padding:.28rem 0;font-size:.88rem;}
+.site-footer a:hover{color:var(--cream-accent);}
+.site-footer .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.08);}
+@media (max-width:900px){.site-footer .footer-top{grid-template-columns:1fr 1fr;}}
+.site-footer h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1rem;}
+.site-footer p{color:rgba(251,250,246,.72);font-size:.9rem;}
 </style>
 
 </head><body>
+<div class="top-strip"><span>Fall Cohort · Enrolment closes Oct 3</span><span class="dot"></span><span>Founder Rate · Save $220 on Annual</span><span class="dot"></span><span>7-Day Money-Back Guarantee</span></div>
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="index.html" aria-label="Club Italia — home">
@@ -97,131 +313,52 @@
 </aside>
 
 
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg"><source src="assets/video/class-demo.mp4" type="video/mp4"></video>
+  <div class="hero-scrim"></div>
+  <div class="hero-trust"><span class="stars">★★★★★</span> <strong>4.8</strong> · Trustpilot · 1,284 reviews</div>
+  <div class="hero-live"><span class="live-dot"></span> Live class in session · 12 learners</div>
+  <div class="hero-wrap">
+    <div class="hero-eyebrow">The Faculty · 2026</div>
+    <h1 class="hero-h1">Seven certified<br>Italian <span class="ital">teachers.</span></h1>
+    <p class="hero-sub">Every Club Italia teacher lives in the Italian city that anchors the course they teach. Every teacher holds a formal teaching qualification, either DITALS (Certificazione di competenza in didattica dell'italiano a stranieri) or CEDILS (Certificazione in Didattica dell'Italiano come Lingua Straniera), issued by an Italian university. Some hold both.</p>
+    <div class="hero-ctas"><a href="courses.html" class="btn btn-primary btn-lg">See Their Courses</a></div>
+  </div>
+</section>
+<section class="section-cream" style="padding:2.4rem 0;"><div class="wrap"><div class="stats "><div class="stat"><div class="stat-num">7</div><div class="stat-lab">certified teachers</div></div><div class="stat"><div class="stat-num">100%</div><div class="stat-lab">in-country</div></div><div class="stat"><div class="stat-num">DITALS/CEDILS</div><div class="stat-lab">every teacher</div></div><div class="stat"><div class="stat-num">6+ yrs</div><div class="stat-lab">average tenure at Club Italia</div></div></div></div></section><section class="section-black"><div class="wrap"><div class="section-head"><div class="section-eyebrow">Faculty Wall</div><h2 class="h-display">Choose the teacher,<br>choose the <span class="ital">city.</span></h2></div></div><div class="teacher-wall"><a class="tt" href="pages/teachers/chiara.html"><img src="assets/img/teacher-chiara.jpg" alt="Chiara, teacher in Firenze"><div class="tt-region">Firenze</div><div class="tt-name">Chiara</div><div class="tt-cred">DITALS II · Università per Stranieri di Perugia</div></a><a class="tt" href="pages/teachers/marco.html"><img src="assets/img/teacher-marco.jpg" alt="Marco, teacher in Roma"><div class="tt-region">Roma</div><div class="tt-name">Marco</div><div class="tt-cred">Master FLE · Roma Tre · Certified DITALS</div></a><a class="tt" href="pages/teachers/giulia.html"><img src="assets/img/teacher-giulia.jpg" alt="Giulia, teacher in Bologna"><div class="tt-region">Bologna</div><div class="tt-name">Giulia</div><div class="tt-cred">DITALS I · Alma Mater Studiorum</div></a><a class="tt" href="pages/teachers/alessandro.html"><img src="assets/img/teacher-alessandro.jpg" alt="Alessandro, teacher in Milano"><div class="tt-region">Milano</div><div class="tt-name">Alessandro</div><div class="tt-cred">CEDILS · Ca' Foscari · CEFR Examiner</div></a><a class="tt" href="pages/teachers/francesca.html"><img src="assets/img/teacher-francesca.jpg" alt="Francesca, teacher in Venezia"><div class="tt-region">Venezia</div><div class="tt-name">Francesca</div><div class="tt-cred">DITALS II · Ca' Foscari</div></a><a class="tt" href="pages/teachers/luca.html"><img src="assets/img/teacher-luca.jpg" alt="Luca, teacher in Napoli"><div class="tt-region">Napoli</div><div class="tt-name">Luca</div><div class="tt-cred">Master FLE · Federico II · DITALS I</div></a><a class="tt" href="pages/teachers/sofia.html"><img src="assets/img/teacher-sofia.jpg" alt="Sofia, teacher in Palermo"><div class="tt-region">Palermo</div><div class="tt-name">Sofia</div><div class="tt-cred">DITALS II · Università di Palermo</div></a></div></section>
+<section class="section-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Credentials, in plain English</div>
+      <h2 class="h-display">What every acronym on this <span class="ital">page means.</span></h2>
+    </div>
+    <table class="glance">
+      <tr><td>DITALS I / II</td><td>Certificazione di competenza in didattica dell'italiano a stranieri. Issued by the Università per Stranieri di Siena. The Level II certification is the highest formal qualification for teaching Italian as a second language and requires a written thesis and a supervised teaching component.</td></tr>
+      <tr><td>CEDILS</td><td>Certificazione in Didattica dell'Italiano come Lingua Straniera. Issued by Ca' Foscari University of Venice. Requires demonstrated competence in second-language acquisition theory and classroom practice.</td></tr>
+      <tr><td>Master FLE</td><td>A postgraduate specialism in the didactics of a foreign language, typically two years of study at an Italian university.</td></tr>
+      <tr><td>CEFR Examiner</td><td>Certified to conduct oral and written examinations aligned with the Common European Framework of Reference for Languages.</td></tr>
+      <tr><td>CELI</td><td>Certificato di Conoscenza della Lingua Italiana. The examination our teachers most frequently supervise.</td></tr>
+    </table>
+  </div>
+</section>
 
-<!-- HERO -->
-<section class="ti-hero"><div class="ti-hero-content reveal">
-<span class="eyebrow eyebrow-line">Seven voices. Seven regions. One method.</span>
-<h1>The voices of Italy, <em>in every classroom.</em></h1>
-<p>Seven certified native teachers, each broadcasting live from a different Italian region. Not a global tutor marketplace. A small, chosen faculty, each a specialist in their city and its way of speaking. When you enrol at Club Italia you are matched to a teacher, not a slot.</p>
-<div class="hero-ctas"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Speak with an Advisor</button><a class="btn btn-3d btn-3d-ghost" href="#faculty">Meet the Faculty</a></div>
-</div></section>
-
-<!-- REGIONAL MAP -->
-<section class="regional-map">
-<div class="rm-grid">
-<div class="rm-copy reveal">
-<span class="eyebrow eyebrow-line">La geografia della nostra scuola</span>
-<h2>From Palermo to <em>Venezia,</em> broadcasting live.</h2>
-<p>Every one of our teachers lives, teaches and broadcasts from Italy. That is not a preference. It is a rule. When your class begins on a Tuesday evening in Boston it is one in the morning in Firenze, and Chiara is at her desk, coffee in hand, because that is where the country she is teaching actually is.</p>
-<p>Italy is not one voice. The Italian of Palermo is not the Italian of Bologna, and neither is the Italian of Milano. We do not homogenise. Our teachers speak the standard, warmly inflected by the region they inhabit, and our students learn to hear the whole peninsula.</p>
-</div>
-<div class="rm-map reveal reveal-d1">
-<svg viewBox="0 0 100 130" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-<defs><linearGradient id="italyG" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#EBDFC7"/><stop offset="1" stop-color="#D9C8AA"/></linearGradient></defs>
-<!-- Stylised boot -->
-<path d="M28,8 C22,10 20,16 22,22 L22,30 C22,34 26,36 30,36 L36,36 C40,36 42,34 44,32 L50,28 C54,26 58,26 62,28 L68,32 C72,34 76,36 78,40 L80,52 C82,58 82,66 78,72 L72,80 C68,86 62,90 56,92 L48,96 C42,100 40,106 40,112 L40,118 C42,122 46,124 50,124 C54,124 58,122 60,118 L64,110 C68,108 72,108 74,112 L78,118 C80,120 84,120 86,118 L88,114 C90,110 88,106 84,104 L78,102 C74,100 72,96 74,92 L78,84 C82,76 84,66 82,58 L80,48 C78,38 72,32 66,28 L60,22 C56,18 50,16 44,16 L38,12 C34,10 32,8 28,8 Z" fill="url(#italyG)" stroke="#A88536" stroke-width=".6" opacity=".7"/>
-<!-- Sicilia -->
-<ellipse cx="38" cy="118" rx="11" ry="4" fill="url(#italyG)" stroke="#A88536" stroke-width=".6" opacity=".7"/>
-<!-- Sardegna -->
-<ellipse cx="12" cy="74" rx="5" ry="9" fill="url(#italyG)" stroke="#A88536" stroke-width=".6" opacity=".5"/>
-</svg>
-<a class="rm-pin" style="left:39.1%;top:31.7%" href="pages/teachers/chiara.html" title="Chiara — Firenze"><span class="rm-pin-dot"></span><span class="rm-pin-label">Chiara · Firenze</span></a>
-<a class="rm-pin" style="left:49.6%;top:49.5%" href="pages/teachers/marco.html" title="Marco — Roma"><span class="rm-pin-dot"></span><span class="rm-pin-label">Marco · Roma</span></a>
-<a class="rm-pin" style="left:39.9%;top:24.8%" href="pages/teachers/giulia.html" title="Giulia — Bologna"><span class="rm-pin-dot"></span><span class="rm-pin-label">Giulia · Bologna</span></a>
-<a class="rm-pin" style="left:21.8%;top:15.6%" href="pages/teachers/alessandro.html" title="Alessandro — Milano"><span class="rm-pin-dot"></span><span class="rm-pin-label">Alessandro · Milano</span></a>
-<a class="rm-pin" style="left:48.1%;top:15.8%" href="pages/teachers/francesca.html" title="Francesca — Venezia"><span class="rm-pin-dot"></span><span class="rm-pin-label">Francesca · Venezia</span></a>
-<a class="rm-pin" style="left:64.3%;top:59.7%" href="pages/teachers/luca.html" title="Luca — Napoli"><span class="rm-pin-dot"></span><span class="rm-pin-label">Luca · Napoli</span></a>
-<a class="rm-pin" style="left:56.8%;top:85.6%" href="pages/teachers/sofia.html" title="Sofia — Palermo"><span class="rm-pin-dot"></span><span class="rm-pin-label">Sofia · Palermo</span></a>
-</div>
-</div></section>
-
-<!-- FACULTY MAGAZINE GRID -->
-<section class="t-grid" id="faculty">
-<div class="t-grid-inner">
-<div class="t-grid-head reveal">
-<span class="eyebrow eyebrow-line">La Facoltà</span>
-<h2>Seven certified native teachers.</h2>
-</div>
-<a class="t-mag-row  reveal" href="pages/teachers/chiara.html">
-<div class="t-mag-photo"><span class="t-mag-num">01</span><img src="assets/img/teacher-chiara.jpg" alt="Portrait of Chiara Bellini, Toscana"></div>
-<div class="t-mag-body">
-<span class="t-mag-region">Firenze · Toscana</span>
-<h3>Chiara <em>Bellini</em></h3>
-<p class="t-mag-teaches">Renaissance Italian. Literature. Art.</p>
-<p class="t-mag-bio">The eye of an art historian, the ear of a Florentine. Chiara teaches Italian the way Dante wrote it, one detail at a time.</p>
-<span class="t-mag-link">Meet Chiara →</span>
-</div>
-</a>
-<a class="t-mag-row rev reveal" href="pages/teachers/marco.html">
-<div class="t-mag-photo"><span class="t-mag-num">02</span><img src="assets/img/teacher-marco.jpg" alt="Portrait of Marco Rinaldi, Lazio"></div>
-<div class="t-mag-body">
-<span class="t-mag-region">Roma · Lazio</span>
-<h3>Marco <em>Rinaldi</em></h3>
-<p class="t-mag-teaches">Cinema. Debate. Contemporary Italian.</p>
-<p class="t-mag-bio">Roman by birth, cinema-literate, football-obsessed. Marco teaches Italian at the pace of the capital, direct and generous.</p>
-<span class="t-mag-link">Meet Marco →</span>
-</div>
-</a>
-<a class="t-mag-row  reveal" href="pages/teachers/giulia.html">
-<div class="t-mag-photo"><span class="t-mag-num">03</span><img src="assets/img/teacher-giulia.jpg" alt="Portrait of Giulia Moretti, Emilia-Romagna"></div>
-<div class="t-mag-body">
-<span class="t-mag-region">Bologna · Emilia-Romagna</span>
-<h3>Giulia <em>Moretti</em></h3>
-<p class="t-mag-teaches">Cucina. Textbook author. Rigour.</p>
-<p class="t-mag-bio">Bologna-trained linguist, home-cook, author of two textbooks. Giulia teaches through food, and it works.</p>
-<span class="t-mag-link">Meet Giulia →</span>
-</div>
-</a>
-<a class="t-mag-row rev reveal" href="pages/teachers/alessandro.html">
-<div class="t-mag-photo"><span class="t-mag-num">04</span><img src="assets/img/teacher-alessandro.jpg" alt="Portrait of Alessandro Ferri, Lombardia"></div>
-<div class="t-mag-body">
-<span class="t-mag-region">Milano · Lombardia</span>
-<h3>Alessandro <em>Ferri</em></h3>
-<p class="t-mag-teaches">Business Italian. Northern precision.</p>
-<p class="t-mag-bio">Precise, fast, warmly Northern. Alessandro is the teacher of choice for professionals headed to Milan.</p>
-<span class="t-mag-link">Meet Alessandro →</span>
-</div>
-</a>
-<a class="t-mag-row  reveal" href="pages/teachers/francesca.html">
-<div class="t-mag-photo"><span class="t-mag-num">05</span><img src="assets/img/teacher-francesca.jpg" alt="Portrait of Francesca Zeno, Veneto"></div>
-<div class="t-mag-body">
-<span class="t-mag-region">Venezia · Veneto</span>
-<h3>Francesca <em>Zeno</em></h3>
-<p class="t-mag-teaches">Literature. Reading. Goldoni.</p>
-<p class="t-mag-bio">Ca' Foscari-trained literature scholar. Francesca teaches Italian slowly and with the patience of the lagoon.</p>
-<span class="t-mag-link">Meet Francesca →</span>
-</div>
-</a>
-<a class="t-mag-row rev reveal" href="pages/teachers/luca.html">
-<div class="t-mag-photo"><span class="t-mag-num">06</span><img src="assets/img/teacher-luca.jpg" alt="Portrait of Luca De Simone, Campania"></div>
-<div class="t-mag-body">
-<span class="t-mag-region">Napoli · Campania</span>
-<h3>Luca <em>De Simone</em></h3>
-<p class="t-mag-teaches">Songs. Theatre. Performance.</p>
-<p class="t-mag-bio">Theatrical, generous, Neapolitan to the core. Luca teaches Italian the way you would sing it.</p>
-<span class="t-mag-link">Meet Luca →</span>
-</div>
-</a>
-<a class="t-mag-row  reveal" href="pages/teachers/sofia.html">
-<div class="t-mag-photo"><span class="t-mag-num">07</span><img src="assets/img/teacher-sofia.jpg" alt="Portrait of Sofia Mazzara, Sicilia"></div>
-<div class="t-mag-body">
-<span class="t-mag-region">Palermo · Sicilia</span>
-<h3>Sofia <em>Mazzara</em></h3>
-<p class="t-mag-teaches">History. Art. The Mediterranean.</p>
-<p class="t-mag-bio">Palermo-native art historian, licensed cultural guide. Sofia teaches Italian through the layered history of her island.</p>
-<span class="t-mag-link">Meet Sofia →</span>
-</div>
-</a>
-</div></section>
-
-<!-- CLOSING -->
-<section class="ti-close"><div class="wrap-narrow reveal">
-<p class="big">Il tuo insegnante non è un profilo. È una persona che ti aspetta ogni settimana.</p>
-<div class="hero-ctas" style="justify-content:center;display:flex"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Match Me with a Teacher</button></div>
-</div></section>
-
-
-<footer class="site-footer">
+<section class="section-cream">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <div class="section-eyebrow">Selection</div>
+        <h2 class="h-display">One in <span class="ital">forty-three.</span></h2>
+        <p class="lede">In 2025 we received 341 applications for four teaching positions. The successful candidates each held DITALS II or CEDILS, five or more years of adult teaching in Italy, and demonstrated the Club Italia house method: grammar drawn from real dialogue, city anchoring, warm classroom register.</p>
+      </div>
+      <div>
+        <div class="section-eyebrow">Continuing training</div>
+        <h2 class="h-display">Six pedagogical days<br>a <span class="ital">year.</span></h2>
+        <p class="lede">Every Club Italia teacher takes part in six annual pedagogical days: three at our summer residency in Firenze, three on Zoom in winter. Sessions cover CEFR descriptor updates, new material rollout, and shared review of anonymised classroom recordings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-green"><div class="wrap"><div class="section-head"><div class="section-eyebrow">Book a Teacher</div><h2 class="h-display">Speak to your prospective<br>teacher <span class="ital">this week.</span></h2><p class="lede">Reserve a 20-minute placement call. Your Club Italia advisor will match you to a teacher and a cohort before you enrol.</p></div><div style="margin-top:2rem;"><a href="#lead" class="btn btn-primary btn-lg" style="background:var(--paper);color:var(--green-deep);">Reserve My Placement Call →</a></div></div></section><footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
@@ -310,5 +447,13 @@
   </div>
 </div>
 
-<script src="js/ci.js"></script>
+<script>
+(function(){
+  var bar=document.querySelector('.enroll-bar');if(!bar)return;
+  var shown=false;
+  function on(){var y=window.scrollY;if(y>600&&!shown){bar.classList.add('show');shown=true;}else if(y<=400&&shown){bar.classList.remove('show');shown=false;}}
+  window.addEventListener('scroll',on,{passive:true});
+})();
+</script>
+
 </body></html>

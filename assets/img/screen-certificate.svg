@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<rect width="800" height="600" fill="#f0e6d3"/>
+<rect x="60" y="40" width="680" height="520" rx="4" fill="#F3EDDF" stroke="#c9a24b" stroke-width="1"/>
+<rect x="80" y="60" width="640" height="480" fill="none" stroke="#C9A24B" stroke-width="2"/>
+<rect x="88" y="68" width="624" height="464" fill="none" stroke="#C9A24B" stroke-width="0.5"/>
+<circle cx="100" cy="80" r="8" fill="none" stroke="#C9A24B"/>
+<circle cx="100" cy="80" r="3" fill="#C9A24B"/>
+<circle cx="700" cy="80" r="8" fill="none" stroke="#C9A24B"/>
+<circle cx="700" cy="80" r="3" fill="#C9A24B"/>
+<circle cx="100" cy="520" r="8" fill="none" stroke="#C9A24B"/>
+<circle cx="100" cy="520" r="3" fill="#C9A24B"/>
+<circle cx="700" cy="520" r="8" fill="none" stroke="#C9A24B"/>
+<circle cx="700" cy="520" r="3" fill="#C9A24B"/>
+<text x="400.0" y="130" font-family="Inter, Arial, sans-serif" font-size="10" fill="#3A0E12" text-anchor="middle" letter-spacing="4" font-weight="700">CLUB ITALIA · ETEACHER GROUP</text>
+<text x="400.0" y="200" font-family="Cormorant Garamond, Georgia, serif" font-size="40" fill="#3A0E12" text-anchor="middle" font-style="italic">Certificate of Completion</text>
+<rect x="355.0" y="220" width="30" height="3" fill="#008C45"/>
+<rect x="385.0" y="220" width="30" height="3" fill="#F4F5F0" stroke="#c9c0ac" stroke-width="0.3"/>
+<rect x="415.0" y="220" width="30" height="3" fill="#CD212A"/>
+<text x="400.0" y="270" font-family="Inter, Arial, sans-serif" font-size="12" fill="#7a5a5d" text-anchor="middle" letter-spacing="3">AWARDED TO</text>
+<text x="400.0" y="325" font-family="Cormorant Garamond, Georgia, serif" font-size="46" fill="#3A0E12" text-anchor="middle" font-style="italic">Diane Costanza</text>
+<line x1="240.0" y1="345" x2="560.0" y2="345" stroke="#C9A24B" stroke-width="0.8"/>
+<text x="400.0" y="380" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5a3a3d" text-anchor="middle">For successful completion of</text>
+<text x="400.0" y="420" font-family="Cormorant Garamond, Georgia, serif" font-size="26" fill="#3A0E12" text-anchor="middle" font-style="italic">CI Elementare · A1.1 → A1.2</text>
+<line x1="140" y1="490" x2="320" y2="490" stroke="#3A0E12"/>
+<text x="230" y="486" font-family="Cormorant Garamond, Georgia, serif" font-size="16" fill="#3A0E12" text-anchor="middle" font-style="italic">Alessandro Ferri</text>
+<text x="230" y="506" font-family="Inter, Arial, sans-serif" font-size="9" fill="#7a5a5d" text-anchor="middle" letter-spacing="1">HEAD OF FACULTY</text>
+<circle cx="400.0" cy="500" r="32" fill="none" stroke="#C9A24B" stroke-width="1.5"/>
+<text x="400.0" y="500" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#3A0E12" text-anchor="middle" font-style="italic" font-weight="700">eT</text>
+<text x="400.0" y="515" font-family="Inter, Arial, sans-serif" font-size="6" fill="#C9A24B" text-anchor="middle" letter-spacing="1">VERIFIED</text>
+<line x1="480" y1="490" x2="660" y2="490" stroke="#3A0E12"/>
+<text x="570" y="486" font-family="Cormorant Garamond, Georgia, serif" font-size="16" fill="#3A0E12" text-anchor="middle" font-style="italic">15 December 2026</text>
+<text x="570" y="506" font-family="Inter, Arial, sans-serif" font-size="9" fill="#7a5a5d" text-anchor="middle" letter-spacing="1">DATE ISSUED</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+<circle cx="42" cy="40" r="28" fill="#3A0E12"/>
+<text x="42" y="52" font-family="Cormorant Garamond, Georgia, serif" font-size="34" font-style="italic" font-weight="700" fill="#C9A24B" text-anchor="middle">eT</text>
+<text x="85" y="42" font-family="Cormorant Garamond, Georgia, serif" font-size="30" font-style="italic" fill="#3A0E12">eTeacher</text>
+<text x="85" y="63" font-family="Inter, Arial, sans-serif" font-size="10" fill="#7a5a5d" letter-spacing="6">GROUP · EST. 2000</text>
+</svg>

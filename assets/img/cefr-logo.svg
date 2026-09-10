@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+<rect x="0" y="0" width="200" height="60" rx="6" fill="none" stroke="#003399" stroke-width="1.5"/>
+<circle cx="30" cy="30" r="20" fill="#003399"/>
+<circle cx="30.0" cy="16.0" r="1.6" fill="#FFCC00"/>
+<circle cx="37.0" cy="17.875644347017857" r="1.6" fill="#FFCC00"/>
+<circle cx="42.12435565298214" cy="23.0" r="1.6" fill="#FFCC00"/>
+<circle cx="44.0" cy="30.0" r="1.6" fill="#FFCC00"/>
+<circle cx="42.124355652982146" cy="37.0" r="1.6" fill="#FFCC00"/>
+<circle cx="37.00000000000001" cy="42.12435565298214" r="1.6" fill="#FFCC00"/>
+<circle cx="30.0" cy="44.0" r="1.6" fill="#FFCC00"/>
+<circle cx="23.000000000000004" cy="42.124355652982146" r="1.6" fill="#FFCC00"/>
+<circle cx="17.87564434701786" cy="37.00000000000001" r="1.6" fill="#FFCC00"/>
+<circle cx="16.0" cy="30.0" r="1.6" fill="#FFCC00"/>
+<circle cx="17.875644347017854" cy="23.000000000000007" r="1.6" fill="#FFCC00"/>
+<circle cx="22.999999999999993" cy="17.87564434701786" r="1.6" fill="#FFCC00"/>
+<text x="60" y="26" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#003399">CEFR ALIGNED</text>
+<text x="60" y="44" font-family="Inter, Arial, sans-serif" font-size="10" fill="#003399" letter-spacing="1">Council of Europe · A1–C2</text>
+</svg>
