@@ -1052,3 +1052,79 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
   .cta-row,.hero-ctas{flex-direction:column;width:100%}
   .cta-row .btn,.hero-ctas .btn,.hero-ctas .btn-gold,.hero-ctas .btn-ghost{width:100%;justify-content:center}
 }
+
+
+/* ============ v9: LARGER, CLEARER HEADLINES ============ */
+.hero h1{
+  font-size:clamp(3.6rem,9.4vw,8.4rem) !important;
+  line-height:.94 !important;
+  letter-spacing:-.022em !important;
+  font-weight:600 !important;
+  max-width:16ch !important;
+  margin:0 0 1.6rem !important;
+}
+.hero-tag{
+  font-size:clamp(1.6rem,2.6vw,2.3rem) !important;
+  margin-bottom:1.2rem !important;
+}
+.hero-sub{
+  font-size:clamp(1.25rem,1.6vw,1.55rem) !important;
+  line-height:1.55 !important;
+  max-width:58ch !important;
+  margin:0 0 2.6rem !important;
+}
+.hero-meta .k{font-size:clamp(2.2rem,3vw,3rem) !important}
+.hero-meta .l{font-size:clamp(1.05rem,1.3vw,1.2rem) !important}
+
+.pb-title{
+  font-size:clamp(3.4rem,7.4vw,6.8rem) !important;
+  line-height:.94 !important;
+  letter-spacing:-.022em !important;
+  font-weight:600 !important;
+}
+.pb-eyebrow{
+  font-size:clamp(1.4rem,2.2vw,2rem) !important;
+}
+.pb-sub{
+  font-size:clamp(1.28rem,1.8vw,1.7rem) !important;
+  line-height:1.5 !important;
+}
+
+.v8-h2,section .sec-head h2,section .sec-head .v8-h2{
+  font-size:clamp(2.8rem,5.8vw,4.8rem) !important;
+  line-height:.98 !important;
+  letter-spacing:-.02em !important;
+  font-weight:600 !important;
+}
+.sec-head .eyebrow{
+  font-size:clamp(.72rem,.9vw,.85rem) !important;
+  letter-spacing:.28em !important;
+}
+.sec-head .lead,.lead{
+  font-size:clamp(1.15rem,1.5vw,1.4rem) !important;
+  line-height:1.55 !important;
+  max-width:58ch !important;
+}
+
+.cc-title{font-size:clamp(1.5rem,2.4vw,2rem) !important;line-height:1.05 !important;font-weight:600 !important}
+.cc-kicker{font-size:.78rem !important;letter-spacing:.24em !important;font-weight:600 !important}
+
+.btn-gold,.btn-ghost{
+  font-size:.95rem !important;
+  padding:1.15rem 2rem !important;
+  letter-spacing:.1em !important;
+  font-weight:700 !important;
+}
+
+/* Mobile — even bigger since visual real estate is more precious */
+@media(max-width:860px){
+  .hero h1{font-size:clamp(3.4rem,12vw,5.2rem) !important;line-height:.96 !important;max-width:none !important}
+  .hero-tag{font-size:1.15rem !important;letter-spacing:.24em !important}
+  .hero-sub{font-size:1.15rem !important;line-height:1.5 !important}
+  .pb-title{font-size:clamp(3rem,11vw,4.6rem) !important;line-height:.96 !important}
+  .pb-eyebrow{font-size:1.1rem !important}
+  .pb-sub{font-size:1.15rem !important}
+  .v8-h2,section .sec-head h2,section .sec-head .v8-h2{font-size:clamp(2.4rem,10vw,4rem) !important;line-height:.98 !important}
+  .cc-title{font-size:1.5rem !important}
+  .btn-gold,.btn-ghost{font-size:.95rem !important;padding:1.05rem 1.5rem !important}
+}
