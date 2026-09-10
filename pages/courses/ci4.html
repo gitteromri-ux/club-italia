@@ -1,276 +1,17 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CI Avanzato · CI-04 · Club Italia by eTeacher</title>
-<meta name="description" content="CI Avanzato: A2.1 → A2.2 live from Naples & Milan. 20 lessons, 28.3 contact hours, CEFR-aligned.">
+<title>Avanzato · Club Italia · Il Corso · Club Italia</title>
+<meta name="description" content="Avanzato: Cultural fluency. A2.1 to A2.2. Live from Italy with Alessandro Conti. Club Italia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/ci.css">
-
-<style>
-/* v3 palette override — applied globally until ci.css rebuild lands */
-:root{
-  --red:#B01823; --red-deep:#8B0F1D; --red-bright:#C7202E;
-  --green:#166A47; --green-deep:#0C3B2E; --green-bright:#1E8A5E;
-  --paper:#FBFAF6; --cream:#F3F0E7; --ink:#0B0B0D; --ink-2:#1A1A1E;
-  --gold:#B08640; --gold-line:rgba(176,134,64,.45);
-  --cream-accent:#E6C99B;
-  --serif:'Playfair Display','Cormorant Garamond',Georgia,serif;
-  --sans:'Inter',system-ui,-apple-system,sans-serif;
-}
-html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;margin:0;padding:0;}
-*{box-sizing:border-box;}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:0;}
-p{margin:0 0 1em 0;}
-.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
-.wrap-narrow{max-width:960px;margin:0 auto;padding:0 clamp(1rem,3vw,2.4rem);}
-/* sections alternate */
-section{padding:clamp(4rem,8vw,7rem) 0;position:relative;}
-.section-white{background:var(--paper);color:var(--ink);}
-.section-cream{background:var(--cream);color:var(--ink);}
-.section-green{background:var(--green-deep);color:var(--paper);}
-.section-red{background:var(--red-deep);color:var(--paper);}
-.section-black{background:var(--ink);color:var(--paper);}
-.section-green h1,.section-green h2,.section-green h3,
-.section-red h1,.section-red h2,.section-red h3,
-.section-black h1,.section-black h2,.section-black h3{color:var(--paper);}
-.section-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:500;}
-.section-black .section-eyebrow,.section-red .section-eyebrow,.section-green .section-eyebrow{color:var(--cream-accent);}
-.h-display{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.015em;margin-bottom:1.4rem;}
-.h-display .ital{font-style:italic;font-weight:500;color:var(--red);}
-.section-black .h-display .ital,.section-red .h-display .ital,.section-green .h-display .ital{color:var(--cream-accent);}
-.h-eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;font-weight:500;}
-.lede{font-size:1.24rem;line-height:1.55;color:var(--ink-2);max-width:62ch;font-weight:300;}
-.section-green .lede,.section-red .lede,.section-black .lede{color:rgba(251,250,246,.86);}
-
-/* Gold hairline rule */
-.rule-gold{width:64px;height:1px;background:var(--gold);margin:0 0 1.4rem 0;}
-
-/* Top urgency strip */
-.top-strip{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;padding:.55rem 0;text-align:center;border-bottom:1px solid var(--gold-line);}
-.top-strip .dot{display:inline-block;width:6px;height:6px;background:var(--red-bright);border-radius:50%;margin:0 .8rem;vertical-align:middle;}
-
-/* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--paper);background:var(--ink);}
-.hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-.hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.55) 0%,rgba(11,11,13,.35) 40%,rgba(11,11,13,.82) 100%);z-index:1;}
-.hero .hero-wrap{position:relative;z-index:2;width:100%;padding:0 clamp(1.2rem,4vw,3rem) clamp(3rem,7vw,6rem);}
-.hero-eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:.42em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1.4rem;}
-.hero-h1{font-family:var(--serif);font-weight:700;font-size:clamp(4.4rem,10vw,9.2rem);line-height:.94;letter-spacing:-.025em;margin:0 0 1.6rem 0;max-width:16ch;}
-.hero-h1 .ital{font-style:italic;font-weight:500;color:var(--cream-accent);}
-.hero-sub{font-size:clamp(1.15rem,1.6vw,1.5rem);line-height:1.5;max-width:56ch;color:rgba(251,250,246,.88);font-weight:300;margin:0 0 2rem 0;}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
-.hero-trust{position:absolute;top:clamp(1rem,3vw,2rem);right:clamp(1rem,3vw,2.4rem);z-index:3;display:flex;align-items:center;gap:.7rem;font-size:.82rem;color:var(--paper);background:rgba(11,11,13,.4);backdrop-filter:blur(6px);padding:.55rem .95rem;border:1px solid rgba(255,255,255,.15);border-radius:2px;}
-.hero-trust .stars{color:#F5B93B;letter-spacing:.05em;}
-.hero-live{position:absolute;bottom:clamp(1rem,3vw,2rem);left:clamp(1.2rem,4vw,3rem);z-index:3;display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--paper);}
-.hero-live .live-dot{width:8px;height:8px;background:var(--red-bright);border-radius:50%;box-shadow:0 0 0 0 rgba(199,32,46,.6);animation:pulse 2s infinite;}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(199,32,46,.6);}70%{box-shadow:0 0 0 14px rgba(199,32,46,0);}100%{box-shadow:0 0 0 0 rgba(199,32,46,0);}}
-
-/* Buttons */
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.6rem;font-family:var(--sans);font-weight:500;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;border-radius:0;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease;}
-.btn-primary{background:var(--green);color:var(--paper);}
-.btn-primary:hover{background:var(--green-deep);transform:translateY(-1px);}
-.btn-red{background:var(--red);color:var(--paper);}
-.btn-red:hover{background:var(--red-deep);}
-.btn-ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.5);}
-.btn-ghost:hover{background:rgba(255,255,255,.08);}
-.btn-ghost-dark{background:transparent;color:var(--ink);border-color:var(--ink);}
-.btn-ghost-dark:hover{background:var(--ink);color:var(--paper);}
-.btn-lg{padding:1.2rem 2rem;font-size:1rem;}
-
-/* Course card GRID — edge-to-edge, hairline borders */
-.cg{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
-@media (max-width:1100px){.cg{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:640px){.cg{grid-template-columns:1fr;}}
-.cg-track{grid-column:1/-1;background:var(--ink);color:var(--paper);padding:1.4rem clamp(1.2rem,3vw,2rem);font-family:var(--serif);font-style:italic;font-size:1.4rem;letter-spacing:.02em;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem;}
-.cg-track .track-meta{font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
-.cc{background:var(--paper);color:var(--ink);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2rem clamp(1.2rem,2vw,1.7rem) 1.6rem;display:flex;flex-direction:column;min-height:380px;position:relative;transition:background .18s ease;}
-.cc:hover{background:var(--cream);}
-.cc-price{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--red);margin-bottom:.15rem;letter-spacing:-.01em;}
-.cc-price small{font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:400;margin-left:.35rem;}
-.cc-badge{display:inline-block;font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green-deep);border:1px solid var(--green);padding:.28rem .55rem;margin-bottom:1rem;align-self:flex-start;}
-.cc-title{font-family:var(--serif);font-size:1.65rem;font-weight:600;line-height:1.05;margin-bottom:.35rem;letter-spacing:-.01em;}
-.cc-sub{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--red-deep);margin-bottom:.9rem;line-height:1.3;}
-.cc-meta{font-family:var(--sans);font-size:.78rem;color:var(--ink-2);letter-spacing:.01em;margin-bottom:1.6rem;line-height:1.55;flex-grow:1;}
-.cc-meta .meta-row{display:block;padding:.28rem 0;border-bottom:1px dotted rgba(11,11,13,.15);}
-.cc-meta .meta-row:last-child{border:0;}
-.cc-enroll{display:inline-flex;align-items:center;justify-content:space-between;background:var(--green);color:var(--paper);padding:.85rem 1.1rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-top:auto;transition:background .18s ease;}
-.cc-enroll:hover{background:var(--green-deep);}
-.cc-enroll .arrow{font-family:var(--serif);font-style:italic;font-size:1.2rem;}
-
-/* Stats row */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);}
-@media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr);}}
-.stat{padding:1.6rem 1.2rem;text-align:center;border-right:1px solid var(--gold-line);}
-.stat:last-child{border-right:0;}
-.stat-num{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.35rem;}
-.stat-lab{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);}
-.section-black .stat-num,.section-green .stat-num,.section-red .stat-num{color:var(--cream-accent);}
-.section-black .stat-lab,.section-green .stat-lab,.section-red .stat-lab{color:rgba(251,250,246,.65);}
-
-/* Syllabus table (IIBS academic register) */
-.syllabus-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.92rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:2rem;}
-.syllabus-table thead th{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-align:left;padding:1rem 1.1rem;border-right:1px solid rgba(255,255,255,.1);}
-.syllabus-table tbody td{padding:1.1rem 1.1rem;border-bottom:1px solid rgba(11,11,13,.1);border-right:1px solid rgba(11,11,13,.08);vertical-align:top;line-height:1.5;}
-.syllabus-table tbody tr:nth-child(even) td{background:var(--cream);}
-.syllabus-table .lesson-num{font-family:var(--serif);font-size:1.4rem;color:var(--red);font-weight:600;width:70px;}
-.syllabus-table .topic{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--ink);width:22%;}
-.syllabus-table .grammar{font-family:var(--sans);font-size:.9rem;color:var(--ink-2);}
-.syllabus-table .culture{font-family:var(--sans);font-size:.88rem;color:var(--green-deep);font-style:italic;width:26%;}
-
-/* At-a-glance academic table */
-.glance{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.98rem;border-top:2px solid var(--ink);}
-.glance tr td{padding:1.05rem 0;border-bottom:1px solid rgba(11,11,13,.14);vertical-align:top;}
-.glance tr td:first-child{font-family:var(--sans);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:500;width:38%;padding-right:1.4rem;}
-.glance tr td:last-child{font-family:var(--serif);font-size:1.1rem;color:var(--ink);line-height:1.45;}
-
-/* Outcomes list */
-.outcomes{list-style:none;padding:0;margin:2rem 0 0 0;counter-reset:o;}
-.outcomes li{counter-increment:o;padding:1.1rem 0 1.1rem 3.6rem;border-bottom:1px solid rgba(11,11,13,.12);position:relative;font-family:var(--serif);font-size:1.15rem;font-style:italic;line-height:1.4;color:var(--ink);}
-.outcomes li::before{content:counter(o,decimal-leading-zero);position:absolute;left:0;top:1.1rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;color:var(--gold);font-style:normal;font-weight:500;}
-
-/* Frames */
-.zoom-frame{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.6rem;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);}
-.zoom-frame img{width:100%;display:block;border-radius:3px;}
-.cert-frame{background:var(--paper);border:1px solid rgba(11,11,13,.12);padding:1rem;box-shadow:0 40px 80px -30px rgba(11,11,13,.35);}
-.browser-frame{border:1px solid rgba(11,11,13,.15);border-radius:6px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(11,11,13,.25);background:#fff;}
-.browser-chrome{background:#EEE;padding:.55rem .9rem;border-bottom:1px solid rgba(0,0,0,.08);display:flex;gap:.4rem;align-items:center;}
-.browser-chrome span{width:10px;height:10px;border-radius:50%;background:#ccc;}
-.browser-chrome span:first-child{background:#F35B5B;}
-.browser-chrome span:nth-child(2){background:#F5B93B;}
-.browser-chrome span:nth-child(3){background:#4CC26A;}
-.browser-chrome .url{margin-left:.9rem;font-family:var(--sans);font-size:.74rem;color:#666;}
-
-/* Teacher tiles */
-.teacher-wall{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid rgba(255,255,255,.14);border-left:1px solid rgba(255,255,255,.14);}
-@media (max-width:1100px){.teacher-wall{grid-template-columns:repeat(4,1fr);}}
-@media (max-width:640px){.teacher-wall{grid-template-columns:repeat(2,1fr);}}
-.tt{border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);padding:1.5rem 1.1rem;text-align:center;}
-.tt img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.15);margin-bottom:.9rem;}
-.tt .tt-region{font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream-accent);}
-.tt .tt-name{font-family:var(--serif);font-size:1.25rem;margin:.35rem 0 .25rem;color:var(--paper);}
-.tt .tt-cred{font-family:var(--sans);font-size:.75rem;color:rgba(251,250,246,.65);}
-
-/* Two-col editorial */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start;}
-@media (max-width:900px){.two-col{grid-template-columns:1fr;}}
-
-/* Pricing */
-.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
-@media (max-width:900px){.pricing{grid-template-columns:1fr;}}
-.tier{background:var(--paper);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:2.4rem 1.8rem 2rem;position:relative;}
-.tier.featured{border:2px solid var(--green);background:linear-gradient(180deg,var(--paper) 0%,#EFF6F1 100%);}
-.tier .tier-badge{position:absolute;top:-13px;left:1.8rem;background:var(--green);color:var(--paper);font-family:var(--sans);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;padding:.35rem .75rem;font-weight:500;}
-.tier-name{font-family:var(--serif);font-size:1.5rem;margin-bottom:.4rem;}
-.tier-price{font-family:var(--serif);font-size:3rem;font-weight:600;color:var(--red);line-height:1;margin-bottom:.2rem;}
-.tier-price small{font-family:var(--sans);font-size:.75rem;color:var(--ink-2);letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin-left:.35rem;}
-.tier-sub{font-family:var(--sans);font-size:.85rem;color:var(--ink-2);margin-bottom:1.4rem;}
-.tier ul{list-style:none;padding:0;margin:0 0 1.6rem 0;}
-.tier ul li{padding:.55rem 0 .55rem 1.5rem;border-bottom:1px dotted rgba(11,11,13,.14);font-size:.92rem;position:relative;}
-.tier ul li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;}
-
-/* FAQ */
-.faq{border-top:1px solid var(--ink);}
-.faq details{border-bottom:1px solid rgba(11,11,13,.15);padding:1.4rem 0;}
-.faq summary{list-style:none;cursor:pointer;font-family:var(--serif);font-size:1.35rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
-.faq summary::-webkit-details-marker{display:none;}
-.faq summary::after{content:"+";font-family:var(--sans);font-size:1.6rem;color:var(--gold);font-weight:300;}
-.faq details[open] summary::after{content:"−";}
-.faq details p{margin-top:1rem;font-size:1rem;color:var(--ink-2);line-height:1.65;max-width:70ch;}
-
-/* Culture tile grid */
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
-@media (max-width:900px){.tiles{grid-template-columns:1fr 1fr;}}
-@media (max-width:600px){.tiles{grid-template-columns:1fr;}}
-.tile{position:relative;aspect-ratio:1/1;overflow:hidden;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);}
-.tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(.08);transition:transform .5s ease;}
-.tile:hover img{transform:scale(1.04);}
-.tile .tile-content{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,0) 40%,rgba(11,11,13,.75) 100%);padding:1.4rem;display:flex;flex-direction:column;justify-content:flex-end;color:var(--paper);}
-.tile .tile-title{font-family:var(--serif);font-style:italic;font-size:1.9rem;line-height:1.05;margin-bottom:.2rem;}
-.tile .tile-sub{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-accent);}
-
-/* Trustpilot review card grid */
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(11,11,13,.14);border:1px solid rgba(11,11,13,.14);}
-@media (max-width:900px){.reviews{grid-template-columns:1fr 1fr;}}
-@media (max-width:600px){.reviews{grid-template-columns:1fr;}}
-.review{background:var(--paper);padding:1.6rem;}
-.review .stars{color:#F5B93B;letter-spacing:.06em;font-size:.95rem;margin-bottom:.6rem;}
-.review .rev-title{font-family:var(--serif);font-size:1.15rem;margin-bottom:.6rem;}
-.review .rev-body{font-size:.92rem;color:var(--ink-2);line-height:1.55;margin-bottom:.9rem;}
-.review .rev-author{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
-
-/* Alumni cards */
-.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
-@media (max-width:900px){.alumni{grid-template-columns:1fr;}}
-.alum{padding:1.8rem;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper);}
-.alum img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:1rem;}
-.alum .quote{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.4;color:var(--ink);margin-bottom:.9rem;}
-.alum .attr{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);}
-
-/* Sticky bottom enroll bar */
-.enroll-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);padding:.85rem clamp(1rem,3vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:80;border-top:1px solid var(--gold-line);transform:translateY(100%);transition:transform .35s ease;}
-.enroll-bar.show{transform:translateY(0);}
-.enroll-bar .eb-left{font-family:var(--serif);font-style:italic;font-size:1rem;}
-.enroll-bar .eb-price{font-family:var(--serif);font-weight:600;color:var(--cream-accent);margin:0 .8rem;}
-.enroll-bar .btn{padding:.7rem 1.2rem;font-size:.8rem;}
-
-/* Includes list */
-.includes{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;list-style:none;padding:0;margin:2rem 0 0;}
-@media (max-width:700px){.includes{grid-template-columns:1fr;}}
-.includes li{padding:.9rem 0 .9rem 1.8rem;border-bottom:1px solid rgba(11,11,13,.1);font-family:var(--sans);font-size:.98rem;position:relative;}
-.includes li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;font-size:1.1rem;}
-
-/* Section head */
-.section-head{max-width:820px;margin:0 0 3rem 0;}
-.section-head.center{margin:0 auto 3rem;text-align:center;}
-
-/* Utility */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
-.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;}
-@media (max-width:900px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr 1fr;}}
-@media (max-width:600px){.grid-3,.grid-4,.grid-5{grid-template-columns:1fr;}}
-
-/* Related courses */
-.related{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
-@media (max-width:900px){.related{grid-template-columns:1fr;}}
-
-/* Small badge */
-.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.42rem .75rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;}
-.chip-green{border-color:var(--green-bright);color:var(--green);background:rgba(30,138,94,.06);}
-.chip-red{border-color:var(--red);color:var(--red);background:rgba(199,32,46,.06);}
-
-/* Video bg utility for non-hero sections */
-.video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.25;}
-
-/* Nav override (works with existing partial) */
-.site-header{background:var(--paper);border-bottom:1px solid rgba(11,11,13,.1);position:sticky;top:0;z-index:70;}
-.site-header .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;}
-.site-header .nav-menu{display:flex;gap:1.4rem;}
-.site-header .nav-link{font-family:var(--sans);font-size:.86rem;color:var(--ink);letter-spacing:.02em;}
-.site-header .nav-link:hover{color:var(--red);}
-.site-header .lt-main{font-family:var(--serif);font-size:1.5rem;color:var(--red);font-weight:600;}
-.site-header .lt-sub{font-family:var(--sans);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);display:block;margin-top:2px;}
-.site-header .nav-cta{background:var(--green);color:var(--paper);border:0;padding:.7rem 1.2rem;font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;}
-.site-header .nav-toggle{display:none;background:transparent;border:0;flex-direction:column;gap:4px;cursor:pointer;padding:.4rem;}
-.site-header .nav-toggle span{width:24px;height:2px;background:var(--ink);display:block;}
-@media (max-width:900px){.site-header .nav-menu{display:none;}.site-header .nav-toggle{display:flex;}}
-.nav-drawer{display:none;}
-
-.site-footer{background:var(--ink);color:var(--paper);padding:4rem 0 2rem;margin-top:0;}
-.site-footer a{color:rgba(251,250,246,.7);display:block;padding:.28rem 0;font-size:.88rem;}
-.site-footer a:hover{color:var(--cream-accent);}
-.site-footer .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.08);}
-@media (max-width:900px){.site-footer .footer-top{grid-template-columns:1fr 1fr;}}
-.site-footer h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cream-accent);margin-bottom:1rem;}
-.site-footer p{color:rgba(251,250,246,.72);font-size:.9rem;}
-</style>
-
-</head><body>
-<div class="top-strip"><span>Fall Cohort · Enrolment closes Oct 3</span><span class="dot"></span><span>Founder Rate · Save $220 on Annual</span><span class="dot"></span><span>7-Day Money-Back Guarantee</span></div>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/ci.css?v=v4">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/cefr-logo.svg">
+</head>
+<body class="v4">
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="../../index.html" aria-label="Club Italia — home">
@@ -312,285 +53,467 @@ section{padding:clamp(4rem,8vw,7rem) 0;position:relative;}
   <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
 </aside>
 
-
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="../../assets/img/course-ci4.jpg"><source src="../../assets/video/napoli-mare.mp4" type="video/mp4"></video>
-  <div class="hero-scrim"></div>
-  <div class="hero-trust"><span class="stars">★★★★★</span> <strong>4.8</strong> · Trustpilot · 1,284 reviews</div>
-  <div class="hero-live"><span class="live-dot"></span> Live cohort in session · 12 learners</div>
-  <div class="hero-wrap">
-    <div class="hero-eyebrow">Course CI-04 · Avanzato · Napoli & Milano</div>
-    <h1 class="hero-h1">CI Avanzato<br><span class="ital">live from Naples & Milan.</span></h1>
-    <p class="hero-sub">Real Italian for real life, between the warmth of Naples and the sharpness of Milan. Twenty live lessons that consolidate CEFR A2 and open the door to B1.</p>
-    <div class="hero-ctas"><a href="#pricing" class="btn btn-primary btn-lg">Reserve My Spot</a><a href="../../pdf/ci4-syllabus.pdf" class="btn btn-red btn-lg">Download Syllabus (PDF)</a></div>
+<section class="hero" style="position:relative;min-height:100vh;overflow:hidden;background:#04070e">
+  <div class="hero-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline poster="../../assets/img/hero-italian-life.jpg" preload="metadata"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%">
+      <source src="../../assets/video/opera-scala.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;inset:0;background:
+      linear-gradient(105deg, rgba(4,20,15,.88) 0%, rgba(4,20,15,.55) 42%, rgba(50,10,10,.35) 70%, rgba(0,0,0,.75) 100%),
+      radial-gradient(ellipse at 30% 55%, rgba(230,201,155,.11), transparent 55%);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35), transparent 22%, transparent 65%, rgba(0,0,0,.55));"></div>
+  </div>
+  <div class="wrap hero-content" style="position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .95fr;gap:clamp(2rem,4vw,5rem);align-items:center;min-height:100vh;padding-top:8rem;padding-bottom:6rem">
+    <div>
+      <div class="eyebrow paper" style="color:#8FC9AB;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.4rem">Club Italia · Il Corso · A2.1 → A2.2</div>
+      <h1 style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(3.4rem,8vw,7.6rem);line-height:1.02;letter-spacing:-.022em;color:#FBFAF6;margin:0 0 2rem"><span class="accent-ital" style="font-style:italic;color:#E6C99B">Avanzato.</span><br>Italian as a way of thinking.</h1>
+      <p style="font-family:'Inter',sans-serif;font-size:clamp(1.2rem,1.7vw,1.55rem);line-height:1.55;color:rgba(251,250,246,.86);max-width:52ch;margin:0 0 2.4rem;font-weight:300">Forty live sessions on high register, idiom, film, and the way Italians argue about food, family, and politics. With Alessandro Conti, live from Milano.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.2rem">
+        <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button>
+        <a class="btn btn-3d btn-3d-ghost" href="#syllabus">View the syllabus</a>
+      </div>
+      <div style="display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap;color:rgba(251,250,246,.75);font-size:.86rem">
+        <div style="display:flex;align-items:center;gap:.55rem"><span style="color:#E6C99B">★★★★★</span><span>4.8 · Trustpilot</span></div>
+        <div style="display:flex;align-items:center;gap:.55rem"><span style="width:9px;height:9px;border-radius:50%;background:#e0413f;animation:pulse 2s infinite;display:inline-block"></span><span style="letter-spacing:.16em;text-transform:uppercase;font-size:.7rem">12 classrooms broadcasting right now</span></div>
+      </div>
+    </div>
+    <div style="position:relative;aspect-ratio:5/6;height:76%;justify-self:end;width:100%;max-width:580px;align-self:center">
+      <img src="../../assets/img/zoom-classroom-chiara.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 22%;transform:rotate(-1.2deg);
+          box-shadow:0 40px 120px -40px rgba(0,0,0,.85);
+          mask-image:radial-gradient(ellipse 90% 92% at 50% 48%, black 60%, transparent 100%);
+          -webkit-mask-image:radial-gradient(ellipse 90% 92% at 50% 48%, black 60%, transparent 100%);">
+      <div style="position:absolute;left:-1.2rem;bottom:1.5rem;background:rgba(4,15,10,.85);backdrop-filter:blur(10px);padding:.9rem 1.2rem;border-left:2px solid #E6C99B;max-width:280px"><div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:.98rem;line-height:1.35">Alessandro Conti · live from Milano</div></div>
+    </div>
+  </div>
+  <style>@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,65,63,.6)}70%{box-shadow:0 0 0 12px rgba(224,65,63,0)}100%{box-shadow:0 0 0 0 rgba(224,65,63,0)}}
+    @media(max-width:960px){.hero-content{grid-template-columns:1fr!important}.hero-content>div:last-child{display:none}}</style>
+</section>
+<section class="section-cream" style="padding:3rem 0;border-bottom:1px solid rgba(0,0,0,.06)">
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;text-align:center">
+    <div style="padding:1.4rem 1rem;border-right:1px solid rgba(0,0,0,.08)"><div style="font-family:'Playfair Display',serif;font-size:2rem;color:#166A47">A2.1 → A2.2</div><div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#6b7168;margin-top:.35rem">CEFR span</div></div>
+    <div style="padding:1.4rem 1rem;border-right:1px solid rgba(0,0,0,.08)"><div style="font-family:'Playfair Display',serif;font-size:2rem;color:#166A47">40</div><div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#6b7168;margin-top:.35rem">Live lessons</div></div>
+    <div style="padding:1.4rem 1rem;border-right:1px solid rgba(0,0,0,.08)"><div style="font-family:'Playfair Display',serif;font-size:2rem;color:#166A47">85 min</div><div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#6b7168;margin-top:.35rem">Each session</div></div>
+    <div style="padding:1.4rem 1rem;border-right:1px solid rgba(0,0,0,.08)"><div style="font-family:'Playfair Display',serif;font-size:2rem;color:#166A47">10–12</div><div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#6b7168;margin-top:.35rem">Classmates</div></div>
+    <div style="padding:1.4rem 1rem"><div style="font-family:'Playfair Display',serif;font-size:2rem;color:#166A47">Native</div><div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#6b7168;margin-top:.35rem">In-Italy teacher</div></div>
   </div>
 </section>
-
-<section class="section-cream" style="padding:1.8rem 0;">
-  <div class="wrap"><div class="stats "><div class="stat"><div class="stat-num">★ 4.8</div><div class="stat-lab">1,284 Trustpilot reviews</div></div><div class="stat"><div class="stat-num">347</div><div class="stat-lab">alumni completed this course</div></div><div class="stat"><div class="stat-num">Oct 6</div><div class="stat-lab">next start · seats open</div></div><div class="stat"><div class="stat-num">28.3h</div><div class="stat-lab">live contact time</div></div></div></div>
+<section class="section-cream" style="padding:clamp(4.5rem,9vw,8rem) 0">
+  <div class="wrap-narrow" style="text-align:center">
+    <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.2rem">The promise of this course</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.05;color:#0e1a14;margin:0 0 1.6rem">By the end of Avanzato, <span class="accent-ital" style="font-style:italic;color:#166A47">you will not be a beginner in avanzato Italian anymore.</span></h2>
+    <p style="font-size:1.2rem;line-height:1.65;color:#3a3f3a;max-width:64ch;margin:0 auto">Forty live sessions on high register, idiom, film, and the way Italians argue about food, family, and politics. With Alessandro Conti, live from Milano.</p>
+  </div>
 </section>
-
-<section class="section-white">
+<section class="section-cream" style="padding:clamp(4.5rem,9vw,8rem) 0">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2.4rem,5vw,5rem);align-items:center">
+    <div>
+      <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.4rem">The room, from the inside</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;color:#0e1a14;margin:0 0 1.6rem">A real class, <span class="accent-ital" style="font-style:italic;color:#166A47">in session.</span></h2>
+      <p style="font-size:1.12rem;line-height:1.65;color:#3a3f3a;max-width:52ch;margin:0 0 1.6rem">Ten to twelve classmates. One native teacher. Eighty-five minutes of Italian at conversational pace. Cameras on, coffee in hand.</p>
+    </div>
+    <figure style="margin:0">
+      <div style="aspect-ratio:4/3;overflow:hidden;box-shadow:0 40px 100px -30px rgba(14,26,20,.35)">
+        <img src="../../assets/img/zoom-classroom-chiara.jpg" alt="A Club Italia live class" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <figcaption style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:#166A47;margin-top:1rem;text-align:center">Alessandro Conti, live from Milano · 11 students, one hand raised.</figcaption>
+    </figure>
+  </div>
+  <style>@media(max-width:820px){[style*="1fr 1.1fr"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-white" style="padding:clamp(5rem,9vw,8rem) 0">
   <div class="wrap">
-    <div class="two-col">
-      <div>
-        <div class="section-eyebrow">Course at a Glance</div>
-        <h2 class="h-display">CI Avanzato · <span class="ital">course card.</span></h2>
-        <p class="lede">This course is designed for adult learners approaching Italian at the A2.1 → A2.2 band of the Common European Framework of Reference for Languages. Instruction is live, in Italian, with English support on demand, and follows the communicative-competence model outlined in the 2020 Companion Volume.</p>
-      </div>
-      <div>
-        <table class="glance">
-          <tr><td>Course code</td><td>CI-04</td></tr>
-          <tr><td>CEFR level</td><td>A2.1 → A2.2</td></tr>
-          <tr><td>Duration</td><td>20 weeks · one live class per week</td></tr>
-          <tr><td>Total contact hours</td><td>28.3 hours</td></tr>
-          <tr><td>Recommended study hours</td><td>40 – 60 hours over the course</td></tr>
-          <tr><td>Class size</td><td>Capped at 12 learners</td></tr>
-          <tr><td>Format</td><td>Live online · weekly · via Club Italia dashboard</td></tr>
-          <tr><td>Language of instruction</td><td>Italian, with English support on demand</td></tr>
-          <tr><td>City anchor</td><td>Naples & Milan</td></tr>
-          <tr><td>Signature teacher</td><td>Luca, Napoli</td></tr>
-          <tr><td>Certification</td><td>Club Italia by eTeacher · CEFR-aligned certificate</td></tr>
-          <tr><td>Materials</td><td>Included in tuition · downloadable PDFs</td></tr>
-        </table>
-      </div>
+    <div style="max-width:820px;margin-bottom:2.6rem">
+      <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.2rem">The syllabus, week by week</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.05;color:#0e1a14;margin:0">Every session, <span class="accent-ital" style="font-style:italic;color:#166A47">on record.</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:.8rem 0;border-bottom:1px solid rgba(0,0,0,.15);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#6b7168">
+      <div>#</div><div>Lesson</div><div>Grammar and vocabulary</div><div>You'll be able to</div>
+    </div>
+    <div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">01</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Registro alto</div>
+      <div style="font-size:.9rem;color:#6b7168">High register</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Read a Repubblica editorial aloud</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">02</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Modi di dire</div>
+      <div style="font-size:.9rem;color:#6b7168">Idiomatic expressions</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Use ten idioms in conversation</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">03</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Il gerundio composto</div>
+      <div style="font-size:.9rem;color:#6b7168">Compound gerund</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Speak in refined subordination</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">04</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Frasi implicite</div>
+      <div style="font-size:.9rem;color:#6b7168">Implicit clauses</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Speak Italian without the crutch of 'che'</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">05</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Concordanza dei tempi</div>
+      <div style="font-size:.9rem;color:#6b7168">Sequence of tenses</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Master narrative time</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">06</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Il congiuntivo trapassato</div>
+      <div style="font-size:.9rem;color:#6b7168">Pluperfect subjunctive</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Speak in unrealized past</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">07</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Retorica quotidiana</div>
+      <div style="font-size:.9rem;color:#6b7168">Everyday rhetoric</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Argue an Italian point</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">08</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Ferrante · lettura</div>
+      <div style="font-size:.9rem;color:#6b7168">Literary reading I</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Discuss a Ferrante chapter</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">09</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Calvino · lettura</div>
+      <div style="font-size:.9rem;color:#6b7168">Literary reading II</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Discuss a Calvino story</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">10</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Poesia · lettura</div>
+      <div style="font-size:.9rem;color:#6b7168">Poetry aloud</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Read a Montale poem aloud</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">11</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Il cinema autoriale</div>
+      <div style="font-size:.9rem;color:#6b7168">Auteur cinema</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Discuss a Fellini scene</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">12</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Il cinema contemporaneo</div>
+      <div style="font-size:.9rem;color:#6b7168">Contemporary cinema</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Discuss a Sorrentino scene</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">13</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">La musica · Battisti</div>
+      <div style="font-size:.9rem;color:#6b7168">Cultural listening</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Discuss classic Italian songwriting</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">14</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">La musica contemporanea</div>
+      <div style="font-size:.9rem;color:#6b7168">Contemporary listening</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Discuss a Baustelle song</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">15</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Politica italiana</div>
+      <div style="font-size:.9rem;color:#6b7168">Political discourse</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Speak civilly about Italian politics</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">16</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Filosofia · cibo e famiglia</div>
+      <div style="font-size:.9rem;color:#6b7168">Cultural philosophy</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Argue an Italian food principle</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">17</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">L'arte contemporanea</div>
+      <div style="font-size:.9rem;color:#6b7168">Contemporary art</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Discuss a Cattelan piece</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">18</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Un articolo lungo</div>
+      <div style="font-size:.9rem;color:#6b7168">Extended reading</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Analyze a long-form article</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">19</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Cena in italiano</div>
+      <div style="font-size:.9rem;color:#6b7168">Extended conversation</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Host a 2-hour dinner in Italian</div>
+    </div><div class="sr-row" style="display:grid;grid-template-columns:80px 1.3fr 1fr 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:baseline">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:1.2rem">20</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#0e1a14">Valutazione finale</div>
+      <div style="font-size:.9rem;color:#6b7168">CEFR A2.2 assessment</div>
+      <div style="font-size:.9rem;color:#3a3f3a;font-style:italic">Assessed conversation and short essay</div>
     </div>
   </div>
 </section>
-
-<section class="section-cream">
+<section class="section-cream" style="padding:clamp(5rem,9vw,8rem) 0">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center">
+    <figure style="margin:0;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+      <img src="../../assets/img/teacher-alessandro.jpg" alt="Alessandro Conti" style="width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:0 30px 80px -20px rgba(14,26,20,.35)">
+      <img src="../../assets/img/env-marco-desk.jpg" alt="Alessandro Conti's teaching studio" style="width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:0 30px 80px -20px rgba(14,26,20,.35)">
+    </figure>
+    <div>
+      <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.4rem">Your teacher</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.05;color:#0e1a14;margin:0 0 1rem">Alessandro Conti,<br><span class="accent-ital" style="font-style:italic;color:#166A47">live from Milano.</span></h2>
+      <p style="font-size:1.12rem;line-height:1.65;color:#3a3f3a;max-width:44ch">Alessandro has taught adult learners for twelve years, from Milano and Torino. His fourth-level class reads Ferrante together, argues about Sorrentino, and finishes the year hosting a two-hour dinner in Italian.</p>
+    </div>
+  </div>
+  <style>@media(max-width:820px){[style*="1fr 1fr"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-cream" style="padding:clamp(5rem,9vw,8rem) 0">
+  <div class="wrap" style="display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2.4rem,5vw,5rem);align-items:center">
+    <figure style="margin:0">
+      <div style="aspect-ratio:4/5;overflow:hidden;box-shadow:0 40px 100px -30px rgba(14,26,20,.35)">
+        <img src="../../assets/img/life-scala-milano.jpg" alt="A moment of Milano life" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </figure>
+    <div>
+      <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.4rem">The culture behind the classroom</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.05;color:#0e1a14;margin:0 0 1.4rem">Not a language. <span class="accent-ital" style="font-style:italic;color:#166A47">A way of living.</span></h2>
+      <p style="font-size:1.12rem;line-height:1.65;color:#3a3f3a;max-width:48ch;margin:0">Every Club Italia session is set inside a piece of Italian daily life. This course is scored to Milano — its cafés, its markets, its small rituals of politeness. You learn the words the way an Italian learned them: because someone said them to you first.</p>
+    </div>
+  </div>
+  <style>@media(max-width:820px){[style*="1.1fr 1fr"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-green" style="padding:clamp(5rem,9vw,8rem) 0">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.4rem,5vw,5rem);align-items:start">
+    <div>
+      <div class="eyebrow" style="color:#E6C99B;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.4rem">By the end of Avanzato</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;color:#FBFAF6;margin:0 0 1.6rem">Five things you will <span class="accent-ital" style="font-style:italic;color:#E6C99B">actually be able to do.</span></h2>
+      <p style="font-size:1.1rem;line-height:1.6;color:rgba(251,250,246,.8);max-width:46ch">Not "gain exposure to". Not "become familiar with". Each of the five outcomes below is assessed live, on video, with a native speaker.</p>
+    </div>
+    <ul style="list-style:none;padding:0;margin:0"><li style="padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(251,250,246,.9);font-size:1.1rem;line-height:1.5;display:flex;gap:1.2rem;align-items:baseline"><span style="color:#E6C99B;font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;flex-shrink:0">01</span><span>Read Ferrante and Calvino in the original with occasional support</span></li><li style="padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(251,250,246,.9);font-size:1.1rem;line-height:1.5;display:flex;gap:1.2rem;align-items:baseline"><span style="color:#E6C99B;font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;flex-shrink:0">02</span><span>Discuss film, politics, and food in native register</span></li><li style="padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(251,250,246,.9);font-size:1.1rem;line-height:1.5;display:flex;gap:1.2rem;align-items:baseline"><span style="color:#E6C99B;font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;flex-shrink:0">03</span><span>Use the full sequence of Italian tenses accurately</span></li><li style="padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(251,250,246,.9);font-size:1.1rem;line-height:1.5;display:flex;gap:1.2rem;align-items:baseline"><span style="color:#E6C99B;font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;flex-shrink:0">04</span><span>Host a two-hour dinner conversation in Italian</span></li><li style="padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(251,250,246,.9);font-size:1.1rem;line-height:1.5;display:flex;gap:1.2rem;align-items:baseline"><span style="color:#E6C99B;font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;flex-shrink:0">05</span><span>Sit and pass a CEFR A2.2 external exam if you choose to</span></li></ul>
+  </div>
+  <style>@media(max-width:820px){[style*="1fr 1fr"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-red" style="padding:clamp(4.5rem,9vw,8rem) 0;overflow:hidden">
+  <div class="wrap" style="display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,4vw,4rem);align-items:center">
+    <div style="position:relative">
+      <div style="position:absolute;inset:-20%;background:radial-gradient(circle at center, rgba(230,201,155,.28), transparent 60%);pointer-events:none"></div>
+      <img src="../../assets/img/biagio.png" alt="Biagio, the AI Italian tutor" style="width:100%;max-width:340px;position:relative;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5))">
+    </div>
+    <div>
+      <div class="eyebrow" style="color:#E6C99B;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.4rem">Between sessions</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.05;color:#FBFAF6;margin:0 0 1.4rem">And between classes, <span class="accent-ital" style="font-style:italic;color:#E6C99B">Biagio.</span></h2>
+      <p style="font-size:1.1rem;line-height:1.6;color:rgba(251,250,246,.86);max-width:52ch;margin:0 0 1.6rem">Biagio is your after-hours Italian tutor. Trained on the exact syllabus of this course. Available at every hour of every day. Included in your enrollment.</p>
+      <a class="btn btn-3d btn-3d-primary" href="../../biagio.html">Meet Biagio</a>
+    </div>
+  </div>
+  <style>@media(max-width:820px){[style*=".85fr 1.15fr"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-cream" style="padding:clamp(4.5rem,9vw,8rem) 0">
+  <div class="wrap" style="text-align:center;margin-bottom:2.6rem">
+    <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.2rem">Where the language lives</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;color:#0e1a14;margin:0 auto;max-width:22ch">The Italy <span class="accent-ital" style="font-style:italic;color:#166A47">you speak into.</span></h2>
+  </div>
+  <div class="wrap-flush" style="padding:0 clamp(1.2rem,2vw,2rem);display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#0e1a14">
+    <figure style="margin:0;position:relative;aspect-ratio:4/5;overflow:hidden">
+      <img src="../../assets/img/life-caffe-roma.jpg" alt="A morning in Roma" style="width:100%;height:100%;object-fit:cover;transition:transform .9s ease">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#FBFAF6;font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem">A morning in Roma</figcaption>
+    </figure><figure style="margin:0;position:relative;aspect-ratio:4/5;overflow:hidden">
+      <img src="../../assets/img/life-trattoria-toscana.jpg" alt="Sunday lunch in Toscana" style="width:100%;height:100%;object-fit:cover;transition:transform .9s ease">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#FBFAF6;font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem">Sunday lunch in Toscana</figcaption>
+    </figure><figure style="margin:0;position:relative;aspect-ratio:4/5;overflow:hidden">
+      <img src="../../assets/img/life-market-bologna.jpg" alt="The market in Bologna" style="width:100%;height:100%;object-fit:cover;transition:transform .9s ease">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#FBFAF6;font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem">The market in Bologna</figcaption>
+    </figure><figure style="margin:0;position:relative;aspect-ratio:4/5;overflow:hidden">
+      <img src="../../assets/img/life-scala-milano.jpg" alt="La Scala di Milano" style="width:100%;height:100%;object-fit:cover;transition:transform .9s ease">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#FBFAF6;font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem">La Scala di Milano</figcaption>
+    </figure><figure style="margin:0;position:relative;aspect-ratio:4/5;overflow:hidden">
+      <img src="../../assets/img/life-gondola-venezia.jpg" alt="A canal in Venezia" style="width:100%;height:100%;object-fit:cover;transition:transform .9s ease">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#FBFAF6;font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem">A canal in Venezia</figcaption>
+    </figure><figure style="margin:0;position:relative;aspect-ratio:4/5;overflow:hidden">
+      <img src="../../assets/img/life-amalfi-coast.jpg" alt="The Amalfi coast at dusk" style="width:100%;height:100%;object-fit:cover;transition:transform .9s ease">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#FBFAF6;font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem">The Amalfi coast at dusk</figcaption>
+    </figure>
+  </div>
+  <style>@media(max-width:820px){[style*="repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr)!important}}
+    @media(max-width:520px){[style*="repeat(3,1fr)"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-white" style="padding:clamp(4.5rem,9vw,8rem) 0">
+  <div class="wrap" style="text-align:center;margin-bottom:2.6rem">
+    <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.2rem">2,140 reviews on Trustpilot</div>
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,4.6vw,3.8rem);color:#0e1a14;line-height:1">4.8<span style="color:#E6C99B;font-size:.8em;margin-left:.4rem">★★★★★</span></div>
+    <p style="color:#6b7168;font-size:1rem;margin-top:.6rem">"Excellent" · Ranked #1 US Italian school 2026</p>
+  </div>
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem"><article class="tp-review-card" style="background:#fff;border:1px solid rgba(0,0,0,.08);padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:1rem">
+    <div style="display:flex;align-items:center;gap:.9rem">
+      <img src="../../assets/img/student-diane.jpg" alt="Diane" style="width:52px;height:52px;border-radius:50%;object-fit:cover">
+      <div><div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#0e1a14">Diane</div><div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168;margin-top:.15rem">Boston, MA · CI Intermedio</div></div>
+    </div>
+    <div style="color:#E6C99B;font-size:.98rem;letter-spacing:.15em">★★★★★</div>
+    <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;line-height:1.5;color:#0e1a14;margin:0">"I have taken three courses now and I finally speak Italian with my in-laws in Puglia. The class feels like a dinner table."</p>
+    <div style="margin-top:auto;padding-top:.9rem;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168">
+      <span style="color:#166A47">✓ Verified</span><span>Reviewed on Trustpilot</span>
+    </div>
+  </article><article class="tp-review-card" style="background:#fff;border:1px solid rgba(0,0,0,.08);padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:1rem">
+    <div style="display:flex;align-items:center;gap:.9rem">
+      <img src="../../assets/img/student-robert.jpg" alt="Robert" style="width:52px;height:52px;border-radius:50%;object-fit:cover">
+      <div><div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#0e1a14">Robert</div><div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168;margin-top:.15rem">Austin, TX · Parliamo Confident</div></div>
+    </div>
+    <div style="color:#E6C99B;font-size:.98rem;letter-spacing:.15em">★★★★★</div>
+    <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;line-height:1.5;color:#0e1a14;margin:0">"I tried Duolingo for four years. I learned more in Marco's first six weeks than in all of that."</p>
+    <div style="margin-top:auto;padding-top:.9rem;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168">
+      <span style="color:#166A47">✓ Verified</span><span>Reviewed on Trustpilot</span>
+    </div>
+  </article><article class="tp-review-card" style="background:#fff;border:1px solid rgba(0,0,0,.08);padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:1rem">
+    <div style="display:flex;align-items:center;gap:.9rem">
+      <img src="../../assets/img/student-linda.jpg" alt="Linda" style="width:52px;height:52px;border-radius:50%;object-fit:cover">
+      <div><div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#0e1a14">Linda</div><div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168;margin-top:.15rem">New York, NY · CI Elementare</div></div>
+    </div>
+    <div style="color:#E6C99B;font-size:.98rem;letter-spacing:.15em">★★★★★</div>
+    <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;line-height:1.5;color:#0e1a14;margin:0">"Chiara teaches with the calm of a woman who has done this for a decade. I look forward to Wednesday nights."</p>
+    <div style="margin-top:auto;padding-top:.9rem;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168">
+      <span style="color:#166A47">✓ Verified</span><span>Reviewed on Trustpilot</span>
+    </div>
+  </article><article class="tp-review-card" style="background:#fff;border:1px solid rgba(0,0,0,.08);padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:1rem">
+    <div style="display:flex;align-items:center;gap:.9rem">
+      <img src="../../assets/img/student-james.jpg" alt="James" style="width:52px;height:52px;border-radius:50%;object-fit:cover">
+      <div><div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#0e1a14">James</div><div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168;margin-top:.15rem">Seattle, WA · Capsule Cucina</div></div>
+    </div>
+    <div style="color:#E6C99B;font-size:.98rem;letter-spacing:.15em">★★★★★</div>
+    <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;line-height:1.5;color:#0e1a14;margin:0">"Six weeks on Italian food, in Italian, with Giulia from Bologna. My kitchen and my accent are both better."</p>
+    <div style="margin-top:auto;padding-top:.9rem;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168">
+      <span style="color:#166A47">✓ Verified</span><span>Reviewed on Trustpilot</span>
+    </div>
+  </article><article class="tp-review-card" style="background:#fff;border:1px solid rgba(0,0,0,.08);padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:1rem">
+    <div style="display:flex;align-items:center;gap:.9rem">
+      <img src="../../assets/img/student-sarah.jpg" alt="Patricia" style="width:52px;height:52px;border-radius:50%;object-fit:cover">
+      <div><div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#0e1a14">Sarah</div><div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168;margin-top:.15rem">Chicago, IL · CI Avanzato</div></div>
+    </div>
+    <div style="color:#E6C99B;font-size:.98rem;letter-spacing:.15em">★★★★★</div>
+    <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;line-height:1.5;color:#0e1a14;margin:0">"By the end of the fourth level I was reading Elena Ferrante in the original. Worth every dollar."</p>
+    <div style="margin-top:auto;padding-top:.9rem;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168">
+      <span style="color:#166A47">✓ Verified</span><span>Reviewed on Trustpilot</span>
+    </div>
+  </article><article class="tp-review-card" style="background:#fff;border:1px solid rgba(0,0,0,.08);padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:1rem">
+    <div style="display:flex;align-items:center;gap:.9rem">
+      <img src="../../assets/img/student-michael.jpg" alt="Michael" style="width:52px;height:52px;border-radius:50%;object-fit:cover">
+      <div><div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#0e1a14">Michael</div><div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168;margin-top:.15rem">Denver, CO · Parliamo Foundation</div></div>
+    </div>
+    <div style="color:#E6C99B;font-size:.98rem;letter-spacing:.15em">★★★★★</div>
+    <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;line-height:1.5;color:#0e1a14;margin:0">"The advisor placed me perfectly, and Alessandro is the calmest, kindest teacher I have had since college."</p>
+    <div style="margin-top:auto;padding-top:.9rem;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#6b7168">
+      <span style="color:#166A47">✓ Verified</span><span>Reviewed on Trustpilot</span>
+    </div>
+  </article></div>
+  <style>@media(max-width:960px){[style*="repeat(3,1fr)"][style*="1.3rem"]{grid-template-columns:repeat(2,1fr)!important}}@media(max-width:600px){[style*="repeat(3,1fr)"][style*="1.3rem"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-cream" style="padding:clamp(5rem,9vw,8rem) 0">
+  <div class="wrap" style="display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2.4rem,5vw,5rem);align-items:center">
+    <div>
+      <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.4rem">On graduation</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.05;color:#0e1a14;margin:0 0 1.4rem">A CEFR certificate. <span class="accent-ital" style="font-style:italic;color:#166A47">A printed one.</span></h2>
+      <p style="font-size:1.12rem;line-height:1.65;color:#3a3f3a;max-width:52ch;margin:0">Every completed track ends with a printed, signed Club Italia certificate stating your CEFR level, your teacher, and your cohort. Not a screenshot. A document.</p>
+    </div>
+    <figure style="margin:0">
+      <div style="aspect-ratio:4/5;overflow:hidden;box-shadow:0 40px 100px -30px rgba(14,26,20,.35)">
+        <img src="../../assets/img/env-chiara-desk.jpg" alt="A Club Italia certificate on a warm wooden table" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </figure>
+  </div>
+  <style>@media(max-width:820px){[style*="1.1fr 1fr"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-white" style="padding:clamp(5rem,9vw,8rem) 0">
+  <div class="wrap" style="text-align:center;margin-bottom:2.6rem">
+    <div class="eyebrow" style="color:#166A47;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.2rem">Enrolment</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.05;color:#0e1a14;margin:0 auto;max-width:22ch">Three ways to <span class="accent-ital" style="font-style:italic;color:#166A47">say yes.</span></h2>
+  </div>
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
+    <div style="background:#fff;border:1px solid rgba(0,0,0,.1);padding:2rem 1.6rem;display:flex;flex-direction:column;gap:1rem">
+      <div style="font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#166A47;font-weight:600">Monthly</div>
+      <div style="font-family:'Playfair Display',serif;font-size:3rem;color:#0e1a14;line-height:1">$84<span style="font-size:1rem;color:#6b7168;font-style:italic;margin-left:.4rem">/wk</span></div>
+      <p style="font-size:.95rem;color:#3a3f3a;margin:0">Rolling month, cancel at any time.</p>
+      <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="margin-top:auto">Reserve My Placement Call</button>
+    </div>
+    <div style="position:relative;background:#fff;border:2px solid #166A47;padding:2rem 1.6rem;display:flex;flex-direction:column;gap:1rem">
+      <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#166A47;color:#fff;padding:.4rem 1rem;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;white-space:nowrap">Best Value · Save $440</div>
+      <div style="font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#166A47;font-weight:600">Annual · 12 months</div>
+      <div style="font-family:'Playfair Display',serif;font-size:3rem;color:#0e1a14;line-height:1">$62<span style="font-size:1rem;color:#6b7168;font-style:italic;margin-left:.4rem">/wk</span></div>
+      <p style="font-size:.95rem;color:#3a3f3a;margin:0">Priority scheduling and Capsule Culturali included.</p>
+      <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="margin-top:auto">Reserve My Placement Call</button>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,0,0,.1);padding:2rem 1.6rem;display:flex;flex-direction:column;gap:1rem">
+      <div style="font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#166A47;font-weight:600">Term · 4 months</div>
+      <div style="font-family:'Playfair Display',serif;font-size:3rem;color:#0e1a14;line-height:1">$73<span style="font-size:1rem;color:#6b7168;font-style:italic;margin-left:.4rem">/wk</span></div>
+      <p style="font-size:.95rem;color:#3a3f3a;margin:0">One CEFR level, cover to cover.</p>
+      <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="margin-top:auto">Reserve My Placement Call</button>
+    </div>
+  </div>
+  <style>@media(max-width:960px){.section-white [style*="repeat(3,1fr)"]{grid-template-columns:1fr!important}}</style>
+</section>
+<section class="section-black" style="padding:clamp(4.5rem,9vw,8rem) 0">
+  <div class="wrap" style="text-align:center;margin-bottom:2.4rem">
+    <div class="eyebrow paper" style="color:#E6C99B;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.2rem">The seven teachers</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.05;color:#FBFAF6;margin:0">Seven cities. <span class="accent-ital" style="font-style:italic;color:#E6C99B">One method.</span></h2>
+  </div>
+  <div class="wrap-flush" style="padding:0 clamp(1rem,2vw,2rem);display:grid;grid-template-columns:repeat(7,1fr);gap:2px"><a href="../../teachers.html" style="text-decoration:none;color:inherit;position:relative;aspect-ratio:3/4;overflow:hidden;background:#000;display:block">
+      <img src="../../assets/img/teacher-chiara.jpg" alt="Chiara" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:.9rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#FBFAF6">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem">Chiara</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:.85rem">Firenze</div>
+      </div>
+    </a><a href="../../teachers.html" style="text-decoration:none;color:inherit;position:relative;aspect-ratio:3/4;overflow:hidden;background:#000;display:block">
+      <img src="../../assets/img/teacher-marco.jpg" alt="Marco" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:.9rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#FBFAF6">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem">Marco</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:.85rem">Roma</div>
+      </div>
+    </a><a href="../../teachers.html" style="text-decoration:none;color:inherit;position:relative;aspect-ratio:3/4;overflow:hidden;background:#000;display:block">
+      <img src="../../assets/img/teacher-giulia.jpg" alt="Giulia" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:.9rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#FBFAF6">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem">Giulia</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:.85rem">Bologna</div>
+      </div>
+    </a><a href="../../teachers.html" style="text-decoration:none;color:inherit;position:relative;aspect-ratio:3/4;overflow:hidden;background:#000;display:block">
+      <img src="../../assets/img/teacher-alessandro.jpg" alt="Alessandro" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:.9rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#FBFAF6">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem">Alessandro</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:.85rem">Milano</div>
+      </div>
+    </a><a href="../../teachers.html" style="text-decoration:none;color:inherit;position:relative;aspect-ratio:3/4;overflow:hidden;background:#000;display:block">
+      <img src="../../assets/img/teacher-francesca.jpg" alt="Francesca" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:.9rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#FBFAF6">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem">Francesca</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:.85rem">Napoli</div>
+      </div>
+    </a><a href="../../teachers.html" style="text-decoration:none;color:inherit;position:relative;aspect-ratio:3/4;overflow:hidden;background:#000;display:block">
+      <img src="../../assets/img/teacher-luca.jpg" alt="Luca" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:.9rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#FBFAF6">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem">Luca</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:.85rem">Venezia</div>
+      </div>
+    </a><a href="../../teachers.html" style="text-decoration:none;color:inherit;position:relative;aspect-ratio:3/4;overflow:hidden;background:#000;display:block">
+      <img src="../../assets/img/teacher-sofia.jpg" alt="Sofia" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:.9rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#FBFAF6">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem">Sofia</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;color:#E6C99B;font-size:.85rem">Palermo</div>
+      </div>
+    </a></div>
+  <style>@media(max-width:1000px){[style*="repeat(7,1fr)"]{grid-template-columns:repeat(4,1fr)!important}}@media(max-width:600px){[style*="repeat(7,1fr)"]{grid-template-columns:repeat(2,1fr)!important}}</style>
+</section>
+<section class="section-tint" style="padding:clamp(4.5rem,9vw,8rem) 0;background:#F4EFE5">
   <div class="wrap-narrow">
-    <div class="section-eyebrow">Learning Outcomes</div>
-    <h2 class="h-display">On successful completion,<br>the learner will be <span class="ital">able to.</span></h2>
-    <p class="lede">The following outcomes reference the CEFR descriptors for the A2.1 → A2.2 band and constitute the assessed criteria for course completion.</p>
-    <ol class="outcomes">
-      <li>Use congiuntivo in context, not just in tests.</li><li>Follow a fast Italian film without subtitles most of the time.</li><li>Argue, persuade and negotiate in a small-group setting.</li><li>Write structured emails, reviews and short articles.</li><li>Understand regional accents from north to south.</li><li>Sit and pass an internationally recognised A2 exam.</li>
-    </ol>
+    <div style="text-align:center;margin-bottom:2.4rem">
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.05;color:#0e1a14;margin:0">Questions worth asking.</h2>
+    </div>
+    <details style="border-bottom:1px solid rgba(0,0,0,.1);padding:1.4rem 0;cursor:pointer">
+      <summary style="display:flex;justify-content:space-between;gap:1.4rem;font-family:'Playfair Display',serif;font-size:1.2rem;color:#0e1a14;list-style:none;cursor:pointer"><span>What if I miss a class?</span><span style="color:#E6C99B;font-size:1.5rem;line-height:1" class="faq-plus">+</span></summary>
+      <div style="padding-top:1rem;font-size:1rem;line-height:1.6;color:#3a3f3a">Every session is recorded and uploaded to your course page within 24 hours. You retain access to your recordings for the life of your enrollment.</div>
+    </details><details style="border-bottom:1px solid rgba(0,0,0,.1);padding:1.4rem 0;cursor:pointer">
+      <summary style="display:flex;justify-content:space-between;gap:1.4rem;font-family:'Playfair Display',serif;font-size:1.2rem;color:#0e1a14;list-style:none;cursor:pointer"><span>Can I switch levels?</span><span style="color:#E6C99B;font-size:1.5rem;line-height:1" class="faq-plus">+</span></summary>
+      <div style="padding-top:1rem;font-size:1rem;line-height:1.6;color:#3a3f3a">Yes, within your first four weeks, at no cost. Beyond that, we reassess at the start of every new term and transfers remain free.</div>
+    </details><details style="border-bottom:1px solid rgba(0,0,0,.1);padding:1.4rem 0;cursor:pointer">
+      <summary style="display:flex;justify-content:space-between;gap:1.4rem;font-family:'Playfair Display',serif;font-size:1.2rem;color:#0e1a14;list-style:none;cursor:pointer"><span>What technology do I need?</span><span style="color:#E6C99B;font-size:1.5rem;line-height:1" class="faq-plus">+</span></summary>
+      <div style="padding-top:1rem;font-size:1rem;line-height:1.6;color:#3a3f3a">A laptop or tablet with a camera, a stable internet connection, and a quiet room. If you can join a video call, you can attend Club Italia.</div>
+    </details><details style="border-bottom:1px solid rgba(0,0,0,.1);padding:1.4rem 0;cursor:pointer">
+      <summary style="display:flex;justify-content:space-between;gap:1.4rem;font-family:'Playfair Display',serif;font-size:1.2rem;color:#0e1a14;list-style:none;cursor:pointer"><span>Do you offer a refund?</span><span style="color:#E6C99B;font-size:1.5rem;line-height:1" class="faq-plus">+</span></summary>
+      <div style="padding-top:1rem;font-size:1rem;line-height:1.6;color:#3a3f3a">Yes. You have seven days from your first live class to request a full refund.</div>
+    </details><details style="border-bottom:1px solid rgba(0,0,0,.1);padding:1.4rem 0;cursor:pointer">
+      <summary style="display:flex;justify-content:space-between;gap:1.4rem;font-family:'Playfair Display',serif;font-size:1.2rem;color:#0e1a14;list-style:none;cursor:pointer"><span>What is the placement call?</span><span style="color:#E6C99B;font-size:1.5rem;line-height:1" class="faq-plus">+</span></summary>
+      <div style="padding-top:1rem;font-size:1rem;line-height:1.6;color:#3a3f3a">A 20-minute video call with an academic advisor to place you in the correct level. No test, no fee, no obligation.</div>
+    </details>
+    <div style="text-align:center;margin-top:2rem"><a href="../../faq.html" style="color:#166A47;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600">All FAQs →</a></div>
   </div>
 </section>
-
-<section class="section-white">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">The Syllabus</div>
-      <h2 class="h-display">20 lessons, 28.3 contact hours,<br>from Naples & Milan to <span class="ital">CEFR A2.2.</span></h2>
-      <p class="lede">Every lesson is set in a specific Italian place. Every lesson introduces a defined grammar unit and a defined vocabulary field. Every lesson finishes with fifteen minutes of open conversation, in Italian, with your teacher.</p>
-      <p style="margin-top:1rem;"><a href="../../pdf/ci4-syllabus.pdf" style="color:var(--gold);border-bottom:1px solid var(--gold-line);padding-bottom:2px;font-family:var(--sans);font-size:.9rem;letter-spacing:.02em;">Download the complete syllabus (12-page PDF, 218KB) →</a></p>
-    </div>
-    <div style="overflow-x:auto;">
-    <table class="syllabus-table">
-      <thead><tr><th style="width:70px;">Lesson</th><th>Topic</th><th>Grammar & Vocabulary</th><th>Cultural Setting</th></tr></thead>
-      <tbody><tr><td class="lesson-num">01</td><td class="topic">Napoli e Milano — due Italie</td><td class="grammar">The northern-southern axis of Italian identity.</td><td class="culture">Review of A2.1</td></tr><tr><td class="lesson-num">02</td><td class="topic">Congiuntivo presente</td><td class="grammar">Full introduction to the subjunctive: after verbs of opinion, doubt, feeling.</td><td class="culture"></td></tr><tr><td class="lesson-num">03</td><td class="topic">Congiuntivo imperfetto</td><td class="grammar">Backshift, hypothetical use, se + imperfetto + condizionale.</td><td class="culture"></td></tr><tr><td class="lesson-num">04</td><td class="topic">Discorso indiretto</td><td class="grammar">Reported speech: he said that…, she asked whether…</td><td class="culture"></td></tr><tr><td class="lesson-num">05</td><td class="topic">La stampa italiana</td><td class="grammar">Reading Corriere della Sera and la Repubblica.</td><td class="culture">Newspaper Italian</td></tr><tr><td class="lesson-num">06</td><td class="topic">Il cinema italiano</td><td class="grammar">Full film analysis: La Grande Bellezza, La Vita è Bella, Il Postino.</td><td class="culture"></td></tr><tr><td class="lesson-num">07</td><td class="topic">Opera in italiano</td><td class="grammar">Understanding a Verdi libretto.</td><td class="culture">Aria listening lab</td></tr><tr><td class="lesson-num">08</td><td class="topic">Business Italian</td><td class="grammar">Meeting vocabulary, presenting, negotiating, closing a deal.</td><td class="culture"></td></tr><tr><td class="lesson-num">09</td><td class="topic">La politica italiana</td><td class="grammar">Institutions, parties, elections — the vocabulary of civic life.</td><td class="culture"></td></tr><tr><td class="lesson-num">10</td><td class="topic">Metà strada</td><td class="grammar">Full midpoint oral, written and listening assessment.</td><td class="culture"></td></tr><tr><td class="lesson-num">11</td><td class="topic">Argomentare</td><td class="grammar">Debating in Italian.</td><td class="culture">Structured arguments, giving and refuting points</td></tr><tr><td class="lesson-num">12</td><td class="topic">Persuadere</td><td class="grammar">The language of sales, marketing and advertising.</td><td class="culture">Rhetorical devices</td></tr><tr><td class="lesson-num">13</td><td class="topic">Napoli — la lingua della strada</td><td class="grammar">Napoletano expressions that entered standard Italian.</td><td class="culture">Neapolitan cinema</td></tr><tr><td class="lesson-num">14</td><td class="topic">Milano — la lingua degli affari</td><td class="grammar">Milanese business register, aperitivo culture, fashion vocabulary.</td><td class="culture"></td></tr><tr><td class="lesson-num">15</td><td class="topic">La letteratura contemporanea</td><td class="grammar">Ferrante, Calvino, Baricco — reading passages and discussion.</td><td class="culture"></td></tr><tr><td class="lesson-num">16</td><td class="topic">La cucina regionale</td><td class="grammar">Twenty regions, twenty cuisines — a culinary tour of Italy.</td><td class="culture"></td></tr><tr><td class="lesson-num">17</td><td class="topic">Il sistema scolastico</td><td class="grammar">Italian education from elementari to università, plus the language of academia.</td><td class="culture"></td></tr><tr><td class="lesson-num">18</td><td class="topic">Vivere in Italia</td><td class="grammar">Practical language for moving to Italy: codice fiscale, permesso di soggiorno, sanità.</td><td class="culture"></td></tr><tr><td class="lesson-num">19</td><td class="topic">Cittadinanza italiana</td><td class="grammar">The language of jure sanguinis, applications, consular Italian.</td><td class="culture"></td></tr><tr><td class="lesson-num">20</td><td class="topic">Arrivederci — a presto, in Italia!</td><td class="grammar">Full CEFR A2.2 assessment, cultural graduation, path to B1.</td><td class="culture"></td></tr></tbody>
-    </table>
-    </div>
+<section class="section-green" style="padding:clamp(6rem,12vw,11rem) 0;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%, rgba(230,201,155,.08), transparent 60%);pointer-events:none"></div>
+  <div class="wrap-narrow" style="position:relative;text-align:center">
+    <div class="eyebrow" style="color:#E6C99B;letter-spacing:.28em;font-size:.78rem;text-transform:uppercase;margin-bottom:1.6rem">Enrolment</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.6rem,6vw,5.4rem);line-height:1.02;color:#FBFAF6;margin:0 0 1.6rem">Ready to say <span class="accent-ital" style="font-style:italic;color:#E6C99B">avanzato?</span></h2>
+    <p style="font-size:1.2rem;line-height:1.6;color:rgba(251,250,246,.82);max-width:56ch;margin:0 auto 2.4rem">Twenty minutes with an academic advisor. No aptitude test, no pressure. Just a plan for the year of Italian ahead of you.</p>
+    <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="font-size:1.05rem;padding:1.35rem 2.6rem">Reserve My Placement Call</button>
+    <div style="margin-top:2rem;color:rgba(251,250,246,.6);font-size:.85rem">· 4.8 ★ Trustpilot · 12,847 alumni · 7-day money-back guarantee</div>
   </div>
 </section>
-
-<section class="section-cream">
-  <div class="wrap">
-    <div class="two-col" style="align-items:center;">
-      <div>
-        <div class="section-eyebrow">Cultural Context</div>
-        <h2 class="h-display">Naples and Milan,,<br><span class="ital">the two poles of contemporary Italian.</span></h2>
-        <p class="lede">To move from A2 to B1 you have to hold your ground against real Italians talking at real speed. Naples and Milan are the two poles of contemporary spoken Italian: one southern, warm, elastic; one northern, quick, business-first. Luca teaches from Vomero; Alessandro co-teaches from Brera. CI-04 is deliberately taught by both.</p>
-      </div>
-      <img src="../../assets/img/city-napoli.jpg" alt="Naples & Milan" style="width:100%;filter:grayscale(.1);">
-    </div>
-  </div>
-</section>
-
-<section class="section-black">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">The Live Classroom</div>
-      <h2 class="h-display">Your Monday 7pm ET class<br>with <span class="ital">Luca.</span></h2>
-    </div>
-    <div class="zoom-frame"><img src="../../assets/img/zoom-mockup-2.svg" alt="A live Club Italia class with Luca teaching from Napoli"></div>
-  </div>
-</section>
-
-<section class="section-white">
-  <div class="wrap">
-    <div class="two-col" style="align-items:center;">
-      <img src="../../assets/img/teacher-luca.jpg" alt="Luca, signature teacher of CI Avanzato, based in Napoli" style="width:100%;filter:grayscale(.1);">
-      <div>
-        <div class="section-eyebrow">Napoli</div>
-        <h2 class="h-display" style="font-size:clamp(2.4rem,4.5vw,3.6rem);">Luca,<br>signature teacher, <span class="ital">CI Avanzato.</span></h2>
-        <p style="font-size:1.1rem;line-height:1.6;color:var(--ink);">Luca was trained in the Federico II and has taught adult learners at Club Italia since 2019. Before joining the school, Luca taught in-country for the Napoli branch of the Società Dante Alighieri, the national network of Italian cultural institutes, and served as an examiner for the CELI proficiency examinations issued by the Università per Stranieri di Perugia.</p>
-        <p style="font-size:1.1rem;line-height:1.6;color:var(--ink);">In the classroom, Luca works on the principle that grammar lives inside dialogue. Every unit is opened by a real recorded exchange between Italians; the grammar point that governs it is drawn out only after learners have already tried the exchange themselves. This is the Club Italia house method and Luca has been one of its early architects.</p>
-        <p style="font-size:1.1rem;line-height:1.6;color:var(--ink);">Outside of teaching, Luca writes for the Club Italia culture library on the language of Napoli and its region.</p>
-        <div style="margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem;">
-          <span class="chip">Master FLE</span><span class="chip">Federico II</span><span class="chip">DITALS I</span>
-        </div>
-        <div style="margin-top:2rem;"><a href="../../pages/teachers/luca.html" class="btn btn-ghost-dark">Read Luca's full profile</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-cream">
-  <div class="wrap">
-    <div class="two-col" style="align-items:center;">
-      <div class="browser-frame"><div class="browser-chrome"><span></span><span></span><span></span><span class="url">clubitalia.eteacher.com/dashboard</span></div><img src="../../assets/img/dashboard-mockup.svg" alt="Club Italia dashboard"></div>
-      <div>
-        <div class="section-eyebrow">The Platform</div>
-        <h2 class="h-display">Everything runs in<br>your <span class="ital">browser.</span></h2>
-        <p class="lede">Every live class, every recording, every homework thread, every PDF and every conversation with Biagio lives inside a single dashboard you open in Chrome, Safari or Firefox. No downloads. No app.</p>
-        <ul class="includes">
-          <li>Live class calendar and one-click join</li>
-          <li>Recording of every lesson within 30 minutes</li>
-          <li>Homework threads with your teacher</li>
-          <li>Biagio AI tutor, on demand, in Italian</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-white">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">Student Outcomes</div>
-      <h2 class="h-display">347 alumni have completed<br>CI-04 <span class="ital">since 2019.</span></h2>
-    </div>
-  </div>
-  <div class="alumni">
-      <div class="alum">
-        <div class="quote">“She corrected the exact preposition I had been getting wrong for a year, in the middle of the third lesson. That is why this course works.”</div>
-        <div class="attr">Ellen G. · New York · CI-04 alumna</div>
-      </div>
-      <div class="alum">
-        <div class="quote">“I flew to Rome the week after CI-01 finished and understood the barista. Not a lot. Enough.”</div>
-        <div class="attr">James D. · Los Angeles · CI-04 alumna</div>
-      </div>
-      <div class="alum">
-        <div class="quote">“The syllabus is honest. You learn twenty things, not two thousand, and you learn them well enough to use.”</div>
-        <div class="attr">Priya K. · Boston · CI-04 alumna</div>
-      </div></div>
-</section>
-
-<section id="pricing" class="section-cream">
-  <div class="wrap">
-    <div class="section-head center">
-      <div class="section-eyebrow">Tuition · CI-04</div>
-      <h2 class="h-display">One tuition, three <span class="ital">rhythms.</span></h2>
-    </div>
-    <div class="pricing">
-      <div class="tier">
-        <div class="tier-name">Monthly</div>
-        <div class="tier-price">$84<small>/wk</small></div>
-        <div class="tier-sub">Rolling month-to-month billing.</div>
-        <ul>
-          <li>All 20 live lessons at your pace</li>
-          <li>Recordings, PDFs, Biagio access</li>
-          <li>CEFR-aligned certificate on completion</li>
-          <li>Cancel any time after month one</li>
-        </ul>
-        <a href="#final" class="btn btn-ghost-dark btn-lg" style="width:100%;justify-content:center;">Choose Monthly</a>
-      </div>
-      <div class="tier featured">
-        <div class="tier-badge">Best value · Save $440</div>
-        <div class="tier-name">Annual</div>
-        <div class="tier-price">$62<small>/wk</small></div>
-        <div class="tier-sub">Billed $3,224 once per year.</div>
-        <ul>
-          <li>Everything in Monthly</li>
-          <li>Free upgrade to the next level when you finish CI-04</li>
-          <li>Two cultural capsules included</li>
-          <li>Priority placement into the next cohort</li>
-          <li>Founder rate locked for life</li>
-        </ul>
-        <a href="#final" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Reserve Annual</a>
-      </div>
-      <div class="tier">
-        <div class="tier-name">Term (one level)</div>
-        <div class="tier-price">$73<small>/wk</small></div>
-        <div class="tier-sub">One full CEFR level, paid upfront.</div>
-        <ul>
-          <li>All 20 live lessons</li>
-          <li>Certificate on completion</li>
-          <li>Upgrade credit toward Annual within 30 days</li>
-        </ul>
-        <a href="#final" class="btn btn-ghost-dark btn-lg" style="width:100%;justify-content:center;">Choose Term</a>
-      </div>
-    </div>
-    <div style="margin-top:2.4rem;display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;">
-      <img src="../../assets/img/guarantee-badge.svg" alt="7-day money-back guarantee" style="width:88px;">
-      <div>
-        <strong style="font-family:var(--serif);font-size:1.35rem;">7-day money-back guarantee.</strong><br>
-        <span style="font-family:var(--sans);font-size:.92rem;color:var(--ink-2);">Sit your first live class. If Club Italia is not the school we describe, we return the full tuition within seven days.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-white">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">What's Included</div>
-      <h2 class="h-display">Everything is in the <span class="ital">tuition.</span></h2>
-    </div>
-    <ul class="includes">
-      <li>20 live classes, taught by Luca from Napoli</li><li>28.3 hours of live instruction time</li><li>Recording of every class within 30 minutes</li><li>Weekly homework thread with your teacher</li><li>Downloadable syllabus and lesson PDFs</li><li>24/7 access to Biagio, our AI tutor</li><li>Placement call before the course begins</li><li>CEFR-aligned oral assessment on completion</li><li>Signed, dated certificate within 7 days of completion</li><li>Priority booking on the next level</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section-cream">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">Questions About CI-04</div>
-      <h2 class="h-display">Frequently <span class="ital">asked.</span></h2>
-    </div>
-    <div class="faq"><details><summary>Who is CI-04 designed for?</summary><p>Adult learners approaching Italian at the A2.1 → A2.2 band of the CEFR. There is no prerequisite beyond a 20-minute placement call with a Club Italia advisor.</p></details><details><summary>How long does CI-04 take?</summary><p>Twenty weeks, at one live class per week, plus 40 to 60 recommended study hours over the full course.</p></details><details><summary>Which certification will I receive?</summary><p>On successful completion of CI-04 you will sit a short oral assessment. A signed, CEFR-aligned certificate is issued within seven days by Club Italia by eTeacher and references the A2.2 descriptor.</p></details><details><summary>What if I have to miss a live class?</summary><p>Every live class is recorded and available on your dashboard within 30 minutes. Your teacher will also post a written recap in the weekly homework thread.</p></details><details><summary>What technology do I need?</summary><p>A modern browser (Chrome, Safari, Firefox or Edge), a working webcam and microphone, and a stable internet connection of at least 5 Mbps. There is no app to install.</p></details><details><summary>Can I try CI-04 before enrolling?</summary><p>Yes. You are welcome to sit an open sample class, free of charge, before you enrol. The Club Italia advisor will suggest the closest upcoming session on your placement call.</p></details></div>
-  </div>
-</section>
-
-<section class="section-white">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">Continue the Ladder</div>
-      <h2 class="h-display">Where CI-04 learners <span class="ital">go next.</span></h2>
-    </div>
-  </div>
-  <div class="related"><a class="cc" href="../../pages/courses/ci3.html">
-  <div class="cc-price">$62<small>/wk · annual</small></div>
-  <div class="cc-badge">CI 03 · A1.2 → A2.1</div>
-  <h3 class="cc-title">Intermedio</h3>
-  <div class="cc-sub">Intermediate Italian in Bologna.</div>
-  <div class="cc-meta"><span class="meta-row">20 lessons × 85 min</span><span class="meta-row">Live · 10-12 learners</span><span class="meta-row">Giulia · Bologna</span><span class="meta-row">Next: Oct 13</span></div>
-  <span class="cc-enroll">Reserve My Spot <span class="arrow">→</span></span>
-</a><a class="cc" href="../../pages/spoken/ps4.html">
-  <div class="cc-price">$48<small>/wk · annual</small></div>
-  <div class="cc-badge">PS 04 · Spoken A2 → B1</div>
-  <h3 class="cc-title">Chiacchierando</h3>
-  <div class="cc-sub">Chat like an Italian.</div>
-  <div class="cc-meta"><span class="meta-row">20 lessons × 60 min</span><span class="meta-row">Live · 6-8 learners</span><span class="meta-row">Alessandro · Milano</span><span class="meta-row">Next: Oct 16</span></div>
-  <span class="cc-enroll">Reserve My Spot <span class="arrow">→</span></span>
-</a><a class="cc" href="../../pages/culture/cap-opera.html">
-  <div class="cc-price">$29<small>/wk · annual</small></div>
-  <div class="cc-badge">CAP · Opera · Any level · English support</div>
-  <h3 class="cc-title">L'Opera</h3>
-  <div class="cc-sub">Opera as a second language.</div>
-  <div class="cc-meta"><span class="meta-row">6 lessons × 75 min</span><span class="meta-row">Live · unlimited seats</span><span class="meta-row">Alessandro · Milano</span><span class="meta-row">Next: Oct 24</span></div>
-  <span class="cc-enroll">Reserve My Spot <span class="arrow">→</span></span>
-</a></div>
-</section>
-
-<section id="final" class="section-green">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">Enrolment · CI-04</div>
-      <h2 class="h-display">Reserve your <span class="ital">placement call.</span></h2>
-      <p class="lede">Twenty minutes with a Club Italia advisor. We hear you speak, we place you on the CEFR ladder, we book your first live class with Luca. No card required.</p>
-    </div>
-    <div style="margin-top:2rem;">
-      <a href="#lead" class="btn btn-primary btn-lg" style="background:var(--paper);color:var(--green-deep);">Reserve My Placement Call →</a>
-      <a href="../../pdf/ci4-syllabus.pdf" class="btn btn-ghost btn-lg" style="margin-left:.8rem;">Download Syllabus PDF</a>
-    </div>
-  </div>
-</section>
-<div class="enroll-bar"><div class="eb-left">CI Avanzato · CI-04 <span class="eb-price">$62/wk annual</span> · Next start Oct 6</div><a href="#pricing" class="btn btn-primary">Reserve My Spot →</a></div><footer class="site-footer">
+<footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
@@ -679,13 +602,5 @@ section{padding:clamp(4rem,8vw,7rem) 0;position:relative;}
   </div>
 </div>
 
-<script>
-(function(){
-  var bar=document.querySelector('.enroll-bar');if(!bar)return;
-  var shown=false;
-  function on(){var y=window.scrollY;if(y>600&&!shown){bar.classList.add('show');shown=true;}else if(y<=400&&shown){bar.classList.remove('show');shown=false;}}
-  window.addEventListener('scroll',on,{passive:true});
-})();
-</script>
-
+<script src="../../js/ci.js?v=v4" defer></script>
 </body></html>
