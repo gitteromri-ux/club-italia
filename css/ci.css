@@ -878,3 +878,9 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
 /* ============================================================
    END — Club Italia v5
    ============================================================ */
+
+/* v6: hero video layer sits behind content */
+.hero-video-layer{position:absolute;inset:0;z-index:0}
+.section-ink.hero-biagio > *:not(.hero-video-layer),
+.section-ink.hero-teacher > *:not(.hero-video-layer),
+.section-ink.hero-page > *:not(.hero-video-layer){position:relative;z-index:1}
