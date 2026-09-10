@@ -3,12 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Cucina — The Language of the Italian Table — Club Italia by eTeacher</title>
+<title>La Cucina — The Language of the Italian Table &mdash; Cultural · Any level &middot; All of Italy &middot; Club Italia</title>
 <meta name="description" content="Six live cultural sessions on the vocabulary and history of the Italian table — pasta, pane, vino, caffè, and the sacred rituals of the family meal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../../css/ci.css">
+<style>
+/* ===== Course-page extras (page-local; ci.css is READ ONLY) ===== */
+.hero-badges{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.h-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;border:1px solid var(--gold-line);color:var(--on-dark);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;border-radius:2px;background:rgba(34,8,11,.35);backdrop-filter:blur(6px)}
+.h-badge.lvl{background:rgba(201,162,75,.14);color:var(--gold-soft);border-color:var(--gold-soft)}
+.hero-meta-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--gold-line-soft);max-width:900px}
+.hero-meta-strip .hm{}
+.hero-meta-strip .hm-k{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.4rem}
+.hero-meta-strip .hm-v{font-family:var(--serif);font-size:1.15rem;color:var(--on-dark)}
+@media (max-width:820px){.hero-meta-strip{grid-template-columns:repeat(2,1fr);gap:1rem}}
 
+/* Promise editorial two-column */
+.promise-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+@media (max-width:900px){.promise-grid{grid-template-columns:1fr;gap:2.5rem}}
+.promise-head h2{font-size:clamp(2.4rem,4.4vw,4rem);letter-spacing:-.015em}
+.promise-outcomes{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+@media (max-width:640px){.promise-outcomes{grid-template-columns:1fr}}
+.promise-outcomes li{display:flex;gap:.9rem;font-size:1.02rem;line-height:1.5;color:var(--on-light)}
+.promise-outcomes .n{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:1.35rem;line-height:1;flex-shrink:0;min-width:1.8rem}
+
+/* Pillar cards */
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+@media (max-width:900px){.pillar-grid{grid-template-columns:1fr}}
+.pillar-card{background:rgba(255,255,255,.05);border:1px solid var(--dark-line);padding:2.4rem 1.9rem;position:relative;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.pillar-card:hover{border-color:var(--gold-soft);transform:translateY(-3px)}
+.pillar-card .p-num{font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--gold-soft);line-height:1;margin-bottom:1.2rem;opacity:.85}
+.pillar-card h3{font-family:var(--serif);font-size:1.55rem;line-height:1.15;margin-bottom:.8rem;color:var(--on-dark)}
+.pillar-card p{font-size:.98rem;color:var(--on-dark-soft);line-height:1.6}
+
+/* City band cinematic */
+.city-band{position:relative;padding:0;min-height:82vh;display:flex;align-items:center;color:var(--on-dark);overflow:hidden}
+.city-band .cb-bg{position:absolute;inset:0;z-index:0}
+.city-band .cb-bg img{width:100%;height:100%;object-fit:cover}
+.city-band .cb-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(34,8,11,.85) 0%,rgba(34,8,11,.5) 60%,rgba(34,8,11,.2) 100%),linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.55))}
+.city-band .cb-content{position:relative;z-index:2;padding:6rem clamp(1.4rem,5vw,5rem);max-width:900px}
+.city-band h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5vw,4.4rem);color:var(--on-dark);line-height:1.05;margin:.8rem 0 2rem}
+.city-band .cb-paragraphs p{font-size:1.06rem;line-height:1.75;color:var(--on-dark-soft);margin-bottom:1.2rem;max-width:60ch}
+
+/* Teacher block (course-page) */
+.teacher-block{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+@media (max-width:900px){.teacher-block{grid-template-columns:1fr;gap:2rem}}
+.teacher-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--navy-mid);border:1px solid var(--gold-line);max-width:440px}
+.teacher-photo img{width:100%;height:100%;object-fit:cover}
+.teacher-photo .tp-badge{position:absolute;bottom:1rem;left:1rem;background:rgba(34,8,11,.75);color:var(--gold-soft);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:.5rem .9rem;border:1px solid var(--gold-line)}
+.teacher-info .ti-role{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.15rem;margin:.4rem 0 1.2rem}
+.teacher-info h3{font-family:var(--serif);font-size:clamp(2.2rem,3.6vw,3rem);line-height:1.05;margin-bottom:.2rem;color:var(--on-dark)}
+.teacher-info p{color:var(--on-dark-soft);font-size:1.02rem;line-height:1.7;margin-bottom:1.4rem}
+.teacher-quote{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.35;color:var(--on-dark);padding-left:1.4rem;border-left:2px solid var(--gold);margin:1.6rem 0}
+.teacher-creds{font-size:.78rem;letter-spacing:.06em;color:var(--on-dark-faint);padding-top:1rem;border-top:1px solid var(--dark-line-soft)}
+
+/* Syllabus timeline / unit cards */
+.unit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+@media (max-width:820px){.unit-grid{grid-template-columns:1fr}}
+.unit-card{display:grid;grid-template-columns:64px 1fr;gap:1.2rem;padding:1.6rem 1.6rem 1.6rem 0;border-top:1px solid var(--gold-line-soft);position:relative;transition:background .2s var(--ease)}
+.unit-card:hover{background:rgba(201,162,75,.04)}
+.unit-card .u-no{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:2rem;line-height:1;padding-left:.6rem}
+.unit-card .u-body h4{font-family:var(--serif);font-size:1.25rem;line-height:1.22;margin-bottom:.35rem;color:var(--on-light)}
+.unit-card .u-body p{font-size:.92rem;color:var(--on-light-soft);line-height:1.55;max-width:none}
+
+/* Week rhythm cards */
+.week-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.6rem}
+@media (max-width:900px){.week-grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.week-grid-4{grid-template-columns:1fr}}
+.week-card-lg{background:var(--paper);border:1px solid var(--gold-line-soft);padding:1.8rem 1.6rem;transition:transform .3s var(--ease),border-color .3s var(--ease)}
+.week-card-lg:hover{transform:translateY(-3px);border-color:var(--gold-soft)}
+.wc-day{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.6rem}
+.wc-title{font-family:var(--serif);font-size:1.4rem;line-height:1.12;margin-bottom:.5rem;color:var(--on-light)}
+.wc-note{font-size:.9rem;color:var(--on-light-soft);line-height:1.55}
+
+/* Sample dialogue card */
+.sample-card{background:var(--navy-mid);border:1px solid var(--gold-line);padding:clamp(2rem,4vw,3.4rem);color:var(--on-dark);position:relative;overflow:hidden}
+.sample-card::before{content:"";position:absolute;top:-50px;right:-40px;width:220px;height:220px;background:radial-gradient(circle,rgba(201,162,75,.16),transparent 70%);pointer-events:none}
+.sample-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.6rem;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--dark-line-soft);flex-wrap:wrap}
+.sample-head h3{font-family:var(--serif);font-size:1.8rem;color:var(--on-dark);line-height:1.15}
+.sample-head .listen-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.7rem 1.2rem;border:1px solid var(--gold-line);color:var(--gold-soft);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(201,162,75,.06);cursor:pointer;transition:background .2s var(--ease)}
+.sample-head .listen-btn:hover{background:rgba(201,162,75,.14)}
+.sample-head .listen-btn::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 12px var(--gold-soft)}
+.sample-setting{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.1rem;line-height:1.5;margin-bottom:1.8rem;max-width:60ch}
+.sample-dialogue{display:grid;gap:1rem;margin-bottom:1.8rem}
+.sample-line{display:grid;grid-template-columns:120px 1fr;gap:1.2rem;padding:.9rem 0;border-bottom:1px solid var(--dark-line-soft)}
+@media (max-width:600px){.sample-line{grid-template-columns:1fr;gap:.3rem}}
+.sample-line .sp{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:.98rem}
+.sample-line .txt{font-family:var(--serif);font-size:1.2rem;line-height:1.4;color:var(--on-dark)}
+.sample-note{background:rgba(201,162,75,.08);border-left:2px solid var(--gold);padding:1rem 1.4rem;font-size:.94rem;color:var(--on-dark-soft);line-height:1.6}
+
+/* Sibling nav */
+.sibling-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+@media (max-width:820px){.sibling-nav{grid-template-columns:1fr}}
+.sib-card{background:rgba(255,255,255,.05);border:1px solid var(--dark-line);padding:2rem;display:flex;flex-direction:column;gap:.4rem;transition:border-color .3s var(--ease),transform .3s var(--ease);color:var(--on-dark)}
+.sib-card:hover{border-color:var(--gold-soft);transform:translateY(-3px)}
+.sib-dir{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft)}
+.sib-title{font-family:var(--serif);font-size:1.7rem;color:var(--on-dark)}
+.sib-cefr{font-size:.86rem;color:var(--on-dark-soft)}
+
+/* Section head (course pages) */
+.sec-head{max-width:820px;margin:0 auto 3.4rem;text-align:center}
+.sec-head h2{margin:.6rem 0 1rem}
+.sec-head p{margin:0 auto;color:var(--on-light-soft)}
+.on-dark .sec-head p{color:var(--on-dark-soft)}
+.gold-rule{border:0;height:1px;background:var(--gold);opacity:.7;width:60px;margin:1.6rem auto 0}
+
+/* Section-terra (warm terracotta accent) */
+.section-terra{background:linear-gradient(180deg,var(--paper) 0%,var(--cream) 100%)}
+.section-navy-grad{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--on-dark)}
+.section-navy-grad h2,.section-navy-grad h3,.section-navy-grad h4{color:var(--on-dark)}
+
+/* Final CTA */
+.final-cta{text-align:center;padding:clamp(5rem,9vw,9rem) 0}
+.final-cta h2{font-size:clamp(2.8rem,5vw,4.6rem);line-height:1.05;margin-bottom:1.4rem;color:var(--on-dark)}
+.final-cta p{max-width:52ch;margin:0 auto 2.4rem;color:var(--on-dark-soft);font-size:1.15rem;line-height:1.55}
+.final-cta .hero-ctas{justify-content:center}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -52,74 +163,251 @@
   <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
 </aside>
 
-
-<section class="hero" style="min-height:78vh">
-  <div class="hero-bg"><img src="../../assets/img/cap-food.jpg" alt="La Cucina — The Language of the Italian Table in All of Italy"></div>
+<section class="hero" style="min-height:88vh">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline preload="metadata" poster="../../assets/img/cap-food.jpg" aria-label="All of Italy — La Cucina — The Language of the Italian Table"><source src="../../assets/video/cucina-pasta.mp4" type="video/mp4"></video>
+  </div>
   <div class="hero-content">
-    <div style="max-width:64ch">
-      <p class="hero-tag">Capsule Culturale · La Cucina · Cultural · Any level</p>
-      <h1>La Cucina — The Language of the Italian Table</h1>
+    <div style="max-width:820px">
+      <div class="hero-badges">
+        <span class="h-badge lvl">CEFR Cultural · Any level</span>
+        <span class="h-badge"><span class="live-dot"></span>Live from Italia</span>
+        <span class="h-badge">CAP · 01</span>
+        <span class="h-badge">Certified by eTeacher</span>
+      </div>
+      <p class="hero-tag">Capsule Culturale · La Cucina</p>
+      <h1>La Cucina — The Language of the Italian Table <span class="gold-ital">·</span> All of Italy</h1>
       <p class="hero-sub">Six live cultural sessions on the vocabulary and history of the Italian table — pasta, pane, vino, caffè, and the sacred rituals of the family meal.</p>
       <div class="hero-ctas">
         <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button>
-        <a class="btn btn-3d btn-3d-ghost" href="#syllabus">See the Syllabus</a>
-        <a class="btn btn-3d btn-3d-ghost" href="../../pdf/cap-food-syllabus.pdf" download>Download PDF</a>
+        <a class="btn btn-3d btn-3d-ghost" href="../../pdf/cap-food-syllabus.pdf" download>Download Syllabus PDF</a>
+      </div>
+      <div class="hero-meta-strip">
+        <div class="hm"><div class="hm-k">Format</div><div class="hm-v">6 sessions × 60 min</div></div>
+        <div class="hm"><div class="hm-k">Group size</div><div class="hm-v">10&ndash;12 learners</div></div>
+        <div class="hm"><div class="hm-k">CEFR</div><div class="hm-v">Cultural · Any level</div></div>
+        <div class="hm"><div class="hm-k">Setting</div><div class="hm-v">All of Italy</div></div>
+        <div class="hm"><div class="hm-k">Next start</div><div class="hm-v">3 November 2026</div></div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="section-cream" style="padding:0">
-  <div class="wrap" style="padding-top:2rem;padding-bottom:2rem">
+  <div class="wrap" style="padding-top:2.2rem;padding-bottom:2.2rem">
     <div class="proof-row">
-      <div class="proof-item"><div class="pi-num">6</div><div class="pi-label">Live Lessons</div></div>
-      <div class="proof-item"><div class="pi-num">85</div><div class="pi-label">Minutes Each Class</div></div>
-      <div class="proof-item"><div class="pi-num">10–12</div><div class="pi-label">Learners per Group</div></div>
-      <div class="proof-item"><div class="pi-num">level</div><div class="pi-label">CEFR Level on Completion</div></div>
+      <div class="proof-item"><div class="pi-num">6</div><div class="pi-label">Live lessons</div></div>
+      <div class="proof-item"><div class="pi-num">85</div><div class="pi-label">Minutes each</div></div>
+      <div class="proof-item"><div class="pi-num">10&ndash;12</div><div class="pi-label">Learners per group</div></div>
+      <div class="proof-item"><div class="pi-num">Cultural · Any level</div><div class="pi-label">CEFR on completion</div></div>
     </div>
   </div>
 </section>
-
 <section class="section-paper">
-  <div class="wrap-narrow">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-line">The Promise</span>
-      <h2 class="display-md">By the end of La Cucina — The Language of the Italian Table, you can:</h2>
-    </div>
-    <ul class="cc-includes reveal" style="font-size:1.15rem;color:var(--on-light)">
-      <li>Read any Italian recipe with confidence</li><li>Understand a regional Italian menu at a glance</li><li>Talk knowledgeably about pasta shape, sauce and region</li><li>Discuss the history of Italian coffee, wine and olive oil</li><li>Understand the ritual grammar of the Italian Sunday lunch</li><li>Order, cook and discuss food in Italian at a cultured level</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section-dark" id="syllabus">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-line">The Syllabus · Week by Week</span>
-      <h2 class="display-md">6 lessons, 6 weeks, one continuous arc.</h2>
-      <p class="lead" style="color:var(--on-dark-soft)">A CEFR-aligned syllabus designed by Italian language specialists. Each lesson is a live 85-minute event set in a specific Italian cultural context.</p>
+    <div class="promise-grid">
+      <div class="promise-head">
+        <p class="eyebrow eyebrow-line">The promise</p>
+        <h2 class="display-lg">The Italian of the <span class='gold-ital'>table</span>, in six sessions.</h2>
+        <p class="lead" style="margin-top:1.4rem">A short, intense capsule on the language and history of the Italian kitchen — for any learner, any level.</p>
+      </div>
+      <div>
+        <ul class="promise-outcomes"><li><span class="n">01</span><span>Read any Italian recipe with confidence</span></li><li><span class="n">02</span><span>Understand a regional Italian menu at a glance</span></li><li><span class="n">03</span><span>Talk knowledgeably about pasta shape, sauce and region</span></li><li><span class="n">04</span><span>Discuss the history of Italian coffee, wine and olive oil</span></li><li><span class="n">05</span><span>Understand the ritual grammar of the Italian Sunday lunch</span></li><li><span class="n">06</span><span>Order, cook and discuss food in Italian at a cultured level</span></li></ul>
+      </div>
     </div>
-    <div class="syllabus-list">
-      <div class="syl-row reveal"><div class="syl-num">01</div><div class="syl-topic"><small>Lesson 01</small>La geografia del cibo</div><div class="syl-grammar">How Italy's twenty regions produced twenty cuisines. The north-south axis of butter vs olive oil, rice vs pasta, wine vs beer.</div></div><div class="syl-row reveal"><div class="syl-num">02</div><div class="syl-topic"><small>Lesson 02</small>La pasta — mille forme, mille storie</div><div class="syl-grammar">Four hundred pasta shapes. Why bucatini all'amatriciana can only be bucatini. The unwritten pasta rules.</div></div><div class="syl-row reveal"><div class="syl-num">03</div><div class="syl-topic"><small>Lesson 03</small>Il pane e il forno</div><div class="syl-grammar">The vocabulary of bread — pane sciapo, pagnotta, michetta, focaccia. The village bakery as institution.</div></div><div class="syl-row reveal"><div class="syl-num">04</div><div class="syl-topic"><small>Lesson 04</small>Il vino italiano</div><div class="syl-grammar">Twenty regions, twenty wine cultures. Reading a label, understanding DOC and DOCG, the ritual of the tasting.</div></div><div class="syl-row reveal"><div class="syl-num">05</div><div class="syl-topic"><small>Lesson 05</small>Il caffè — un rito</div><div class="syl-grammar">The Italian relationship with coffee, from Trieste to Naples. The bar, the moka, the caffettiera.</div></div><div class="syl-row reveal"><div class="syl-num">06</div><div class="syl-topic"><small>Lesson 06</small>Il pranzo della domenica</div><div class="syl-grammar">The most sacred meal in Italian life. Six courses, three hours, one grandmother. Cultural graduation.</div></div>
-    </div>
-    <div class="text-center mt-4"><a class="btn btn-3d btn-3d-primary" href="../../pdf/cap-food-syllabus.pdf" download>Download the Full Syllabus PDF</a></div>
   </div>
 </section>
-
+<section class="section-navy-grad">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">The DNA of this course</p>
+      <h2 class="display-lg">What makes <span class='gold-ital'>La Cucina</span> different</h2>
+      <p>Three reasons the capsule format is the right shape for the language of food.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="pillar-grid"><div class="pillar-card"><div class="p-num">01</div><h3>Sei sessioni, sei paesaggi</h3><p>Six live sessions, each set in a different Italian foodscape — Roman markets, Neapolitan pizzerias, Emilian pasta workshops, Sicilian pastry shops.</p></div><div class="pillar-card"><div class="p-num">02</div><h3>Il vocabolario del gusto</h3><p>You learn the vocabulary of taste — dolce, sapido, amaro, umami — as Italians actually use it, with the shades of preference and disagreement that live inside every word.</p></div><div class="pillar-card"><div class="p-num">03</div><h3>Un&#x27;insegnante che cucina</h3><p>Giulia teaches from a real kitchen, real ingredients, real dishes. You are not watching a lecture; you are watching a meal being made in real time.</p></div></div>
+  </div>
+</section>
+<section class="city-band">
+  <div class="cb-bg"><img src="../../assets/img/cap-food.jpg" alt="All of Italy"></div>
+  <div class="wrap cb-content">
+    <p class="eyebrow" style="color:var(--gold-soft)">The kitchen is the classroom</p>
+    <h2>Why <span class='gold-ital'>la cucina</span> teaches the culture</h2>
+    <p class="lead" style="color:var(--on-dark);margin-bottom:2rem;max-width:56ch">Every Italian meal is a language lesson. Six of them, hosted, is a small education.</p>
+    <div class="cb-paragraphs"><p>There is no Italian cuisine, only Italian cuisines — twenty regions, hundreds of towns, thousands of unwritten rules about which pasta shape belongs with which sauce and which grandmother&#x27;s recipe is closest to the original. La Cucina is a language before it is a menu.</p><p>This six-session capsule is our shortest course and our densest. It is designed for any learner at any level — beginners will pick up the vocabulary; advanced learners will finally understand why bucatini all&#x27;amatriciana can only be bucatini. Giulia hosts every session from a working Italian kitchen.</p><p>You will finish able to read any Italian menu, argue about it competently, and know why the same tomato in Naples and in Milan tastes like two different words.</p></div>
+  </div>
+</section>
+<section class="section-dark" style="background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 60%,var(--navy-soft) 130%)">
+  <div class="wrap">
+    <div class="teacher-block">
+      <div class="teacher-photo">
+        <img src="../../assets/img/teacher-giulia.jpg" alt="Giulia Bianchi — Club Italia master teacher">
+        <span class="tp-badge">Firenze · Chianti</span>
+      </div>
+      <div class="teacher-info">
+        <p class="eyebrow">Meet your teacher</p>
+        <h3>Giulia Bianchi</h3>
+        <div class="ti-role">Culture-Capsule host · Cordon Bleu-trained</div>
+        <p>Giulia leads La Cucina — the six-session capsule on the language of the Italian table. Her Cordon Bleu training and her lifelong obsession with regional Italian cuisine make her the natural voice for this course. She hosts each session from a working Italian kitchen.</p>
+        <blockquote class="teacher-quote">&ldquo;Every Italian meal is a lecture on twenty regions of grammar. To speak Italian is, in the end, to know how a Sicilian butter differs from a Piedmontese one.&rdquo;</blockquote>
+        <div class="teacher-creds">Diploma Cordon Bleu Firenze · MA Italian Language · 7 years teaching · culinary journalist</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-paper" id="syllabus">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">The full curriculum</p>
+      <h2 class="display-lg">Six live lessons, one <span class="gold-ital">journey</span></h2>
+      <p>A structured Cultural · Any level curriculum, each 85-minute live class themed to the setting of the course.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="unit-grid"><div class="unit-card">
+      <div class="u-no">01</div>
+      <div class="u-body">
+        <h4>La geografia del cibo</h4>
+        <p>How Italy&#x27;s twenty regions produced twenty cuisines. The north-south axis of butter vs olive oil, rice vs pasta, wine vs beer.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">02</div>
+      <div class="u-body">
+        <h4>La pasta — mille forme, mille storie</h4>
+        <p>Four hundred pasta shapes. Why bucatini all&#x27;amatriciana can only be bucatini. The unwritten pasta rules.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">03</div>
+      <div class="u-body">
+        <h4>Il pane e il forno</h4>
+        <p>The vocabulary of bread — pane sciapo, pagnotta, michetta, focaccia. The village bakery as institution.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">04</div>
+      <div class="u-body">
+        <h4>Il vino italiano</h4>
+        <p>Twenty regions, twenty wine cultures. Reading a label, understanding DOC and DOCG, the ritual of the tasting.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">05</div>
+      <div class="u-body">
+        <h4>Il caffè — un rito</h4>
+        <p>The Italian relationship with coffee, from Trieste to Naples. The bar, the moka, the caffettiera.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">06</div>
+      <div class="u-body">
+        <h4>Il pranzo della domenica</h4>
+        <p>The most sacred meal in Italian life. Six courses, three hours, one grandmother. Cultural graduation.</p>
+      </div>
+    </div></div>
+  </div>
+</section>
 <section class="section-cream">
-  <div class="wrap-narrow text-center">
-    <p class="big-quote reveal">Twenty lessons that change the way you speak, listen and think in Italian.</p>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">The rhythm</p>
+      <h2 class="display-lg">A <span class="gold-ital">week</span> in this course</h2>
+      <p>Every week is designed to make Italian a daily habit, not a weekly appointment.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="week-grid-4"><div class="week-card-lg"><div class="wc-day">Weeks 1-2</div><div class="wc-title">Le Regioni</div><div class="wc-note">Two sessions on the north-south axis of Italian cuisine.</div></div><div class="week-card-lg"><div class="wc-day">Weeks 3-4</div><div class="wc-title">La Pasta</div><div class="wc-note">Two sessions on the four hundred pasta shapes and the rules that govern them.</div></div><div class="week-card-lg"><div class="wc-day">Week 5</div><div class="wc-title">Il Vino</div><div class="wc-note">One session on the vocabulary of Italian wine, from Barolo to Nero d&#x27;Avola.</div></div><div class="week-card-lg"><div class="wc-day">Week 6</div><div class="wc-title">Il Pranzo della Domenica</div><div class="wc-note">The final session — a full Sunday lunch, in real time, in Italian.</div></div></div>
   </div>
 </section>
-
 <section class="section-paper">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-line">Ready to begin?</span>
-      <h2 class="display-md">Speak with a Club Italia advisor.</h2>
-      <p class="lead">A free 15-minute placement call. No obligation. You leave with a clear plan.</p>
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Listen in</p>
+      <h2 class="display-lg">A pasta workshop in <span class='gold-ital'>Bologna</span></h2>
+      <p>A short excerpt from a real lesson. Press listen to hear the pronunciation.</p>
+      <hr class="gold-rule">
     </div>
-    <div class="text-center"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button></div>
+    <div class="sample-card">
+      <div class="sample-head">
+        <h3>Session 02 · La pasta, mille forme</h3>
+        <button class="listen-btn" type="button" aria-label="Play the audio for this dialogue">Play audio · 0:42</button>
+      </div>
+      <p class="sample-setting">A workshop in Bologna, seventeen wooden boards, a rolling pin, one grandmother named Rita.</p>
+      <div class="sample-dialogue"><div class="sample-line"><div class="sp">Rita</div><div class="txt">Vedi, la sfoglia si tira così, con calma.</div></div><div class="sample-line"><div class="sp">Tu</div><div class="txt">Deve essere di questo spessore?</div></div><div class="sample-line"><div class="sp">Rita</div><div class="txt">Sottile come un velo. Se vedi la mano attraverso, va bene.</div></div><div class="sample-line"><div class="sp">Tu</div><div class="txt">E per i tortellini?</div></div><div class="sample-line"><div class="sp">Rita</div><div class="txt">Ancora più sottile. Ma quello, cara, si impara con gli anni.</div></div></div>
+      <p class="sample-note"><strong>Teacher's note.</strong> This is the dialogue that A2 unlocks — the polite question, the elder&#x27;s answer, the follow-up. The sfoglia is the vocabulary lesson.</p>
+    </div>
+  </div>
+</section>
+<section class="section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Voices from this course</p>
+      <h2 class="display-lg">Students of <span class="gold-ital">Table</span></h2>
+      <p>Three past learners of this exact course, in their own words.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="testimonials"><div class="t-card"><div class="t-stars">★ ★ ★ ★ ★</div><p class="t-quote">“I finally understand why my Italian grandmother refused to make a carbonara with cream. Six sessions and a lifetime of confusion, resolved.”</p><p class="t-name">Nina C.</p><p class="t-loc">Warsaw · La Cucina · Winter 2026</p></div><div class="t-card"><div class="t-stars">★ ★ ★ ★ ★</div><p class="t-quote">“The capsule format is perfect. Six sessions, six kitchens, and I now read Italian menus like a local. Best small course I have taken.”</p><p class="t-name">Julian F.</p><p class="t-loc">Copenhagen · La Cucina · Spring 2026</p></div><div class="t-card"><div class="t-stars">★ ★ ★ ★ ★</div><p class="t-quote">“Giulia is a national treasure. I would take her capsule again just to hear her describe a tomato.”</p><p class="t-name">Maya K.</p><p class="t-loc">New York · La Cucina · Autumn 2025</p></div></div>
+  </div>
+</section>
+<section class="section-dark" id="pricing" style="background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Tuition</p>
+      <h2 class="display-lg" style="color:var(--on-dark)">One investment. One <span class="gold-ital">Italia</span>.</h2>
+      <p style="color:var(--on-dark-soft)">Every plan includes live teaching from Italy, lifetime access to lesson recordings, and your Club Italia certificate.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <span class="pc-badge">Best value</span>
+        <h3>Annual</h3>
+        <div class="pc-perweek">$480<small>&nbsp;/ week</small></div>
+        <p class="pc-total">$480 for the six-session capsule</p>
+        <ul>
+          <li>All live lessons with the master teacher</li>
+          <li>Small live groups of 10&ndash;12 learners</li>
+          <li>Lifetime access to every lesson recording</li>
+          <li>Biagio, your 24/7 AI Italian tutor</li>
+          <li>Club Italia certificate on completion</li>
+          <li>$100 in Club Italia learning credits</li>
+        </ul>
+        <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Seat</button>
+      </div>
+      <div class="price-card">
+        <h3>Term</h3>
+        <div class="pc-perweek">$180<small>&nbsp;/ week</small></div>
+        <p class="pc-total">$180 / two sessions</p>
+        <ul>
+          <li>Pay per term, no long commitment</li>
+          <li>Same live small-group classes</li>
+          <li>Lifetime recordings included</li>
+          <li>Upgrade to Annual anytime</li>
+        </ul>
+        <button class="btn btn-3d btn-3d-navy" data-advisor type="button">Start with a Term</button>
+      </div>
+      <div class="price-card">
+        <h3>Monthly</h3>
+        <div class="pc-perweek">$99<small>&nbsp;/ week</small></div>
+        <p class="pc-total">$99 / month · six months max</p>
+        <ul>
+          <li>Pay month to month, cancel anytime</li>
+          <li>Same live small-group classes</li>
+          <li>Lifetime recordings included</li>
+          <li>Convert to Annual at any point</li>
+        </ul>
+        <button class="btn btn-3d btn-3d-navy" data-advisor type="button">Start Monthly</button>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--on-dark-faint);font-size:.82rem;margin-top:2rem">Club Italia is presented by eTeacher Group. All amounts in USD. Tuition includes VAT where applicable.</p>
+  </div>
+</section>
+<section class="section-dark" style="background:var(--navy-deep);padding:3rem 0"><div class="wrap"><div class="sibling-nav"><a class="sib-card" href="../../pages/culture/cap-art.html">
+        <span class="sib-dir">Next &rarr;</span>
+        <span class="sib-title">L&#x27;Arte</span>
+        <span class="sib-cefr">Renaissance in words</span>
+      </a></div></div></section>
+<section class="section-dark final-cta" style="background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%)">
+  <div class="wrap-narrow">
+    <p class="eyebrow eyebrow-line" style="justify-content:center">Live Italian. Live.</p>
+    <h2>Learn the Italian of the <span class='gold-ital'>table</span>.</h2>
+    <p>Six live sessions with Giulia, hosted from working Italian kitchens. Any level. Lifetime recordings.</p>
+    <div class="hero-ctas">
+      <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button>
+      <a class="btn btn-3d btn-3d-ghost" href="../../how-it-works.html">See how it works</a>
+    </div>
   </div>
 </section>
 
@@ -127,91 +415,60 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
-        <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
-        <p>Club Italia by eTeacher — a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
-        <p style="margin-top:1.2rem">
-          <a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a>
-        </p>
+        <div class="logo-text" style="margin-bottom:1rem"><span class="lt-main" style="color:var(--on-dark)">Club Italia</span><span class="lt-sub">by eTeacher</span></div>
+        <p>Live Italian, taught inside Italian cities. Small groups, master teachers, lifetime recordings. Certified by eTeacher Group.</p>
       </div>
       <div class="footer-col">
         <h4>Courses</h4>
+        <a href="../../pages/courses/ci1.html">CI Principiante</a>
+        <a href="../../pages/courses/ci2.html">CI Elementare</a>
+        <a href="../../pages/courses/ci3.html">CI Intermedio</a>
+        <a href="../../pages/courses/ci4.html">CI Avanzato</a>
         <a href="../../courses.html">All Courses</a>
-        <a href="../../pages/courses/ci1.html">CI Principiante · A0→A1.1</a>
-        <a href="../../pages/courses/ci2.html">CI Elementare · A1.1→A1.2</a>
-        <a href="../../pages/courses/ci3.html">CI Intermedio · A1.2→A2.1</a>
-        <a href="../../pages/courses/ci4.html">CI Avanzato · A2.1→A2.2</a>
-        <a href="../../pages/spoken/ps1.html">Parliamo · Foundation</a>
-        <a href="../../pages/spoken/ps2.html">Parliamo · Beginner</a>
-        <a href="../../pages/spoken/ps3.html">Parliamo · Elementary</a>
-        <a href="../../pages/spoken/ps4.html">Parliamo · Confident</a>
-        <a href="../../pages/culture/cap-food.html">Capsule · La Cucina</a>
-        <a href="../../pages/culture/cap-art.html">Capsule · L'Arte</a>
-        <a href="../../pages/culture/cap-opera.html">Capsule · L'Opera</a>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="../../how-it-works.html">How It Works</a>
-        <a href="../../method.html">Our Method</a>
-        <a href="../../teachers.html">Teachers</a>
-        <a href="../../culture.html">Culture</a>
+        <h4>Spoken &amp; Capsules</h4>
+        <a href="../../pages/spoken/ps1.html">Al Caffè</a>
+        <a href="../../pages/spoken/ps2.html">A Tavola</a>
+        <a href="../../pages/spoken/ps3.html">In Viaggio</a>
+        <a href="../../pages/spoken/ps4.html">Chiacchierando</a>
         <a href="../../capsules.html">Culture Capsules</a>
-        <a href="../../biagio.html">Biagio AI Tutor</a>
-        <a href="../../blog.html">Cultural Journal</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="../../about.html">About Us</a>
-        <a href="../../eteacher.html">eTeacher Group</a>
+        <a href="../../about.html">About</a>
+        <a href="../../method.html">Method</a>
         <a href="../../pricing.html">Pricing</a>
         <a href="../../faq.html">FAQ</a>
         <a href="../../contact.html">Contact</a>
-        <a href="../../privacy.html">Privacy Policy</a>
-        <a href="../../terms.html">Terms &amp; Conditions</a>
+        <a href="../../terms.html">Terms</a>
+        <a href="../../privacy.html">Privacy</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 eTeacher Group. All rights reserved. Club Italia is a trading style of eTeacher Group.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">◉</a>
-        <a href="#" aria-label="YouTube">▶</a>
-      </div>
+      <p>Presented by eTeacher Group &nbsp;·&nbsp; advisor@clubitalia.com &nbsp;·&nbsp; +1-888-230-5110</p>
     </div>
+    <p style="color:var(--on-dark-faint);font-size:.78rem;text-align:center;margin-top:1.6rem">Copyright eTeacher Group © 2026. All Rights Reserved.</p>
   </div>
 </footer>
-
-<div class="advisor-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="advisorModalTitle">
+<div class="advisor-modal" id="advisorModal" role="dialog" aria-modal="true" aria-labelledby="advisorTitle">
   <div class="advisor-card">
-    <button class="advisor-modal-close" aria-label="Close" type="button">×</button>
+    <button class="advisor-modal-close" aria-label="Close" type="button">&times;</button>
     <div class="advisor-head">
-      <span class="eyebrow eyebrow-line">Speak with us</span>
-      <h3 id="advisorModalTitle">Talk to an Advisor</h3>
-      <p>Tell us a little about you and a Club Italia academic advisor will be in touch to plan your start.</p>
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Placement conversation</p>
+      <h3 id="advisorTitle">Speak to a Club Italia advisor</h3>
+      <p>A 15-minute conversation to place you in the right level and answer everything about the course.</p>
     </div>
     <form class="advisor-form" novalidate>
-      <div class="field"><label for="adv-name">Name</label><input id="adv-name" name="name" type="text" autocomplete="name" required placeholder="Your full name"><span class="err-msg" aria-live="polite"></span></div>
-      <div class="field"><label for="adv-email">Email</label><input id="adv-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"><span class="err-msg" aria-live="polite"></span></div>
-      <div class="field"><label for="adv-phone">Phone</label><input id="adv-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 000 0000"><span class="err-msg" aria-live="polite"></span></div>
-      <div class="field"><label for="adv-level">Your Italian right now</label>
-        <select id="adv-level" name="level" required>
-          <option value="">Choose your level</option>
-          <option value="none">I don't speak any Italian yet</option>
-          <option value="a1">A few words · A1</option>
-          <option value="a2">Some basics · A2</option>
-          <option value="b1">Conversational · B1+</option>
-        </select>
-        <span class="err-msg" aria-live="polite"></span>
-      </div>
-      <button class="btn btn-3d btn-3d-primary" type="submit">Request My Consultation</button>
+      <div class="field"><label for="af-name">Your name</label><input id="af-name" name="name" required><span class="err-msg"></span></div>
+      <div class="field"><label for="af-email">Email</label><input id="af-email" name="email" type="email" required><span class="err-msg"></span></div>
+      <div class="field"><label for="af-phone">Phone (optional)</label><input id="af-phone" name="phone" type="tel"></div>
+      <div class="field"><label for="af-level">Current Italian level</label><select id="af-level" name="level"><option>Complete beginner</option><option>A1 · basics</option><option>A2 · confident</option><option>B1 or higher</option></select></div>
+      <button class="btn btn-3d btn-3d-primary" type="submit">Reserve My Placement Call</button>
     </form>
-    <div class="advisor-success">
-      <h3>Grazie!</h3>
-      <p>Your request is on its way to our advisor. We will be in touch shortly to plan your start with Club Italia.</p>
-    </div>
+    <div class="advisor-success"><h3>Grazie mille.</h3><p>An advisor will call within one business day. Look for a call from Roma.</p></div>
   </div>
 </div>
-
-<script src="../../js/ci.js"></script>
+<script src="../../js/ci.js" defer></script>
 </body>
 </html>

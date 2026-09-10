@@ -2,7 +2,53 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neapolitan Humour, Explained — Cultural Journal · Club Italia</title><meta name="description" content="The philosophy underneath the world's most laughed-in city">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="../../css/ci.css"></head><body>
+<link rel="stylesheet" href="../../css/ci.css">
+<style>
+.post-body-grid{display:grid;grid-template-columns:1fr 320px;gap:4rem;max-width:1160px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem);align-items:start}
+@media (max-width:960px){.post-body-grid{grid-template-columns:1fr;gap:2.6rem}}
+.post-main h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,2.6vw,2.4rem);line-height:1.14;color:var(--navy);margin:2.4rem 0 1rem}
+.post-main h2:first-child{margin-top:0}
+.post-main p.lead{font-size:1.14rem;line-height:1.78;color:var(--on-light);margin-bottom:1.4rem;font-weight:400}
+.post-main p.lead:first-of-type::first-letter{font-family:var(--serif);float:left;font-size:4.6rem;line-height:.88;padding:.3rem .55rem 0 0;color:var(--terra-deep);font-weight:600}
+.post-sidebar{position:sticky;top:6rem;background:var(--ivory);border:1px solid var(--gold-line-soft);padding:1.8rem 1.6rem;font-size:.95rem}
+@media (max-width:960px){.post-sidebar{position:static}}
+.post-sidebar .rn-eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1rem;display:block;font-weight:600}
+.post-sidebar h4{font-family:var(--serif);font-size:1.35rem;color:var(--navy);margin-bottom:1rem;line-height:1.15}
+.post-sidebar dl{margin:0;padding:0}
+.post-sidebar dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-top:1rem}
+.post-sidebar dt:first-of-type{margin-top:0}
+.post-sidebar dd{margin:.25rem 0 0;font-family:var(--serif);font-size:1.05rem;color:var(--navy);line-height:1.4}
+.post-sidebar .rn-tip{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--gold-line-soft);font-style:italic;color:var(--on-light-soft);line-height:1.55}
+
+.post-pull{margin:2.8rem -1rem;padding:2.4rem 2.4rem;border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);background:linear-gradient(180deg,rgba(201,162,75,.06),rgba(201,162,75,0))}
+.post-pull p{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.35;color:var(--navy);margin:0;max-width:34ch}
+.post-pull p::before{content:"\201C";color:var(--gold-deep);font-size:1.4em;line-height:0;position:relative;top:.2em;margin-right:.1em}
+.post-pull p::after{content:"\201D";color:var(--gold-deep);font-size:1.4em;line-height:0;position:relative;top:.2em;margin-left:.05em}
+
+.post-cta-box{margin:2.4rem 0;padding:2.2rem 2rem;background:var(--navy);color:var(--on-dark);border-left:4px solid var(--gold)}
+.post-cta-box .cta-eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.9rem;font-weight:600;display:block}
+.post-cta-box h3{font-family:var(--serif);font-size:1.55rem;color:var(--on-dark);margin-bottom:.7rem;line-height:1.15}
+.post-cta-box p{font-size:1rem;color:var(--on-dark-soft);line-height:1.6;margin-bottom:1.2rem}
+.post-cta-box a.cta-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);border-bottom:1px solid var(--gold-line);padding-bottom:.35rem;font-weight:600}
+
+.post-continue{background:var(--ivory);padding:clamp(4rem,7vw,6rem) 0}
+.post-continue .section-head{margin-bottom:2.6rem}
+.post-continue h2{font-family:var(--serif);color:var(--navy)}
+.post-continue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+@media (max-width:820px){.post-continue-grid{grid-template-columns:1fr}}
+.post-continue-card{background:var(--white);border:1px solid var(--gold-line-soft);overflow:hidden;text-decoration:none;color:inherit;transition:all .3s var(--ease);display:flex;flex-direction:column}
+.post-continue-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(58,14,18,.14)}
+.post-continue-card .pcc-img{aspect-ratio:16/10;overflow:hidden;background:var(--cream)}
+.post-continue-card .pcc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.post-continue-card:hover .pcc-img img{transform:scale(1.04)}
+.post-continue-card .pcc-body{padding:1.6rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column}
+.post-continue-card .pcc-eyebrow{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.7rem;font-weight:600}
+.post-continue-card h3{font-family:var(--serif);font-size:1.35rem;color:var(--navy);line-height:1.15;margin-bottom:.6rem}
+.post-continue-card p{font-size:.94rem;color:var(--on-light-soft);line-height:1.5;margin-bottom:1rem}
+.post-continue-card .pcc-cta{margin-top:auto;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);font-weight:600}
+</style>
+
+</head><body>
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="../../index.html" aria-label="Club Italia — home">
@@ -45,13 +91,54 @@
 </aside>
 
 
-<section class="hero" style="min-height:60vh"><div class="hero-bg"><img src="../../assets/img/course-ci4.jpg" alt=""></div>
+<section class="hero" style="min-height:60vh"><div class="hero-bg"><video autoplay muted loop playsinline preload="metadata" poster="../../assets/img/course-ci4.jpg" aria-label=""><source src="../../assets/video/napoli-mare.mp4" type="video/mp4"></video></div>
 <div class="hero-content"><div style="max-width:64ch"><p class="hero-tag">Culture · 02 Jun 2026</p><h1>Neapolitan Humour, Explained</h1><p class="hero-sub">The philosophy underneath the world's most laughed-in city</p></div></div></section>
 
-<article class="section-paper"><div class="wrap-narrow">
-<h2 class="display-sm mt-4">A city that laughs</h2><p class="lead" style="margin-top:1rem">Naples is, by most sociological measures, one of the harder cities in Europe to live in. It is dense, chaotic, poor by northern-European standards, historically underserved by its own state. It is also, by the near-unanimous testimony of every visitor and every Neapolitan, the funniest city on earth.</p><h2 class="display-sm mt-4">The philosophy</h2><p class="lead" style="margin-top:1rem">The Neapolitan philosopher Benedetto Croce, born just outside the city, wrote that Neapolitan humour is not a decoration on Neapolitan life but its structural foundation. Laughter, in this reading, is not what you do after your problems are solved. Laughter is how you organise your relationship to problems that cannot be solved.</p><h2 class="display-sm mt-4">The registers</h2><p class="lead" style="margin-top:1rem">Neapolitan humour has three registers. The first is verbal wit — the pun, the double meaning, the swift verbal punch that ends a discussion. The second is physical comedy — the exaggerated gesture, the deadpan face, the sudden shift from apparent seriousness to obvious absurdity. The third, and most sophisticated, is what Neapolitans call sfottò — the affectionate mockery of a friend, delivered with such precision that the friend himself laughs harder than anyone.</p><h2 class="display-sm mt-4">For the learner</h2><p class="lead" style="margin-top:1rem">Understanding Neapolitan humour requires understanding Naples — its history, its dialects, its centuries of Spanish, French, Bourbon and Piedmontese rule. This is why CI Avanzato, the fourth course in the Club Italia structured mastery track, spends its Neapolitan sessions on the humour, the theatre, the songs and the language of a city that laughs at everything, including its own laughter.</p>
+<article class="section-paper"><div class="post-body-grid">
+<div class="post-main"><h2 class="display-sm mt-4">A city that laughs</h2><p class="lead" style="margin-top:1rem">Naples is, by most sociological measures, one of the harder cities in Europe to live in. It is dense, chaotic, poor by northern-European standards, historically underserved by its own state. It is also, by the near-unanimous testimony of every visitor and every Neapolitan, the funniest city on earth.</p><h2 class="display-sm mt-4">The philosophy</h2><p class="lead" style="margin-top:1rem">The Neapolitan philosopher Benedetto Croce, born just outside the city, wrote that Neapolitan humour is not a decoration on Neapolitan life but its structural foundation. Laughter, in this reading, is not what you do after your problems are solved. Laughter is how you organise your relationship to problems that cannot be solved.</p><div class="post-pull"><p>Neapolitan humour is not a joke. It is a philosophy that treats the improbable as a resource.</p></div><h2 class="display-sm mt-4">The registers</h2><p class="lead" style="margin-top:1rem">Neapolitan humour has three registers. The first is verbal wit — the pun, the double meaning, the swift verbal punch that ends a discussion. The second is physical comedy — the exaggerated gesture, the deadpan face, the sudden shift from apparent seriousness to obvious absurdity. The third, and most sophisticated, is what Neapolitans call sfottò — the affectionate mockery of a friend, delivered with such precision that the friend himself laughs harder than anyone.</p><h2 class="display-sm mt-4">For the learner</h2><p class="lead" style="margin-top:1rem">Understanding Neapolitan humour requires understanding Naples — its history, its dialects, its centuries of Spanish, French, Bourbon and Piedmontese rule. This is why CI Avanzato, the fourth course in the Club Italia structured mastery track, spends its Neapolitan sessions on the humour, the theatre, the songs and the language of a city that laughs at everything, including its own laughter.</p><div class="post-pull"><p>In Napoli, laughter is not what happens after the difficulty. It is what happens inside the difficulty.</p></div><div class="post-cta-box">
+<span class="cta-eyebrow">In your next class</span>
+<h3>Learn Italian with Luca, from Napoli.</h3>
+<p>Luca De Simone teaches CI Principiante, CI Elementare and a Napoli-focused Parliamo Beginner cohort.</p>
+<a class="cta-link" href="../teachers/luca.html">Meet Luca →</a>
+</div></div>
+<aside class="post-sidebar">
+<span class="rn-eyebrow">Reading Notes</span>
+<h4>Reading Notes</h4>
+<dl><dt>Read time</dt><dd>6 minutes</dd>
+<dt>Level</dt><dd>B1 · Intermediate</dd>
+<dt>New Italian words</dt><dd>battuta, sfottò, presa in giro, arte di arrangiarsi, guagliò</dd>
+<dt>Filed under</dt><dd>Culture · Napoli</dd></dl>
+<p class="rn-tip">Luca teaches Italian through the theatricality of Napoli. His courses are the fastest route into the humour of the south.</p>
+</aside>
 </div></article>
 
+<section class="post-continue">
+<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Continue Reading</span><h2 class="display-md">More from the Cultural Journal.</h2></div>
+<div class="post-continue-grid"><a class="post-continue-card" href="italian-golden-age.html">
+<div class="pcc-img"><img src="../../assets/img/pillar-cinema.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Cinema · 10 Sep 2026</span>
+<h3>The Golden Age of Italian Cinema</h3>
+<p>How Fellini, Visconti and Rossellini rewrote what film could be</p>
+<span class="pcc-cta">Read on →</span>
+</div></a>
+<a class="post-continue-card" href="aperitivo.html">
+<div class="pcc-img"><img src="../../assets/img/spoken-ps4.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Culture · 22 Apr 2026</span>
+<h3>The Milanese Aperitivo, Decoded</h3>
+<p>When it started, what it costs, what you actually eat</p>
+<span class="pcc-cta">Read on →</span>
+</div></a>
+<a class="post-continue-card" href="ragu-alla-bolognese.html">
+<div class="pcc-img"><img src="../../assets/img/cap-food.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Cuisine · 28 Jul 2026</span>
+<h3>The Real Ragù alla Bolognese</h3>
+<p>And the eight things it is not</p>
+<span class="pcc-cta">Read on →</span>
+</div></a></div>
+</div></section>
 <section class="section-dark tagline-band"><div class="wrap-narrow"><p class="tag-script">Leggi. Poi parla.</p>
 <div class="hero-ctas mt-3" style="justify-content:center;display:flex"><a class="btn btn-3d btn-3d-primary" href="../../courses.html">Explore the Courses</a></div></div></section>
 

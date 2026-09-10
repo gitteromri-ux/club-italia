@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chiara Bellini — Italian Teacher from Firenze · Club Italia by eTeacher</title><meta name="description" content="Chiara Bellini, native Italian teacher from Firenze, Toscana. Renaissance-city Italian, taught with the eye of an art historian and the ear of a Florentine.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../../css/ci.css">
+
+<style>
+.t-hero{position:relative;min-height:100vh;background:linear-gradient(120deg,var(--navy-deep) 0%,var(--navy) 55%,var(--navy-soft) 100%);color:var(--on-dark);display:flex;align-items:stretch;overflow:hidden}
+.t-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 30%,rgba(201,162,75,.14),transparent 55%);pointer-events:none}
+.t-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0;width:100%;align-items:stretch;position:relative;z-index:2}
+@media (max-width:960px){.t-hero-grid{grid-template-columns:1fr}}
+.t-hero-copy{padding:9rem clamp(1.6rem,5vw,6rem) 5rem;display:flex;flex-direction:column;justify-content:center}
+.t-hero-eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:2rem;display:inline-flex;align-items:center;gap:.9rem}
+.t-hero-eyebrow::before{content:"";width:2.4rem;height:1px;background:var(--gold-soft)}
+.t-hero-name{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(3.6rem,7vw,7rem);line-height:.98;letter-spacing:-.02em;margin:0 0 .4rem;color:var(--on-dark)}
+.t-hero-last{display:block;color:var(--gold-soft);font-style:italic}
+.t-hero-role{font-family:var(--serif);font-size:1.35rem;font-style:italic;color:var(--on-dark-soft);margin:2rem 0 2.4rem;max-width:36ch;line-height:1.4}
+.t-hero-quote{border-left:2px solid var(--gold);padding:.4rem 0 .4rem 1.4rem;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--on-dark);max-width:44ch;margin-bottom:.6rem}
+.t-hero-quote-en{font-size:.86rem;letter-spacing:.02em;color:var(--on-dark-faint);max-width:44ch;margin-bottom:2.4rem}
+.t-hero-portrait{position:relative;overflow:hidden;background:var(--navy-mid);min-height:64vh}
+.t-hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.t-hero-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,8,11,.55) 0%,rgba(34,8,11,0) 30%),linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.35) 100%);pointer-events:none}
+
+.region-band{display:grid;grid-template-columns:.7fr 1.3fr;gap:0}
+@media (max-width:960px){.region-band{grid-template-columns:1fr}}
+.region-photo{position:relative;min-height:64vh;overflow:hidden}
+.region-photo img{width:100%;height:100%;object-fit:cover}
+.region-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,8,11,0) 60%,rgba(243,237,223,.15) 100%);pointer-events:none}
+.region-essay{padding:clamp(4rem,7vw,7rem) clamp(1.6rem,5vw,6rem);background:var(--paper);color:var(--on-light)}
+.region-essay h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,3.6vw,3rem);line-height:1.1;margin:0 0 2rem;max-width:22ch;color:var(--navy)}
+.region-essay .region-eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.4rem;display:block}
+.region-essay p{font-size:1.08rem;line-height:1.75;margin-bottom:1.2rem;color:var(--on-light-soft)}
+.region-essay .drop::first-letter{font-family:var(--serif);float:left;font-size:4.6rem;line-height:.9;padding:.4rem .6rem 0 0;color:var(--gold-deep);font-weight:600}
+
+.manifesto{background:var(--ivory);padding:clamp(4rem,7vw,7rem) 0}
+.manifesto-head{max-width:820px;margin:0 auto 3rem;padding:0 clamp(1.4rem,3vw,3rem)}
+.manifesto-head .eyebrow{color:var(--gold-deep)}
+.manifesto-body{max-width:760px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem)}
+.manifesto-body p{font-size:1.13rem;line-height:1.78;color:var(--on-light);margin-bottom:1.4rem}
+.manifesto-body p:first-child::first-letter{font-family:var(--serif);float:left;font-size:5rem;line-height:.9;padding:.3rem .55rem 0 0;color:var(--terra-deep);font-weight:600}
+.manifesto-sign{margin-top:2rem;font-family:var(--serif);font-style:italic;color:var(--terra-deep);font-size:1.1rem}
+
+.cred-band{background:var(--navy);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0}
+.cred-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start}
+@media (max-width:960px){.cred-grid{grid-template-columns:1fr}}
+.cred-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2rem,3.6vw,3rem);line-height:1.05;color:var(--gold-soft)}
+.cred-list{list-style:none;padding:0;margin:0}
+.cred-list li{padding:1.2rem 0;border-top:1px solid var(--gold-line-soft);font-size:1.02rem;line-height:1.55;color:var(--on-dark);display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:baseline}
+.cred-list li:last-child{border-bottom:1px solid var(--gold-line-soft)}
+.cred-list .cred-num{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.35rem;min-width:2ch}
+
+.t-testimonials{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
+.t-test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+@media (max-width:960px){.t-test-grid{grid-template-columns:1fr}}
+.t-test{background:var(--white);border:1px solid var(--gold-line-soft);padding:2.2rem 2rem;position:relative}
+.t-test::before{content:"\201C";position:absolute;top:-.1rem;left:1.4rem;font-family:var(--serif);color:var(--gold);font-size:5rem;line-height:1;font-weight:600}
+.t-test p{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.5;color:var(--on-light);margin-top:1.8rem;margin-bottom:1.4rem}
+.t-test .t-test-src{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);border-top:1px solid var(--light-line);padding-top:1rem}
+
+.lesson-band{background:var(--cream);padding:clamp(4rem,7vw,7rem) 0}
+.lesson-timeline{max-width:900px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem);position:relative}
+.lesson-timeline::before{content:"";position:absolute;left:calc(clamp(1.4rem,3vw,3rem) + 5rem);top:0;bottom:0;width:1px;background:var(--gold-line)}
+@media (max-width:640px){.lesson-timeline::before{display:none}}
+.lesson-row{display:grid;grid-template-columns:6rem 1fr;gap:2rem;padding:1.8rem 0;border-bottom:1px solid var(--light-line);position:relative}
+.lesson-row:last-child{border-bottom:none}
+.lesson-row::before{content:"";position:absolute;left:calc(5rem - 4px);top:2.2rem;width:9px;height:9px;background:var(--gold);border-radius:50%}
+@media (max-width:640px){.lesson-row{grid-template-columns:1fr;gap:.4rem}.lesson-row::before{display:none}}
+.lesson-time{font-family:var(--serif);font-style:italic;color:var(--terra-deep);font-size:1.05rem;line-height:1.3}
+.lesson-desc{font-size:1.02rem;line-height:1.6;color:var(--on-light);padding-left:1.4rem}
+@media (max-width:640px){.lesson-desc{padding-left:0}}
+
+.t-courses{background:var(--paper);padding:clamp(4rem,7vw,7rem) 0}
+.t-course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+@media (max-width:900px){.t-course-grid{grid-template-columns:1fr}}
+.t-course-card{background:var(--white);border:1px solid var(--gold-line-soft);padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .3s var(--ease);text-decoration:none;color:inherit}
+.t-course-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(58,14,18,.14);border-color:var(--gold-line)}
+.t-course-card .tcc-eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.4rem}
+.t-course-card h3{font-family:var(--serif);font-size:1.55rem;margin-bottom:1rem;color:var(--navy);line-height:1.15}
+.t-course-card .tcc-cta{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-deep);margin-top:1.4rem}
+
+.schedule-band{background:var(--navy);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0}
+.schedule-table{max-width:900px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem)}
+.sched-row{display:grid;grid-template-columns:1fr 1fr 1.6fr auto;gap:2rem;padding:1.4rem 0;border-bottom:1px solid var(--gold-line-soft);align-items:baseline;font-size:1rem}
+.sched-row.head{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);border-bottom:1px solid var(--gold);padding-bottom:1rem;font-family:var(--sans)}
+@media (max-width:720px){.sched-row{grid-template-columns:1fr 1fr;gap:.6rem;padding:1.2rem 0}.sched-row.head{display:none}}
+.sched-day{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.2rem}
+.sched-time{color:var(--on-dark);font-variant-numeric:tabular-nums}
+.sched-course{color:var(--on-dark-soft)}
+.sched-seats{font-size:.82rem;letter-spacing:.06em;color:var(--gold-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
+.sched-seats.full{color:var(--terra-soft)}
+
+.t-book{background:linear-gradient(140deg,var(--terra-deep) 0%,var(--navy) 60%);color:var(--on-dark);padding:clamp(4rem,7vw,7rem) 0;text-align:center}
+.t-book h2{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.05;margin-bottom:1.6rem}
+.t-book p{font-size:1.15rem;color:var(--on-dark-soft);max-width:60ch;margin:0 auto 2.4rem}
+</style>
+
+</head><body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="nav-logo" href="../../index.html" aria-label="Club Italia — home">
+      <span class="logo-text">
+        <span class="lt-main">Club Italia</span>
+        <span class="lt-sub">by eTeacher</span>
+      </span>
+    </a>
+    <nav class="nav-menu" aria-label="Primary">
+      <span class="nav-item"><a class="nav-link" href="../../courses.html">Courses</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../how-it-works.html">How It Works</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../method.html">Method</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../teachers.html">Teachers</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../culture.html">Culture</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../biagio.html">AI Tutor</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../pricing.html">Pricing</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../blog.html">Blog</a></span>
+    </nav>
+    <button class="btn btn-3d btn-3d-primary nav-cta" data-advisor type="button">Talk to an Advisor</button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="navDrawer" type="button">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<aside class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
+  <button class="nav-drawer-close" aria-label="Close menu" type="button">&times;</button>
+  <a href="../../courses.html">Courses</a>
+  <a href="../../how-it-works.html">How It Works</a>
+  <a href="../../method.html">Method</a>
+  <a href="../../teachers.html">Teachers</a>
+  <a href="../../culture.html">Culture</a>
+  <a href="../../capsules.html">Culture Capsules</a>
+  <a href="../../biagio.html">AI Tutor</a>
+  <a href="../../pricing.html">Pricing</a>
+  <a href="../../blog.html">Blog</a>
+  <a href="../../faq.html">FAQ</a>
+  <a href="../../about.html">About</a>
+  <a href="../../contact.html">Contact</a>
+  <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
+</aside>
+
+
+
+<!-- FOLD 1 · HERO -->
+<section class="t-hero"><div class="t-hero-grid">
+<div class="t-hero-copy reveal">
+  <span class="t-hero-eyebrow">Firenze · Toscana</span>
+  <h1 class="t-hero-name">Chiara <span class="t-hero-last">Bellini</span></h1>
+  <p class="t-hero-role">Nine years in Florence's classrooms. Fluent in art, food, and the perfect subjunctive.</p>
+  <blockquote class="t-hero-quote">L'italiano si apre come un affresco. Un dettaglio alla volta.</blockquote>
+  <p class="t-hero-quote-en">Italian opens like a fresco. One detail at a time.</p>
+  <div class="hero-ctas"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Book a Lesson with Chiara</button><a class="btn btn-3d btn-3d-ghost" href="#schedule">See Chiara's Schedule</a></div>
+</div>
+<div class="t-hero-portrait reveal reveal-d1"><img src="../../assets/img/teacher-chiara.jpg" alt="Portrait of Chiara Bellini, Italian teacher from Firenze"></div>
+</div></section>
+
+<!-- FOLD 2 · THE REGION -->
+<section class="region-band">
+<div class="region-photo reveal"><img src="../../assets/img/pillar-art.jpg" alt="Toscana landscape"></div>
+<div class="region-essay reveal reveal-d1">
+  <span class="region-eyebrow">Toscana · The Region</span>
+  <h2>The Italy I teach from.</h2>
+  <p class="drop">Toscana is the region that gave the Italian language its shape. When Dante Alighieri, born in Firenze in 1265, chose to write the Divina Commedia in the volgare fiorentino instead of in Latin, he did not just write a poem, he handed a national tongue to a peninsula that did not yet know it was a nation. Five and a half centuries later, when Alessandro Manzoni set out to rewrite I promessi sposi, he moved to Florence, quite literally, to "rinse his laundry in the Arno" and re-write the novel in the Tuscan the city spoke.</p>
+<p>To learn Italian with a Florentine is to inherit that lineage. Not the accent of a television anchor, which is Tuscan-derived and slightly softened, but the real cadence of the streets of Santo Spirito, of the market of San Lorenzo, of the bar on the corner of Via Maggio at eight in the morning where the barista greets you and remembers whether you take sugar. There is a distinctive Florentine sound that turns hard c into a breathy h, la Coca-Cola becomes la hoha-hola, and while I do not push my students to imitate this, I do teach them to hear it and to smile at it.</p>
+<p>Toscana is also the region of the Renaissance, of the Uffizi and the Accademia and the Bargello, of the first modern banks and the first modern art criticism. My lessons on Botticelli, on Piero della Francesca, on the sculpture of Donatello, are not decoration. They are the way I teach the words for light, for weight, for the human body, for time. A student who has spent an hour with me in front of the Primavera has learned twenty-five nouns and six adjectives without ever seeing a vocabulary list.</p>
+</div>
+</section>
+
+<!-- FOLD 3 · HOW I TEACH -->
+<section class="manifesto">
+<div class="manifesto-head reveal">
+  <span class="eyebrow eyebrow-line">How I Teach · A Manifesto</span>
+  <h2 class="display-md" style="color:var(--navy)">The classroom I run.</h2>
+</div>
+<div class="manifesto-body reveal">
+  <p>I do not believe in language drills the way most people mean the word. I believe in attention. When I ask a beginner to describe the espresso we are drinking, in the first lesson, in a mix of hand gestures and single Italian words, we are already doing everything language classes are supposed to do, we are noticing, comparing, choosing, correcting. That is Italian. The grammar comes to serve the noticing, not the other way round.</p>
+<p>My students are almost always adults, most of them Americans, many of them retired professionals with sharper minds than they give themselves credit for. What they lack is not intelligence, it is patience with themselves. So the first job I do, in the first three or four lessons, is to slow us both down to a pace where making a mistake in Italian is interesting instead of embarrassing. I speak slowly, I repeat, I let silence sit. And then the sentences start coming.</p>
+<p>I teach with real things. A postcard from Fiesole. A photograph of my grandmother's kitchen in Certaldo. A page from a 1950s cookbook. A recording of my aunt describing the day of the alluvione, the flood of 1966. Language that is attached to a real Italian object is language that stays. Language that is attached to a page in a textbook is language that leaves the moment the class ends.</p>
+<p>By the end of six months with me, my students can order in a Florentine trattoria without switching to English, hold a fifteen minute conversation with a stranger on the train, read the main text of a newspaper article on a subject they care about, and, most importantly, they no longer apologise for their Italian. That last one, I care about the most.</p>
+  <p class="manifesto-sign">Chiara Bellini, Firenze</p>
+</div>
+</section>
+
+<!-- FOLD 4 · CREDENTIALS -->
+<section class="cred-band">
+<div class="wrap"><div class="cred-grid">
+<div class="reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Credenziali</span><h2 class="cred-title">Certified, trained, rooted in Firenze.</h2></div>
+<ul class="cred-list reveal reveal-d1"><li><span class="cred-num">01</span><span>Università per Stranieri di Siena · CEDILS (Certificazione in Didattica dell'Italiano a Stranieri)</span></li>
+<li><span class="cred-num">02</span><span>MA · Italian Literature, Università degli Studi di Firenze</span></li>
+<li><span class="cred-num">03</span><span>Ten years teaching adult foreign learners, seven of them at the British Institute of Florence</span></li>
+<li><span class="cred-num">04</span><span>Native Florentine, born and raised in the Oltrarno</span></li></ul>
+</div></div></section>
+
+<!-- FOLD 5 · TESTIMONIALS -->
+<section class="t-testimonials">
+<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">What My Students Say</span><h2 class="display-md" style="color:var(--navy)">In their own words.</h2></div>
+<div class="t-test-grid"><div class="t-test reveal reveal-d0"><p>Chiara took me from tourist-Italian to actually holding a conversation with my mother-in-law in Prato. She teaches with real Florence, not with a textbook.</p><div class="t-test-src">Kate M., Boston · CI Intermedio, 2025</div></div>
+<div class="t-test reveal reveal-d1"><p>I have taken Italian classes for thirty years, on and off, in three different countries. Chiara is the only teacher who has ever made the congiuntivo feel like a friend instead of a threat.</p><div class="t-test-src">Robert J., San Francisco · CI Avanzato, 2026</div></div>
+<div class="t-test reveal reveal-d2"><p>Every lesson feels like a walk through Florence. I miss my class the way I miss a good coffee shop.</p><div class="t-test-src">Maria L., Chicago · CI Elementare, 2025</div></div></div>
+</div></section>
+
+<!-- FOLD 6 · A TYPICAL LESSON -->
+<section class="lesson-band">
+<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">A Typical Lesson</span><h2 class="display-md" style="color:var(--navy)">85 minutes with Chiara.</h2><p class="lead">Every Chiara class runs for eighty-five minutes and follows the same architecture. The topics change every week, the rhythm does not.</p></div></div>
+<div class="lesson-timeline"><div class="lesson-row reveal"><div class="lesson-time">Minutes 0 to 10</div><div class="lesson-desc">Rituale d'apertura. Chiara opens with two minutes of small talk in Italian about the weather, the day, a piece of news from Florence. Every student contributes one sentence. She writes any new word on the shared whiteboard.</div></div>
+<div class="lesson-row reveal"><div class="lesson-time">Minutes 10 to 30</div><div class="lesson-desc">Il testo del giorno. A short authentic text, a menu, a headline, a recipe, sometimes a Renaissance quotation, is read aloud. Students take turns. Chiara does not correct pronunciation on the fly, she notes and returns.</div></div>
+<div class="lesson-row reveal"><div class="lesson-time">Minutes 30 to 55</div><div class="lesson-desc">Il punto di grammatica. One narrow grammar point is drawn out of the text and drilled with speech, not with worksheets. Students speak, Chiara corrects with a single Italian question that redirects them.</div></div>
+<div class="lesson-row reveal"><div class="lesson-time">Minutes 55 to 75</div><div class="lesson-desc">Conversazione libera. Twenty minutes of free conversation, in pairs and then to the whole class, on a prompt Chiara has chosen from the day's material.</div></div>
+<div class="lesson-row reveal"><div class="lesson-time">Minutes 75 to 85</div><div class="lesson-desc">Chiusura e compiti. Recap in Italian, homework assigned as a five-minute audio recording rather than a written exercise, and the goodbye that is always ci vediamo martedì, we see each other Tuesday.</div></div></div>
+</section>
+
+<!-- FOLD 7 · COURSES -->
+<section class="t-courses">
+<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Where You'll Find Me</span><h2 class="display-md" style="color:var(--navy)">Courses I teach.</h2></div>
+<div class="t-course-grid"><a class="t-course-card reveal" href="../../pages/courses/ci2.html"><div><span class="tcc-eyebrow">Course</span><h3>CI Elementare · A1.1 → A1.2</h3></div><span class="tcc-cta">See the syllabus →</span></a>
+<a class="t-course-card reveal" href="../../pages/courses/ci3.html"><div><span class="tcc-eyebrow">Course</span><h3>CI Intermedio · A1.2 → A2.1</h3></div><span class="tcc-cta">See the syllabus →</span></a>
+<a class="t-course-card reveal" href="../../pages/culture/cap-art.html"><div><span class="tcc-eyebrow">Course</span><h3>Culture Capsule · L'Arte</h3></div><span class="tcc-cta">See the syllabus →</span></a></div>
+</div></section>
+
+<!-- FOLD 8 · SCHEDULE -->
+<section class="schedule-band" id="schedule">
+<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Open Cohorts · September 2026</span><h2 class="display-md">Chiara's live schedule.</h2><p class="lead" style="color:var(--on-dark-soft)">All times shown in US Eastern. Every class is live, small, and taught by Chiara in person from Firenze.</p></div>
+<div class="schedule-table">
+<div class="sched-row head"><span>Day</span><span>Time (ET)</span><span>Course</span><span>Seats</span></div>
+<div class="sched-row"><span class="sched-day">Monday</span><span class="sched-time">19:00 ET</span><span class="sched-course">CI Intermedio</span><span class="sched-seats ">seats: 3 of 12</span></div>
+<div class="sched-row"><span class="sched-day">Tuesday</span><span class="sched-time">12:00 ET</span><span class="sched-course">CI Elementare</span><span class="sched-seats ">seats: 5 of 12</span></div>
+<div class="sched-row"><span class="sched-day">Wednesday</span><span class="sched-time">20:00 ET</span><span class="sched-course">Capsule · L'Arte</span><span class="sched-seats ">seats: 2 of 10</span></div>
+<div class="sched-row"><span class="sched-day">Thursday</span><span class="sched-time">19:00 ET</span><span class="sched-course">CI Intermedio</span><span class="sched-seats full">seats: waitlist</span></div>
+<div class="sched-row"><span class="sched-day">Saturday</span><span class="sched-time">10:00 ET</span><span class="sched-course">Conversazione libera</span><span class="sched-seats ">seats: 6 of 8</span></div>
+</div></div></section>
+
+<!-- FOLD 9 · BOOK CTA -->
+<section class="t-book"><div class="wrap-narrow reveal">
+<h2>Learn Italian with Chiara.</h2>
+<p>An advisor will help you place, choose the right cohort, and reserve a seat with Chiara. There is no obligation. The consultation is free.</p>
+<div class="hero-ctas" style="justify-content:center;display:flex"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Book My Placement Call</button><a class="btn btn-3d btn-3d-ghost" href="../../teachers.html">Meet the Other Teachers</a></div>
+</div></section>
+
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
+        <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
+        <p>Club Italia by eTeacher — a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
+        <p style="margin-top:1.2rem">
+          <a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <a href="../../courses.html">All Courses</a>
+        <a href="../../pages/courses/ci1.html">CI Principiante · A0→A1.1</a>
+        <a href="../../pages/courses/ci2.html">CI Elementare · A1.1→A1.2</a>
+        <a href="../../pages/courses/ci3.html">CI Intermedio · A1.2→A2.1</a>
+        <a href="../../pages/courses/ci4.html">CI Avanzato · A2.1→A2.2</a>
+        <a href="../../pages/spoken/ps1.html">Parliamo · Foundation</a>
+        <a href="../../pages/spoken/ps2.html">Parliamo · Beginner</a>
+        <a href="../../pages/spoken/ps3.html">Parliamo · Elementary</a>
+        <a href="../../pages/spoken/ps4.html">Parliamo · Confident</a>
+        <a href="../../pages/culture/cap-food.html">Capsule · La Cucina</a>
+        <a href="../../pages/culture/cap-art.html">Capsule · L'Arte</a>
+        <a href="../../pages/culture/cap-opera.html">Capsule · L'Opera</a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="../../how-it-works.html">How It Works</a>
+        <a href="../../method.html">Our Method</a>
+        <a href="../../teachers.html">Teachers</a>
+        <a href="../../culture.html">Culture</a>
+        <a href="../../capsules.html">Culture Capsules</a>
+        <a href="../../biagio.html">Biagio AI Tutor</a>
+        <a href="../../blog.html">Cultural Journal</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../../about.html">About Us</a>
+        <a href="../../eteacher.html">eTeacher Group</a>
+        <a href="../../pricing.html">Pricing</a>
+        <a href="../../faq.html">FAQ</a>
+        <a href="../../contact.html">Contact</a>
+        <a href="../../privacy.html">Privacy Policy</a>
+        <a href="../../terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 eTeacher Group. All rights reserved. Club Italia is a trading style of eTeacher Group.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◉</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="advisor-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="advisorModalTitle">
+  <div class="advisor-card">
+    <button class="advisor-modal-close" aria-label="Close" type="button">×</button>
+    <div class="advisor-head">
+      <span class="eyebrow eyebrow-line">Speak with us</span>
+      <h3 id="advisorModalTitle">Talk to an Advisor</h3>
+      <p>Tell us a little about you and a Club Italia academic advisor will be in touch to plan your start.</p>
+    </div>
+    <form class="advisor-form" novalidate>
+      <div class="field"><label for="adv-name">Name</label><input id="adv-name" name="name" type="text" autocomplete="name" required placeholder="Your full name"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-email">Email</label><input id="adv-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-phone">Phone</label><input id="adv-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 000 0000"><span class="err-msg" aria-live="polite"></span></div>
+      <div class="field"><label for="adv-level">Your Italian right now</label>
+        <select id="adv-level" name="level" required>
+          <option value="">Choose your level</option>
+          <option value="none">I don't speak any Italian yet</option>
+          <option value="a1">A few words · A1</option>
+          <option value="a2">Some basics · A2</option>
+          <option value="b1">Conversational · B1+</option>
+        </select>
+        <span class="err-msg" aria-live="polite"></span>
+      </div>
+      <button class="btn btn-3d btn-3d-primary" type="submit">Request My Consultation</button>
+    </form>
+    <div class="advisor-success">
+      <h3>Grazie!</h3>
+      <p>Your request is on its way to our advisor. We will be in touch shortly to plan your start with Club Italia.</p>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/ci.js"></script>
+</body></html>

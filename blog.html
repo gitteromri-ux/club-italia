@@ -1,8 +1,60 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cultural Journal — Club Italia by eTeacher</title><meta name="description" content="Dispatches from Italy on cuisine, language, travel, cinema, opera, and the art of living.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="css/ci.css"></head><body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultural Journal · Club Italia by eTeacher</title>
+<meta name="description" content="Dispatches from Italy on cuisine, language, travel, cinema, opera, and the art of living.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/ci.css">
+<style>
+.blog-hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:var(--on-dark);overflow:hidden}
+.blog-hero .hero-bg{position:absolute;inset:0;z-index:0}
+.blog-hero .hero-bg video,.blog-hero .hero-bg img{width:100%;height:100%;object-fit:cover}
+.blog-hero .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(34,8,11,.88),rgba(34,8,11,.4) 60%,rgba(34,8,11,.2))}
+.blog-hero .hero-content{position:relative;z-index:2;padding:8rem clamp(1.4rem,5vw,6rem) 5rem;width:100%}
+.blog-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(3.6rem,9vw,7.4rem);line-height:.98;letter-spacing:-.02em;color:var(--on-dark);max-width:18ch}
+.blog-hero .kicker{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.4rem);color:var(--gold-soft);margin-bottom:1.4rem}
+.blog-hero p.lead{color:var(--on-dark-soft);font-size:1.3rem;max-width:56ch;margin-top:1.6rem;font-weight:300}
+.editorial-featured{padding:7rem 0}
+.editorial-featured .feat-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;max-width:1280px;margin:0 auto;padding:0 clamp(1.4rem,4vw,3rem)}
+@media (max-width:920px){.editorial-featured .feat-wrap{grid-template-columns:1fr}}
+.editorial-featured .fm-img{aspect-ratio:4/3;overflow:hidden;position:relative}
+.editorial-featured .fm-img img{width:100%;height:100%;object-fit:cover}
+.editorial-featured .fm-img .fm-cat{position:absolute;top:1.6rem;left:1.6rem;background:var(--gold);color:var(--navy);padding:.5rem 1rem;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.editorial-featured .fm-copy .eyebrow{color:var(--gold-deep)}
+.editorial-featured .fm-copy h2{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.02;margin:1rem 0;letter-spacing:-.014em}
+.editorial-featured .fm-copy p.desc{font-size:1.2rem;color:var(--on-light-soft);line-height:1.55;margin-bottom:2rem;max-width:52ch}
+.editorial-featured .fm-copy .fm-meta{display:flex;gap:1.4rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-light-faint);margin-bottom:1.6rem}
+.editorial-featured .fm-copy .read-link{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-deep);border-bottom:1px solid var(--gold);padding-bottom:.2rem}
+.essay-grid{padding:6rem 0;background:var(--ivory)}
+.essay-grid .eg-wrap{max-width:1280px;margin:0 auto;padding:0 clamp(1.4rem,4vw,3rem)}
+.essay-grid .eg-head{margin-bottom:3rem;text-align:center}
+.essay-grid .eg-head h2{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.4rem);line-height:1.04}
+.essay-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem}
+@media (max-width:940px){.essay-cards{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.essay-cards{grid-template-columns:1fr}}
+.essay-card{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--gold-line-soft);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.essay-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(58,14,18,.14)}
+.essay-card .ec-img{aspect-ratio:4/3;overflow:hidden;position:relative}
+.essay-card .ec-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.essay-card:hover .ec-img img{transform:scale(1.05)}
+.essay-card .ec-img .ec-cat{position:absolute;top:1rem;left:1rem;background:var(--navy);color:var(--gold-soft);padding:.4rem .8rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase}
+.essay-card .ec-body{padding:1.8rem 1.6rem 2rem;flex:1;display:flex;flex-direction:column}
+.essay-card .ec-meta{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-light-faint);margin-bottom:.6rem}
+.essay-card .ec-title{font-family:var(--serif);font-size:1.5rem;line-height:1.15;margin-bottom:.6rem}
+.essay-card .ec-sub{font-size:.94rem;color:var(--on-light-soft);line-height:1.5;flex:1}
+.essay-card .ec-read{margin-top:1.4rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold-deep);border-top:1px solid var(--light-line);padding-top:1rem}
+.subscribe-band{padding:6rem 0;text-align:center;background:var(--navy);color:var(--on-dark)}
+.subscribe-band h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);color:var(--on-dark);max-width:20ch;margin:0 auto 1rem}
+.subscribe-band p{color:var(--on-dark-soft);max-width:52ch;margin:0 auto 2rem}
+.subscribe-band form{display:flex;gap:.8rem;max-width:440px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.subscribe-band input{flex:1;min-width:220px;padding:.9rem 1rem;background:var(--navy-mid);border:1px solid var(--dark-line);color:var(--on-dark);font-family:var(--sans)}
+</style>
+</head>
+<body>
+
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="index.html" aria-label="Club Italia — home">
@@ -45,22 +97,40 @@
 </aside>
 
 
-<section class="hero" style="min-height:55vh"><div class="hero-bg"><img src="assets/img/pillar-tradition.jpg" alt=""></div>
-<div class="hero-content"><div style="max-width:64ch"><p class="hero-tag">Il Diario Culturale</p><h1>Cultural <span class="gold-ital">Journal</span></h1><p class="hero-sub">Dispatches from Italy — on gastronomy, language, travel, cinema, opera, and the art of living beautifully.</p></div></div></section>
+<section class="blog-hero">
+  <div class="hero-bg"><video autoplay muted loop playsinline preload="metadata" poster="assets/img/pillar-tradition.jpg"><source src="assets/video/bologna-portici.mp4" type="video/mp4"></video></div>
+  <div class="hero-content"><div class="wrap"><p class="kicker">Il Diario Culturale</p><h1>Dispatches <span class="gold-ital">from Italy</span></h1><p class="lead">Essays on gastronomy, language, travel, cinema, opera, and the art of living beautifully. Written by our teachers, from their kitchens and cafés in Roma, Firenze, Bologna, Milano, Venezia, Napoli, Palermo.</p></div></div>
+</section>
 
-<section class="section-paper"><div class="wrap">
-<div class="section-head reveal"><span class="eyebrow eyebrow-line">Featured Essay</span><h2 class="display-md">The Golden Age of Italian Cinema</h2><p class="lead">How Fellini, Visconti and Rossellini rewrote what film could be</p></div>
-<a class="course-card reveal" href="pages/blog/italian-golden-age.html" style="max-width:820px;margin:0 auto"><div class="cc-hero" style="aspect-ratio:16/9"><img src="assets/img/pillar-cinema.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Cinema</span><span class="cc-num">10 Sep 2026</span></div></div><div class="cc-body"><h3 class="cc-title">The Golden Age of Italian Cinema</h3><p class="cc-desc">How Fellini, Visconti and Rossellini rewrote what film could be</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif);font-size:1.1rem">Read the essay</span><span class="cc-arrow">›</span></div></div></a>
-</div></section>
+<section class="editorial-featured">
+  <div class="feat-wrap">
+    <div class="fm-img"><img src="assets/img/pillar-cinema.jpg" alt=""><span class="fm-cat">Cinema</span></div>
+    <div class="fm-copy">
+      <span class="eyebrow eyebrow-line">Featured essay</span>
+      <h2>The Golden Age of Italian Cinema</h2>
+      <div class="fm-meta"><span>10 Sep 2026</span><span>8 min read</span><span>Cinema</span></div>
+      <p class="desc">How Fellini, Visconti and Rossellini rewrote what film could be</p>
+      <a href="pages/blog/italian-golden-age.html" class="read-link">Read the essay ›</a>
+    </div>
+  </div>
+</section>
 
-<section class="section-cream"><div class="wrap">
-<div class="section-head reveal"><span class="eyebrow eyebrow-line">All Essays</span><h2 class="display-md">Eleven dispatches from Italy</h2></div>
-<div class="course-grid" style="grid-template-columns:repeat(3,1fr)">
-<a class="course-card reveal" href="pages/blog/italian-golden-age.html"><div class="cc-hero"><img src="assets/img/pillar-cinema.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Cinema</span><span class="cc-num">10 Sep 2026</span></div></div><div class="cc-body"><span class="cc-track">Cinema</span><h3 class="cc-title">The Golden Age of Italian Cinema</h3><p class="cc-desc">How Fellini, Visconti and Rossellini rewrote what film could be</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">8 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/americans-italy.html"><div class="cc-hero"><img src="assets/img/pillar-travel.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Travel</span><span class="cc-num">24 Aug 2026</span></div></div><div class="cc-body"><span class="cc-track">Travel</span><h3 class="cc-title">7.5 Million Americans, One Italy</h3><p class="cc-desc">Why U.S. travellers made Italy their second-most-visited country</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">7 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/passato-prossimo.html"><div class="cc-hero"><img src="assets/img/course-ci2.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Language</span><span class="cc-num">12 Aug 2026</span></div></div><div class="cc-body"><span class="cc-track">Language</span><h3 class="cc-title">The Passato Prossimo Is Not the Enemy</h3><p class="cc-desc">Why the Italian past tense is the friendliest tense you will meet</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">6 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/ragu-alla-bolognese.html"><div class="cc-hero"><img src="assets/img/pillar-food.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Cuisine</span><span class="cc-num">28 Jul 2026</span></div></div><div class="cc-body"><span class="cc-track">Cuisine</span><h3 class="cc-title">The Real Ragù alla Bolognese</h3><p class="cc-desc">And the eight things it is not</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">7 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/dual-citizenship.html"><div class="cc-hero"><img src="assets/img/pillar-tradition.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Culture</span><span class="cc-num">15 Jul 2026</span></div></div><div class="cc-body"><span class="cc-track">Culture</span><h3 class="cc-title">Italian Dual Citizenship, 2026</h3><p class="cc-desc">What the March 2025 reform means for Italian-descent Americans</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">9 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/verdi-life.html"><div class="cc-hero"><img src="assets/img/pillar-opera.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Opera</span><span class="cc-num">01 Jul 2026</span></div></div><div class="cc-body"><span class="cc-track">Opera</span><h3 class="cc-title">Verdi in a Life</h3><p class="cc-desc">Six operas that shaped a nation and still shape Italian</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">10 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/tuscan-italian.html"><div class="cc-hero"><img src="assets/img/course-ci2.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Language</span><span class="cc-num">18 Jun 2026</span></div></div><div class="cc-body"><span class="cc-track">Language</span><h3 class="cc-title">Why Italian Is Really Tuscan</h3><p class="cc-desc">Dante, Boccaccio, Petrarch and the accident of the standard</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">7 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/neapolitan-humour.html"><div class="cc-hero"><img src="assets/img/course-ci4.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Culture</span><span class="cc-num">02 Jun 2026</span></div></div><div class="cc-body"><span class="cc-track">Culture</span><h3 class="cc-title">Neapolitan Humour, Explained</h3><p class="cc-desc">The philosophy underneath the world's most laughed-in city</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">6 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/italian-coffee.html"><div class="cc-hero"><img src="assets/img/cap-food.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Cuisine</span><span class="cc-num">18 May 2026</span></div></div><div class="cc-body"><span class="cc-track">Cuisine</span><h3 class="cc-title">Italian Coffee Is Not What You Think</h3><p class="cc-desc">A history of espresso, from Naples 1901 to your kitchen</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">6 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/uffizi-italian.html"><div class="cc-hero"><img src="assets/img/cap-art.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Art</span><span class="cc-num">05 May 2026</span></div></div><div class="cc-body"><span class="cc-track">Art</span><h3 class="cc-title">How to Read an Uffizi Wall Label</h3><p class="cc-desc">The five Italian words that unlock the museum</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">8 min</span><span class="cc-arrow">›</span></div></div></a><a class="course-card reveal" href="pages/blog/aperitivo.html"><div class="cc-hero"><img src="assets/img/spoken-ps4.jpg" alt=""><div class="cc-hero-overlay"><span class="cc-cefr">Culture</span><span class="cc-num">22 Apr 2026</span></div></div><div class="cc-body"><span class="cc-track">Culture</span><h3 class="cc-title">The Milanese Aperitivo, Decoded</h3><p class="cc-desc">When it started, what it costs, what you actually eat</p><div class="cc-cta"><span style="color:var(--gold-deep);font-family:var(--serif)">6 min</span><span class="cc-arrow">›</span></div></div></a>
-</div></div></section>
+<section class="essay-grid">
+  <div class="eg-wrap">
+    <div class="eg-head"><span class="eyebrow eyebrow-line" style="margin-bottom:1.4rem">All essays</span><h2>Ten more dispatches <span class="gold-ital">from Italy</span></h2></div>
+    <div class="essay-cards">
+      <a href="pages/blog/americans-italy.html" class="essay-card"><div class="ec-img"><img src="assets/img/pillar-travel.jpg" alt=""><span class="ec-cat">Travel</span></div><div class="ec-body"><div class="ec-meta">24 Aug 2026 · 7 min read</div><h3 class="ec-title">7.5 Million Americans, One Italy</h3><p class="ec-sub">Why U.S. travellers made Italy their second-most-visited country</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/passato-prossimo.html" class="essay-card"><div class="ec-img"><img src="assets/img/course-ci2.jpg" alt=""><span class="ec-cat">Language</span></div><div class="ec-body"><div class="ec-meta">12 Aug 2026 · 6 min read</div><h3 class="ec-title">The Passato Prossimo Is Not the Enemy</h3><p class="ec-sub">Why the Italian past tense is the friendliest tense you will meet</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/ragu-alla-bolognese.html" class="essay-card"><div class="ec-img"><img src="assets/img/pillar-food.jpg" alt=""><span class="ec-cat">Cuisine</span></div><div class="ec-body"><div class="ec-meta">28 Jul 2026 · 7 min read</div><h3 class="ec-title">The Real Ragù alla Bolognese</h3><p class="ec-sub">And the eight things it is not</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/dual-citizenship.html" class="essay-card"><div class="ec-img"><img src="assets/img/pillar-tradition.jpg" alt=""><span class="ec-cat">Culture</span></div><div class="ec-body"><div class="ec-meta">15 Jul 2026 · 9 min read</div><h3 class="ec-title">Italian Dual Citizenship, 2026</h3><p class="ec-sub">What the March 2025 reform means for Italian-descent Americans</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/verdi-life.html" class="essay-card"><div class="ec-img"><img src="assets/img/pillar-opera.jpg" alt=""><span class="ec-cat">Opera</span></div><div class="ec-body"><div class="ec-meta">01 Jul 2026 · 10 min read</div><h3 class="ec-title">Verdi in a Life</h3><p class="ec-sub">Six operas that shaped a nation and still shape Italian</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/tuscan-italian.html" class="essay-card"><div class="ec-img"><img src="assets/img/course-ci2.jpg" alt=""><span class="ec-cat">Language</span></div><div class="ec-body"><div class="ec-meta">18 Jun 2026 · 7 min read</div><h3 class="ec-title">Why Italian Is Really Tuscan</h3><p class="ec-sub">Dante, Boccaccio, Petrarch and the accident of the standard</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/neapolitan-humour.html" class="essay-card"><div class="ec-img"><img src="assets/img/course-ci4.jpg" alt=""><span class="ec-cat">Culture</span></div><div class="ec-body"><div class="ec-meta">02 Jun 2026 · 6 min read</div><h3 class="ec-title">Neapolitan Humour, Explained</h3><p class="ec-sub">The philosophy underneath the world's most laughed-in city</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/italian-coffee.html" class="essay-card"><div class="ec-img"><img src="assets/img/cap-food.jpg" alt=""><span class="ec-cat">Cuisine</span></div><div class="ec-body"><div class="ec-meta">18 May 2026 · 6 min read</div><h3 class="ec-title">Italian Coffee Is Not What You Think</h3><p class="ec-sub">A history of espresso, from Naples 1901 to your kitchen</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/uffizi-italian.html" class="essay-card"><div class="ec-img"><img src="assets/img/cap-art.jpg" alt=""><span class="ec-cat">Art</span></div><div class="ec-body"><div class="ec-meta">05 May 2026 · 8 min read</div><h3 class="ec-title">How to Read an Uffizi Wall Label</h3><p class="ec-sub">The five Italian words that unlock the museum</p><div class="ec-read">Read the essay ›</div></div></a><a href="pages/blog/aperitivo.html" class="essay-card"><div class="ec-img"><img src="assets/img/spoken-ps4.jpg" alt=""><span class="ec-cat">Culture</span></div><div class="ec-body"><div class="ec-meta">22 Apr 2026 · 6 min read</div><h3 class="ec-title">The Milanese Aperitivo, Decoded</h3><p class="ec-sub">When it started, what it costs, what you actually eat</p><div class="ec-read">Read the essay ›</div></div></a>
+    </div>
+  </div>
+</section>
 
-<section class="section-dark tagline-band"><div class="wrap-narrow"><p class="tag-script">Leggi. Poi parla.</p><p>Read the journal. Then speak the language.</p>
-<div class="hero-ctas mt-3" style="justify-content:center;display:flex"><a class="btn btn-3d btn-3d-primary" href="courses.html">Explore the Courses</a></div></div></section>
+<section class="subscribe-band">
+  <div class="wrap">
+    <h2>Read the journal. <span class="gold-ital">Then speak the language.</span></h2>
+    <p>New essays every second week, from our teachers, direct from Italy. No spam, one link, unsubscribe with one click.</p>
+    <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Grazie';"><input type="email" placeholder="you@email.com" required><button class="btn btn-3d btn-3d-primary" type="submit">Subscribe</button></form>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -151,4 +221,6 @@
   </div>
 </div>
 
-<script src="js/ci.js"></script></body></html>
+<script src="js/ci.js"></script>
+</body>
+</html>

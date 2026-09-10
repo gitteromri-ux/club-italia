@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch a Real Class, Club Italia by eTeacher</title>
+<meta name="description" content="An editorial walk-through of a real Club Italia beginner lesson broadcast live from Rome, the 85-minute format, minute-by-minute rhythm, live transcripts, and why it feels nothing like a Zoom class.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/ci.css">
+<style>
+.sc-hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;color:var(--on-dark);background:var(--navy-deep)}
+.sc-hero-bg{position:absolute;inset:0;z-index:0}
+.sc-hero-bg img{width:100%;height:100%;object-fit:cover}
+.sc-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(34,8,11,.85) 0%,rgba(34,8,11,.55) 55%,rgba(34,8,11,.35) 100%)}
+.sc-hero .wrap{position:relative;z-index:2}
+.sc-hero h1{font-family:var(--serif);font-size:clamp(3rem,6vw,5.8rem);line-height:1.02;max-width:18ch;margin:1.4rem 0}
+.sc-hero .lede{max-width:56ch;color:var(--on-dark-soft);font-size:clamp(1.15rem,1.45vw,1.38rem);line-height:1.62;font-weight:300}
+.sc-hero .play-wrap{margin-top:2.4rem;display:flex;align-items:center;gap:1.4rem}
+.sc-hero .play{width:88px;height:88px;border-radius:50%;background:var(--gold-deep);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.6rem;padding-left:6px;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.sc-hero .play-l{font-family:var(--serif);font-style:italic;color:var(--on-dark-soft)}
+
+.sc-tri{height:6px;background:linear-gradient(90deg,#009246 33.33%,#F6F1E6 33.33% 66.66%,#CE2B37 66.66%)}
+
+.sc-band{padding:6rem 0}
+.sc-band.dark{background:var(--navy);color:var(--on-dark)}
+.sc-band.cream{background:var(--ivory)}
+.sc-band.paper{background:var(--paper)}
+.sc-band h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.05;max-width:22ch;margin-bottom:1.2rem}
+.sc-band.dark h2,.sc-band.dark h3,.sc-band.dark h4{color:var(--on-dark)}
+.sc-band .lede-p{color:var(--on-light-soft);font-size:1.1rem;line-height:1.7;max-width:60ch}
+.sc-band.dark .lede-p{color:var(--on-dark-soft)}
+
+.sc-format{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+@media (max-width:820px){.sc-format{grid-template-columns:1fr 1fr}}
+.sc-format .cell{padding:2rem 1.6rem;background:var(--white);border:1px solid var(--gold-line-soft);text-align:center}
+.sc-band.dark .sc-format .cell{background:var(--navy-mid);border-color:var(--dark-line-soft)}
+.sc-format .cell .n{font-family:var(--serif);font-style:italic;font-size:2.6rem;color:var(--gold-deep);line-height:1}
+.sc-band.dark .sc-format .cell .n{color:var(--gold-soft)}
+.sc-format .cell .l{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-top:.6rem;color:var(--on-light-soft)}
+.sc-band.dark .sc-format .cell .l{color:var(--on-dark-soft)}
+
+.sc-minute{margin-top:2rem}
+.sc-min-row{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:1.4rem 0;border-bottom:1px solid var(--gold-line-soft);align-items:start}
+.sc-min-row .t{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--gold-deep)}
+.sc-band.dark .sc-min-row .t{color:var(--gold-soft)}
+.sc-min-row .b h4{font-family:var(--serif);font-size:1.2rem;margin-bottom:.4rem;line-height:1.2}
+.sc-min-row .b p{font-size:.95rem;color:var(--on-light-soft);line-height:1.62}
+.sc-band.dark .sc-min-row .b p{color:var(--on-dark-soft)}
+
+.sc-snip{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2rem}
+@media (max-width:820px){.sc-snip{grid-template-columns:1fr}}
+.sc-snip .card{padding:2rem;background:var(--paper);border-left:3px solid var(--gold-deep)}
+.sc-band.dark .sc-snip .card{background:var(--navy-mid);border-left-color:var(--gold-soft)}
+.sc-snip .card .who{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.6rem}
+.sc-band.dark .sc-snip .card .who{color:var(--gold-soft)}
+.sc-snip .card .it{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;line-height:1.3}
+.sc-band.dark .sc-snip .card .it{color:var(--on-dark)}
+.sc-snip .card .en{font-size:.95rem;color:var(--on-light-soft)}
+.sc-band.dark .sc-snip .card .en{color:var(--on-dark-soft)}
+
+.sc-quote{background:var(--paper);padding:6rem 0;text-align:center}
+.sc-quote.dark{background:var(--navy-deep);color:var(--on-dark)}
+.sc-quote .q{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.24;max-width:34ch;margin:0 auto;color:var(--navy)}
+.sc-quote.dark .q{color:var(--on-dark)}
+.sc-quote .s{margin-top:1.4rem;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.sc-quote.dark .s{color:var(--gold-soft)}
+
+.sc-vs{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2rem}
+@media (max-width:820px){.sc-vs{grid-template-columns:1fr}}
+.sc-vs .col{padding:2.2rem;background:var(--paper);border:1px solid var(--gold-line-soft)}
+.sc-band.dark .sc-vs .col{background:var(--navy-mid);border-color:var(--dark-line-soft)}
+.sc-vs .col.us{border-top:4px solid var(--gold-deep)}
+.sc-vs .col.zoom{opacity:.85}
+.sc-vs h4{font-family:var(--serif);font-size:1.4rem;margin-bottom:1rem}
+.sc-vs ul{list-style:none;padding:0;margin:0}
+.sc-vs li{padding:.7rem 0;border-bottom:1px dotted var(--gold-line-soft);color:var(--on-light-soft);font-size:.95rem;padding-left:1.4rem;position:relative}
+.sc-band.dark .sc-vs li{color:var(--on-dark-soft)}
+.sc-vs li::before{content:"›";position:absolute;left:0;color:var(--gold-deep)}
+.sc-vs .zoom li::before{content:"×";color:var(--terra-deep)}
+
+.sc-feel{display:grid;grid-template-columns:1fr 1.15fr;gap:3.2rem;align-items:start}
+@media (max-width:900px){.sc-feel{grid-template-columns:1fr}}
+.sc-feel .body p{color:var(--on-light-soft);font-size:1.02rem;line-height:1.72;margin-bottom:1.1rem}
+.sc-band.dark .sc-feel .body p{color:var(--on-dark-soft)}
+
+.sc-cta{background:linear-gradient(140deg,var(--navy) 0%,var(--terra-deep) 130%);color:var(--on-dark);padding:6rem 0;text-align:center}
+.sc-cta h2{color:var(--on-dark);font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem)}
+.sc-cta p{color:var(--on-dark-soft);max-width:54ch;margin:1rem auto 2rem;font-size:1.1rem}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="nav-logo" href="index.html" aria-label="Club Italia, home">
+      <span class="logo-text">
+        <span class="lt-main">Club Italia</span>
+        <span class="lt-sub">by eTeacher</span>
+      </span>
+    </a>
+    <nav class="nav-menu" aria-label="Primary">
+      <span class="nav-item"><a class="nav-link" href="courses.html">Courses</a></span>
+      <span class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></span>
+      <span class="nav-item"><a class="nav-link" href="method.html">Method</a></span>
+      <span class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></span>
+      <span class="nav-item"><a class="nav-link" href="culture.html">Culture</a></span>
+      <span class="nav-item"><a class="nav-link" href="events.html">Events</a></span>
+      <span class="nav-item"><a class="nav-link" href="map.html">Map</a></span>
+      <span class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></span>
+    </nav>
+    <button class="btn btn-3d btn-3d-primary nav-cta" data-advisor type="button">Talk to an Advisor</button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="navDrawer" type="button"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
+  <button class="nav-drawer-close" aria-label="Close menu" type="button">&times;</button>
+  <a href="courses.html">Courses</a><a href="how-it-works.html">How It Works</a><a href="method.html">Method</a>
+  <a href="teachers.html">Teachers</a><a href="culture.html">Culture</a><a href="events.html">Events</a>
+  <a href="map.html">Map</a><a href="community.html">Community</a><a href="sample-class.html">Sample Class</a>
+  <a href="biagio.html">AI Tutor</a><a href="pricing.html">Pricing</a><a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
+</aside>
+
+<section class="sc-hero">
+  <div class="sc-hero-bg"><img src="assets/img/class-demo-poster.jpg" alt="A Club Italia class in session"></div>
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line" style="color:var(--gold-soft)">Watch a real class · Roma · CI Principiante · Session 07</span>
+    <h1>Eighty-five minutes inside a <span class="gold-ital">real Club Italia lesson.</span></h1>
+    <p class="lede">A full editorial walk-through of one of our beginner sessions, the format, the minute-by-minute rhythm, the small talk before class begins, the moment somebody speaks Italian for the first time, and the reasons every learner tells us it feels nothing like a Zoom class.</p>
+    <div class="play-wrap">
+      <a href="#" class="play" aria-label="Play the recording">▶</a>
+      <span class="play-l">Watch the 14-minute editorial reel</span>
+    </div>
+  </div>
+</section>
+
+<div class="sc-tri" aria-hidden="true"></div>
+
+<section class="sc-band paper">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">The format</span>
+    <h2>The shape of every Club Italia lesson, <span class="gold-ital">at a glance.</span></h2>
+    <p class="lede-p">Every course session runs to the same architecture. The teacher varies. The city varies. The exact material varies. The rhythm, arrival, opening ritual, the day's language, the culture window, the guided speaking, the closing, never varies.</p>
+    <div class="sc-format">
+      <div class="cell"><div class="n">85</div><div class="l">minutes per lesson</div></div>
+      <div class="cell"><div class="n">10,12</div><div class="l">learners in the room</div></div>
+      <div class="cell"><div class="n">1</div><div class="l">teacher, live from Italy</div></div>
+      <div class="cell"><div class="n">∞</div><div class="l">lifetime recording access</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sc-band dark">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">Minute by minute</span>
+    <h2>What happens in the eighty-five minutes, <span class="gold-ital">in order.</span></h2>
+    <p class="lede-p">Recorded from a real session of CI Principiante, taught by Sofia broadcasting from Rome, on the seventh Tuesday of the term.</p>
+    <div class="sc-minute">
+      <div class="sc-min-row"><div class="t">−05:00</div><div class="b"><h4>The room opens.</h4><p>Sofia joins from her Roman studio. Learners arrive in twos and threes; there is small talk in English and hesitant Italian; the coffee cup on Sofia's desk is a Bialetti moka. This is on purpose. The classroom is a place, not a screen.</p></div></div>
+      <div class="sc-min-row"><div class="t">00:00</div><div class="b"><h4>The ritual of the greeting.</h4><p>Sofia takes attendance in Italian and asks each learner one small personal question, the weather, the weekend, the pasta of last night. Nobody gets it wrong. Everybody speaks a full sentence. Five minutes.</p></div></div>
+      <div class="sc-min-row"><div class="t">00:05</div><div class="b"><h4>La parola del giorno.</h4><p>The word of the day. Today: <em>vicino</em>. Sofia writes it on her side of the whiteboard, uses it in six spoken sentences, then puts it into the chat for saving. Learners repeat aloud, unmuted. Three minutes.</p></div></div>
+      <div class="sc-min-row"><div class="t">00:08</div><div class="b"><h4>Review of last session.</h4><p>Five minutes of quick-fire recall. Sofia calls names in Italian; the room answers in Italian. If nobody remembers the verb <em>abitare</em>, she draws it, mimes it, sings it. The whole session moves in Italian by the ninth minute.</p></div></div>
+      <div class="sc-min-row"><div class="t">00:13</div><div class="b"><h4>The new material.</h4><p>Twenty-five minutes on the day's structure. Today: the difference between <em>c'è</em> and <em>ci sono</em>. Grammar is embedded in a real Roman story, Sofia describes her walk to the bar this morning and the room reconstructs the walk in Italian.</p></div></div>
+      <div class="sc-min-row"><div class="t">00:38</div><div class="b"><h4>La finestra sull'Italia.</h4><p>The culture window. Fifteen minutes of live Italian input, a short film clip, a menu from a Roman trattoria, a photo of Piazza Navona at seven in the morning. Sofia narrates in slow Italian. Learners listen. No English.</p></div></div>
+      <div class="sc-min-row"><div class="t">00:53</div><div class="b"><h4>Breakout rooms.</h4><p>Twenty minutes in threes. Sofia rotates. Each breakout works on a real task, reserve a table by phone, order two courses, ask for the check, refuse coffee politely. The tasks are Roman-specific, not generic.</p></div></div>
+      <div class="sc-min-row"><div class="t">01:13</div><div class="b"><h4>Whole-group debrief.</h4><p>Ten minutes. Every breakout reports back in Italian. Sofia corrects lightly, never breaks flow. Common errors are logged on the shared board and become homework prompts.</p></div></div>
+      <div class="sc-min-row"><div class="t">01:23</div><div class="b"><h4>The closing.</h4><p>Two minutes. Sofia announces next week's cultural fold, wishes the room <em>buona serata</em>, and lingers on video for as long as anyone wants to stay and talk, often another fifteen minutes, off the clock.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sc-quote">
+  <div class="wrap-narrow">
+    <p class="q">"I have taken online courses for twelve years. This is the first one where I speak more Italian than my teacher does."</p>
+    <p class="s">Deborah K., alumna · New York, cohort 2022</p>
+  </div>
+</section>
+
+<section class="sc-band cream">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">Live snippets</span>
+    <h2>Four things you will hear in the <span class="gold-ital">first lesson.</span></h2>
+    <p class="lede-p">A real transcript from a Roman session of CI Principiante, session one. The greetings, the first correction, the first laugh.</p>
+    <div class="sc-snip">
+      <div class="card"><div class="who">Sofia · Roma · 00:04</div><p class="it">"Buonasera a tutti. Prima di iniziare, un giro veloce, come state stasera?"</p><p class="en">Good evening everyone. Before we start, a quick round, how is everyone this evening?</p></div>
+      <div class="card"><div class="who">Michael · Boston · 00:06</div><p class="it">"Io sto bene, grazie. E tu? È una bella giornata a Roma?"</p><p class="en">I am well, thank you. And you? Is it a nice day in Rome? (First sentence spoken by a beginner.)</p></div>
+      <div class="card"><div class="who">Sofia · 00:37</div><p class="it">"Attenzione: si dice <em>c'è un caffè</em>, un solo caffè, ma <em>ci sono due caffè</em>. Provate voi."</p><p class="en">Careful: you say <em>c'è un caffè</em>, one coffee, but <em>ci sono due caffè</em>. Now try yourselves.</p></div>
+      <div class="card"><div class="who">Rachel · London · 01:12</div><p class="it">"Ho prenotato un tavolo per due, per venerdì sera, alle otto. Va bene così?"</p><p class="en">I have booked a table for two, for Friday evening, at eight. Is that alright? (Breakout task, first phone call.)</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sc-quote dark">
+  <div class="wrap-narrow">
+    <p class="q">"The eighty-fifth minute is what separates a lesson from a class."</p>
+    <p class="s">Sofia Marino, Club Italia teacher, Roma</p>
+  </div>
+</section>
+
+<section class="sc-band paper">
+  <div class="wrap">
+    <div class="sc-feel">
+      <div>
+        <span class="eyebrow eyebrow-line">How it feels the first time</span>
+        <h2>What a first-time learner actually <span class="gold-ital">experiences.</span></h2>
+      </div>
+      <div class="body">
+        <p>The first Club Italia lesson is not a lecture. It is a room. The teacher greets each learner by name. The other learners nod. Within four minutes the whole conversation is in Italian, at a pace slow enough for a beginner to catch every fifth word, which is enough.</p>
+        <p>You will make mistakes in front of the room within the first ten minutes. This is by design. The teacher will correct one of them, warmly, and move on. Nobody laughs. Everybody has done the same. By the fortieth minute, most learners have forgotten to feel self-conscious. By the eighty-fifth, most stay on video for another ten just to keep talking.</p>
+        <p>The recording arrives in the inbox that night. Learners re-watch on the commute, catch the phrases they missed, and come back the following week already fluent in five things they were not fluent in before. It is a compounding format.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sc-band dark">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">Not a Zoom class</span>
+    <h2>Why this feels nothing like the <span class="gold-ital">online school you tried before.</span></h2>
+    <div class="sc-vs">
+      <div class="col us">
+        <h4>Club Italia · live from Italy</h4>
+        <ul>
+          <li>Ten to twelve learners, every speaks in every session</li>
+          <li>Native Italian teacher, broadcasting from Rome, Florence, Milan or Naples</li>
+          <li>Culture at the core, not decoration, a live cultural fold every lesson</li>
+          <li>Real tasks: order in a bar, book by phone, argue about the bill</li>
+          <li>Recording of every session, kept for life, indexed by grammar point</li>
+          <li>Il Circolo community forum for the six days between classes</li>
+          <li>CEFR-aligned certificate on completion, issued by eTeacher Group</li>
+        </ul>
+      </div>
+      <div class="col zoom">
+        <h4>Typical online class</h4>
+        <ul>
+          <li>Forty to two hundred learners in the room, one microphone</li>
+          <li>Teacher location and native-speaker status varies from session to session</li>
+          <li>Grammar drills first, culture as an occasional bonus PDF</li>
+          <li>Generic worksheets, textbook exercises, fill-in-the-blank at pace</li>
+          <li>Recording available for thirty days, then removed</li>
+          <li>Community is a Facebook page moderated by an intern</li>
+          <li>No formal certification, or a private certificate of doubtful value</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sc-band cream">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">What alumni told us</span>
+    <h2>The three things every alumnus <span class="gold-ital">says first.</span></h2>
+    <div class="sc-snip">
+      <div class="card"><div class="who">On the small group size</div><p class="it">"Ten people. Ten. I could not hide."</p><p class="en">,  Amir S., Tel Aviv · CI Elementare, 2024</p></div>
+      <div class="card"><div class="who">On the teacher being in Italy</div><p class="it">"When Chiara said <em>oggi piove a Bologna</em>, we knew she meant it. That changed how we listened."</p><p class="en">,  Kirsten L., Sydney · CI Intermedio, 2025</p></div>
+      <div class="card"><div class="who">On the pace</div><p class="it">"Eighty-five minutes goes by like fifteen. Then I want to book another one."</p><p class="en">,  Paul M., Boston · CI Principiante, 2025</p></div>
+      <div class="card"><div class="who">On the community</div><p class="it">"The class ends. Il Circolo does not. I met my two best friends in Italy on the alumni Slack."</p><p class="en">,  Nadia B., London · Parliamo Elementary, 2023</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sc-cta">
+  <div class="wrap-narrow">
+    <span class="eyebrow eyebrow-line">Reserve a seat</span>
+    <h2>Book a seat in a real, <span class="gold-ital">not a sample.</span></h2>
+    <p>You are welcome to sit in as a silent observer for the first ten minutes of any new-cohort session, free, before enrolment. Our advisors book the observation and take you through the first-week reading.</p>
+    <div class="hero-ctas" style="justify-content:center;display:flex">
+      <a class="btn btn-3d btn-3d-primary" href="courses.html">See This Term's Courses</a>
+      <button class="btn btn-3d btn-3d-ghost" data-advisor type="button">Book My Observation</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
+        <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
+        <p>Club Italia by eTeacher, a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
+        <p style="margin-top:1.2rem"><a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="courses.html">All Courses</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="method.html">Method</a>
+        <a href="sample-class.html">Watch a Class</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="map.html">Map of Italy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Culture</h4>
+        <a href="culture.html">Culture</a>
+        <a href="capsules.html">Capsules</a>
+        <a href="events.html">Cultural Events</a>
+        <a href="community.html">Community</a>
+        <a href="blog.html">Journal</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="eteacher.html">eTeacher Group</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 eTeacher Group. All rights reserved. Club Italia is a trading style of eTeacher Group.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◉</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/ci.js" defer></script>
+</body>
+</html>

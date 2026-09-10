@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il Palio di Siena, the Bareback Race of the Piazza · Club Italia</title>
+<meta name="description" content="Ninety seconds of bareback horse racing around the Piazza del Campo, contested by seventeen medieval city districts twice a year. The history, the contrade, the strategy, the songs, a Club Italia cultural essay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../../css/ci.css">
+<style>
+/* -------- EVENT PAGE, page-scoped -------- */
+.ev-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:var(--on-dark);overflow:hidden;background:var(--navy-deep)}
+.ev-hero-bg{position:absolute;inset:0;z-index:0}
+.ev-hero-bg img{width:100%;height:100%;object-fit:cover}
+.ev-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,8,11,.25) 0%,rgba(34,8,11,.72) 55%,rgba(34,8,11,.94) 100%)}
+.ev-hero .wrap{position:relative;z-index:2;padding:10rem 0 5rem}
+.ev-hero .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1.8rem}
+.ev-hero .kicker span{color:var(--on-dark-soft);margin-left:.6rem}
+.ev-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(3rem,7vw,6.4rem);line-height:.98;letter-spacing:-.02em;max-width:16ch;margin:0 0 1.6rem;color:var(--on-dark)}
+.ev-hero .lede{max-width:56ch;color:var(--on-dark-soft);font-weight:300;font-size:clamp(1.15rem,1.5vw,1.4rem);line-height:1.62}
+.ev-hero .meta{display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:2.8rem;padding-top:2rem;border-top:1px solid var(--gold-line-soft)}
+.ev-hero .meta > div small{display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:.4rem}
+.ev-hero .meta > div strong{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--gold-soft)}
+
+.ev-tri{height:6px;background:linear-gradient(90deg,#009246 0 33.33%,#F6F1E6 33.33% 66.66%,#CE2B37 66.66%)}
+
+.ev-band{padding:6rem 0;position:relative}
+.ev-band.dark{background:var(--navy);color:var(--on-dark)}
+.ev-band.dark h2,.ev-band.dark h3{color:var(--on-dark)}
+.ev-band.dark p{color:var(--on-dark-soft)}
+.ev-band.cream{background:var(--ivory)}
+.ev-band.paper{background:var(--paper)}
+.ev-band h2{font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.6rem);line-height:1.04;margin-bottom:1.2rem;max-width:22ch}
+.ev-band .lede-p{font-size:1.15rem;line-height:1.7;max-width:60ch;color:var(--on-light-soft)}
+.ev-band.dark .lede-p{color:var(--on-dark-soft)}
+
+.ev-mag{display:grid;grid-template-columns:1fr 1.15fr;gap:3.6rem;align-items:start}
+@media (max-width:900px){.ev-mag{grid-template-columns:1fr;gap:2rem}}
+.ev-mag .body p{font-size:1.02rem;line-height:1.72;margin-bottom:1.2rem;color:var(--on-light-soft)}
+.ev-band.dark .ev-mag .body p{color:var(--on-dark-soft)}
+.ev-mag .body p em{color:var(--gold-deep);font-style:italic}
+.ev-band.dark .ev-mag .body p em{color:var(--gold-soft)}
+.ev-mag .drop{font-family:var(--serif);font-style:italic;font-size:9rem;color:var(--gold-soft);opacity:.35;line-height:.9;margin-bottom:-3rem;display:block}
+
+.ev-pull{background:var(--paper);padding:6rem 0;text-align:center;position:relative}
+.ev-pull.dark{background:var(--navy-deep);color:var(--on-dark)}
+.ev-pull .quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.24;max-width:32ch;margin:0 auto;color:var(--navy)}
+.ev-pull.dark .quote{color:var(--on-dark)}
+.ev-pull .sig{margin-top:1.6rem;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+.ev-pull.dark .sig{color:var(--gold-soft)}
+
+.ev-tradition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3rem}
+@media (max-width:820px){.ev-tradition-grid{grid-template-columns:1fr}}
+.ev-tradition-card{background:var(--paper);border:1px solid var(--gold-line-soft);padding:2.2rem 1.8rem}
+.ev-band.dark .ev-tradition-card{background:var(--navy-mid);border-color:var(--dark-line-soft)}
+.ev-tradition-card .rn{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--gold-deep);margin-bottom:.6rem}
+.ev-band.dark .ev-tradition-card .rn{color:var(--gold-soft)}
+.ev-tradition-card h4{font-family:var(--serif);font-size:1.5rem;margin-bottom:.6rem;line-height:1.15}
+.ev-tradition-card p{font-size:.95rem;color:var(--on-light-soft);line-height:1.6}
+.ev-band.dark .ev-tradition-card p{color:var(--on-dark-soft)}
+
+.ev-timeline{margin-top:2rem}
+.ev-tl-row{display:grid;grid-template-columns:110px 1fr;gap:2rem;padding:1.6rem 0;border-bottom:1px solid var(--gold-line-soft)}
+.ev-tl-row .yr{font-family:var(--serif);font-style:italic;font-size:1.8rem;color:var(--gold-deep)}
+.ev-band.dark .ev-tl-row .yr{color:var(--gold-soft)}
+.ev-tl-row h4{font-family:var(--serif);font-size:1.35rem;margin-bottom:.4rem;line-height:1.18}
+.ev-tl-row p{font-size:.98rem;color:var(--on-light-soft);line-height:1.62}
+.ev-band.dark .ev-tl-row p{color:var(--on-dark-soft)}
+
+.ev-live{background:var(--navy-deep);color:var(--on-dark);padding:6rem 0;position:relative;overflow:hidden}
+.ev-live::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(201,162,75,.16),transparent 55%);pointer-events:none}
+.ev-live .grid{display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;align-items:center;position:relative;z-index:1}
+@media (max-width:900px){.ev-live .grid{grid-template-columns:1fr}}
+.ev-live .video-frame{aspect-ratio:16/9;background:var(--navy);border:1px solid var(--gold-line);position:relative;overflow:hidden}
+.ev-live .video-frame img{width:100%;height:100%;object-fit:cover;opacity:.65}
+.ev-live .video-frame .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:var(--gold-deep);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.6rem;padding-left:6px}
+.ev-live .video-frame .live-badge{position:absolute;top:1rem;left:1rem;padding:.4rem .8rem;background:rgba(224,65,63,.9);color:#fff;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem}
+.ev-live .video-frame .live-badge::before{content:"";width:8px;height:8px;background:#fff;border-radius:50%;animation:pulse 2s infinite}
+.ev-live h2{color:var(--on-dark)}
+.ev-live p{color:var(--on-dark-soft);line-height:1.65;font-size:1.05rem;margin-top:1rem}
+
+.ev-recipe{background:var(--ivory);padding:6rem 0}
+.ev-recipe .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem}
+@media (max-width:820px){.ev-recipe .grid{grid-template-columns:1fr}}
+.ev-recipe h3{font-family:var(--serif);font-size:1.8rem;margin-bottom:1rem}
+.ev-recipe ul{list-style:none;padding:0;margin:1rem 0}
+.ev-recipe li{padding:.6rem 0;border-bottom:1px dotted var(--gold-line-soft);color:var(--on-light-soft);font-size:.98rem;display:flex;justify-content:space-between}
+.ev-recipe li span{font-family:var(--serif);color:var(--navy);font-style:italic}
+.ev-recipe .steps p{margin-bottom:1rem;color:var(--on-light-soft);line-height:1.7}
+.ev-recipe .steps p::first-letter{font-family:var(--serif);font-size:1.6rem;color:var(--gold-deep);font-style:italic;margin-right:.2rem}
+
+.ev-vocab{padding:6rem 0;background:var(--paper)}
+.ev-vocab .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media (max-width:820px){.ev-vocab .grid{grid-template-columns:1fr}}
+.ev-vocab .row{display:grid;grid-template-columns:220px 1fr;gap:1.4rem;padding:1rem 1.2rem;background:var(--white);border:1px solid var(--gold-line-soft)}
+.ev-vocab .row .it{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--navy)}
+.ev-vocab .row .en{font-size:.95rem;color:var(--on-light-soft);align-self:center}
+
+.ev-cta{background:linear-gradient(140deg,var(--navy) 0%,var(--navy-soft) 60%,var(--terra-deep) 130%);color:var(--on-dark);padding:6rem 0;text-align:center}
+.ev-cta h2{color:var(--on-dark);font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.6rem)}
+.ev-cta p{color:var(--on-dark-soft);max-width:56ch;margin:1rem auto 2rem;font-size:1.1rem;line-height:1.6}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="nav-logo" href="../../index.html" aria-label="Club Italia, home">
+      <span class="logo-text">
+        <span class="lt-main">Club Italia</span>
+        <span class="lt-sub">by eTeacher</span>
+      </span>
+    </a>
+    <nav class="nav-menu" aria-label="Primary">
+      <span class="nav-item"><a class="nav-link" href="../../courses.html">Courses</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../how-it-works.html">How It Works</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../method.html">Method</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../teachers.html">Teachers</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../culture.html">Culture</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../events.html">Events</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../map.html">Map</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../pricing.html">Pricing</a></span>
+    </nav>
+    <button class="btn btn-3d btn-3d-primary nav-cta" data-advisor type="button">Talk to an Advisor</button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="navDrawer" type="button"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
+  <button class="nav-drawer-close" aria-label="Close menu" type="button">&times;</button>
+  <a href="../../courses.html">Courses</a><a href="../../how-it-works.html">How It Works</a><a href="../../method.html">Method</a>
+  <a href="../../teachers.html">Teachers</a><a href="../../culture.html">Culture</a><a href="../../events.html">Events</a>
+  <a href="../../map.html">Map</a><a href="../../community.html">Community</a><a href="../../sample-class.html">Sample Class</a>
+  <a href="../../biagio.html">AI Tutor</a><a href="../../pricing.html">Pricing</a><a href="../../about.html">About</a>
+  <a href="../../contact.html">Contact</a>
+  <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
+</aside>
+
+<!--FOLD 1 · HERO-->
+<section class="ev-hero">
+  <div class="ev-hero-bg"><img src="../../assets/img/pillar-tradition.jpg" alt=""></div>
+  <div class="wrap">
+    <p class="kicker">Cultural event · Il Palio <span>· 2 July · 16 August · every year</span></p>
+    <h1>Il Palio di<br><span class="gold-ital">Siena.</span></h1>
+    <p class="lede">Twice a year, seventeen medieval city districts saddle up ten horses and gallop bareback around a shell-shaped square in the middle of Tuscany. The race lasts ninety seconds. The preparation lasts a lifetime. Anyone who has been in Siena on the second of July or the sixteenth of August knows there is nothing else in Europe quite like it.</p>
+    <div class="meta">
+      <div><small>Held on</small><strong>2 July · 16 August · every year</strong></div>
+      <div><small>Where</small><strong>Siena, Piazza del Campo</strong></div>
+      <div><small>First recorded</small><strong>Since 1633</strong></div>
+      <div><small>Broadcast</small><strong>Live from Tuscany</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="ev-tri" aria-hidden="true"></div>
+
+<!--FOLD 2 · CULTURAL ESSAY / 2-col magazine-->
+<section class="ev-band paper">
+  <div class="wrap">
+    <div class="ev-mag">
+      <div>
+        <span class="drop">01</span>
+        <span class="eyebrow eyebrow-line">The cultural essay</span>
+        <h2>Why every Italian, on this day, <span class="gold-ital">stops.</span></h2>
+        <p class="lede-p">A national holiday is a country's most concentrated form of self-portrait. To understand <em>Pici</em> at a Sienese table, the smoke trails of the Frecce Tricolori over Rome, or the mask of the <em>bautà</em> in a Venetian palazzo, is to understand the Italian idea of belonging.</p>
+      </div>
+      <div class="body">
+        <p>The Italian calendar is not a schedule; it is a liturgy. Every region has its own saints' days, harvests, harbour festivals, chestnut fairs, olive-oil pressings, sagre and processions. Layered on top, only three or four dates belong to the entire peninsula at once. This is one of them.</p>
+        <p>When Club Italia builds a cultural unit around a date, the point is never trivia. Italy is a country where the words <em>tradizione</em> and <em>identità</em> still carry weight, where the shape of an event teaches the shape of a language, and where knowing why an event happens, and how it is celebrated, is inseparable from speaking Italian well.</p>
+        <p>Our teachers do not lecture on holidays. They walk into their kitchens the morning after, phones on, and describe them. The learner hears the exact register, the exact vocabulary, the emotional colour of the day, spoken, unscripted, by an Italian who lived it the day before.</p>
+        <p>What follows is the full editorial file: the history, the traditions, the recipe, the vocabulary and the live broadcast we will run this year. Save it. Come back to it. Bring it into class.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ev-pull dark"><div class="wrap-narrow"><p class="quote">"Il Palio non è una corsa. È la nostra vita in novanta secondi."</p><p class="sig">Sienese proverb</p></div></section>
+
+<!--FOLD 4 · HISTORY TIMELINE-->
+<section class="ev-band dark">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">A short history</span>
+    <h2>The story, in six <span class="gold-ital">dates.</span></h2>
+    <p class="lede-p">Every Italian tradition has a paper trail. Here is the one for this event, as documented by the Italian state archives and the standard scholarly reference works.</p>
+    <div class="ev-timeline">
+      <div class="ev-tl-row"><div class="yr">1200s</div><div><h4>Medieval city games.</h4><p>Siena, one of the great banking republics of the Middle Ages, holds bull-hunts, buffalo-races and pugilistic contests in the Campo. The rivalry between the neighbourhoods, the <em>contrade</em>, is already fierce and organised.</p></div></div><div class="ev-tl-row"><div class="yr">1633</div><div><h4>The first Palio alla tonda.</h4><p>The city stages the first true bareback horse race around the shell of the Campo. The prize is a painted silk banner, the <em>Palio</em>, which gives the race its name. It has been run twice a year, on 2 July and 16 August, almost every year since.</p></div></div><div class="ev-tl-row"><div class="yr">1721</div><div><h4>The seventeen contrade are fixed.</h4><p>A ducal edict reduces the historical thirty-five districts to seventeen and fixes their boundaries. Every Sienese is born into one, the district of the address of the maternity. The affiliation is for life.</p></div></div><div class="ev-tl-row"><div class="yr">1729</div><div><h4>Governor Violante formalises the ceremony.</h4><p>The Marchesa Violante Beatrice of Bavaria, governor of Siena, standardises the pre-race parade, the costumes, the flag-throwing and the marching order. The choreography has not meaningfully changed in three hundred years.</p></div></div><div class="ev-tl-row"><div class="yr">1899</div><div><h4>The first extraordinary Palio.</h4><p>An additional race is run outside the twice-yearly calendar to mark a national event. This precedent is invoked rarely, for the end of a world war, a papal visit, or a great civic anniversary.</p></div></div><div class="ev-tl-row"><div class="yr">Today</div><div><h4>A modern spectacle with medieval bones.</h4><p>Sixty thousand people fill the Campo. The race is broadcast live on RAI. Every hotel in Tuscany is full. The horses arrive by van; the ceremony arrives by history.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 5 · TRADITIONS 6-CARD GRID-->
+<section class="ev-band paper">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">The six great traditions</span>
+    <h2>What happens on the <span class="gold-ital">day itself.</span></h2>
+    <div class="ev-tradition-grid">
+      <div class="ev-tradition-card"><div class="rn">I</div><h4>The seventeen contrade.</h4><p>Aquila, Bruco, Chiocciola, Civetta, Drago, Giraffa, Istrice, Leocorno, Lupa, Nicchio, Oca, Onda, Pantera, Selva, Tartuca, Torre and Valdimontone. Each has its own colours, its own hymn, its own church, its own oratory and its own museum. Only ten race per Palio: seven by right, three by lottery.</p></div><div class="ev-tradition-card"><div class="rn">II</div><h4>The horse's blessing.</h4><p>An hour before the race, each contrada takes its horse into its own parish church. The priest blesses the animal at the altar. If the horse defecates during the blessing, as they routinely do, it is considered excellent luck.</p></div><div class="ev-tradition-card"><div class="rn">III</div><h4>The corteo storico.</h4><p>A two-and-a-half hour procession in medieval costume, with drums, flag-throwers and horses, wends through the streets before assembling on the Campo. Six hundred participants. Every costume is stitched by the contrada seamstresses.</p></div><div class="ev-tradition-card"><div class="rn">IV</div><h4>The mossa.</h4><p>The start is chaos by design. Nine horses enter the twin ropes; the tenth, the <em>rincorsa</em>, enters last and triggers the start when it chooses. False starts routinely delay proceedings for an hour. Rival contrade negotiate, and pay, for tactical advantage.</p></div><div class="ev-tradition-card"><div class="rn">V</div><h4>The race itself.</h4><p>Three laps of the tufo-covered Campo. Ninety seconds if clean. Two of the three corners, San Martino and the Casato, are treacherous, angled far below their outer walls. Falls are frequent. A horse can win without its jockey.</p></div><div class="ev-tradition-card"><div class="rn">VI</div><h4>The dinner of the victory.</h4><p>The winning contrada holds an open-air victory dinner in its streets, sometimes for three thousand seated guests, with the horse at the head of the table. The losing contrade go home in silence. The rivalry resumes the next morning.</p></div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 6 · SECOND PULL QUOTE-->
+
+<section class="ev-pull "><div class="wrap-narrow"><p class="quote">"A Siena non si nasce cittadini di Siena. Si nasce cittadini di una contrada."</p><p class="sig">Local saying, recorded by the anthropologist Alessandro Falassi</p></div></section>
+
+<!--FOLD 7 · LIVE BROADCAST-->
+<section class="ev-live">
+  <div class="wrap">
+    <div class="grid">
+      <div class="video-frame">
+        <img src="../../assets/img/pillar-tradition.jpg" alt="">
+        <span class="live-badge">Live · this year</span>
+        <a href="#" class="play" aria-label="Watch live">▶</a>
+      </div>
+      <div>
+        <span class="eyebrow eyebrow-line">Live stream</span>
+        <h2>Watch the event <span class="gold-ital">from Italy.</span></h2>
+        <p>Club Italia broadcasts a live cultural window from the piazza on the day itself, hosted by one of our resident teachers, with commentary in slow Italian for learners at A1 and above, and a follow-up debrief lesson the following week.</p>
+        <p>Members of the Club Italia community receive the calendar invitation automatically. Non-members can register a single-event pass through our advisors.</p>
+        <div class="hero-ctas" style="margin-top:1.6rem">
+          <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Broadcast Seat</button>
+          <a class="btn btn-3d btn-3d-ghost" href="../../events.html">All Events</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 8 · RECIPE-->
+<section class="ev-recipe">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow eyebrow-line">The recipe of the day</span>
+        <h3>Pici all'aglione</h3>
+        <p style="color:var(--on-light-soft);line-height:1.7">The traditional hand-rolled Sienese pasta with an aromatic tomato sauce, eaten across the province in the days around the Palio. Recipe from the Tuscan grandmother tradition of the val di Chiana.</p>
+        <div class="steps" style="margin-top:2rem">
+          <p>Combine the flour and salt on a board, add warm water in stages and knead ten minutes until smooth.</p><p>Rest under a bowl for thirty minutes.</p><p>Roll into a two-centimetre sheet.</p><p>Cut into strips and, on a wooden board, roll each strip under the palm into a long, thick, uneven noodle, that is the <em>pico</em>.</p><p>Peel and crush the garlic.</p><p>Warm the oil, add garlic and peperoncino, cook two minutes without browning.</p><p>Add the peeled crushed tomatoes and simmer twenty-five minutes until the sauce breaks.</p><p>Season.</p><p>Cook the pici in salted water for six to seven minutes, they should be al dente and slightly chewy.</p><p>Toss in the sauce off heat with the torn basil.</p><p>Serve with a generous grating of pecorino toscano.</p>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow eyebrow-line">Ingredients</span>
+        <ul><li>00 flour<span>400 g</span></li><li>Warm water<span>200 ml</span></li><li>Salt<span>1 tsp</span></li><li>Ripe tomatoes<span>800 g</span></li><li>Aglione garlic<span>6 cloves (or 3 elephant garlic)</span></li><li>Extra virgin olive oil<span>60 ml</span></li><li>Peperoncino<span>1 whole</span></li><li>Fresh basil<span>a handful</span></li><li>Pecorino toscano<span>to serve</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 9 · VOCAB TABLE-->
+<section class="ev-vocab">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line">The vocabulary of the day</span>
+      <h2 class="display-md">Words for the <span class="gold-ital">occasion.</span></h2>
+      <p class="lead">A ready-to-print glossary of the twelve to fifteen Italian words a learner will hear most on the day.</p>
+    </div>
+    <div class="grid">
+      <div class="row"><div class="it">il Palio</div><div class="en">the banner (and the race)</div></div><div class="row"><div class="it">la contrada</div><div class="en">medieval city district</div></div><div class="row"><div class="it">il fantino</div><div class="en">the jockey</div></div><div class="row"><div class="it">il cavallo</div><div class="en">the horse</div></div><div class="row"><div class="it">la Piazza del Campo</div><div class="en">the shell-shaped square</div></div><div class="row"><div class="it">il tufo</div><div class="en">the yellow earth track</div></div><div class="row"><div class="it">la mossa</div><div class="en">the start</div></div><div class="row"><div class="it">il canape</div><div class="en">the starting rope</div></div><div class="row"><div class="it">il Mangia</div><div class="en">the great tower</div></div><div class="row"><div class="it">il drappellone</div><div class="en">the painted silk banner</div></div><div class="row"><div class="it">la benedizione</div><div class="en">the horse's blessing in church</div></div><div class="row"><div class="it">la cena della prova</div><div class="en">the pre-race dinner</div></div><div class="row"><div class="it">i colori</div><div class="en">the district colours</div></div><div class="row"><div class="it">la vittoria</div><div class="en">the victory</div></div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 10 · CTA-->
+<section class="ev-cta">
+  <div class="wrap-narrow">
+    <span class="eyebrow eyebrow-line">Join the cultural calendar</span>
+    <h2>Every great Italian day, <span class="gold-ital">taught in Italian.</span></h2>
+    <p>Every Club Italia course includes a cultural events calendar, live broadcasts from the piazza on the day itself, follow-up debrief lessons in slow Italian, and a recorded archive open to all learners for life.</p>
+    <div class="hero-ctas" style="justify-content:center;display:flex">
+      <a class="btn btn-3d btn-3d-primary" href="../../courses.html">Explore the Courses</a>
+      <button class="btn btn-3d btn-3d-ghost" data-advisor type="button">Talk to an Advisor</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
+        <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
+        <p>Club Italia by eTeacher, a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
+        <p style="margin-top:1.2rem"><a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="../../courses.html">All Courses</a>
+        <a href="../../how-it-works.html">How It Works</a>
+        <a href="../../method.html">Method</a>
+        <a href="../../sample-class.html">Watch a Class</a>
+        <a href="../../teachers.html">Teachers</a>
+        <a href="../../map.html">Map of Italy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Culture</h4>
+        <a href="../../culture.html">Culture</a>
+        <a href="../../capsules.html">Capsules</a>
+        <a href="../../events.html">Cultural Events</a>
+        <a href="../../community.html">Community</a>
+        <a href="../../blog.html">Journal</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../../about.html">About</a>
+        <a href="../../eteacher.html">eTeacher Group</a>
+        <a href="../../pricing.html">Pricing</a>
+        <a href="../../faq.html">FAQ</a>
+        <a href="../../contact.html">Contact</a>
+        <a href="../../privacy.html">Privacy</a>
+        <a href="../../terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 eTeacher Group. All rights reserved. Club Italia is a trading style of eTeacher Group.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◉</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../../js/ci.js" defer></script>
+</body>
+</html>

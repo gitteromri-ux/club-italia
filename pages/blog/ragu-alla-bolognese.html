@@ -2,7 +2,53 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Real Ragù alla Bolognese — Cultural Journal · Club Italia</title><meta name="description" content="And the eight things it is not">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="../../css/ci.css"></head><body>
+<link rel="stylesheet" href="../../css/ci.css">
+<style>
+.post-body-grid{display:grid;grid-template-columns:1fr 320px;gap:4rem;max-width:1160px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem);align-items:start}
+@media (max-width:960px){.post-body-grid{grid-template-columns:1fr;gap:2.6rem}}
+.post-main h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,2.6vw,2.4rem);line-height:1.14;color:var(--navy);margin:2.4rem 0 1rem}
+.post-main h2:first-child{margin-top:0}
+.post-main p.lead{font-size:1.14rem;line-height:1.78;color:var(--on-light);margin-bottom:1.4rem;font-weight:400}
+.post-main p.lead:first-of-type::first-letter{font-family:var(--serif);float:left;font-size:4.6rem;line-height:.88;padding:.3rem .55rem 0 0;color:var(--terra-deep);font-weight:600}
+.post-sidebar{position:sticky;top:6rem;background:var(--ivory);border:1px solid var(--gold-line-soft);padding:1.8rem 1.6rem;font-size:.95rem}
+@media (max-width:960px){.post-sidebar{position:static}}
+.post-sidebar .rn-eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1rem;display:block;font-weight:600}
+.post-sidebar h4{font-family:var(--serif);font-size:1.35rem;color:var(--navy);margin-bottom:1rem;line-height:1.15}
+.post-sidebar dl{margin:0;padding:0}
+.post-sidebar dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-top:1rem}
+.post-sidebar dt:first-of-type{margin-top:0}
+.post-sidebar dd{margin:.25rem 0 0;font-family:var(--serif);font-size:1.05rem;color:var(--navy);line-height:1.4}
+.post-sidebar .rn-tip{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--gold-line-soft);font-style:italic;color:var(--on-light-soft);line-height:1.55}
+
+.post-pull{margin:2.8rem -1rem;padding:2.4rem 2.4rem;border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);background:linear-gradient(180deg,rgba(201,162,75,.06),rgba(201,162,75,0))}
+.post-pull p{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.35;color:var(--navy);margin:0;max-width:34ch}
+.post-pull p::before{content:"\201C";color:var(--gold-deep);font-size:1.4em;line-height:0;position:relative;top:.2em;margin-right:.1em}
+.post-pull p::after{content:"\201D";color:var(--gold-deep);font-size:1.4em;line-height:0;position:relative;top:.2em;margin-left:.05em}
+
+.post-cta-box{margin:2.4rem 0;padding:2.2rem 2rem;background:var(--navy);color:var(--on-dark);border-left:4px solid var(--gold)}
+.post-cta-box .cta-eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.9rem;font-weight:600;display:block}
+.post-cta-box h3{font-family:var(--serif);font-size:1.55rem;color:var(--on-dark);margin-bottom:.7rem;line-height:1.15}
+.post-cta-box p{font-size:1rem;color:var(--on-dark-soft);line-height:1.6;margin-bottom:1.2rem}
+.post-cta-box a.cta-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);border-bottom:1px solid var(--gold-line);padding-bottom:.35rem;font-weight:600}
+
+.post-continue{background:var(--ivory);padding:clamp(4rem,7vw,6rem) 0}
+.post-continue .section-head{margin-bottom:2.6rem}
+.post-continue h2{font-family:var(--serif);color:var(--navy)}
+.post-continue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+@media (max-width:820px){.post-continue-grid{grid-template-columns:1fr}}
+.post-continue-card{background:var(--white);border:1px solid var(--gold-line-soft);overflow:hidden;text-decoration:none;color:inherit;transition:all .3s var(--ease);display:flex;flex-direction:column}
+.post-continue-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(58,14,18,.14)}
+.post-continue-card .pcc-img{aspect-ratio:16/10;overflow:hidden;background:var(--cream)}
+.post-continue-card .pcc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.post-continue-card:hover .pcc-img img{transform:scale(1.04)}
+.post-continue-card .pcc-body{padding:1.6rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column}
+.post-continue-card .pcc-eyebrow{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.7rem;font-weight:600}
+.post-continue-card h3{font-family:var(--serif);font-size:1.35rem;color:var(--navy);line-height:1.15;margin-bottom:.6rem}
+.post-continue-card p{font-size:.94rem;color:var(--on-light-soft);line-height:1.5;margin-bottom:1rem}
+.post-continue-card .pcc-cta{margin-top:auto;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);font-weight:600}
+</style>
+
+</head><body>
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="../../index.html" aria-label="Club Italia — home">
@@ -48,10 +94,51 @@
 <section class="hero" style="min-height:60vh"><div class="hero-bg"><img src="../../assets/img/pillar-food.jpg" alt=""></div>
 <div class="hero-content"><div style="max-width:64ch"><p class="hero-tag">Cuisine · 28 Jul 2026</p><h1>The Real Ragù alla Bolognese</h1><p class="hero-sub">And the eight things it is not</p></div></div></section>
 
-<article class="section-paper"><div class="wrap-narrow">
-<h2 class="display-sm mt-4">The dish</h2><p class="lead" style="margin-top:1rem">Ragù alla bolognese, the meat sauce of Bologna, is one of the most misunderstood dishes in the world. In 1982, the Italian Academy of Cuisine deposited the official recipe with the Bologna Chamber of Commerce, in what remains the most Italian bureaucratic act of the twentieth century.</p><h2 class="display-sm mt-4">The official recipe</h2><p class="lead" style="margin-top:1rem">The deposited recipe calls for beef cartella (thin skirt), pancetta, onion, carrot, celery, tomato paste, meat broth, dry white wine and milk. No garlic. No herbs. No olive oil. No red wine. No cream at the end. No tomato passata as a base. And absolutely, categorically, no spaghetti.</p><h2 class="display-sm mt-4">The eight things ragù is not</h2><p class="lead" style="margin-top:1rem">One: it is not spaghetti bolognese, which is a dish invented in mid-twentieth-century America and served today across the English-speaking world. In Bologna, ragù is served with tagliatelle — the flat, porous, egg-based pasta that catches sauce the way spaghetti never can. Two: it is not brown. A proper ragù has just enough tomato to blush the meat, no more. Three: it is not quick. The minimum simmer time is two hours, and four is closer to right. Four: it does not contain garlic. Five: it does not contain oregano, basil or bay leaves. Six: the milk is not optional. Seven: the wine is white, not red. Eight: it is finished with a small ladle of broth, not with cream.</p><h2 class="display-sm mt-4">The philosophy</h2><p class="lead" style="margin-top:1rem">What the deposited recipe protects is not a formula but a philosophy — that a great Italian dish is built by patience, by the right cut of the right meat, by the sofrito of onion, carrot and celery, and by the willingness of the cook to spend an afternoon at the stove for a Sunday lunch that lasts three hours. Ragù is not fast food. It is the slow, ritual food of a very serious culture.</p><h2 class="display-sm mt-4">The Club Italia connection</h2><p class="lead" style="margin-top:1rem">In the Parliamo Italiano course A Tavola, learners spend a full 85-minute session on the language of ragù — the vocabulary of cuts, of pastas, of simmering, of the family Sunday. By the end of the session, you can order it, cook it, and argue about it in Italian. Which is, if you think about it, all the Italian you really need.</p>
+<article class="section-paper"><div class="post-body-grid">
+<div class="post-main"><h2 class="display-sm mt-4">The dish</h2><p class="lead" style="margin-top:1rem">Ragù alla bolognese, the meat sauce of Bologna, is one of the most misunderstood dishes in the world. In 1982, the Italian Academy of Cuisine deposited the official recipe with the Bologna Chamber of Commerce, in what remains the most Italian bureaucratic act of the twentieth century.</p><h2 class="display-sm mt-4">The official recipe</h2><p class="lead" style="margin-top:1rem">The deposited recipe calls for beef cartella (thin skirt), pancetta, onion, carrot, celery, tomato paste, meat broth, dry white wine and milk. No garlic. No herbs. No olive oil. No red wine. No cream at the end. No tomato passata as a base. And absolutely, categorically, no spaghetti.</p><div class="post-pull"><p>Bolognese sauce, as invented in Bologna in 1891, has never contained tomato in the way you know it. It contains tomato in the way you do not.</p></div><h2 class="display-sm mt-4">The eight things ragù is not</h2><p class="lead" style="margin-top:1rem">One: it is not spaghetti bolognese, which is a dish invented in mid-twentieth-century America and served today across the English-speaking world. In Bologna, ragù is served with tagliatelle — the flat, porous, egg-based pasta that catches sauce the way spaghetti never can. Two: it is not brown. A proper ragù has just enough tomato to blush the meat, no more. Three: it is not quick. The minimum simmer time is two hours, and four is closer to right. Four: it does not contain garlic. Five: it does not contain oregano, basil or bay leaves. Six: the milk is not optional. Seven: the wine is white, not red. Eight: it is finished with a small ladle of broth, not with cream.</p><h2 class="display-sm mt-4">The philosophy</h2><p class="lead" style="margin-top:1rem">What the deposited recipe protects is not a formula but a philosophy — that a great Italian dish is built by patience, by the right cut of the right meat, by the sofrito of onion, carrot and celery, and by the willingness of the cook to spend an afternoon at the stove for a Sunday lunch that lasts three hours. Ragù is not fast food. It is the slow, ritual food of a very serious culture.</p><div class="post-pull"><p>The word ragù, in Bologna, is not the name of a sauce. It is the name of a discipline that takes four hours and no shortcuts.</p></div><h2 class="display-sm mt-4">The Club Italia connection</h2><p class="lead" style="margin-top:1rem">In the Parliamo Italiano course A Tavola, learners spend a full 85-minute session on the language of ragù — the vocabulary of cuts, of pastas, of simmering, of the family Sunday. By the end of the session, you can order it, cook it, and argue about it in Italian. Which is, if you think about it, all the Italian you really need.</p><div class="post-cta-box">
+<span class="cta-eyebrow">In your next class</span>
+<h3>Cook, and speak, with Giulia.</h3>
+<p>Giulia Moretti runs a monthly Saturday Cucina Live in Italian, plus a full Culture Capsule on La Cucina.</p>
+<a class="cta-link" href="../culture/cap-food.html">See La Cucina Capsule →</a>
+</div></div>
+<aside class="post-sidebar">
+<span class="rn-eyebrow">Reading Notes</span>
+<h4>Reading Notes</h4>
+<dl><dt>Read time</dt><dd>8 minutes</dd>
+<dt>Level</dt><dd>A2 · Elementary</dd>
+<dt>New Italian words</dt><dd>ragù, soffritto, brodo, tagliatelle, mattarello</dd>
+<dt>Filed under</dt><dd>Cuisine · Emilia-Romagna</dd></dl>
+<p class="rn-tip">Giulia runs a monthly Cucina Live where students cook a Bolognese menu together, in Italian. Enrolled Club Italia students only.</p>
+</aside>
 </div></article>
 
+<section class="post-continue">
+<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Continue Reading</span><h2 class="display-md">More from the Cultural Journal.</h2></div>
+<div class="post-continue-grid"><a class="post-continue-card" href="aperitivo.html">
+<div class="pcc-img"><img src="../../assets/img/spoken-ps4.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Culture · 22 Apr 2026</span>
+<h3>The Milanese Aperitivo, Decoded</h3>
+<p>When it started, what it costs, what you actually eat</p>
+<span class="pcc-cta">Read on →</span>
+</div></a>
+<a class="post-continue-card" href="italian-coffee.html">
+<div class="pcc-img"><img src="../../assets/img/pillar-food.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Cuisine · 18 May 2026</span>
+<h3>Italian Coffee Is Not What You Think</h3>
+<p>A history of espresso, from Naples 1901 to your kitchen</p>
+<span class="pcc-cta">Read on →</span>
+</div></a>
+<a class="post-continue-card" href="americans-italy.html">
+<div class="pcc-img"><img src="../../assets/img/spoken-ps1.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Travel · 24 Aug 2026</span>
+<h3>7.5 Million Americans, One Italy</h3>
+<p>Why U.S. travellers made Italy their second-most-visited country</p>
+<span class="pcc-cta">Read on →</span>
+</div></a></div>
+</div></section>
 <section class="section-dark tagline-band"><div class="wrap-narrow"><p class="tag-script">Leggi. Poi parla.</p>
 <div class="hero-ctas mt-3" style="justify-content:center;display:flex"><a class="btn btn-3d btn-3d-primary" href="../../courses.html">Explore the Courses</a></div></div></section>
 

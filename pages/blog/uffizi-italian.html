@@ -2,7 +2,53 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to Read an Uffizi Wall Label — Cultural Journal · Club Italia</title><meta name="description" content="The five Italian words that unlock the museum">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="../../css/ci.css"></head><body>
+<link rel="stylesheet" href="../../css/ci.css">
+<style>
+.post-body-grid{display:grid;grid-template-columns:1fr 320px;gap:4rem;max-width:1160px;margin:0 auto;padding:0 clamp(1.4rem,3vw,3rem);align-items:start}
+@media (max-width:960px){.post-body-grid{grid-template-columns:1fr;gap:2.6rem}}
+.post-main h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,2.6vw,2.4rem);line-height:1.14;color:var(--navy);margin:2.4rem 0 1rem}
+.post-main h2:first-child{margin-top:0}
+.post-main p.lead{font-size:1.14rem;line-height:1.78;color:var(--on-light);margin-bottom:1.4rem;font-weight:400}
+.post-main p.lead:first-of-type::first-letter{font-family:var(--serif);float:left;font-size:4.6rem;line-height:.88;padding:.3rem .55rem 0 0;color:var(--terra-deep);font-weight:600}
+.post-sidebar{position:sticky;top:6rem;background:var(--ivory);border:1px solid var(--gold-line-soft);padding:1.8rem 1.6rem;font-size:.95rem}
+@media (max-width:960px){.post-sidebar{position:static}}
+.post-sidebar .rn-eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1rem;display:block;font-weight:600}
+.post-sidebar h4{font-family:var(--serif);font-size:1.35rem;color:var(--navy);margin-bottom:1rem;line-height:1.15}
+.post-sidebar dl{margin:0;padding:0}
+.post-sidebar dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-top:1rem}
+.post-sidebar dt:first-of-type{margin-top:0}
+.post-sidebar dd{margin:.25rem 0 0;font-family:var(--serif);font-size:1.05rem;color:var(--navy);line-height:1.4}
+.post-sidebar .rn-tip{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--gold-line-soft);font-style:italic;color:var(--on-light-soft);line-height:1.55}
+
+.post-pull{margin:2.8rem -1rem;padding:2.4rem 2.4rem;border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);background:linear-gradient(180deg,rgba(201,162,75,.06),rgba(201,162,75,0))}
+.post-pull p{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.35;color:var(--navy);margin:0;max-width:34ch}
+.post-pull p::before{content:"\201C";color:var(--gold-deep);font-size:1.4em;line-height:0;position:relative;top:.2em;margin-right:.1em}
+.post-pull p::after{content:"\201D";color:var(--gold-deep);font-size:1.4em;line-height:0;position:relative;top:.2em;margin-left:.05em}
+
+.post-cta-box{margin:2.4rem 0;padding:2.2rem 2rem;background:var(--navy);color:var(--on-dark);border-left:4px solid var(--gold)}
+.post-cta-box .cta-eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.9rem;font-weight:600;display:block}
+.post-cta-box h3{font-family:var(--serif);font-size:1.55rem;color:var(--on-dark);margin-bottom:.7rem;line-height:1.15}
+.post-cta-box p{font-size:1rem;color:var(--on-dark-soft);line-height:1.6;margin-bottom:1.2rem}
+.post-cta-box a.cta-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);border-bottom:1px solid var(--gold-line);padding-bottom:.35rem;font-weight:600}
+
+.post-continue{background:var(--ivory);padding:clamp(4rem,7vw,6rem) 0}
+.post-continue .section-head{margin-bottom:2.6rem}
+.post-continue h2{font-family:var(--serif);color:var(--navy)}
+.post-continue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+@media (max-width:820px){.post-continue-grid{grid-template-columns:1fr}}
+.post-continue-card{background:var(--white);border:1px solid var(--gold-line-soft);overflow:hidden;text-decoration:none;color:inherit;transition:all .3s var(--ease);display:flex;flex-direction:column}
+.post-continue-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(58,14,18,.14)}
+.post-continue-card .pcc-img{aspect-ratio:16/10;overflow:hidden;background:var(--cream)}
+.post-continue-card .pcc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.post-continue-card:hover .pcc-img img{transform:scale(1.04)}
+.post-continue-card .pcc-body{padding:1.6rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column}
+.post-continue-card .pcc-eyebrow{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.7rem;font-weight:600}
+.post-continue-card h3{font-family:var(--serif);font-size:1.35rem;color:var(--navy);line-height:1.15;margin-bottom:.6rem}
+.post-continue-card p{font-size:.94rem;color:var(--on-light-soft);line-height:1.5;margin-bottom:1rem}
+.post-continue-card .pcc-cta{margin-top:auto;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);font-weight:600}
+</style>
+
+</head><body>
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="../../index.html" aria-label="Club Italia — home">
@@ -48,10 +94,51 @@
 <section class="hero" style="min-height:60vh"><div class="hero-bg"><img src="../../assets/img/cap-art.jpg" alt=""></div>
 <div class="hero-content"><div style="max-width:64ch"><p class="hero-tag">Art · 05 May 2026</p><h1>How to Read an Uffizi Wall Label</h1><p class="hero-sub">The five Italian words that unlock the museum</p></div></div></section>
 
-<article class="section-paper"><div class="wrap-narrow">
-<h2 class="display-sm mt-4">The problem</h2><p class="lead" style="margin-top:1rem">A visitor to the Uffizi Gallery in Florence stands in front of Botticelli's Primavera, wall label at eye height, and reads: Tempera su tavola. Firenze, Galleria degli Uffizi. Attribuito a Sandro Botticelli, ca. 1480. And that visitor, if they do not read Italian, understands almost none of it.</p><h2 class="display-sm mt-4">The five words</h2><p class="lead" style="margin-top:1rem">But five Italian words, learned and remembered, unlock ninety per cent of every wall label in every Italian museum. They are: tempera (a paint made with egg yolk as the binder, used before the invention of oil paint), tavola (a wood panel, the standard surface before the sixteenth century), olio (oil paint, invented in Flanders and perfected in Venice), tela (canvas, the standard surface from the sixteenth century onward), and affresco (fresh — a mural painted directly onto wet plaster, so the pigment becomes part of the wall itself).</p><h2 class="display-sm mt-4">The rest of the label</h2><p class="lead" style="margin-top:1rem">The word attribuito means the painting is generally believed to be by the named artist but there is scholarly doubt. The word cerchia di means the workshop or circle of. The word bottega di means directly from the workshop, probably with the master's supervision but not by his own hand. The word firma means the work is signed.</p><h2 class="display-sm mt-4">The transformation</h2><p class="lead" style="margin-top:1rem">Once these words are in place, the Uffizi transforms. You are not looking at a beautiful object with a small Italian riddle beneath it. You are looking at a beautiful object whose Italian caption is telling you exactly what it is, how it was made, and how sure the museum is about who made it.</p><h2 class="display-sm mt-4">For the learner</h2><p class="lead" style="margin-top:1rem">This is exactly what the Capsula Culturale L'Arte at Club Italia does. Six 60-minute cultural sessions, structured around the vocabulary of Italian art history, so that by the end you can walk into any Italian museum in the world and read the walls.</p>
+<article class="section-paper"><div class="post-body-grid">
+<div class="post-main"><h2 class="display-sm mt-4">The problem</h2><p class="lead" style="margin-top:1rem">A visitor to the Uffizi Gallery in Florence stands in front of Botticelli's Primavera, wall label at eye height, and reads: Tempera su tavola. Firenze, Galleria degli Uffizi. Attribuito a Sandro Botticelli, ca. 1480. And that visitor, if they do not read Italian, understands almost none of it.</p><h2 class="display-sm mt-4">The five words</h2><p class="lead" style="margin-top:1rem">But five Italian words, learned and remembered, unlock ninety per cent of every wall label in every Italian museum. They are: tempera (a paint made with egg yolk as the binder, used before the invention of oil paint), tavola (a wood panel, the standard surface before the sixteenth century), olio (oil paint, invented in Flanders and perfected in Venice), tela (canvas, the standard surface from the sixteenth century onward), and affresco (fresh — a mural painted directly onto wet plaster, so the pigment becomes part of the wall itself).</p><div class="post-pull"><p>Five words. That is what stands between the wall label and the painting. Learn the five, and the museum reopens.</p></div><h2 class="display-sm mt-4">The rest of the label</h2><p class="lead" style="margin-top:1rem">The word attribuito means the painting is generally believed to be by the named artist but there is scholarly doubt. The word cerchia di means the workshop or circle of. The word bottega di means directly from the workshop, probably with the master's supervision but not by his own hand. The word firma means the work is signed.</p><h2 class="display-sm mt-4">The transformation</h2><p class="lead" style="margin-top:1rem">Once these words are in place, the Uffizi transforms. You are not looking at a beautiful object with a small Italian riddle beneath it. You are looking at a beautiful object whose Italian caption is telling you exactly what it is, how it was made, and how sure the museum is about who made it.</p><div class="post-pull"><p>An Uffizi label written in Italian is not a translation of the English. It is the original, and the English is the translation, imperfect.</p></div><h2 class="display-sm mt-4">For the learner</h2><p class="lead" style="margin-top:1rem">This is exactly what the Capsula Culturale L'Arte at Club Italia does. Six 60-minute cultural sessions, structured around the vocabulary of Italian art history, so that by the end you can walk into any Italian museum in the world and read the walls.</p><div class="post-cta-box">
+<span class="cta-eyebrow">In your next class</span>
+<h3>Read the museum in Italian.</h3>
+<p>Culture Capsule L'Arte is a six-week course on Italian art history taught in accessible Italian. Suitable from A2.</p>
+<a class="cta-link" href="../culture/cap-art.html">See L'Arte Capsule →</a>
+</div></div>
+<aside class="post-sidebar">
+<span class="rn-eyebrow">Reading Notes</span>
+<h4>Reading Notes</h4>
+<dl><dt>Read time</dt><dd>7 minutes</dd>
+<dt>Level</dt><dd>A2 · Elementary</dd>
+<dt>New Italian words</dt><dd>tavola, tempera, olio, pala, predella</dd>
+<dt>Filed under</dt><dd>Art · Firenze</dd></dl>
+<p class="rn-tip">Sofia's Culture Capsule L'Arte teaches art history through the Italian vocabulary that unlocks the museum.</p>
+</aside>
 </div></article>
 
+<section class="post-continue">
+<div class="wrap"><div class="section-head reveal"><span class="eyebrow eyebrow-line">Continue Reading</span><h2 class="display-md">More from the Cultural Journal.</h2></div>
+<div class="post-continue-grid"><a class="post-continue-card" href="italian-golden-age.html">
+<div class="pcc-img"><img src="../../assets/img/pillar-cinema.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Cinema · 10 Sep 2026</span>
+<h3>The Golden Age of Italian Cinema</h3>
+<p>How Fellini, Visconti and Rossellini rewrote what film could be</p>
+<span class="pcc-cta">Read on →</span>
+</div></a>
+<a class="post-continue-card" href="verdi-life.html">
+<div class="pcc-img"><img src="../../assets/img/cap-opera.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Opera · 01 Jul 2026</span>
+<h3>Verdi in a Life</h3>
+<p>Six operas that shaped a nation and still shape Italian</p>
+<span class="pcc-cta">Read on →</span>
+</div></a>
+<a class="post-continue-card" href="tuscan-italian.html">
+<div class="pcc-img"><img src="../../assets/img/pillar-art.jpg" alt=""></div>
+<div class="pcc-body">
+<span class="pcc-eyebrow">Language · 18 Jun 2026</span>
+<h3>Why Italian Is Really Tuscan</h3>
+<p>Dante, Boccaccio, Petrarch and the accident of the standard</p>
+<span class="pcc-cta">Read on →</span>
+</div></a></div>
+</div></section>
 <section class="section-dark tagline-band"><div class="wrap-narrow"><p class="tag-script">Leggi. Poi parla.</p>
 <div class="hero-ctas mt-3" style="justify-content:center;display:flex"><a class="btn btn-3d btn-3d-primary" href="../../courses.html">Explore the Courses</a></div></div></section>
 

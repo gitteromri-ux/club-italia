@@ -3,12 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CI Elementare — Club Italia by eTeacher</title>
+<title>CI Elementare &mdash; A1.1 → A1.2 &middot; Florence &middot; Club Italia</title>
 <meta name="description" content="Everyday Italian from Florence, the city where the language was standardised. Twenty live lessons that take you from short replies to full daily narrative.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../../css/ci.css">
+<style>
+/* ===== Course-page extras (page-local; ci.css is READ ONLY) ===== */
+.hero-badges{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.h-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;border:1px solid var(--gold-line);color:var(--on-dark);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;border-radius:2px;background:rgba(34,8,11,.35);backdrop-filter:blur(6px)}
+.h-badge.lvl{background:rgba(201,162,75,.14);color:var(--gold-soft);border-color:var(--gold-soft)}
+.hero-meta-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--gold-line-soft);max-width:900px}
+.hero-meta-strip .hm{}
+.hero-meta-strip .hm-k{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.4rem}
+.hero-meta-strip .hm-v{font-family:var(--serif);font-size:1.15rem;color:var(--on-dark)}
+@media (max-width:820px){.hero-meta-strip{grid-template-columns:repeat(2,1fr);gap:1rem}}
 
+/* Promise editorial two-column */
+.promise-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+@media (max-width:900px){.promise-grid{grid-template-columns:1fr;gap:2.5rem}}
+.promise-head h2{font-size:clamp(2.4rem,4.4vw,4rem);letter-spacing:-.015em}
+.promise-outcomes{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+@media (max-width:640px){.promise-outcomes{grid-template-columns:1fr}}
+.promise-outcomes li{display:flex;gap:.9rem;font-size:1.02rem;line-height:1.5;color:var(--on-light)}
+.promise-outcomes .n{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:1.35rem;line-height:1;flex-shrink:0;min-width:1.8rem}
+
+/* Pillar cards */
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+@media (max-width:900px){.pillar-grid{grid-template-columns:1fr}}
+.pillar-card{background:rgba(255,255,255,.05);border:1px solid var(--dark-line);padding:2.4rem 1.9rem;position:relative;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.pillar-card:hover{border-color:var(--gold-soft);transform:translateY(-3px)}
+.pillar-card .p-num{font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--gold-soft);line-height:1;margin-bottom:1.2rem;opacity:.85}
+.pillar-card h3{font-family:var(--serif);font-size:1.55rem;line-height:1.15;margin-bottom:.8rem;color:var(--on-dark)}
+.pillar-card p{font-size:.98rem;color:var(--on-dark-soft);line-height:1.6}
+
+/* City band cinematic */
+.city-band{position:relative;padding:0;min-height:82vh;display:flex;align-items:center;color:var(--on-dark);overflow:hidden}
+.city-band .cb-bg{position:absolute;inset:0;z-index:0}
+.city-band .cb-bg img{width:100%;height:100%;object-fit:cover}
+.city-band .cb-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(34,8,11,.85) 0%,rgba(34,8,11,.5) 60%,rgba(34,8,11,.2) 100%),linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.55))}
+.city-band .cb-content{position:relative;z-index:2;padding:6rem clamp(1.4rem,5vw,5rem);max-width:900px}
+.city-band h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5vw,4.4rem);color:var(--on-dark);line-height:1.05;margin:.8rem 0 2rem}
+.city-band .cb-paragraphs p{font-size:1.06rem;line-height:1.75;color:var(--on-dark-soft);margin-bottom:1.2rem;max-width:60ch}
+
+/* Teacher block (course-page) */
+.teacher-block{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+@media (max-width:900px){.teacher-block{grid-template-columns:1fr;gap:2rem}}
+.teacher-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--navy-mid);border:1px solid var(--gold-line);max-width:440px}
+.teacher-photo img{width:100%;height:100%;object-fit:cover}
+.teacher-photo .tp-badge{position:absolute;bottom:1rem;left:1rem;background:rgba(34,8,11,.75);color:var(--gold-soft);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:.5rem .9rem;border:1px solid var(--gold-line)}
+.teacher-info .ti-role{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.15rem;margin:.4rem 0 1.2rem}
+.teacher-info h3{font-family:var(--serif);font-size:clamp(2.2rem,3.6vw,3rem);line-height:1.05;margin-bottom:.2rem;color:var(--on-dark)}
+.teacher-info p{color:var(--on-dark-soft);font-size:1.02rem;line-height:1.7;margin-bottom:1.4rem}
+.teacher-quote{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.35;color:var(--on-dark);padding-left:1.4rem;border-left:2px solid var(--gold);margin:1.6rem 0}
+.teacher-creds{font-size:.78rem;letter-spacing:.06em;color:var(--on-dark-faint);padding-top:1rem;border-top:1px solid var(--dark-line-soft)}
+
+/* Syllabus timeline / unit cards */
+.unit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+@media (max-width:820px){.unit-grid{grid-template-columns:1fr}}
+.unit-card{display:grid;grid-template-columns:64px 1fr;gap:1.2rem;padding:1.6rem 1.6rem 1.6rem 0;border-top:1px solid var(--gold-line-soft);position:relative;transition:background .2s var(--ease)}
+.unit-card:hover{background:rgba(201,162,75,.04)}
+.unit-card .u-no{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:2rem;line-height:1;padding-left:.6rem}
+.unit-card .u-body h4{font-family:var(--serif);font-size:1.25rem;line-height:1.22;margin-bottom:.35rem;color:var(--on-light)}
+.unit-card .u-body p{font-size:.92rem;color:var(--on-light-soft);line-height:1.55;max-width:none}
+
+/* Week rhythm cards */
+.week-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.6rem}
+@media (max-width:900px){.week-grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.week-grid-4{grid-template-columns:1fr}}
+.week-card-lg{background:var(--paper);border:1px solid var(--gold-line-soft);padding:1.8rem 1.6rem;transition:transform .3s var(--ease),border-color .3s var(--ease)}
+.week-card-lg:hover{transform:translateY(-3px);border-color:var(--gold-soft)}
+.wc-day{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.6rem}
+.wc-title{font-family:var(--serif);font-size:1.4rem;line-height:1.12;margin-bottom:.5rem;color:var(--on-light)}
+.wc-note{font-size:.9rem;color:var(--on-light-soft);line-height:1.55}
+
+/* Sample dialogue card */
+.sample-card{background:var(--navy-mid);border:1px solid var(--gold-line);padding:clamp(2rem,4vw,3.4rem);color:var(--on-dark);position:relative;overflow:hidden}
+.sample-card::before{content:"";position:absolute;top:-50px;right:-40px;width:220px;height:220px;background:radial-gradient(circle,rgba(201,162,75,.16),transparent 70%);pointer-events:none}
+.sample-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.6rem;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--dark-line-soft);flex-wrap:wrap}
+.sample-head h3{font-family:var(--serif);font-size:1.8rem;color:var(--on-dark);line-height:1.15}
+.sample-head .listen-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.7rem 1.2rem;border:1px solid var(--gold-line);color:var(--gold-soft);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(201,162,75,.06);cursor:pointer;transition:background .2s var(--ease)}
+.sample-head .listen-btn:hover{background:rgba(201,162,75,.14)}
+.sample-head .listen-btn::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 12px var(--gold-soft)}
+.sample-setting{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:1.1rem;line-height:1.5;margin-bottom:1.8rem;max-width:60ch}
+.sample-dialogue{display:grid;gap:1rem;margin-bottom:1.8rem}
+.sample-line{display:grid;grid-template-columns:120px 1fr;gap:1.2rem;padding:.9rem 0;border-bottom:1px solid var(--dark-line-soft)}
+@media (max-width:600px){.sample-line{grid-template-columns:1fr;gap:.3rem}}
+.sample-line .sp{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:.98rem}
+.sample-line .txt{font-family:var(--serif);font-size:1.2rem;line-height:1.4;color:var(--on-dark)}
+.sample-note{background:rgba(201,162,75,.08);border-left:2px solid var(--gold);padding:1rem 1.4rem;font-size:.94rem;color:var(--on-dark-soft);line-height:1.6}
+
+/* Sibling nav */
+.sibling-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+@media (max-width:820px){.sibling-nav{grid-template-columns:1fr}}
+.sib-card{background:rgba(255,255,255,.05);border:1px solid var(--dark-line);padding:2rem;display:flex;flex-direction:column;gap:.4rem;transition:border-color .3s var(--ease),transform .3s var(--ease);color:var(--on-dark)}
+.sib-card:hover{border-color:var(--gold-soft);transform:translateY(-3px)}
+.sib-dir{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft)}
+.sib-title{font-family:var(--serif);font-size:1.7rem;color:var(--on-dark)}
+.sib-cefr{font-size:.86rem;color:var(--on-dark-soft)}
+
+/* Section head (course pages) */
+.sec-head{max-width:820px;margin:0 auto 3.4rem;text-align:center}
+.sec-head h2{margin:.6rem 0 1rem}
+.sec-head p{margin:0 auto;color:var(--on-light-soft)}
+.on-dark .sec-head p{color:var(--on-dark-soft)}
+.gold-rule{border:0;height:1px;background:var(--gold);opacity:.7;width:60px;margin:1.6rem auto 0}
+
+/* Section-terra (warm terracotta accent) */
+.section-terra{background:linear-gradient(180deg,var(--paper) 0%,var(--cream) 100%)}
+.section-navy-grad{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--on-dark)}
+.section-navy-grad h2,.section-navy-grad h3,.section-navy-grad h4{color:var(--on-dark)}
+
+/* Final CTA */
+.final-cta{text-align:center;padding:clamp(5rem,9vw,9rem) 0}
+.final-cta h2{font-size:clamp(2.8rem,5vw,4.6rem);line-height:1.05;margin-bottom:1.4rem;color:var(--on-dark)}
+.final-cta p{max-width:52ch;margin:0 auto 2.4rem;color:var(--on-dark-soft);font-size:1.15rem;line-height:1.55}
+.final-cta .hero-ctas{justify-content:center}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -52,74 +163,339 @@
   <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
 </aside>
 
-
-<section class="hero" style="min-height:78vh">
-  <div class="hero-bg"><img src="../../assets/img/course-ci2.jpg" alt="CI Elementare in Florence"></div>
+<section class="hero" style="min-height:88vh">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline preload="metadata" poster="../../assets/img/course-ci2.jpg" aria-label="Florence — CI Elementare"><source src="../../assets/video/firenze-arno.mp4" type="video/mp4"></video>
+  </div>
   <div class="hero-content">
-    <div style="max-width:64ch">
-      <p class="hero-tag">Elementare · Firenze · A1.1 → A1.2</p>
-      <h1>CI Elementare</h1>
+    <div style="max-width:820px">
+      <div class="hero-badges">
+        <span class="h-badge lvl">CEFR A1.1 → A1.2</span>
+        <span class="h-badge"><span class="live-dot"></span>Live from Italia</span>
+        <span class="h-badge">CI · 02</span>
+        <span class="h-badge">Certified by eTeacher</span>
+      </div>
+      <p class="hero-tag">Elementare · Firenze</p>
+      <h1>CI Elementare <span class="gold-ital">·</span> Florence</h1>
       <p class="hero-sub">Everyday Italian from Florence, the city where the language was standardised. Twenty live lessons that take you from short replies to full daily narrative.</p>
       <div class="hero-ctas">
         <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button>
-        <a class="btn btn-3d btn-3d-ghost" href="#syllabus">See the Syllabus</a>
-        <a class="btn btn-3d btn-3d-ghost" href="../../pdf/ci2-syllabus.pdf" download>Download PDF</a>
+        <a class="btn btn-3d btn-3d-ghost" href="../../pdf/ci2-syllabus.pdf" download>Download Syllabus PDF</a>
+      </div>
+      <div class="hero-meta-strip">
+        <div class="hm"><div class="hm-k">Format</div><div class="hm-v">20 lessons × 85 min</div></div>
+        <div class="hm"><div class="hm-k">Group size</div><div class="hm-v">10&ndash;12 learners</div></div>
+        <div class="hm"><div class="hm-k">CEFR</div><div class="hm-v">A1.1 → A1.2</div></div>
+        <div class="hm"><div class="hm-k">Setting</div><div class="hm-v">Florence</div></div>
+        <div class="hm"><div class="hm-k">Next start</div><div class="hm-v">13 October 2026</div></div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="section-cream" style="padding:0">
-  <div class="wrap" style="padding-top:2rem;padding-bottom:2rem">
+  <div class="wrap" style="padding-top:2.2rem;padding-bottom:2.2rem">
     <div class="proof-row">
-      <div class="proof-item"><div class="pi-num">20</div><div class="pi-label">Live Lessons</div></div>
-      <div class="proof-item"><div class="pi-num">85</div><div class="pi-label">Minutes Each Class</div></div>
-      <div class="proof-item"><div class="pi-num">10–12</div><div class="pi-label">Learners per Group</div></div>
-      <div class="proof-item"><div class="pi-num">A1.2</div><div class="pi-label">CEFR Level on Completion</div></div>
+      <div class="proof-item"><div class="pi-num">20</div><div class="pi-label">Live lessons</div></div>
+      <div class="proof-item"><div class="pi-num">85</div><div class="pi-label">Minutes each</div></div>
+      <div class="proof-item"><div class="pi-num">10&ndash;12</div><div class="pi-label">Learners per group</div></div>
+      <div class="proof-item"><div class="pi-num">A1.2</div><div class="pi-label">CEFR on completion</div></div>
     </div>
   </div>
 </section>
-
 <section class="section-paper">
-  <div class="wrap-narrow">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-line">The Promise</span>
-      <h2 class="display-md">By the end of CI Elementare, you can:</h2>
-    </div>
-    <ul class="cc-includes reveal" style="font-size:1.15rem;color:var(--on-light)">
-      <li>Narrate a past event or weekend in detail</li><li>Describe people, places and things with precision</li><li>Make and change plans on the phone</li><li>Handle emails and short letters in Italian</li><li>Understand a Tuscan waiter, shopkeeper or landlord</li><li>Read simple newspaper headlines and short articles</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section-dark" id="syllabus">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-line">The Syllabus · Week by Week</span>
-      <h2 class="display-md">20 lessons, 20 weeks, one continuous arc.</h2>
-      <p class="lead" style="color:var(--on-dark-soft)">A CEFR-aligned syllabus designed by Italian language specialists. Each lesson is a live 85-minute event set in a specific Italian cultural context.</p>
+    <div class="promise-grid">
+      <div class="promise-head">
+        <p class="eyebrow eyebrow-line">The promise</p>
+        <h2 class="display-lg">Speak the Italian <span class='gold-ital'>Firenze</span> invented.</h2>
+        <p class="lead" style="margin-top:1.4rem">A1.1 to A1.2 is where phrases turn into sentences and sentences turn into a past you can talk about. Twenty lessons rooted in the city that gave Italy its language.</p>
+      </div>
+      <div>
+        <ul class="promise-outcomes"><li><span class="n">01</span><span>Narrate a past event or weekend in detail</span></li><li><span class="n">02</span><span>Describe people, places and things with precision</span></li><li><span class="n">03</span><span>Make and change plans on the phone</span></li><li><span class="n">04</span><span>Handle emails and short letters in Italian</span></li><li><span class="n">05</span><span>Understand a Tuscan waiter, shopkeeper or landlord</span></li><li><span class="n">06</span><span>Read simple newspaper headlines and short articles</span></li></ul>
+      </div>
     </div>
-    <div class="syllabus-list">
-      <div class="syl-row reveal"><div class="syl-num">01</div><div class="syl-topic"><small>Lesson 01</small>Firenze, culla della lingua</div><div class="syl-grammar">Why Italian is Tuscan. Dante, Boccaccio, Petrarch. Review of A1.1.</div></div><div class="syl-row reveal"><div class="syl-num">02</div><div class="syl-topic"><small>Lesson 02</small>Ricordi d'estate</div><div class="syl-grammar">Passato prossimo consolidation, time markers (ieri, la settimana scorsa).</div></div><div class="syl-row reveal"><div class="syl-num">03</div><div class="syl-topic"><small>Lesson 03</small>Da piccolo</div><div class="syl-grammar">Imperfetto for description and habit, comparison with passato prossimo.</div></div><div class="syl-row reveal"><div class="syl-num">04</div><div class="syl-topic"><small>Lesson 04</small>Le persone</div><div class="syl-grammar">Describing people physically and in character. Adjective agreement in depth.</div></div><div class="syl-row reveal"><div class="syl-num">05</div><div class="syl-topic"><small>Lesson 05</small>A casa mia</div><div class="syl-grammar">Rooms, prepositions of place, ci per luogo. A Florentine apartment tour.</div></div><div class="syl-row reveal"><div class="syl-num">06</div><div class="syl-topic"><small>Lesson 06</small>Nella cucina toscana</div><div class="syl-grammar">Regional food vocabulary, ne partitivo, cooking verbs. Ribollita, bistecca, cantucci.</div></div><div class="syl-row reveal"><div class="syl-num">07</div><div class="syl-topic"><small>Lesson 07</small>Al ristorante</div><div class="syl-grammar">Full dining dialogue, complaining politely, tipping, il conto per favore.</div></div><div class="syl-row reveal"><div class="syl-num">08</div><div class="syl-topic"><small>Lesson 08</small>Fare la spesa</div><div class="syl-grammar">Weights, containers, packaging. Mercato Centrale.</div></div><div class="syl-row reveal"><div class="syl-num">09</div><div class="syl-topic"><small>Lesson 09</small>Al telefono</div><div class="syl-grammar">Phone conventions, formal register, leaving a message.</div></div><div class="syl-row reveal"><div class="syl-num">10</div><div class="syl-topic"><small>Lesson 10</small>Prendo appuntamento</div><div class="syl-grammar">Making appointments — doctor, hairdresser, notary. The Italian bureaucratic register.</div></div><div class="syl-row reveal"><div class="syl-num">11</div><div class="syl-topic"><small>Lesson 11</small>Il corpo umano</div><div class="syl-grammar">Body vocabulary, at the pharmacy, common ailments, mi fa male + body part.</div></div><div class="syl-row reveal"><div class="syl-num">12</div><div class="syl-topic"><small>Lesson 12</small>Vestirsi</div><div class="syl-grammar">Reflexive verbs, morning routine, adverbs of frequency.</div></div><div class="syl-row reveal"><div class="syl-num">13</div><div class="syl-topic"><small>Lesson 13</small>Il tempo libero</div><div class="syl-grammar">Hobbies, sport, Serie A football, Sunday papers.</div></div><div class="syl-row reveal"><div class="syl-num">14</div><div class="syl-topic"><small>Lesson 14</small>Cinema italiano</div><div class="syl-grammar">Fellini and Sorrentino, film vocabulary, expressing opinion.</div></div><div class="syl-row reveal"><div class="syl-num">15</div><div class="syl-topic"><small>Lesson 15</small>A metà strada</div><div class="syl-grammar">Midpoint review, oral test, cultural quiz on Florence.</div></div><div class="syl-row reveal"><div class="syl-num">16</div><div class="syl-topic"><small>Lesson 16</small>Il futuro</div><div class="syl-grammar">Simple future tense, plans, promises, predictions.</div></div><div class="syl-row reveal"><div class="syl-num">17</div><div class="syl-topic"><small>Lesson 17</small>Se… allora</div><div class="syl-grammar">Introduction to hypothetical: se + present / future, se + imperfetto / condizionale (light touch).</div></div><div class="syl-row reveal"><div class="syl-num">18</div><div class="syl-topic"><small>Lesson 18</small>Il condizionale</div><div class="syl-grammar">Condizionale for polite requests and wishes: vorrei, mi piacerebbe, potrei.</div></div><div class="syl-row reveal"><div class="syl-num">19</div><div class="syl-topic"><small>Lesson 19</small>Scrivere una mail</div><div class="syl-grammar">Email conventions, formal vs informal register, greetings and sign-offs.</div></div><div class="syl-row reveal"><div class="syl-num">20</div><div class="syl-topic"><small>Lesson 20</small>A presto, Firenze!</div><div class="syl-grammar">CEFR A1.2 full assessment, cultural presentation, path to CI Intermedio.</div></div>
-    </div>
-    <div class="text-center mt-4"><a class="btn btn-3d btn-3d-primary" href="../../pdf/ci2-syllabus.pdf" download>Download the Full Syllabus PDF</a></div>
   </div>
 </section>
-
+<section class="section-navy-grad">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">The DNA of this course</p>
+      <h2 class="display-lg">What makes <span class='gold-ital'>Elementare</span> different</h2>
+      <p>Three reasons to learn A1.2 in Florence, and only in Florence.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="pillar-grid"><div class="pillar-card"><div class="p-num">01</div><h3>La lingua di Dante, in strada</h3><p>Every lesson pairs a grammar point with a passage from Florentine daily life — a signed poster, a market receipt, a Manifesto pasted to a wall. You learn the language by reading the city.</p></div><div class="pillar-card"><div class="p-num">02</div><h3>Il passato prossimo, senza panico</h3><p>The passato prossimo is where most learners quit. We teach it as it is spoken in Florence — as a habit, not a rule — with hundreds of repetitions before you ever conjugate.</p></div><div class="pillar-card"><div class="p-num">03</div><h3>Un maestro fiorentino</h3><p>Alessandro teaches all twenty lessons. He was trained inside the Accademia della Crusca, the guardian body of the Italian language. You are, in the most literal sense, being taught by the source.</p></div></div>
+  </div>
+</section>
+<section class="city-band">
+  <div class="cb-bg"><img src="../../assets/img/course-ci2.jpg" alt="Florence"></div>
+  <div class="wrap cb-content">
+    <p class="eyebrow" style="color:var(--gold-soft)">The city is the classroom</p>
+    <h2>Why <span class='gold-ital'>Firenze</span> teaches the sentence</h2>
+    <p class="lead" style="color:var(--on-dark);margin-bottom:2rem;max-width:56ch">The past tense was, in a very real sense, standardised on the banks of the Arno. We teach it where it belongs.</p>
+    <div class="cb-paragraphs"><p>Florence gave Italy its language. Not the Rome of the Popes, not the Milan of the merchants — Florence, because Dante wrote the Commedia in Tuscan, and every child from Sicily to Trentino has learned it since. When we say &#x27;standard Italian&#x27; we are, in a very real sense, saying &#x27;Florentine, softened for national use&#x27;.</p><p>A1.1 to A1.2 is where you begin to feel the shape of the language: the past tense, the polite forms, the vocabulary of everyday errands. Florence is the perfect terrain for that shape, because Florentines are enormously proud of the precision of their speech and enormously willing to correct — gently — anyone who is trying.</p><p>The course threads through the city: a morning at the Sant&#x27;Ambrogio market, a photography walk in the Oltrarno, an afternoon at a family-run trattoria where the menu has been the same since 1962. You will finish this term saying, and meaning, buongiorno as a Florentine does.</p></div>
+  </div>
+</section>
+<section class="section-dark" style="background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 60%,var(--navy-soft) 130%)">
+  <div class="wrap">
+    <div class="teacher-block">
+      <div class="teacher-photo">
+        <img src="../../assets/img/teacher-alessandro.jpg" alt="Alessandro Fiorini — Club Italia master teacher">
+        <span class="tp-badge">Firenze · Oltrarno</span>
+      </div>
+      <div class="teacher-info">
+        <p class="eyebrow">Meet your teacher</p>
+        <h3>Alessandro Fiorini</h3>
+        <div class="ti-role">Native teacher · former Accademia della Crusca researcher</div>
+        <p>Alessandro spent four years at the Accademia della Crusca, the four-hundred-year-old institution that quietly guards the Italian language. He now teaches what most Italians take for granted: why Florence is the city whose dialect became the country. His lessons feel like walking beside a friend who happens to know every etymology on every street sign.</p>
+        <blockquote class="teacher-quote">&ldquo;Dante wrote here. Machiavelli wrote here. Nobody in Firenze speaks like a book, and yet the language of books was invented here. That is the paradox I love to teach.&rdquo;</blockquote>
+        <div class="teacher-creds">MA Filologia · Università di Firenze · former Crusca junior fellow · 9 years teaching</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-paper" id="syllabus">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">The full curriculum</p>
+      <h2 class="display-lg">Twenty live lessons, one <span class="gold-ital">journey</span></h2>
+      <p>A structured A1.1 → A1.2 curriculum, each 85-minute live class themed to the setting of the course.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="unit-grid"><div class="unit-card">
+      <div class="u-no">01</div>
+      <div class="u-body">
+        <h4>Firenze, culla della lingua</h4>
+        <p>Why Italian is Tuscan. Dante, Boccaccio, Petrarch. Review of A1.1.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">02</div>
+      <div class="u-body">
+        <h4>Ricordi d&#x27;estate</h4>
+        <p>Passato prossimo consolidation, time markers (ieri, la settimana scorsa).</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">03</div>
+      <div class="u-body">
+        <h4>Da piccolo</h4>
+        <p>Imperfetto for description and habit, comparison with passato prossimo.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">04</div>
+      <div class="u-body">
+        <h4>Le persone</h4>
+        <p>Describing people physically and in character. Adjective agreement in depth.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">05</div>
+      <div class="u-body">
+        <h4>A casa mia</h4>
+        <p>Rooms, prepositions of place, ci per luogo. A Florentine apartment tour.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">06</div>
+      <div class="u-body">
+        <h4>Nella cucina toscana</h4>
+        <p>Regional food vocabulary, ne partitivo, cooking verbs. Ribollita, bistecca, cantucci.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">07</div>
+      <div class="u-body">
+        <h4>Al ristorante</h4>
+        <p>Full dining dialogue, complaining politely, tipping, il conto per favore.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">08</div>
+      <div class="u-body">
+        <h4>Fare la spesa</h4>
+        <p>Weights, containers, packaging. Mercato Centrale.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">09</div>
+      <div class="u-body">
+        <h4>Al telefono</h4>
+        <p>Phone conventions, formal register, leaving a message.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">10</div>
+      <div class="u-body">
+        <h4>Prendo appuntamento</h4>
+        <p>Making appointments — doctor, hairdresser, notary. The Italian bureaucratic register.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">11</div>
+      <div class="u-body">
+        <h4>Il corpo umano</h4>
+        <p>Body vocabulary, at the pharmacy, common ailments, mi fa male + body part.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">12</div>
+      <div class="u-body">
+        <h4>Vestirsi</h4>
+        <p>Reflexive verbs, morning routine, adverbs of frequency.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">13</div>
+      <div class="u-body">
+        <h4>Il tempo libero</h4>
+        <p>Hobbies, sport, Serie A football, Sunday papers.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">14</div>
+      <div class="u-body">
+        <h4>Cinema italiano</h4>
+        <p>Fellini and Sorrentino, film vocabulary, expressing opinion.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">15</div>
+      <div class="u-body">
+        <h4>A metà strada</h4>
+        <p>Midpoint review, oral test, cultural quiz on Florence.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">16</div>
+      <div class="u-body">
+        <h4>Il futuro</h4>
+        <p>Simple future tense, plans, promises, predictions.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">17</div>
+      <div class="u-body">
+        <h4>Se… allora</h4>
+        <p>Introduction to hypothetical: se + present / future, se + imperfetto / condizionale (light touch).</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">18</div>
+      <div class="u-body">
+        <h4>Il condizionale</h4>
+        <p>Condizionale for polite requests and wishes: vorrei, mi piacerebbe, potrei.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">19</div>
+      <div class="u-body">
+        <h4>Scrivere una mail</h4>
+        <p>Email conventions, formal vs informal register, greetings and sign-offs.</p>
+      </div>
+    </div><div class="unit-card">
+      <div class="u-no">20</div>
+      <div class="u-body">
+        <h4>A presto, Firenze!</h4>
+        <p>CEFR A1.2 full assessment, cultural presentation, path to CI Intermedio.</p>
+      </div>
+    </div></div>
+  </div>
+</section>
 <section class="section-cream">
-  <div class="wrap-narrow text-center">
-    <p class="big-quote reveal">Twenty lessons that change the way you speak, listen and think in Italian.</p>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">The rhythm</p>
+      <h2 class="display-lg">A <span class="gold-ital">week</span> in this course</h2>
+      <p>Every week is designed to make Italian a daily habit, not a weekly appointment.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="week-grid-4"><div class="week-card-lg"><div class="wc-day">Monday</div><div class="wc-title">Lezione dal Vivo</div><div class="wc-note">The 85-minute live class with Alessandro. Small group of ten to twelve, cameras on.</div></div><div class="week-card-lg"><div class="wc-day">Wednesday</div><div class="wc-title">Studio Guidato</div><div class="wc-note">A 20-minute private study session with Biagio, our AI tutor, on the week&#x27;s past-tense forms.</div></div><div class="week-card-lg"><div class="wc-day">Friday</div><div class="wc-title">Salotto Fiorentino</div><div class="wc-note">A 30-minute conversation salon. Talk about your week in the passato prossimo. Alessandro joins from the Oltrarno.</div></div><div class="week-card-lg"><div class="wc-day">Weekend</div><div class="wc-title">Firenze in un Film</div><div class="wc-note">A short weekend film shot in Florence — the Boboli gardens, a leather workshop, the Ponte Vecchio at dawn.</div></div></div>
   </div>
 </section>
-
 <section class="section-paper">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-line">Ready to begin?</span>
-      <h2 class="display-md">Speak with a Club Italia advisor.</h2>
-      <p class="lead">A free 15-minute placement call. No obligation. You leave with a clear plan.</p>
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Listen in</p>
+      <h2 class="display-lg">A morning at <span class='gold-ital'>Sant'Ambrogio</span></h2>
+      <p>A short excerpt from a real lesson. Press listen to hear the pronunciation.</p>
+      <hr class="gold-rule">
     </div>
-    <div class="text-center"><button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button></div>
+    <div class="sample-card">
+      <div class="sample-head">
+        <h3>Lesson 07 · Al mercato di Sant&#x27;Ambrogio</h3>
+        <button class="listen-btn" type="button" aria-label="Play the audio for this dialogue">Play audio · 0:42</button>
+      </div>
+      <p class="sample-setting">A Tuesday morning at the produce stalls. La signora Rossi, who has run stall number 14 since 1988, sees you approach.</p>
+      <div class="sample-dialogue"><div class="sample-line"><div class="sp">Signora Rossi</div><div class="txt">Buongiorno, cara. Cosa Le do oggi?</div></div><div class="sample-line"><div class="sp">Tu</div><div class="txt">Buongiorno. Vorrei mezzo chilo di pomodori San Marzano, per favore.</div></div><div class="sample-line"><div class="sp">Signora Rossi</div><div class="txt">Belli maturi, guardi. Per stasera? Sugo?</div></div><div class="sample-line"><div class="sp">Tu</div><div class="txt">Sì, ho invitato degli amici. Facciamo una pasta al pomodoro.</div></div><div class="sample-line"><div class="sp">Signora Rossi</div><div class="txt">Allora Le metto anche un mazzetto di basilico. Regalo mio.</div></div></div>
+      <p class="sample-note"><strong>Teacher's note.</strong> The market is where the polite Lei-form comes alive. Florence uses it more than Rome, and this dialogue rehearses six polite constructions in seventy seconds.</p>
+    </div>
+  </div>
+</section>
+<section class="section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Voices from this course</p>
+      <h2 class="display-lg">Students of <span class="gold-ital">Elementare</span></h2>
+      <p>Three past learners of this exact course, in their own words.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="testimonials"><div class="t-card"><div class="t-stars">★ ★ ★ ★ ★</div><p class="t-quote">“Alessandro's love of Florence is contagious. I came in wanting to order gelato and left able to argue with a stallholder about the price of artichokes. In Italian. Politely.”</p><p class="t-name">Isabelle M.</p><p class="t-loc">Montreal · CI Elementare · Winter 2026</p></div><div class="t-card"><div class="t-stars">★ ★ ★ ★ ★</div><p class="t-quote">“The passato prossimo used to terrify me. Now I use it every time I tell my husband what I did during the day. That is quite the domestic transformation.”</p><p class="t-name">Priya S.</p><p class="t-loc">New Delhi · CI Elementare · Spring 2026</p></div><div class="t-card"><div class="t-stars">★ ★ ★ ★ ★</div><p class="t-quote">“I have taken three online Italian courses before this one. None of them made me feel Italian. This one did, by lesson eight.”</p><p class="t-name">Grant B.</p><p class="t-loc">Melbourne · CI Elementare · Autumn 2025</p></div></div>
+  </div>
+</section>
+<section class="section-dark" id="pricing" style="background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Tuition</p>
+      <h2 class="display-lg" style="color:var(--on-dark)">One investment. One <span class="gold-ital">Italia</span>.</h2>
+      <p style="color:var(--on-dark-soft)">Every plan includes live teaching from Italy, lifetime access to lesson recordings, and your Club Italia certificate.</p>
+      <hr class="gold-rule">
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <span class="pc-badge">Best value</span>
+        <h3>Annual</h3>
+        <div class="pc-perweek">$62<small>&nbsp;/ week</small></div>
+        <p class="pc-total">$1,240 billed yearly · full 20-lesson programme</p>
+        <ul>
+          <li>All live lessons with the master teacher</li>
+          <li>Small live groups of 10&ndash;12 learners</li>
+          <li>Lifetime access to every lesson recording</li>
+          <li>Biagio, your 24/7 AI Italian tutor</li>
+          <li>Club Italia certificate on completion</li>
+          <li>$100 in Club Italia learning credits</li>
+        </ul>
+        <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Seat</button>
+      </div>
+      <div class="price-card">
+        <h3>Term</h3>
+        <div class="pc-perweek">$78<small>&nbsp;/ week</small></div>
+        <p class="pc-total">From $780 / ten-lesson term</p>
+        <ul>
+          <li>Pay per term, no long commitment</li>
+          <li>Same live small-group classes</li>
+          <li>Lifetime recordings included</li>
+          <li>Upgrade to Annual anytime</li>
+        </ul>
+        <button class="btn btn-3d btn-3d-navy" data-advisor type="button">Start with a Term</button>
+      </div>
+      <div class="price-card">
+        <h3>Monthly</h3>
+        <div class="pc-perweek">$84<small>&nbsp;/ week</small></div>
+        <p class="pc-total">From $336 / month · cancel anytime</p>
+        <ul>
+          <li>Pay month to month, cancel anytime</li>
+          <li>Same live small-group classes</li>
+          <li>Lifetime recordings included</li>
+          <li>Convert to Annual at any point</li>
+        </ul>
+        <button class="btn btn-3d btn-3d-navy" data-advisor type="button">Start Monthly</button>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--on-dark-faint);font-size:.82rem;margin-top:2rem">Club Italia is presented by eTeacher Group. All amounts in USD. Tuition includes VAT where applicable.</p>
+  </div>
+</section>
+<section class="section-dark" style="background:var(--navy-deep);padding:3rem 0"><div class="wrap"><div class="sibling-nav"><a class="sib-card" href="../../pages/courses/ci1.html">
+        <span class="sib-dir">&larr; Previous</span>
+        <span class="sib-title">CI Principiante</span>
+        <span class="sib-cefr">A0 → A1.1 · Roma</span>
+      </a><a class="sib-card" href="../../pages/courses/ci3.html">
+        <span class="sib-dir">Next &rarr;</span>
+        <span class="sib-title">CI Intermedio</span>
+        <span class="sib-cefr">A1.2 → A2.1 · Bologna</span>
+      </a></div></div></section>
+<section class="section-dark final-cta" style="background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%)">
+  <div class="wrap-narrow">
+    <p class="eyebrow eyebrow-line" style="justify-content:center">Live Italian. Live.</p>
+    <h2>Speak Italian in <span class='gold-ital'>full sentences</span>.</h2>
+    <p>Twenty live lessons with Alessandro, from the Uffizi steps to a family kitchen in the Oltrarno. Small group. Lifetime recordings. Certificate on the wall.</p>
+    <div class="hero-ctas">
+      <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Placement Call</button>
+      <a class="btn btn-3d btn-3d-ghost" href="../../how-it-works.html">See how it works</a>
+    </div>
   </div>
 </section>
 
@@ -127,91 +503,60 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
-        <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
-        <p>Club Italia by eTeacher — a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
-        <p style="margin-top:1.2rem">
-          <a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a>
-        </p>
+        <div class="logo-text" style="margin-bottom:1rem"><span class="lt-main" style="color:var(--on-dark)">Club Italia</span><span class="lt-sub">by eTeacher</span></div>
+        <p>Live Italian, taught inside Italian cities. Small groups, master teachers, lifetime recordings. Certified by eTeacher Group.</p>
       </div>
       <div class="footer-col">
         <h4>Courses</h4>
+        <a href="../../pages/courses/ci1.html">CI Principiante</a>
+        <a href="../../pages/courses/ci2.html">CI Elementare</a>
+        <a href="../../pages/courses/ci3.html">CI Intermedio</a>
+        <a href="../../pages/courses/ci4.html">CI Avanzato</a>
         <a href="../../courses.html">All Courses</a>
-        <a href="../../pages/courses/ci1.html">CI Principiante · A0→A1.1</a>
-        <a href="../../pages/courses/ci2.html">CI Elementare · A1.1→A1.2</a>
-        <a href="../../pages/courses/ci3.html">CI Intermedio · A1.2→A2.1</a>
-        <a href="../../pages/courses/ci4.html">CI Avanzato · A2.1→A2.2</a>
-        <a href="../../pages/spoken/ps1.html">Parliamo · Foundation</a>
-        <a href="../../pages/spoken/ps2.html">Parliamo · Beginner</a>
-        <a href="../../pages/spoken/ps3.html">Parliamo · Elementary</a>
-        <a href="../../pages/spoken/ps4.html">Parliamo · Confident</a>
-        <a href="../../pages/culture/cap-food.html">Capsule · La Cucina</a>
-        <a href="../../pages/culture/cap-art.html">Capsule · L'Arte</a>
-        <a href="../../pages/culture/cap-opera.html">Capsule · L'Opera</a>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="../../how-it-works.html">How It Works</a>
-        <a href="../../method.html">Our Method</a>
-        <a href="../../teachers.html">Teachers</a>
-        <a href="../../culture.html">Culture</a>
+        <h4>Spoken &amp; Capsules</h4>
+        <a href="../../pages/spoken/ps1.html">Al Caffè</a>
+        <a href="../../pages/spoken/ps2.html">A Tavola</a>
+        <a href="../../pages/spoken/ps3.html">In Viaggio</a>
+        <a href="../../pages/spoken/ps4.html">Chiacchierando</a>
         <a href="../../capsules.html">Culture Capsules</a>
-        <a href="../../biagio.html">Biagio AI Tutor</a>
-        <a href="../../blog.html">Cultural Journal</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="../../about.html">About Us</a>
-        <a href="../../eteacher.html">eTeacher Group</a>
+        <a href="../../about.html">About</a>
+        <a href="../../method.html">Method</a>
         <a href="../../pricing.html">Pricing</a>
         <a href="../../faq.html">FAQ</a>
         <a href="../../contact.html">Contact</a>
-        <a href="../../privacy.html">Privacy Policy</a>
-        <a href="../../terms.html">Terms &amp; Conditions</a>
+        <a href="../../terms.html">Terms</a>
+        <a href="../../privacy.html">Privacy</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 eTeacher Group. All rights reserved. Club Italia is a trading style of eTeacher Group.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">◉</a>
-        <a href="#" aria-label="YouTube">▶</a>
-      </div>
+      <p>Presented by eTeacher Group &nbsp;·&nbsp; advisor@clubitalia.com &nbsp;·&nbsp; +1-888-230-5110</p>
     </div>
+    <p style="color:var(--on-dark-faint);font-size:.78rem;text-align:center;margin-top:1.6rem">Copyright eTeacher Group © 2026. All Rights Reserved.</p>
   </div>
 </footer>
-
-<div class="advisor-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="advisorModalTitle">
+<div class="advisor-modal" id="advisorModal" role="dialog" aria-modal="true" aria-labelledby="advisorTitle">
   <div class="advisor-card">
-    <button class="advisor-modal-close" aria-label="Close" type="button">×</button>
+    <button class="advisor-modal-close" aria-label="Close" type="button">&times;</button>
     <div class="advisor-head">
-      <span class="eyebrow eyebrow-line">Speak with us</span>
-      <h3 id="advisorModalTitle">Talk to an Advisor</h3>
-      <p>Tell us a little about you and a Club Italia academic advisor will be in touch to plan your start.</p>
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Placement conversation</p>
+      <h3 id="advisorTitle">Speak to a Club Italia advisor</h3>
+      <p>A 15-minute conversation to place you in the right level and answer everything about the course.</p>
     </div>
     <form class="advisor-form" novalidate>
-      <div class="field"><label for="adv-name">Name</label><input id="adv-name" name="name" type="text" autocomplete="name" required placeholder="Your full name"><span class="err-msg" aria-live="polite"></span></div>
-      <div class="field"><label for="adv-email">Email</label><input id="adv-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"><span class="err-msg" aria-live="polite"></span></div>
-      <div class="field"><label for="adv-phone">Phone</label><input id="adv-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 000 0000"><span class="err-msg" aria-live="polite"></span></div>
-      <div class="field"><label for="adv-level">Your Italian right now</label>
-        <select id="adv-level" name="level" required>
-          <option value="">Choose your level</option>
-          <option value="none">I don't speak any Italian yet</option>
-          <option value="a1">A few words · A1</option>
-          <option value="a2">Some basics · A2</option>
-          <option value="b1">Conversational · B1+</option>
-        </select>
-        <span class="err-msg" aria-live="polite"></span>
-      </div>
-      <button class="btn btn-3d btn-3d-primary" type="submit">Request My Consultation</button>
+      <div class="field"><label for="af-name">Your name</label><input id="af-name" name="name" required><span class="err-msg"></span></div>
+      <div class="field"><label for="af-email">Email</label><input id="af-email" name="email" type="email" required><span class="err-msg"></span></div>
+      <div class="field"><label for="af-phone">Phone (optional)</label><input id="af-phone" name="phone" type="tel"></div>
+      <div class="field"><label for="af-level">Current Italian level</label><select id="af-level" name="level"><option>Complete beginner</option><option>A1 · basics</option><option>A2 · confident</option><option>B1 or higher</option></select></div>
+      <button class="btn btn-3d btn-3d-primary" type="submit">Reserve My Placement Call</button>
     </form>
-    <div class="advisor-success">
-      <h3>Grazie!</h3>
-      <p>Your request is on its way to our advisor. We will be in touch shortly to plan your start with Club Italia.</p>
-    </div>
+    <div class="advisor-success"><h3>Grazie mille.</h3><p>An advisor will call within one business day. Look for a call from Roma.</p></div>
   </div>
 </div>
-
-<script src="../../js/ci.js"></script>
+<script src="../../js/ci.js" defer></script>
 </body>
 </html>

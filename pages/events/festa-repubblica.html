@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festa della Repubblica, Italy's National Day · Club Italia</title>
+<meta name="description" content="June 2, Italy's national holiday. The story of the 1946 referendum, the Frecce Tricolori over the Altare della Patria, and how to celebrate the birth of the Italian Republic, a cultural essay from Club Italia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../../css/ci.css">
+<style>
+/* -------- EVENT PAGE, page-scoped -------- */
+.ev-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:var(--on-dark);overflow:hidden;background:var(--navy-deep)}
+.ev-hero-bg{position:absolute;inset:0;z-index:0}
+.ev-hero-bg img{width:100%;height:100%;object-fit:cover}
+.ev-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,8,11,.25) 0%,rgba(34,8,11,.72) 55%,rgba(34,8,11,.94) 100%)}
+.ev-hero .wrap{position:relative;z-index:2;padding:10rem 0 5rem}
+.ev-hero .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1.8rem}
+.ev-hero .kicker span{color:var(--on-dark-soft);margin-left:.6rem}
+.ev-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(3rem,7vw,6.4rem);line-height:.98;letter-spacing:-.02em;max-width:16ch;margin:0 0 1.6rem;color:var(--on-dark)}
+.ev-hero .lede{max-width:56ch;color:var(--on-dark-soft);font-weight:300;font-size:clamp(1.15rem,1.5vw,1.4rem);line-height:1.62}
+.ev-hero .meta{display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:2.8rem;padding-top:2rem;border-top:1px solid var(--gold-line-soft)}
+.ev-hero .meta > div small{display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:.4rem}
+.ev-hero .meta > div strong{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--gold-soft)}
+
+.ev-tri{height:6px;background:linear-gradient(90deg,#009246 0 33.33%,#F6F1E6 33.33% 66.66%,#CE2B37 66.66%)}
+
+.ev-band{padding:6rem 0;position:relative}
+.ev-band.dark{background:var(--navy);color:var(--on-dark)}
+.ev-band.dark h2,.ev-band.dark h3{color:var(--on-dark)}
+.ev-band.dark p{color:var(--on-dark-soft)}
+.ev-band.cream{background:var(--ivory)}
+.ev-band.paper{background:var(--paper)}
+.ev-band h2{font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.6rem);line-height:1.04;margin-bottom:1.2rem;max-width:22ch}
+.ev-band .lede-p{font-size:1.15rem;line-height:1.7;max-width:60ch;color:var(--on-light-soft)}
+.ev-band.dark .lede-p{color:var(--on-dark-soft)}
+
+.ev-mag{display:grid;grid-template-columns:1fr 1.15fr;gap:3.6rem;align-items:start}
+@media (max-width:900px){.ev-mag{grid-template-columns:1fr;gap:2rem}}
+.ev-mag .body p{font-size:1.02rem;line-height:1.72;margin-bottom:1.2rem;color:var(--on-light-soft)}
+.ev-band.dark .ev-mag .body p{color:var(--on-dark-soft)}
+.ev-mag .body p em{color:var(--gold-deep);font-style:italic}
+.ev-band.dark .ev-mag .body p em{color:var(--gold-soft)}
+.ev-mag .drop{font-family:var(--serif);font-style:italic;font-size:9rem;color:var(--gold-soft);opacity:.35;line-height:.9;margin-bottom:-3rem;display:block}
+
+.ev-pull{background:var(--paper);padding:6rem 0;text-align:center;position:relative}
+.ev-pull.dark{background:var(--navy-deep);color:var(--on-dark)}
+.ev-pull .quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.24;max-width:32ch;margin:0 auto;color:var(--navy)}
+.ev-pull.dark .quote{color:var(--on-dark)}
+.ev-pull .sig{margin-top:1.6rem;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+.ev-pull.dark .sig{color:var(--gold-soft)}
+
+.ev-tradition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3rem}
+@media (max-width:820px){.ev-tradition-grid{grid-template-columns:1fr}}
+.ev-tradition-card{background:var(--paper);border:1px solid var(--gold-line-soft);padding:2.2rem 1.8rem}
+.ev-band.dark .ev-tradition-card{background:var(--navy-mid);border-color:var(--dark-line-soft)}
+.ev-tradition-card .rn{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--gold-deep);margin-bottom:.6rem}
+.ev-band.dark .ev-tradition-card .rn{color:var(--gold-soft)}
+.ev-tradition-card h4{font-family:var(--serif);font-size:1.5rem;margin-bottom:.6rem;line-height:1.15}
+.ev-tradition-card p{font-size:.95rem;color:var(--on-light-soft);line-height:1.6}
+.ev-band.dark .ev-tradition-card p{color:var(--on-dark-soft)}
+
+.ev-timeline{margin-top:2rem}
+.ev-tl-row{display:grid;grid-template-columns:110px 1fr;gap:2rem;padding:1.6rem 0;border-bottom:1px solid var(--gold-line-soft)}
+.ev-tl-row .yr{font-family:var(--serif);font-style:italic;font-size:1.8rem;color:var(--gold-deep)}
+.ev-band.dark .ev-tl-row .yr{color:var(--gold-soft)}
+.ev-tl-row h4{font-family:var(--serif);font-size:1.35rem;margin-bottom:.4rem;line-height:1.18}
+.ev-tl-row p{font-size:.98rem;color:var(--on-light-soft);line-height:1.62}
+.ev-band.dark .ev-tl-row p{color:var(--on-dark-soft)}
+
+.ev-live{background:var(--navy-deep);color:var(--on-dark);padding:6rem 0;position:relative;overflow:hidden}
+.ev-live::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(201,162,75,.16),transparent 55%);pointer-events:none}
+.ev-live .grid{display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;align-items:center;position:relative;z-index:1}
+@media (max-width:900px){.ev-live .grid{grid-template-columns:1fr}}
+.ev-live .video-frame{aspect-ratio:16/9;background:var(--navy);border:1px solid var(--gold-line);position:relative;overflow:hidden}
+.ev-live .video-frame img{width:100%;height:100%;object-fit:cover;opacity:.65}
+.ev-live .video-frame .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:var(--gold-deep);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.6rem;padding-left:6px}
+.ev-live .video-frame .live-badge{position:absolute;top:1rem;left:1rem;padding:.4rem .8rem;background:rgba(224,65,63,.9);color:#fff;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem}
+.ev-live .video-frame .live-badge::before{content:"";width:8px;height:8px;background:#fff;border-radius:50%;animation:pulse 2s infinite}
+.ev-live h2{color:var(--on-dark)}
+.ev-live p{color:var(--on-dark-soft);line-height:1.65;font-size:1.05rem;margin-top:1rem}
+
+.ev-recipe{background:var(--ivory);padding:6rem 0}
+.ev-recipe .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem}
+@media (max-width:820px){.ev-recipe .grid{grid-template-columns:1fr}}
+.ev-recipe h3{font-family:var(--serif);font-size:1.8rem;margin-bottom:1rem}
+.ev-recipe ul{list-style:none;padding:0;margin:1rem 0}
+.ev-recipe li{padding:.6rem 0;border-bottom:1px dotted var(--gold-line-soft);color:var(--on-light-soft);font-size:.98rem;display:flex;justify-content:space-between}
+.ev-recipe li span{font-family:var(--serif);color:var(--navy);font-style:italic}
+.ev-recipe .steps p{margin-bottom:1rem;color:var(--on-light-soft);line-height:1.7}
+.ev-recipe .steps p::first-letter{font-family:var(--serif);font-size:1.6rem;color:var(--gold-deep);font-style:italic;margin-right:.2rem}
+
+.ev-vocab{padding:6rem 0;background:var(--paper)}
+.ev-vocab .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media (max-width:820px){.ev-vocab .grid{grid-template-columns:1fr}}
+.ev-vocab .row{display:grid;grid-template-columns:220px 1fr;gap:1.4rem;padding:1rem 1.2rem;background:var(--white);border:1px solid var(--gold-line-soft)}
+.ev-vocab .row .it{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--navy)}
+.ev-vocab .row .en{font-size:.95rem;color:var(--on-light-soft);align-self:center}
+
+.ev-cta{background:linear-gradient(140deg,var(--navy) 0%,var(--navy-soft) 60%,var(--terra-deep) 130%);color:var(--on-dark);padding:6rem 0;text-align:center}
+.ev-cta h2{color:var(--on-dark);font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.6rem)}
+.ev-cta p{color:var(--on-dark-soft);max-width:56ch;margin:1rem auto 2rem;font-size:1.1rem;line-height:1.6}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="nav-logo" href="../../index.html" aria-label="Club Italia, home">
+      <span class="logo-text">
+        <span class="lt-main">Club Italia</span>
+        <span class="lt-sub">by eTeacher</span>
+      </span>
+    </a>
+    <nav class="nav-menu" aria-label="Primary">
+      <span class="nav-item"><a class="nav-link" href="../../courses.html">Courses</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../how-it-works.html">How It Works</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../method.html">Method</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../teachers.html">Teachers</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../culture.html">Culture</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../events.html">Events</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../map.html">Map</a></span>
+      <span class="nav-item"><a class="nav-link" href="../../pricing.html">Pricing</a></span>
+    </nav>
+    <button class="btn btn-3d btn-3d-primary nav-cta" data-advisor type="button">Talk to an Advisor</button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="navDrawer" type="button"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
+  <button class="nav-drawer-close" aria-label="Close menu" type="button">&times;</button>
+  <a href="../../courses.html">Courses</a><a href="../../how-it-works.html">How It Works</a><a href="../../method.html">Method</a>
+  <a href="../../teachers.html">Teachers</a><a href="../../culture.html">Culture</a><a href="../../events.html">Events</a>
+  <a href="../../map.html">Map</a><a href="../../community.html">Community</a><a href="../../sample-class.html">Sample Class</a>
+  <a href="../../biagio.html">AI Tutor</a><a href="../../pricing.html">Pricing</a><a href="../../about.html">About</a>
+  <a href="../../contact.html">Contact</a>
+  <button class="btn btn-3d btn-3d-primary" data-advisor type="button" style="width:100%;margin-top:1.6rem">Talk to an Advisor</button>
+</aside>
+
+<!--FOLD 1 · HERO-->
+<section class="ev-hero">
+  <div class="ev-hero-bg"><img src="../../assets/img/pillar-tradition.jpg" alt=""></div>
+  <div class="wrap">
+    <p class="kicker">Cultural event · Ricorrenza nazionale <span>· 2 giugno · every year</span></p>
+    <h1>Festa della<br><span class="gold-ital">Repubblica.</span></h1>
+    <p class="lede">On the second of June nineteen forty-six, the Italian people voted, by referendum, to abolish the monarchy and become a republic. Every year since, Rome has closed the Via dei Fori Imperiali, the Frecce Tricolori have painted green, white and red across the sky above the Altare della Patria, and the whole peninsula has stopped for a single day of civic memory. This is what Italian democracy looks like when it dresses up.</p>
+    <div class="meta">
+      <div><small>Held on</small><strong>2 giugno · every year</strong></div>
+      <div><small>Where</small><strong>Roma, Via dei Fori Imperiali</strong></div>
+      <div><small>First recorded</small><strong>Since 1946</strong></div>
+      <div><small>Broadcast</small><strong>Live from Rome</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="ev-tri" aria-hidden="true"></div>
+
+<!--FOLD 2 · CULTURAL ESSAY / 2-col magazine-->
+<section class="ev-band paper">
+  <div class="wrap">
+    <div class="ev-mag">
+      <div>
+        <span class="drop">01</span>
+        <span class="eyebrow eyebrow-line">The cultural essay</span>
+        <h2>Why every Italian, on this day, <span class="gold-ital">stops.</span></h2>
+        <p class="lede-p">A national holiday is a country's most concentrated form of self-portrait. To understand <em>Bucatini</em> at a Sienese table, the smoke trails of the Frecce Tricolori over Rome, or the mask of the <em>bautà</em> in a Venetian palazzo, is to understand the Italian idea of belonging.</p>
+      </div>
+      <div class="body">
+        <p>The Italian calendar is not a schedule; it is a liturgy. Every region has its own saints' days, harvests, harbour festivals, chestnut fairs, olive-oil pressings, sagre and processions. Layered on top, only three or four dates belong to the entire peninsula at once. This is one of them.</p>
+        <p>When Club Italia builds a cultural unit around a date, the point is never trivia. Italy is a country where the words <em>tradizione</em> and <em>identità</em> still carry weight, where the shape of an event teaches the shape of a language, and where knowing why an event happens, and how it is celebrated, is inseparable from speaking Italian well.</p>
+        <p>Our teachers do not lecture on holidays. They walk into their kitchens the morning after, phones on, and describe them. The learner hears the exact register, the exact vocabulary, the emotional colour of the day, spoken, unscripted, by an Italian who lived it the day before.</p>
+        <p>What follows is the full editorial file: the history, the traditions, the recipe, the vocabulary and the live broadcast we will run this year. Save it. Come back to it. Bring it into class.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ev-pull dark"><div class="wrap-narrow"><p class="quote">"Che cosa è la patria? È quella terra dove nostro figlio parlerà la nostra lingua."</p><p class="sig">Sandro Pertini, President of the Republic (1978,1985)</p></div></section>
+
+<!--FOLD 4 · HISTORY TIMELINE-->
+<section class="ev-band dark">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">A short history</span>
+    <h2>The story, in six <span class="gold-ital">dates.</span></h2>
+    <p class="lede-p">Every Italian tradition has a paper trail. Here is the one for this event, as documented by the Italian state archives and the standard scholarly reference works.</p>
+    <div class="ev-timeline">
+      <div class="ev-tl-row"><div class="yr">1946</div><div><h4>The referendum that made Italy a republic.</h4><p>After twenty years of fascism and a devastating world war, the Italian people were asked a single institutional question: monarchy or republic. Twelve and a half million citizens voted <em>Repubblica</em>; ten and a half million voted <em>Monarchia</em>. Women voted in a national ballot for the first time in Italian history. On 12 June the results were certified. The House of Savoy went into exile. Italy, at last, belonged to Italians.</p></div></div><div class="ev-tl-row"><div class="yr">1948</div><div><h4>The Constitution enters into force.</h4><p>The Constituent Assembly, chaired by Meuccio Ruini and drafted by figures from every democratic party, produced a text that came into force on 1 January 1948. Article 1: <em>l'Italia è una Repubblica democratica, fondata sul lavoro</em>. Every Club Italia intermediate learner studies this sentence in the original.</p></div></div><div class="ev-tl-row"><div class="yr">1949</div><div><h4>The first modern parade on Via dei Fori Imperiali.</h4><p>The Ministry of Defence proposed a civic-military review along the Roman forums to mark the anniversary. It has run, with only a handful of interruptions, ever since.</p></div></div><div class="ev-tl-row"><div class="yr">1961</div><div><h4>The Frecce Tricolori are formed.</h4><p>Italy's national aerobatic team, based at Rivolto, becomes a permanent feature of the Rome parade, the smoke trails timed to the anthem.</p></div></div><div class="ev-tl-row"><div class="yr">1977</div><div><h4>The date is briefly moved and returned.</h4><p>For fifteen years the celebration was quietly folded into a Sunday to save the working day. It was restored to a fixed 2 June in 2001, at the request of President Ciampi.</p></div></div><div class="ev-tl-row"><div class="yr">Today</div><div><h4>A day of hospitality at the Quirinale.</h4><p>The President opens the gardens of the Quirinale palace to the public. Bands play. Children run under the pines. The gardens close at sunset with a lowering of the flag.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 5 · TRADITIONS 6-CARD GRID-->
+<section class="ev-band paper">
+  <div class="wrap">
+    <span class="eyebrow eyebrow-line">The six great traditions</span>
+    <h2>What happens on the <span class="gold-ital">day itself.</span></h2>
+    <div class="ev-tradition-grid">
+      <div class="ev-tradition-card"><div class="rn">I</div><h4>The parade at the Fori.</h4><p>Twenty regiments, the Alpini in their green feathered hats, the Carabinieri on horseback, the Navy in blues, all march past the presidential stand from the Colosseum to Piazza Venezia. It takes about ninety minutes and it is broadcast on RAI 1 without commercial break.</p></div><div class="ev-tradition-card"><div class="rn">II</div><h4>The tricolour over Rome.</h4><p>At the exact moment the anthem finishes, the Frecce Tricolori pass overhead trailing green, white and red smoke that hangs in the Roman air for a full three minutes. Every phone in Piazza Venezia is pointed at the sky.</p></div><div class="ev-tradition-card"><div class="rn">III</div><h4>The presidential wreath.</h4><p>The President of the Republic and the presidents of the two chambers place a laurel wreath at the tomb of the Unknown Soldier, the <em>Milite Ignoto</em>, inside the Altare della Patria. A single trumpet plays the <em>Silenzio</em>.</p></div><div class="ev-tradition-card"><div class="rn">IV</div><h4>Open day at the Quirinale.</h4><p>The palace, normally strictly closed, opens its Salone dei Corazzieri and the Giardino to any citizen who queues. Free timed tickets are released a week ahead. Waiting time: hours. Nobody complains.</p></div><div class="ev-tradition-card"><div class="rn">V</div><h4>Concerts across the country.</h4><p>Regional bands, philharmonic orchestras and city choirs perform the anthem and republican-era repertoire in every capoluogo, from Torino to Bari, often in the main cathedral square.</p></div><div class="ev-tradition-card"><div class="rn">VI</div><h4>The family lunch.</h4><p>A public holiday. Offices, ministries and banks close. Families gather. The menu is not fixed but tends toward the Roman: <em>bucatini all'amatriciana</em>, <em>abbacchio al forno</em>, <em>fragole con panna</em>, a bottle of Frascati or a Cesanese from the Alban Hills. Italy is at its most Italian.</p></div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 6 · SECOND PULL QUOTE-->
+
+<section class="ev-pull "><div class="wrap-narrow"><p class="quote">"L'Italia è una Repubblica democratica, fondata sul lavoro."</p><p class="sig">Article 1, Constitution of the Italian Republic</p></div></section>
+
+<!--FOLD 7 · LIVE BROADCAST-->
+<section class="ev-live">
+  <div class="wrap">
+    <div class="grid">
+      <div class="video-frame">
+        <img src="../../assets/img/pillar-tradition.jpg" alt="">
+        <span class="live-badge">Live · this year</span>
+        <a href="#" class="play" aria-label="Watch live">▶</a>
+      </div>
+      <div>
+        <span class="eyebrow eyebrow-line">Live stream</span>
+        <h2>Watch the event <span class="gold-ital">from Italy.</span></h2>
+        <p>Club Italia broadcasts a live cultural window from the piazza on the day itself, hosted by one of our resident teachers, with commentary in slow Italian for learners at A1 and above, and a follow-up debrief lesson the following week.</p>
+        <p>Members of the Club Italia community receive the calendar invitation automatically. Non-members can register a single-event pass through our advisors.</p>
+        <div class="hero-ctas" style="margin-top:1.6rem">
+          <button class="btn btn-3d btn-3d-primary" data-advisor type="button">Reserve My Broadcast Seat</button>
+          <a class="btn btn-3d btn-3d-ghost" href="../../events.html">All Events</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 8 · RECIPE-->
+<section class="ev-recipe">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow eyebrow-line">The recipe of the day</span>
+        <h3>Bucatini all'amatriciana</h3>
+        <p style="color:var(--on-light-soft);line-height:1.7">The Roman dish traditionally served on 2 June, from Amatrice in the Sabina, technically a Lazio town, historically a mountain shepherd's plate that entered the Roman canon in the nineteenth century.</p>
+        <div class="steps" style="margin-top:2rem">
+          <p>Cut the guanciale into strips the width of a matchstick.</p><p>Render it slowly, without oil, in a heavy pan until golden and translucent.</p><p>Deglaze with the white wine and let it evaporate.</p><p>Add the peperoncino and the crushed tomatoes; simmer twelve minutes until the sauce breaks into oil at the edge.</p><p>Cook the bucatini in salted water for one minute short of the packet instruction.</p><p>Transfer directly into the sauce with a ladle of pasta water.</p><p>Toss over medium heat, off flame add the pecorino in two additions, tossing until glossy.</p><p>Serve immediately with a further scattering of pecorino and a heavy grind of black pepper.</p><p>Never, as any Roman will insist, with garlic, and never with onion.</p>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow eyebrow-line">Ingredients</span>
+        <ul><li>Bucatini pasta<span>500 g</span></li><li>Guanciale (cured pork jowl)<span>150 g</span></li><li>Pecorino romano<span>80 g grated</span></li><li>Peeled San Marzano tomatoes<span>400 g</span></li><li>Dry white wine<span>1/2 glass</span></li><li>Chili (peperoncino)<span>1 whole</span></li><li>Salt<span>to taste</span></li><li>Black pepper<span>to taste</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 9 · VOCAB TABLE-->
+<section class="ev-vocab">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line">The vocabulary of the day</span>
+      <h2 class="display-md">Words for the <span class="gold-ital">occasion.</span></h2>
+      <p class="lead">A ready-to-print glossary of the twelve to fifteen Italian words a learner will hear most on the day.</p>
+    </div>
+    <div class="grid">
+      <div class="row"><div class="it">la Repubblica</div><div class="en">the Republic</div></div><div class="row"><div class="it">il referendum</div><div class="en">the referendum</div></div><div class="row"><div class="it">la Costituzione</div><div class="en">the Constitution</div></div><div class="row"><div class="it">la sfilata militare</div><div class="en">the military parade</div></div><div class="row"><div class="it">il tricolore</div><div class="en">the tricolour flag</div></div><div class="row"><div class="it">le Frecce Tricolori</div><div class="en">the aerobatic team</div></div><div class="row"><div class="it">l'inno nazionale</div><div class="en">the national anthem</div></div><div class="row"><div class="it">Fratelli d'Italia</div><div class="en">Brothers of Italy (anthem)</div></div><div class="row"><div class="it">il Presidente della Repubblica</div><div class="en">the President</div></div><div class="row"><div class="it">l'Altare della Patria</div><div class="en">the Altar of the Fatherland</div></div><div class="row"><div class="it">il Quirinale</div><div class="en">the presidential palace</div></div><div class="row"><div class="it">la deposizione della corona</div><div class="en">the wreath-laying</div></div>
+    </div>
+  </div>
+</section>
+
+<!--FOLD 10 · CTA-->
+<section class="ev-cta">
+  <div class="wrap-narrow">
+    <span class="eyebrow eyebrow-line">Join the cultural calendar</span>
+    <h2>Every great Italian day, <span class="gold-ital">taught in Italian.</span></h2>
+    <p>Every Club Italia course includes a cultural events calendar, live broadcasts from the piazza on the day itself, follow-up debrief lessons in slow Italian, and a recorded archive open to all learners for life.</p>
+    <div class="hero-ctas" style="justify-content:center;display:flex">
+      <a class="btn btn-3d btn-3d-primary" href="../../courses.html">Explore the Courses</a>
+      <button class="btn btn-3d btn-3d-ghost" data-advisor type="button">Talk to an Advisor</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
+        <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
+        <p>Club Italia by eTeacher, a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
+        <p style="margin-top:1.2rem"><a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="../../courses.html">All Courses</a>
+        <a href="../../how-it-works.html">How It Works</a>
+        <a href="../../method.html">Method</a>
+        <a href="../../sample-class.html">Watch a Class</a>
+        <a href="../../teachers.html">Teachers</a>
+        <a href="../../map.html">Map of Italy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Culture</h4>
+        <a href="../../culture.html">Culture</a>
+        <a href="../../capsules.html">Capsules</a>
+        <a href="../../events.html">Cultural Events</a>
+        <a href="../../community.html">Community</a>
+        <a href="../../blog.html">Journal</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../../about.html">About</a>
+        <a href="../../eteacher.html">eTeacher Group</a>
+        <a href="../../pricing.html">Pricing</a>
+        <a href="../../faq.html">FAQ</a>
+        <a href="../../contact.html">Contact</a>
+        <a href="../../privacy.html">Privacy</a>
+        <a href="../../terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 eTeacher Group. All rights reserved. Club Italia is a trading style of eTeacher Group.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◉</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../../js/ci.js" defer></script>
+</body>
+</html>

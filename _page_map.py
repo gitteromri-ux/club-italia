@@ -1,0 +1,335 @@
+from _build_new_pages import shell
+
+# 7 cities with rich cultural content (~200w each)
+CITIES = [
+  {
+    "key":"roma","name":"Roma","region":"Lazio","cx":315,"cy":410,
+    "sub":"The Eternal Capital · Lazio",
+    "tag":"Where every language student walks the streets of Latin.",
+    "img":"assets/img/hero-poster.jpg",
+    "essay":"Rome is not a city you visit. It is a city you enter. The Italian spoken in Roma is direct, warm, gestural — closer to the piazza than the podium — inflected with the flat, rolled cadence of the seven hills. It carries the ghost of Latin in every second word: <em>domus</em>, <em>tempo</em>, <em>caro</em>. The Roman table is generous and uncomplicated: <em>cacio e pepe</em>, <em>carbonara</em>, <em>saltimbocca</em>, artichokes <em>alla giudìa</em>, an unadorned pizza <em>bianca</em> torn straight from the bakery paper. The city eats loudly and lingers late. Beyond the plate, Rome is a lesson in scale. The Pantheon still holds the largest unreinforced concrete dome ever built. The Sistine ceiling is still overhead. Bernini's colonnade still gathers pilgrims. Our Roman teachers broadcast from studios near Trastevere and Monti, and every lesson set here begins in the language of hospitality — the invitation, the greeting, the compliment, the way a Roman gently insists you take one more piece of bread. To speak Roman Italian is to speak with the whole body.",
+    "teachers":"Sofia · Marco · Alessandro"
+  },
+  {
+    "key":"firenze","name":"Firenze","region":"Toscana","cx":260,"cy":320,
+    "sub":"The Cradle of the Language · Toscana",
+    "tag":"The Italian of Dante, refined for the modern ear.",
+    "img":"assets/img/pillar-art.jpg",
+    "essay":"Florence is the reason we speak Italian at all. When Dante wrote the <em>Commedia</em> in the Florentine vernacular rather than in Latin, he did not just make a poem — he made a country. The Tuscan dialect became modern Italian, and to this day the Italian of Florence is considered the closest to the standard: crystalline vowels, unhurried consonants, the famous soft <em>c</em> that turns <em>casa</em> into <em>hasa</em> in the mouth of a real Florentine. The city itself is a museum you eat inside. The <em>bistecca alla fiorentina</em> — a T-bone the size of a book, blood-rare, salted after the sear — is served at long marble tables in trattorias older than most nations. Wander into a wine bar and try a glass of Chianti Classico with a plate of <em>crostini di fegatini</em>. Above the plate, the city breathes Michelangelo, Botticelli, Brunelleschi. Our Florentine teachers guide learners through the pronunciation that all Italians secretly consider the most beautiful — the language, in short, at its source.",
+    "teachers":"Giulia · Francesca"
+  },
+  {
+    "key":"bologna","name":"Bologna","region":"Emilia-Romagna","cx":270,"cy":260,
+    "sub":"La Grassa · Emilia-Romagna",
+    "tag":"Home to the world's oldest university and its most generous kitchen.",
+    "img":"assets/img/pillar-food.jpg",
+    "essay":"Bologna is called <em>la dotta, la grassa, la rossa</em> — the learned, the fat, the red. Founded in 1088, its university is the oldest in the Western world, and the density of students has kept the city young, argumentative and lit-up for a thousand years. The Bolognese dialect is warm, softly musical, and famously fast: locals speak with a lilt that pulls the melody upward. This is the land where <em>tagliatelle al ragù</em> was born (never called Bolognese here), where <em>tortellini in brodo</em> is served in silver bowls at Christmas, where <em>mortadella</em> is sliced so thin you can read through it. Piazza Maggiore, the porticoes stretching for forty kilometres, the leaning Asinelli tower — the city is a walkable geometry of red brick and appetite. Our Bolognese teachers bring the pace of the north into the classroom: fast, generous, endlessly curious about ideas. Come here for the language of the mind and the language of the table. In Bologna they are the same language.",
+    "teachers":"Chiara"
+  },
+  {
+    "key":"milano","name":"Milano","region":"Lombardia","cx":210,"cy":175,
+    "sub":"The Modern Metropolis · Lombardia",
+    "tag":"Italy's economic capital, spoken with clean northern precision.",
+    "img":"assets/img/pillar-opera.jpg",
+    "essay":"Milan is the Italy the rest of Italy quietly resents and quietly copies. Design, fashion, finance and the country's most ferocious work ethic all begin here. Milanese Italian is clean, quick, faintly clipped — the northern <em>e</em> stays narrow, the <em>r</em> stays sharp, and business is conducted at a pace nobody in Naples would tolerate. Yet the city hides an old, tender Italy beneath its glass. Behind the Duomo — that impossible marble forest of a cathedral — the Galleria Vittorio Emanuele II shelters cafés that have served the same <em>aperitivo</em> since 1867. Cross the courtyard of Santa Maria delle Grazie and Leonardo's <em>Last Supper</em> is quietly waiting. La Scala still stages the opening night of the opera season on 7 December. The Milanese table is short, elegant and northern: <em>risotto allo zafferano</em>, <em>ossobuco</em>, <em>cotoletta alla milanese</em>. Our Milanese teachers deliver the language of contemporary Italy — the Italian you will need in a meeting, in a boardroom, in a design studio, in a first-class carriage on the Frecciarossa.",
+    "teachers":"Luca"
+  },
+  {
+    "key":"venezia","name":"Venezia","region":"Veneto","cx":315,"cy":195,
+    "sub":"The Serenissima · Veneto",
+    "tag":"An entire city rewritten as a poem across the water.",
+    "img":"assets/img/pillar-tradition.jpg",
+    "essay":"Venice is not built on water. Venice is water arranged into a city. For a thousand years the Republic of Saint Mark ruled the Adriatic, minted its own coin, invented modern banking, and evolved a dialect — <em>veneto</em> — that is still spoken today in the vaporetti, the fish market, the wine bars behind Piazza San Marco. Venetian Italian softens consonants and swallows vowels: <em>casa</em> becomes <em>caxa</em>, <em>fatto</em> becomes <em>fato</em>. It is a language for shouting across a canal. The Venetian table is the sea itself: <em>sarde in saòr</em>, <em>bigoli in salsa</em>, <em>fritto misto</em>, <em>risi e bisi</em> in early spring. In February the entire city puts on the mask of Carnevale — a two-week baroque theatre with rules older than most republics. In September the Biennale fills every warehouse with contemporary art. Venice is fragile, sinking, priceless, and utterly unlike anywhere else on Earth. Our Venetian sessions live inside that atmosphere: the language of a floating civilisation.",
+    "teachers":"Guest teachers from the Veneto"
+  },
+  {
+    "key":"napoli","name":"Napoli","region":"Campania","cx":365,"cy":475,
+    "sub":"The Southern Heartbeat · Campania",
+    "tag":"The most operatic Italian in Italy, sung as much as spoken.",
+    "img":"assets/img/pillar-cinema.jpg",
+    "essay":"Naples is the loudest, warmest, most beautiful contradiction in the Italian peninsula. It gave the world pizza (protected by UNESCO), Sophia Loren, Enrico Caruso, the mandolin, the espresso as we drink it, and a version of Italian so musical it slips into song without meaning to. Neapolitan — <em>napulitano</em> — is technically a separate language, with its own dictionary, its own grammar, its own songbook. Every Neapolitan speaks both: the Italian of school, and the dialect of the family table. The food is the same religion. A true Margherita, cooked in ninety seconds in a wood oven at 485°C. <em>Sfogliatella</em> for breakfast. <em>Spaghetti alle vongole</em> after a swim. <em>Pastiera</em> at Easter. Beyond the plate: the National Archaeological Museum, the Cappella Sansevero, the coast that curves toward Sorrento and the Amalfi. Our Neapolitan teacher opens the door to the south — the gestures, the operatic vowels, the tenderness in the language, the reason so many Italian songs have never needed a translation.",
+    "teachers":"Guest teachers from Napoli"
+  },
+  {
+    "key":"palermo","name":"Palermo","region":"Sicilia","cx":295,"cy":625,
+    "sub":"Crossroads of the Mediterranean · Sicilia",
+    "tag":"Three thousand years of empires, all in one Italian accent.",
+    "img":"assets/img/pillar-travel.jpg",
+    "essay":"Palermo is the oldest, strangest, most layered city in Italy. Founded by the Phoenicians, ruled by Greeks, Romans, Byzantines, Arabs, Normans, Swabians, Spanish and Bourbons before ever meeting the modern Italian state — Palermo carries all of them at once. The Sicilian language, still spoken in the markets of Ballarò and Vucciria, is closer to a Romance sister of Italian than a dialect of it: Arabic loan-words for the almond and the sugar, Norman syntax in the verbs, Spanish flourishes in the vowels. To learn Italian in Sicily is to hear the whole Mediterranean at once. The table is the same story. <em>Arancini</em>, <em>caponata</em>, <em>pasta alla Norma</em>, <em>sarde a beccafico</em>, the almond-milk <em>granita</em> eaten for breakfast with a <em>brioche col tuppo</em>. Above it all: the golden Byzantine mosaics of the Cappella Palatina, Monreale glittering in the hills, and the temples of Segesta and Agrigento watching the sea. Our southern programme brings this layered Italian into the classroom — Italy at the widest.",
+    "teachers":"Guest teachers from Palermo"
+  }
+]
+
+# 8 folds:
+# 1 hero, 2 tricolor pull-quote band, 3 SVG interactive map + pins, 4 city cards grid (7 x rich),
+# 5 magazine 2-col: why we broadcast from 7 cities, 6 pull-quote, 7 route + timeline "your term across Italy",
+# 8 CTA join map / advisor
+
+def build_map_svg():
+    """Rough silhouette of Italy — hand-authored SVG path."""
+    # Coordinates picked to make a recognisable boot; not geographically precise but readable.
+    # width 500 height 720
+    path = ("M195 105 L235 90 L275 105 L305 135 L295 165 L280 195 L305 210 "
+            "L345 225 L365 265 L340 300 L305 320 L285 340 L270 370 L280 395 "
+            "L305 420 L340 460 L365 495 L370 530 L360 560 L340 580 L320 600 "
+            "L290 615 L265 605 L245 585 L235 555 L245 525 L260 495 L245 465 "
+            "L225 445 L205 420 L195 390 L185 355 L175 320 L165 285 L155 250 "
+            "L145 220 L140 185 L155 155 L175 125 Z")
+    sicily = "M240 630 L305 625 L340 635 L330 665 L285 675 L245 665 Z"
+    sardinia = "M75 460 L110 450 L125 480 L120 520 L100 540 L75 530 L65 495 Z"
+    pins = ""
+    for c in CITIES:
+        pins += f'''
+    <a href="#{c['key']}" class="map-pin-link" aria-label="{c['name']}">
+      <circle cx="{c['cx']}" cy="{c['cy']}" r="14" class="map-pin-halo"/>
+      <circle cx="{c['cx']}" cy="{c['cy']}" r="6" class="map-pin"/>
+      <text x="{c['cx']+14}" y="{c['cy']+5}" class="map-pin-label">{c['name']}</text>
+    </a>'''
+    # a gold route connecting them in the visit order
+    order = ["milano","venezia","bologna","firenze","roma","napoli","palermo"]
+    pts = {c['key']: (c['cx'], c['cy']) for c in CITIES}
+    d = "M " + " L ".join(f"{pts[k][0]} {pts[k][1]}" for k in order)
+    return f'''<svg viewBox="0 0 500 720" class="italy-svg" role="img" aria-label="Map of Italy showing seven Club Italia cities">
+  <defs>
+    <linearGradient id="italyFill" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#EBDFC7"/><stop offset="1" stop-color="#D9C8AA"/>
+    </linearGradient>
+    <filter id="mapGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <path d="{path}" fill="url(#italyFill)" stroke="#8E3D22" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="{sicily}" fill="url(#italyFill)" stroke="#8E3D22" stroke-width="1.2"/>
+  <path d="{sardinia}" fill="url(#italyFill)" stroke="#8E3D22" stroke-width="1.2"/>
+  <path d="{d}" fill="none" stroke="#C9A24B" stroke-width="2" stroke-dasharray="6 6" opacity=".8" class="italy-route"/>
+  {pins}
+</svg>'''
+
+def build():
+    svg = build_map_svg()
+    cards = ""
+    for c in CITIES:
+        cards += f'''
+    <article class="city-card" id="{c['key']}">
+      <div class="city-card-media"><img src="{c['img']}" alt="{c['name']}"></div>
+      <div class="city-card-body">
+        <div class="city-card-head">
+          <span class="eyebrow eyebrow-line">{c['sub']}</span>
+          <h3 class="display-sm">{c['name']}</h3>
+          <p class="city-tag"><em>{c['tag']}</em></p>
+        </div>
+        <p class="city-essay">{c['essay']}</p>
+        <div class="city-card-foot">
+          <span class="city-teachers"><small>Broadcasting teachers</small><br>{c['teachers']}</span>
+        </div>
+      </div>
+    </article>'''
+
+    style = '''<style>
+/* -------- MAP PAGE — page-scoped -------- */
+.map-hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;color:var(--on-dark);overflow:hidden;background:var(--navy-deep)}
+.map-hero-bg{position:absolute;inset:0;z-index:0}
+.map-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.map-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,8,11,.55) 0%,rgba(34,8,11,.9) 90%)}
+.map-hero .wrap{position:relative;z-index:2;padding:9rem 0 4rem}
+.map-hero .breadcrumb{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.8rem}
+.map-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.8rem,5.4vw,5.2rem);line-height:1.02;letter-spacing:-.014em;max-width:20ch;margin:0 0 1.6rem;color:var(--on-dark)}
+.map-hero .map-lede{max-width:60ch;color:var(--on-dark-soft);font-weight:300;font-size:clamp(1.1rem,1.4vw,1.35rem);line-height:1.65}
+
+.tri-band{background:linear-gradient(90deg,#009246 0 33.3%,#F6F1E6 33.3% 66.6%,#CE2B37 66.6%);height:6px;width:100%}
+.map-quote-band{background:var(--paper);padding:5rem 0;text-align:center;position:relative}
+.map-quote-band .quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,3.4vw,2.8rem);color:var(--navy);max-width:34ch;margin:0 auto;line-height:1.24}
+.map-quote-band .quote-sig{margin-top:1.6rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+
+.italy-band{background:var(--ivory);padding:5rem 0;position:relative}
+.italy-stage{display:grid;grid-template-columns:1fr 1.15fr;gap:3.4rem;align-items:center}
+@media (max-width:900px){.italy-stage{grid-template-columns:1fr;gap:2rem}}
+.italy-svg{max-width:420px;width:100%;height:auto;margin:0 auto;display:block;filter:drop-shadow(0 30px 60px rgba(58,14,18,.18))}
+.map-pin{fill:#C9A24B;stroke:#22080B;stroke-width:1.4;transition:transform .3s ease}
+.map-pin-halo{fill:rgba(201,162,75,.28);animation:mapPulse 2.4s ease-in-out infinite}
+@keyframes mapPulse{0%,100%{r:14;opacity:.28}50%{r:20;opacity:.10}}
+.map-pin-link:hover .map-pin{transform:scale(1.4);transform-origin:center}
+.map-pin-label{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;fill:#22080B;letter-spacing:.02em}
+.italy-route{animation:mapDraw 8s ease-in-out infinite}
+@keyframes mapDraw{0%,100%{stroke-dashoffset:0}50%{stroke-dashoffset:-24}}
+.italy-legend h2{font-family:var(--serif);font-size:clamp(2rem,3.4vw,3rem);line-height:1.1;margin-bottom:1.2rem}
+.italy-legend p{color:var(--on-light-soft);line-height:1.65;font-size:1.05rem}
+.italy-legend .pin-list{list-style:none;padding:0;margin:1.8rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.italy-legend .pin-list a{display:flex;align-items:center;gap:.6rem;padding:.7rem .9rem;background:var(--paper);border:1px solid var(--gold-line-soft);color:var(--navy);font-family:var(--serif);font-size:1.1rem;transition:all .25s ease}
+.italy-legend .pin-list a:hover{background:var(--navy);color:var(--on-dark);border-color:var(--gold-deep)}
+.italy-legend .pin-list a::before{content:"●";color:var(--gold-deep);font-size:.7rem}
+
+.cities-band{background:var(--paper);padding:6rem 0}
+.cities-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+.city-card{display:grid;grid-template-columns:1fr 1.15fr;gap:0;background:var(--white);border:1px solid var(--gold-line-soft);overflow:hidden;box-shadow:0 20px 40px -30px rgba(58,14,18,.4)}
+.city-card:nth-child(even){grid-template-columns:1.15fr 1fr}
+.city-card:nth-child(even) .city-card-media{order:2}
+@media (max-width:900px){.city-card,.city-card:nth-child(even){grid-template-columns:1fr}.city-card:nth-child(even) .city-card-media{order:0}}
+.city-card-media{aspect-ratio:4/3;overflow:hidden;background:var(--navy)}
+.city-card-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.city-card:hover .city-card-media img{transform:scale(1.04)}
+.city-card-body{padding:3rem 2.6rem;display:flex;flex-direction:column;gap:1.2rem}
+.city-card-head h3{font-size:2.4rem;margin:.4rem 0 .4rem}
+.city-tag{font-family:var(--serif);color:var(--gold-deep);font-size:1.15rem}
+.city-essay{color:var(--on-light-soft);font-size:.98rem;line-height:1.7}
+.city-essay em{font-style:italic;color:var(--navy)}
+.city-card-foot{margin-top:auto;padding-top:1.2rem;border-top:1px solid var(--light-line)}
+.city-teachers{font-family:var(--serif);font-size:1.05rem;color:var(--navy)}
+.city-teachers small{font-family:var(--sans);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--on-light-faint)}
+
+.why-cities{background:var(--navy);color:var(--on-dark);padding:6rem 0}
+.why-cities .two-col{display:grid;grid-template-columns:1fr 1fr;gap:3.2rem;align-items:start}
+@media (max-width:820px){.why-cities .two-col{grid-template-columns:1fr}}
+.why-cities h2{color:var(--on-dark);font-family:var(--serif);font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.06;margin-bottom:1.2rem}
+.why-cities p{color:var(--on-dark-soft);font-size:1.05rem;line-height:1.72}
+.why-num{font-family:var(--serif);font-style:italic;font-size:9rem;color:var(--gold-soft);opacity:.28;line-height:.9;margin-bottom:-4rem;display:block}
+
+.term-timeline{background:var(--ivory);padding:6rem 0}
+.term-timeline .line{display:grid;grid-template-columns:repeat(7,1fr);gap:1rem;margin-top:3rem;position:relative}
+.term-timeline .line::before{content:"";position:absolute;top:36px;left:5%;right:5%;height:1px;background:var(--gold-line)}
+@media (max-width:820px){.term-timeline .line{grid-template-columns:1fr;gap:1.4rem}.term-timeline .line::before{display:none}}
+.term-node{text-align:center;position:relative}
+.term-node .dot{width:72px;height:72px;border-radius:50%;background:var(--paper);border:1px solid var(--gold-line);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-deep);margin:0 auto 1rem}
+.term-node h4{font-family:var(--serif);font-size:1.15rem;margin-bottom:.3rem}
+.term-node p{font-size:.85rem;color:var(--on-light-soft);line-height:1.5}
+
+.map-cta{background:linear-gradient(140deg,var(--navy) 0%,var(--navy-soft) 60%,var(--terra-deep) 130%);color:var(--on-dark);padding:6rem 0;text-align:center}
+.map-cta h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.05;color:var(--on-dark);margin-bottom:1.4rem}
+.map-cta p{color:var(--on-dark-soft);max-width:56ch;margin:0 auto 2rem;font-size:1.1rem;line-height:1.6}
+</style>'''
+
+    body = f'''
+<!--HERO-->
+<section class="map-hero">
+  <div class="map-hero-bg"><img src="assets/img/hero-poster.jpg" alt="Italy from above"></div>
+  <div class="wrap">
+    <p class="breadcrumb">Club Italia · Where we teach</p>
+    <h1>An Interactive Map of <span class="gold-ital">Italian Italy.</span></h1>
+    <p class="map-lede">Seven cities. Seven regional cuisines. Seven distinct Italian accents, from the crystalline Florentine that became the national standard to the operatic Neapolitan of the Bay. Every Club Italia lesson is broadcast live from an Italian classroom in one of these places. This is the country you will actually learn in.</p>
+    <div class="hero-ctas" style="margin-top:2.4rem">
+      <a class="btn btn-3d btn-3d-primary" href="#italy">Open the Map</a>
+      <a class="btn btn-3d btn-3d-ghost" href="courses.html">See the Courses</a>
+    </div>
+  </div>
+</section>
+
+<div class="tri-band" aria-hidden="true"></div>
+
+<!--PULL QUOTE-->
+<section class="map-quote-band">
+  <div class="wrap-narrow">
+    <p class="quote">"Italy is not a country. It is twenty countries pretending to share one flag."</p>
+    <p class="quote-sig">Luigi Barzini, <em>The Italians</em>, 1964</p>
+  </div>
+</section>
+
+<!--MAP-->
+<section class="italy-band" id="italy">
+  <div class="wrap">
+    <div class="italy-stage">
+      <div class="italy-svg-wrap">{svg}</div>
+      <div class="italy-legend">
+        <span class="eyebrow eyebrow-line">The seven-city map</span>
+        <h2>Every pin is a <span class="gold-ital">live classroom.</span></h2>
+        <p>Click any city to read its cultural essay below, meet its resident teachers, and hear the local Italian in the Club Italia sample library. The dotted gold route traces the order most learners visit across a full four-term programme — from northern Milan down to the Sicilian coast.</p>
+        <ul class="pin-list">
+          <li><a href="#roma">Roma</a></li>
+          <li><a href="#firenze">Firenze</a></li>
+          <li><a href="#bologna">Bologna</a></li>
+          <li><a href="#milano">Milano</a></li>
+          <li><a href="#venezia">Venezia</a></li>
+          <li><a href="#napoli">Napoli</a></li>
+          <li><a href="#palermo">Palermo</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--REGIONAL CITY CARDS — the 7 essays-->
+<section class="cities-band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow eyebrow-line">The regions</span>
+      <h2 class="display-md">Seven Italies, taught in <span class="gold-ital">their own words.</span></h2>
+      <p class="lead">A two-hundred-word cultural essay for every city we broadcast from — the language, the food, the atmosphere.</p>
+    </div>
+    <div class="cities-grid">
+      {cards}
+    </div>
+  </div>
+</section>
+
+<!--MAGAZINE 2-COL: why 7 cities-->
+<section class="why-cities">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="why-num">01</span>
+        <span class="eyebrow eyebrow-line">A pedagogical choice</span>
+        <h2>We broadcast from seven cities on <span class="gold-ital">purpose.</span></h2>
+      </div>
+      <div class="reveal reveal-d1">
+        <p>Every other online Italian school teaches from one accent — usually a neutral Florentine, sometimes a media Italian recorded in Rome. The result is that learners graduate speaking a language nobody actually speaks. Real Italian is regional. A Milanese eats differently, argues differently and greets differently from a Sicilian, and the sound of the language proves it inside two syllables.</p>
+        <p style="margin-top:1.2rem">Club Italia treats regional variety as core curriculum, not colour commentary. Every four-term programme moves the learner through the peninsula: the northern precision of Milan, the classical Italian of Florence, the food-loud Bologna of the centre, the operatic south of Naples, the Byzantine-Arab Sicily of Palermo. You will hear all of it, in the mouths of the people who grew up inside it, before you sit for your CEFR examination.</p>
+        <p style="margin-top:1.2rem">The result is an Italian ear the tourist never develops. You can drop into any of the twenty regions and understand the register instantly. This is the difference between a language learner and a traveller.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--PULL QUOTE 2-->
+<section class="map-quote-band" style="background:var(--paper)">
+  <div class="wrap-narrow">
+    <p class="quote">"Every twenty kilometres in Italy, the language, the bread and the wine change."</p>
+    <p class="quote-sig">Attributed to the poet Cesare Pavese</p>
+  </div>
+</section>
+
+<!--TIMELINE: your term across Italy-->
+<section class="term-timeline">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow eyebrow-line">Your journey</span>
+      <h2 class="display-md">A four-term walk across <span class="gold-ital">the peninsula.</span></h2>
+      <p class="lead">A typical Club Italia learner meets all seven of our regional studios over an academic year.</p>
+    </div>
+    <div class="line">
+      <div class="term-node"><div class="dot">i</div><h4>Weeks 1–4</h4><p>Roma · greetings, hospitality, first verbs.</p></div>
+      <div class="term-node"><div class="dot">ii</div><h4>Weeks 5–8</h4><p>Firenze · the classical Italian, pronunciation drills.</p></div>
+      <div class="term-node"><div class="dot">iii</div><h4>Weeks 9–12</h4><p>Bologna · the language of the table.</p></div>
+      <div class="term-node"><div class="dot">iv</div><h4>Weeks 13–16</h4><p>Milano · the language of contemporary Italy.</p></div>
+      <div class="term-node"><div class="dot">v</div><h4>Weeks 17–20</h4><p>Venezia · Carnevale unit, Adriatic dialect.</p></div>
+      <div class="term-node"><div class="dot">vi</div><h4>Weeks 21–24</h4><p>Napoli · music, opera, the southern kitchen.</p></div>
+      <div class="term-node"><div class="dot">vii</div><h4>Weeks 25–28</h4><p>Palermo · the Mediterranean crossroads.</p></div>
+    </div>
+  </div>
+</section>
+
+<!--CTA-->
+<section class="map-cta">
+  <div class="wrap-narrow">
+    <span class="eyebrow eyebrow-line">Join the map</span>
+    <h2>Choose a city. <span class="gold-ital">Begin in Italian.</span></h2>
+    <p>Every course places you in a small live class with a teacher broadcasting from one of these seven cities. Your first orientation call includes a regional listening sample so you can hear the Italian of your future classroom before you enrol.</p>
+    <div class="hero-ctas" style="justify-content:center;display:flex">
+      <a class="btn btn-3d btn-3d-primary" href="courses.html">Explore the Courses</a>
+      <button class="btn btn-3d btn-3d-ghost" data-advisor type="button">Talk to an Advisor</button>
+    </div>
+  </div>
+</section>
+'''
+
+    html = shell(
+        "Interactive Map of Italy — Club Italia by eTeacher",
+        "Seven Italian cities, seven regional accents. Explore the map of the Italy where Club Italia's live classes are broadcast — Rome, Florence, Bologna, Milan, Venice, Naples and Palermo.",
+        body,
+        root="",
+        extra_head=style
+    )
+    with open("/home/user/workspace/club-italia/map.html","w") as f:
+        f.write(html)
+    print("map.html written:", len(html), "bytes")
+
+if __name__ == "__main__":
+    build()
