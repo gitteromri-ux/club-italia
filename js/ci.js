@@ -145,3 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
     bChatMsgs.scrollTop = bChatMsgs.scrollHeight;
   });
 })();
+
+/* ===== HERO MUSIC TOGGLE ===== */
+(function(){var btn=document.getElementById('hero-sound-toggle');var audio=document.getElementById('hero-audio');if(!btn||!audio)return;audio.volume=0.35;btn.addEventListener('click',function(){if(audio.paused){audio.play().then(function(){btn.setAttribute('data-state','on');var lbl=btn.querySelector('.hero-sound-label');if(lbl)lbl.textContent='Music off';}).catch(function(e){console.warn(e);});}else{audio.pause();btn.setAttribute('data-state','off');var lbl=btn.querySelector('.hero-sound-label');if(lbl)lbl.textContent='Music on';}});})();
