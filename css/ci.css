@@ -1365,3 +1365,19 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
 .hero-sound-btn:hover{background:rgba(15,14,12,.8);border-color:#DDB86A;transform:translateY(-1px)}
 .hero-sound-btn[data-state="on"]{background:rgba(176,134,64,.9);border-color:#DDB86A;color:#0F0E0C}
 @media(max-width:860px){.hero-sound-btn{top:5rem;right:1rem;padding:.7rem 1rem;font-size:.7rem}.hero-sound-btn .hero-sound-label{display:none}}
+
+
+/* v10c: hero H1 fits on desktop cleanly + chapter mobile clamp */
+@media(min-width:861px){
+  .hero h1{font-size:clamp(4.4rem,7vw,7.8rem) !important; max-width:14ch !important; line-height:.95 !important}
+  .pb-title,.ch-title{font-size:clamp(3.4rem,5.6vw,5.6rem) !important; max-width:16ch !important}
+  .v8-h2,section .sec-head h2,.sec-head .v8-h2{font-size:clamp(2.8rem,4.8vw,4.4rem) !important; max-width:20ch !important; margin:0 auto !important}
+  .hero-sub{max-width:52ch !important; font-size:1.4rem !important}
+}
+/* Mobile: chapter H2 max-width so it doesn't cram */
+@media(max-width:860px){
+  .ch-title{font-size:clamp(2.4rem,9vw,3.6rem) !important; line-height:1 !important; max-width:none !important; word-break:keep-all}
+  .pb-title{font-size:clamp(2.6rem,10vw,4rem) !important; line-height:1 !important}
+  /* Tighter hero CTA button so text fits single line */
+  .hero-ctas .btn-gold,.hero-ctas .btn-ghost{font-size:.85rem !important; padding:1.05rem 1rem !important; letter-spacing:.08em !important}
+}
