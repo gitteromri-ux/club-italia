@@ -148,3 +148,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ===== HERO MUSIC TOGGLE ===== */
 (function(){var btn=document.getElementById('hero-sound-toggle');var audio=document.getElementById('hero-audio');if(!btn||!audio)return;audio.volume=0.35;btn.addEventListener('click',function(){if(audio.paused){audio.play().then(function(){btn.setAttribute('data-state','on');var lbl=btn.querySelector('.hero-sound-label');if(lbl)lbl.textContent='Music off';}).catch(function(e){console.warn(e);});}else{audio.pause();btn.setAttribute('data-state','off');var lbl=btn.querySelector('.hero-sound-label');if(lbl)lbl.textContent='Music on';}});})();
+
+// v10d: Play videos when they enter viewport (mobile fix)
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var videos = document.querySelectorAll('video[autoplay]');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v = e.target;
+      if(e.isIntersecting){
+        var p = v.play();
+        if(p && p.catch) p.catch(function(err){ /* muted autoplay should work */ });
+      } else {
+        v.pause();
+      }
+    });
+  }, { rootMargin: '200px 0px', threshold: 0.05 });
+  videos.forEach(function(v){ obs.observe(v); });
+})();

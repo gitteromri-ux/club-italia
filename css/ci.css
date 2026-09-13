@@ -1381,3 +1381,14 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
   /* Tighter hero CTA button so text fits single line */
   .hero-ctas .btn-gold,.hero-ctas .btn-ghost{font-size:.85rem !important; padding:1.05rem 1rem !important; letter-spacing:.08em !important}
 }
+
+/* v10d: lighter mobile scrim so footage is visible + eager preload */
+@media(max-width:860px){
+  .chapter.left .chapter-stage::before,
+  .chapter.right .chapter-stage::before{
+    background:linear-gradient(180deg,rgba(15,14,12,.35) 0%,rgba(15,14,12,.15) 40%,rgba(15,14,12,.75) 100%) !important;
+  }
+  .hero-bg::after{background:linear-gradient(180deg,rgba(15,14,12,.4) 0%,rgba(15,14,12,.15) 30%,rgba(15,14,12,.4) 60%,rgba(15,14,12,.75) 100%) !important}
+  .hero-bg::before{display:none !important}
+  .pb-full .pb-media::after{background:linear-gradient(180deg,rgba(15,14,12,.3) 0%,rgba(15,14,12,.1) 40%,rgba(15,14,12,.75) 100%) !important}
+}
