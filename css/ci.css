@@ -1669,3 +1669,12 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
   .accred-strip .a-item{font-size:.68rem !important; letter-spacing:.2em !important; white-space:nowrap; flex-shrink:0}
   .accred-strip .a-sep{width:1px;height:1.4rem;background:rgba(221,184,106,.3);flex-shrink:0}
 }
+
+/* v11b: fix hero-tag colliding with fixed nav on mobile */
+@media(max-width:860px){
+  .hero-content{padding-bottom:2.4rem !important; padding-top:0 !important}
+  /* Push hero content further down so tag doesn't collide with nav */
+  .hero-tag{padding-top:0 !important; margin-top:0 !important}
+}
+/* Also on desktop, tag was overlapping nav */
+.hero-content{padding-top:clamp(6rem,10vh,10rem) !important}
