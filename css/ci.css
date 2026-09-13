@@ -1392,3 +1392,31 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
   .hero-bg::before{display:none !important}
   .pb-full .pb-media::after{background:linear-gradient(180deg,rgba(15,14,12,.3) 0%,rgba(15,14,12,.1) 40%,rgba(15,14,12,.75) 100%) !important}
 }
+
+/* v10e: MOBILE — footage-first hero + chapters. Scrim only where text sits. */
+@media(max-width:860px){
+  /* Hero: video fills screen, only bottom half has a dark base for text legibility */
+  .hero{min-height:100svh !important; display:flex !important; flex-direction:column !important; justify-content:flex-end !important}
+  .hero-bg::before{display:none !important}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(15,14,12,.2) 0%,rgba(15,14,12,0) 25%,rgba(15,14,12,0) 45%,rgba(15,14,12,.55) 65%,rgba(15,14,12,.92) 100%) !important}
+  .hero-content{padding:0 1.2rem 2rem !important; min-height:auto !important; justify-content:flex-end !important}
+  .hero h1{font-size:clamp(2.8rem,10vw,4rem) !important; text-shadow:0 2px 30px rgba(0,0,10,.95),0 1px 4px rgba(0,0,10,.9) !important}
+  .hero-tag{margin-bottom:.6rem !important}
+  .hero-sub{margin-bottom:1.4rem !important; text-shadow:0 2px 20px rgba(0,0,10,.95),0 1px 4px rgba(0,0,10,.85) !important}
+  .hero-meta{margin-top:1.6rem !important; padding-top:1.4rem !important; border-top-color:rgba(255,255,255,.25) !important}
+
+  /* Chapter sections: video visible, text has its own base at bottom */
+  .chapter-stage{min-height:88svh !important; display:flex !important; align-items:flex-end !important}
+  .chapter.left .chapter-stage::before,.chapter.right .chapter-stage::before{
+    background:linear-gradient(180deg,rgba(15,14,12,.15) 0%,rgba(15,14,12,0) 30%,rgba(15,14,12,0) 55%,rgba(15,14,12,.65) 75%,rgba(15,14,12,.95) 100%) !important;
+  }
+  .chapter-stage .wrap{padding:2rem 1.2rem 3rem !important}
+  .ch-card{max-width:none !important}
+  .ch-title{text-shadow:0 2px 30px rgba(0,0,10,.95),0 1px 4px rgba(0,0,10,.9) !important}
+  .ch-lede{text-shadow:0 2px 20px rgba(0,0,10,.95) !important; opacity:.95 !important}
+
+  /* pb-full full-bleed cinematic — same treatment */
+  .pb-full{min-height:78svh !important; display:flex !important; align-items:flex-end !important}
+  .pb-full .pb-media::after{background:linear-gradient(180deg,rgba(15,14,12,.15) 0%,rgba(15,14,12,0) 30%,rgba(15,14,12,0) 55%,rgba(15,14,12,.65) 75%,rgba(15,14,12,.95) 100%) !important}
+  .pb-full .pb-inner{padding:2rem 1.2rem 3rem !important}
+}
