@@ -1420,3 +1420,252 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
   .pb-full .pb-media::after{background:linear-gradient(180deg,rgba(15,14,12,.15) 0%,rgba(15,14,12,0) 30%,rgba(15,14,12,0) 55%,rgba(15,14,12,.65) 75%,rgba(15,14,12,.95) 100%) !important}
   .pb-full .pb-inner{padding:2rem 1.2rem 3rem !important}
 }
+
+/* ================================================================
+   v11: LUXURY BRAND SCALE
+   - Massive font bump (mobile h1 up to 15vw, section h2 up to 12vw)
+   - Edge-to-edge mobile hero (kill scrim, text overlays bottom)
+   - Mobile card sliders on course grid + faculty row + trustpilot
+   - Higher contrast text shadows
+   - Cleaner Cormorant Garamond only (no script fonts)
+================================================================ */
+
+/* ---------- MASSIVE HEADLINES ---------- */
+.hero h1{
+  font-size:clamp(4.8rem,10vw,10rem) !important;
+  font-weight:600 !important;
+  line-height:.92 !important;
+  letter-spacing:-.028em !important;
+  max-width:14ch !important;
+  text-shadow:0 4px 32px rgba(0,0,10,.85),0 2px 6px rgba(0,0,10,.75) !important;
+}
+.hero-tag{
+  font-family:'Cormorant Garamond',serif !important;
+  font-style:italic !important;
+  font-size:clamp(1.7rem,2.6vw,2.4rem) !important;
+  color:#E8C77A !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  text-shadow:0 2px 20px rgba(0,0,10,.75) !important;
+  margin-bottom:1.4rem !important;
+}
+.hero-sub{
+  font-size:clamp(1.35rem,1.7vw,1.65rem) !important;
+  color:#F5EED9 !important;
+  font-weight:400 !important;
+  line-height:1.52 !important;
+  max-width:54ch !important;
+  text-shadow:0 2px 20px rgba(0,0,10,.9) !important;
+  margin:0 0 2.6rem !important;
+}
+.hero-meta .k{font-size:clamp(2.4rem,3vw,3.2rem) !important; color:#E8C77A !important; font-weight:700 !important; text-shadow:0 2px 16px rgba(0,0,10,.7)}
+.hero-meta .l{font-size:clamp(1.05rem,1.25vw,1.2rem) !important; color:rgba(245,238,217,.85) !important; margin-top:.5rem !important}
+
+.pb-title,.ch-title{
+  font-size:clamp(3.8rem,7vw,7.2rem) !important;
+  font-weight:600 !important;
+  line-height:.94 !important;
+  letter-spacing:-.024em !important;
+  color:#FFFDF6 !important;
+  text-shadow:0 4px 34px rgba(0,0,10,.9),0 2px 6px rgba(0,0,10,.75) !important;
+  max-width:15ch !important;
+}
+.pb-title em,.ch-title em{color:#E8C77A;font-style:italic;font-weight:500}
+.pb-eyebrow,.ch-index{
+  font-family:'Cormorant Garamond',serif !important;
+  font-style:italic !important;
+  font-size:clamp(1.5rem,2.2vw,2rem) !important;
+  color:#E8C77A !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  display:block !important;
+  margin-bottom:.6rem !important;
+  text-shadow:0 2px 14px rgba(0,0,10,.65)
+}
+.pb-sub,.ch-lede{
+  font-size:clamp(1.3rem,1.7vw,1.6rem) !important;
+  color:#F5EED9 !important;
+  line-height:1.55 !important;
+  font-weight:400 !important;
+  text-shadow:0 2px 18px rgba(0,0,10,.85) !important;
+  margin:1.4rem 0 2rem !important;
+}
+.v8-h2,section .sec-head h2,.sec-head .v8-h2{
+  font-size:clamp(3.4rem,6vw,5.6rem) !important;
+  font-weight:600 !important;
+  line-height:.96 !important;
+  letter-spacing:-.022em !important;
+}
+.sec-head .eyebrow{
+  font-family:'Cormorant Garamond',serif !important;
+  font-style:italic !important;
+  font-size:clamp(1.3rem,1.8vw,1.7rem) !important;
+  color:#B08640 !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  font-weight:500 !important;
+  margin-bottom:1.4rem !important;
+}
+.sec-head .lead,.lead{
+  font-size:clamp(1.3rem,1.55vw,1.5rem) !important;
+  line-height:1.55 !important;
+  max-width:60ch !important;
+  color:rgba(255,255,255,.85);
+}
+
+.btn-gold,.btn-ghost{
+  font-size:1.05rem !important;
+  padding:1.4rem 2.6rem !important;
+  letter-spacing:.16em !important;
+  font-weight:700 !important;
+  text-transform:uppercase !important;
+}
+
+.cc-title,.cg-body h3{font-size:clamp(1.8rem,2.6vw,2.4rem) !important; line-height:1.05 !important; font-weight:600 !important}
+.cc-kicker,.cg-k{font-size:.82rem !important; letter-spacing:.28em !important; font-weight:700 !important; color:#E8C77A !important}
+
+/* ---------- EDGE-TO-EDGE MOBILE HERO + FULL-BLEED CHAPTERS ---------- */
+@media(max-width:860px){
+  .hero{min-height:100svh !important; display:flex !important; flex-direction:column !important; justify-content:flex-end !important; position:relative}
+  .hero-bg{position:absolute !important; inset:0 !important}
+  .hero-bg video{width:100vw !important; height:100svh !important; object-fit:cover !important; object-position:center !important}
+  /* Kill the big scrims. Just a soft bottom gradient for text legibility. */
+  .hero-bg::before{display:none !important}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%,rgba(15,14,12,.35) 55%,rgba(15,14,12,.85) 82%,rgba(15,14,12,.95) 100%) !important}
+  .hero-content{padding:0 1.4rem 2.4rem !important; min-height:auto !important; position:relative; z-index:2}
+  .hero-content > *{max-width:none !important}
+  .hero h1{
+    font-size:clamp(3.6rem,13vw,5.4rem) !important;
+    line-height:.94 !important;
+    max-width:none !important;
+    text-shadow:0 4px 24px rgba(0,0,0,.98),0 2px 6px rgba(0,0,0,.95) !important;
+  }
+  .hero-tag{font-size:1.35rem !important; margin-bottom:.9rem !important; text-shadow:0 3px 18px rgba(0,0,0,.95)}
+  .hero-sub{font-size:1.2rem !important; line-height:1.5 !important; margin:1rem 0 1.6rem !important; text-shadow:0 3px 18px rgba(0,0,0,.95)}
+  .hero-ctas{display:flex !important; flex-direction:column !important; gap:.8rem !important; width:100% !important}
+  .hero-ctas .btn-gold,.hero-ctas .btn-ghost{width:100% !important; padding:1.1rem 1rem !important; font-size:.92rem !important; letter-spacing:.14em !important; justify-content:center !important}
+  .hero-meta{margin-top:1.8rem !important; padding-top:1.4rem !important; border-top-color:rgba(255,255,255,.3) !important; gap:1.4rem !important; display:grid !important; grid-template-columns:1fr 1fr !important}
+  .hero-meta .k{font-size:2.1rem !important; text-shadow:0 3px 14px rgba(0,0,0,.9)}
+  .hero-meta .l{font-size:.95rem !important; text-shadow:0 2px 12px rgba(0,0,0,.85)}
+
+  /* Chapter: video edge-to-edge, text overlays bottom third only */
+  .chapter-stage{min-height:88svh !important; display:flex !important; align-items:flex-end !important}
+  .chapter-stage .bgvid{position:absolute !important; inset:0 !important}
+  .chapter-stage .bgvid video{width:100vw !important; height:100% !important; object-fit:cover !important}
+  .chapter.left .chapter-stage::before,.chapter.right .chapter-stage::before{
+    background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(15,14,12,.55) 70%,rgba(15,14,12,.95) 100%) !important;
+  }
+  .chapter-stage::after{display:none !important}
+  .chapter-stage .wrap{padding:2rem 1.4rem 3rem !important; display:flex !important; justify-content:flex-start !important; position:relative; z-index:2}
+  .chapter.right .chapter-stage .wrap{justify-content:flex-start !important}
+  .ch-card{max-width:none !important}
+  .ch-title{font-size:clamp(3rem,11vw,4.6rem) !important; text-shadow:0 4px 24px rgba(0,0,0,.98),0 2px 6px rgba(0,0,0,.95) !important; max-width:none !important; line-height:.98 !important}
+  .ch-index{font-size:1.3rem !important; margin-bottom:.7rem !important; text-shadow:0 3px 14px rgba(0,0,0,.9)}
+  .ch-lede{font-size:1.15rem !important; line-height:1.5 !important; text-shadow:0 3px 16px rgba(0,0,0,.95) !important; margin:1.1rem 0 1.6rem !important}
+  .ch-cta{font-size:.85rem !important; letter-spacing:.18em !important}
+
+  .pb-full{min-height:78svh !important; display:flex !important; align-items:flex-end !important}
+  .pb-full .pb-media::after{background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(15,14,12,.55) 70%,rgba(15,14,12,.95) 100%) !important}
+  .pb-full .pb-inner{padding:2rem 1.4rem 3rem !important}
+  .pb-title{font-size:clamp(3rem,11vw,4.6rem) !important}
+  .pb-sub{font-size:1.15rem !important}
+
+  /* Section headings */
+  .v8-h2,section .sec-head h2,.sec-head .v8-h2{font-size:clamp(2.8rem,11vw,4.4rem) !important; line-height:.98 !important}
+  .sec-head .eyebrow{font-size:1.15rem !important}
+  .sec-head .lead{font-size:1.15rem !important; line-height:1.55 !important}
+  .sec-head{margin-bottom:2.4rem !important}
+}
+
+/* ---------- MOBILE CARD SLIDERS ---------- */
+@media(max-width:860px){
+  /* Course card grid → horizontal snap slider */
+  .cg-row{
+    display:flex !important; grid-template-columns:none !important;
+    overflow-x:auto !important; scroll-snap-type:x mandatory !important;
+    gap:1rem !important; padding:0 1.4rem !important;
+    scrollbar-width:none; -ms-overflow-style:none;
+  }
+  .cg-row::-webkit-scrollbar{display:none}
+  .cg-row .cg-card{
+    flex:0 0 78vw !important; scroll-snap-align:start !important;
+    min-width:78vw !important;
+  }
+  .cg-body h3{font-size:1.6rem !important}
+  .cg-body p{font-size:.98rem !important}
+
+  /* Faculty row → horizontal slider */
+  .faculty-row{
+    display:flex !important; grid-template-columns:none !important;
+    overflow-x:auto !important; scroll-snap-type:x mandatory !important;
+    gap:1rem !important; padding:0 1.4rem !important;
+    scrollbar-width:none;
+  }
+  .faculty-row::-webkit-scrollbar{display:none}
+  .faculty-row .fac-real{
+    flex:0 0 65vw !important; scroll-snap-align:start !important;
+    min-width:65vw !important;
+  }
+  .fac-real h4{font-size:1.4rem !important}
+  .fac-real p{font-size:.95rem !important}
+
+  /* Trustpilot cards → slider */
+  .tp-grid{
+    display:flex !important; grid-template-columns:none !important;
+    overflow-x:auto !important; scroll-snap-type:x mandatory !important;
+    gap:1rem !important; padding:0 1.4rem !important;
+    scrollbar-width:none;
+  }
+  .tp-grid::-webkit-scrollbar{display:none}
+  .tp-grid .tp-card{
+    flex:0 0 82vw !important; scroll-snap-align:start !important;
+    min-width:82vw !important;
+    padding:1.4rem 1.5rem !important;
+  }
+  .tp-card .tp-quote{font-size:1.05rem !important; line-height:1.55 !important}
+
+  /* Add a subtle "swipe" cue below sliders */
+  .cg-row+.slider-cue,.faculty-row+.slider-cue,.tp-grid+.slider-cue{
+    text-align:center;
+    font-family:'Inter',sans-serif;
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:rgba(221,184,106,.75);
+    margin-top:1.4rem;
+  }
+
+  /* Pricing tighter */
+  .pricing-grid{
+    display:flex !important; grid-template-columns:none !important;
+    overflow-x:auto !important; scroll-snap-type:x mandatory !important;
+    gap:1rem !important; padding:0 1.4rem !important;
+    scrollbar-width:none;
+  }
+  .pricing-grid::-webkit-scrollbar{display:none}
+  .pricing-grid .pp-card{flex:0 0 82vw !important; scroll-snap-align:start !important; min-width:82vw !important; transform:none !important}
+  .pricing-grid .pp-featured{transform:none !important}
+
+  /* CEFR ladder tighter on mobile */
+  .cefr-ladder{grid-template-columns:repeat(3,1fr) !important}
+  .cefr-node{padding:1.2rem .8rem !important}
+  .cn-k{font-size:.75rem !important; margin-bottom:.5rem !important}
+  .cn-t{font-size:1.3rem !important; margin-bottom:.4rem !important}
+  .cn-d{font-size:.78rem !important; line-height:1.35 !important}
+
+  /* FAQ */
+  .faq-list summary{font-size:1.35rem !important; padding-right:2rem !important}
+  .faq-list p{font-size:1.05rem !important}
+}
+
+/* ---------- ACCREDITATION STRIP — luxury ---------- */
+.accred-strip{background:#0F0E0C;padding:2.4rem 0;border-top:1px solid rgba(221,184,106,.18);border-bottom:1px solid rgba(221,184,106,.18)}
+.accred-strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.accred-strip .a-item{font-size:.78rem !important; letter-spacing:.24em !important}
+@media(max-width:860px){
+  .accred-strip{padding:1.6rem 0}
+  .accred-strip .wrap{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:1.6rem;padding:0 1.4rem}
+  .accred-strip::-webkit-scrollbar{display:none}
+  .accred-strip .a-item{font-size:.68rem !important; letter-spacing:.2em !important; white-space:nowrap; flex-shrink:0}
+  .accred-strip .a-sep{width:1px;height:1.4rem;background:rgba(221,184,106,.3);flex-shrink:0}
+}
