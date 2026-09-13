@@ -1941,3 +1941,428 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
 /* helpers used by FA-style pages inside Club Italia shell */
 .course-hero .cw h1 + .hero-sub{margin-top:1.4rem}
 .section .learn-list + .section-lede{margin-top:1.8rem}
+
+/* ════════════════════════════════════════════════════════════════════════
+   BIAGIO · AI Italian tutor page (FA Julien-quality)
+   Appended block — dark navy ivory paper alternation, gold accents,
+   real audio playback controls, and live-transcript chat.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* ── Section rhythm ─────────────────────────────────────────────────── */
+.section-pad { padding: clamp(4rem,7vw,7rem) 0; }
+.biagio-fold          { padding-top: clamp(5rem,8vw,8rem); padding-bottom: clamp(5rem,8vw,8rem); }
+.biagio-fold-ivory    { background: var(--paper); color: var(--on-light); }
+.biagio-fold-paper    { background: #F5EFE1; color: var(--on-light); }
+.biagio-fold-navy     { background: var(--ink); color: var(--on-dark); }
+.biagio-fold-navy-r   {
+  background:
+    radial-gradient(58% 64% at 76% 42%, rgba(200,169,107,.16), transparent 64%),
+    linear-gradient(150deg, #0C0B09 0%, var(--ink) 60%, #1B1913 120%);
+  color: var(--on-dark);
+}
+
+/* ── HERO ───────────────────────────────────────────────────────────── */
+.biagio-hero {
+  position: relative;
+  min-height: 100svh;
+  background:
+    radial-gradient(60% 55% at 78% 40%, rgba(176,134,64,.20), transparent 60%),
+    linear-gradient(155deg, #0A0908 0%, #14120E 55%, #1F1A12 120%);
+  color: var(--on-dark);
+  overflow: hidden;
+  display: flex; align-items: center;
+  padding-top: 5rem;
+}
+.biagio-hero-glow {
+  position: absolute; inset: -20% -10% auto auto;
+  width: 60%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(200,169,107,.28), transparent 70%);
+  pointer-events: none; filter: blur(20px);
+}
+.biagio-hero-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.35) 100%);
+  pointer-events: none;
+}
+.biagio-hero-grid {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  gap: clamp(2rem,5vw,5rem); align-items: center;
+  padding-top: clamp(3rem,6vw,6rem); padding-bottom: clamp(3rem,6vw,6rem);
+}
+.biagio-hero-content .breadcrumb {
+  font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--on-dark-soft); margin-bottom: 1.6rem;
+}
+.biagio-hero-content .breadcrumb a { color: var(--on-dark-soft); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .3s; }
+.biagio-hero-content .breadcrumb a:hover { border-bottom-color: var(--sistine-gold-line); }
+.biagio-hero-tag {
+  font-size: .8rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--sistine-gold-soft); font-weight: 600; margin-bottom: 1.2rem;
+}
+.biagio-hero h1 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(3rem, 6.5vw, 5.6rem); line-height: .98; letter-spacing: -.018em;
+  color: var(--on-dark); margin: 0 0 1.6rem;
+}
+.biagio-hero h1 .gold-ital { font-style: italic; color: var(--sistine-gold-soft); font-weight: 500; }
+.biagio-hero-sub {
+  font-family: var(--sans); color: var(--on-dark-soft);
+  font-size: 1.05rem; line-height: 1.6; max-width: 46ch;
+  margin: 0 0 2rem;
+}
+.biagio-hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+.biagio-live-badge {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+  color: var(--on-dark-soft);
+}
+.biagio-live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #6FCF97; box-shadow: 0 0 0 3px rgba(111,207,151,.18);
+  animation: biagio-pulse 2.2s ease-in-out infinite;
+}
+@keyframes biagio-pulse { 50% { box-shadow: 0 0 0 6px rgba(111,207,151,.05); } }
+
+.biagio-hero-char { position: relative; display: flex; justify-content: flex-end; align-items: center; }
+.biagio-cutout-wrap {
+  position: relative; display: inline-block; border-radius: 20px; overflow: visible;
+  max-width: 460px; width: 100%;
+}
+.biagio-cutout-wrap--hero { max-width: 520px; }
+.biagio-cutout {
+  width: 100%; height: auto; display: block; border-radius: 18px;
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(200,169,107,.18);
+  object-fit: cover; object-position: center 20%;
+}
+.biagio-cutout-badge {
+  position: absolute; top: 1rem; left: 1rem; z-index: 3;
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(15,14,12,.7); backdrop-filter: blur(8px);
+  border: 1px solid var(--sistine-gold-line-soft);
+  color: var(--sistine-gold-soft);
+  font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+  padding: .55rem .9rem; border-radius: 999px;
+}
+.biagio-cutout-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--sistine-gold-soft);
+  box-shadow: 0 0 0 3px rgba(200,169,107,.22);
+  animation: biagio-pulse 2.2s ease-in-out infinite;
+}
+.biagio-cutout-wrap--light .biagio-cutout {
+  box-shadow: 0 30px 60px -25px rgba(0,0,0,.35);
+}
+.biagio-cutout-wrap--light .biagio-cutout-badge {
+  background: rgba(255,255,255,.86); color: var(--sistine-gold); border-color: var(--sistine-gold-line-soft);
+}
+
+/* ── SAY block — Italian phrase + English translation + Hear button ── */
+.biagio-say {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  bottom: -1.8rem; z-index: 4; width: min(90%, 380px);
+  background: rgba(20,18,14,.86); backdrop-filter: blur(10px);
+  border: 1px solid var(--sistine-gold-line-soft); border-radius: 16px;
+  padding: 1.1rem 1.2rem 1rem;
+  color: var(--on-dark); text-align: center;
+  box-shadow: 0 24px 60px -25px rgba(0,0,0,.7);
+}
+.biagio-cutout-wrap--light .biagio-say {
+  background: rgba(255,255,255,.94); color: var(--on-light); border-color: var(--sistine-gold-line-soft);
+  box-shadow: 0 24px 60px -25px rgba(15,14,12,.28);
+}
+.biagio-say-it {
+  font-family: var(--serif); font-style: italic; color: var(--sistine-gold-soft);
+  font-size: 1.12rem; line-height: 1.35; margin: 0 0 .35rem; font-weight: 500;
+}
+.biagio-cutout-wrap--light .biagio-say-it { color: var(--sistine-gold); }
+.biagio-say-en {
+  font-family: var(--sans); font-size: .82rem; color: var(--on-dark-soft);
+  margin: 0 0 .8rem;
+}
+.biagio-cutout-wrap--light .biagio-say-en { color: var(--on-light-soft); }
+
+/* ── HEAR BUTTON — pill with speaker icon ─────────────────────────── */
+.biagio-say-btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  background: rgba(200,169,107,.08);
+  border: 1px solid var(--sistine-gold-line);
+  color: var(--sistine-gold-soft);
+  padding: .7rem 1.2rem; border-radius: 999px;
+  font-family: var(--sans);
+  font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+  cursor: pointer; transition: background .3s var(--ease), border-color .3s, transform .3s, color .3s;
+  line-height: 1;
+}
+.biagio-say-btn:hover { background: rgba(200,169,107,.18); border-color: var(--sistine-gold); transform: translateY(-1px); }
+.biagio-say-btn svg { width: 15px; height: 15px; }
+.biagio-say-btn[aria-pressed="true"] {
+  background: var(--sistine-gold); color: var(--ink); border-color: var(--sistine-gold);
+}
+.biagio-say-btn[aria-pressed="true"] svg { animation: biagio-eq 1.2s ease-in-out infinite; }
+@keyframes biagio-eq { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+.biagio-cutout-wrap--light .biagio-say-btn { color: var(--sistine-gold); }
+
+/* ── SECTION heads ──────────────────────────────────────────────────── */
+.biagio-head { text-align: center; max-width: 64ch; margin: 0 auto clamp(3rem,5vw,4.4rem); }
+.biagio-head .eyebrow-gold { color: var(--sistine-gold-soft); }
+.biagio-head .lead-light { color: var(--on-dark-soft); }
+.biagio-head .lead { margin: 1.3rem auto 0; max-width: 58ch; }
+
+/* ── WHO IS BIAGIO ─────────────────────────────────────────────────── */
+.biagio-intro-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem,5vw,5rem); align-items: center; }
+.biagio-intro-text .lead { margin-top: 0; }
+.biagio-facts { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: .8rem; }
+.biagio-facts li {
+  font-family: var(--sans); font-size: .95rem; color: var(--on-light-soft);
+  padding-left: 1.4rem; position: relative;
+}
+.biagio-facts li::before {
+  content: ""; position: absolute; left: 0; top: .7em;
+  width: 8px; height: 1px; background: var(--sistine-gold);
+}
+.biagio-facts strong { color: var(--ink); font-weight: 600; letter-spacing: -.005em; }
+.biagio-intro-media { display: flex; justify-content: center; }
+.biagio-intro-media .biagio-cutout-wrap { max-width: 380px; }
+
+/* ── 6 SHOWCASE CARDS ──────────────────────────────────────────────── */
+.biagio-showcase-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.4rem, 2.4vw, 2.2rem);
+}
+.biagio-showcase-card {
+  background: rgba(255,255,255,.04); backdrop-filter: blur(6px);
+  border: 1px solid var(--dark-line-soft); border-radius: 18px;
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: border-color .35s var(--ease), transform .35s var(--ease), background .35s;
+}
+.biagio-showcase-card:hover {
+  border-color: var(--sistine-gold-line);
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.06);
+}
+.biagio-showcase-media { aspect-ratio: 4/3; overflow: hidden; background: #14120E; }
+.biagio-showcase-media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 25%;
+  transition: transform .8s var(--ease);
+}
+.biagio-showcase-card:hover .biagio-showcase-media img { transform: scale(1.04); }
+.biagio-showcase-body { padding: 1.5rem 1.4rem 1.6rem; display: flex; flex-direction: column; gap: .8rem; flex: 1; }
+.biagio-showcase-eyebrow {
+  margin: 0; font-family: var(--sans);
+  font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+  color: var(--sistine-gold-soft);
+}
+.biagio-showcase-num { color: var(--sistine-gold-soft); }
+.biagio-showcase-title { color: var(--on-dark); }
+.biagio-showcase-it {
+  font-family: var(--serif); font-style: italic; color: var(--sistine-gold-soft);
+  font-size: 1.28rem; line-height: 1.32; margin: 0; font-weight: 500;
+}
+.biagio-showcase-en {
+  font-family: var(--sans); font-size: .88rem; color: var(--on-dark-soft);
+  margin: 0; line-height: 1.55;
+}
+.biagio-showcase-card .biagio-say-btn { align-self: flex-start; margin-top: auto; }
+
+/* ── LIVE TRANSCRIPT ───────────────────────────────────────────────── */
+.biagio-demo-wrap { max-width: 900px; margin: 0 auto; }
+.biagio-transcript {
+  background: rgba(20,18,14,.6); backdrop-filter: blur(10px);
+  border: 1px solid var(--sistine-gold-line-soft);
+  border-radius: 22px; overflow: hidden;
+  box-shadow: 0 40px 100px -40px rgba(0,0,0,.7);
+}
+.biagio-transcript-head {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.2rem 1.6rem;
+  background: rgba(0,0,0,.35);
+  border-bottom: 1px solid var(--dark-line-soft);
+}
+.biagio-transcript-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  object-fit: cover; object-position: center 25%;
+  border: 1px solid var(--sistine-gold-line);
+}
+.biagio-transcript-name { color: var(--on-dark); font-weight: 600; font-size: .98rem; }
+.biagio-transcript-status {
+  display: inline-flex; align-items: center; gap: .5rem;
+  color: var(--on-dark-soft); font-size: .78rem;
+  font-family: var(--sans); letter-spacing: .04em;
+}
+.biagio-transcript-body {
+  padding: 1.8rem 1.8rem 1.4rem;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.msg { max-width: 80%; padding: 1rem 1.2rem; border-radius: 16px; font-family: var(--sans); font-size: .96rem; line-height: 1.55; }
+.msg p { margin: 0; }
+.msg p + p { margin-top: .55rem; }
+.msg.user {
+  align-self: flex-end; background: var(--paper); color: var(--on-light);
+  border: 1px solid var(--light-line);
+  border-bottom-right-radius: 4px;
+}
+.msg.biagio {
+  align-self: flex-start;
+  background: rgba(200,169,107,.08);
+  border: 1px solid var(--sistine-gold-line-soft);
+  border-left: 3px solid var(--sistine-gold);
+  color: var(--on-dark);
+  border-bottom-left-radius: 4px;
+}
+.msg.biagio .msg-line-it { color: var(--on-dark); }
+.msg.biagio .msg-line-en { color: var(--on-dark-soft); font-size: .89rem; }
+.msg.biagio .msg-correction {
+  font-family: var(--serif); font-style: italic;
+  color: var(--sistine-gold-soft); font-size: 1.1rem; line-height: 1.4;
+  padding: .6rem .9rem; background: rgba(200,169,107,.08);
+  border-radius: 8px; margin: .4rem 0;
+}
+.msg.biagio .msg-correction em { color: #FFE0A8; font-style: italic; font-weight: 600; }
+.biagio-transcript-foot {
+  padding: 1.1rem 1.6rem 1.4rem;
+  border-top: 1px solid var(--dark-line-soft);
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  background: rgba(0,0,0,.2);
+}
+.biagio-transcript-note {
+  font-family: var(--sans); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--on-dark-faint);
+}
+
+/* ── FEATURES GRID ─────────────────────────────────────────────────── */
+.biagio-features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.4rem,2vw,2rem);
+}
+.biagio-feature-card {
+  background: #fff; border: 1px solid var(--hair);
+  border-radius: 14px;
+  padding: 2rem 1.8rem 1.8rem;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+}
+.biagio-feature-card:hover {
+  border-color: var(--sistine-gold-line);
+  box-shadow: 0 20px 45px -25px rgba(15,14,12,.18);
+  transform: translateY(-2px);
+}
+.biagio-feature-num {
+  font-family: var(--serif); font-style: italic;
+  color: var(--sistine-gold); font-size: 1.5rem; margin-bottom: .8rem;
+  font-weight: 500;
+}
+.biagio-feature-card h3 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: 1.4rem; line-height: 1.2; margin: 0 0 .8rem; color: var(--ink);
+}
+.biagio-feature-card p {
+  font-family: var(--sans); font-size: .95rem; line-height: 1.55;
+  color: var(--on-light-soft); margin: 0;
+}
+
+/* ── AVAILABILITY STRIP ────────────────────────────────────────────── */
+.biagio-avail-strip {
+  background: var(--sistine-gold); color: var(--ink);
+  padding: 2rem 0;
+}
+.biagio-avail-wrap {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; align-items: center; text-align: center;
+}
+.biagio-avail-item { display: flex; flex-direction: column; gap: .35rem; }
+.biagio-avail-num {
+  font-family: var(--serif); font-weight: 500; font-size: 2.4rem; line-height: 1;
+  color: var(--ink);
+}
+.biagio-avail-lbl {
+  font-family: var(--sans); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(15,14,12,.7); font-weight: 600;
+}
+
+/* ── FAQ (button-based accordion) ──────────────────────────────────── */
+.biagio-faq .faq-item {
+  border-bottom: 1px solid var(--hair); padding: 0;
+}
+.biagio-faq .faq-q {
+  width: 100%; text-align: left;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.4rem 0; background: none; border: 0; cursor: pointer;
+  font-family: var(--serif); font-weight: 500; font-size: 1.28rem; line-height: 1.3;
+  color: var(--ink);
+}
+.biagio-faq .faq-plus {
+  font-family: var(--serif); font-style: normal; color: var(--sistine-gold);
+  font-size: 1.7rem; line-height: 1; font-weight: 500;
+  transition: transform .3s var(--ease);
+}
+.biagio-faq .faq-item.is-open .faq-plus { transform: rotate(45deg); }
+.biagio-faq .faq-a {
+  max-height: 0; overflow: hidden; transition: max-height .4s var(--ease);
+}
+.biagio-faq .faq-item.is-open .faq-a { max-height: 500px; }
+.biagio-faq .faq-a-inner { padding: 0 0 1.5rem; }
+.biagio-faq .faq-a-inner > div {
+  font-family: var(--sans); font-size: 1rem; line-height: 1.6; color: var(--on-light-soft);
+}
+
+/* ── SIBLING NAV BACK TO COURSES ───────────────────────────────────── */
+.biagio-sibling {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem,5vw,5rem); align-items: center;
+}
+.biagio-sibling-media img {
+  width: 100%; height: auto; border-radius: 18px;
+  box-shadow: 0 30px 60px -25px rgba(15,14,12,.24);
+  object-fit: cover; object-position: center 20%;
+  aspect-ratio: 4/5;
+}
+.biagio-sibling-text .cta-row { display: flex; gap: 1rem; margin-top: 1.8rem; flex-wrap: wrap; }
+
+/* ── FLOATING TRY BIAGIO WIDGET (homepage) ─────────────────────────── */
+.biagio-float {
+  position: fixed; right: 1.6rem; bottom: 1.6rem; z-index: 200;
+  display: inline-flex; align-items: center; gap: .8rem;
+  padding: .7rem .7rem .7rem 1.2rem;
+  background: rgba(15,14,12,.92); backdrop-filter: blur(10px);
+  color: var(--on-dark);
+  border: 1px solid var(--sistine-gold-line);
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 20px 50px -20px rgba(0,0,0,.55);
+  font-family: var(--sans); font-size: .82rem; letter-spacing: .04em; font-weight: 500;
+  transition: transform .3s var(--ease), background .3s, border-color .3s;
+}
+.biagio-float:hover { transform: translateY(-2px); border-color: var(--sistine-gold); background: rgba(15,14,12,1); }
+.biagio-float-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  object-fit: cover; object-position: center 25%;
+  border: 1px solid var(--sistine-gold-line-soft);
+}
+.biagio-float-label { display: inline-flex; flex-direction: column; line-height: 1.15; }
+.biagio-float-label small { color: var(--sistine-gold-soft); font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+.biagio-float-play {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--sistine-gold); color: var(--ink);
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 0; cursor: pointer; padding: 0; margin-left: .3rem;
+}
+.biagio-float-play svg { width: 12px; height: 12px; }
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .biagio-hero-grid { grid-template-columns: 1fr; text-align: left; }
+  .biagio-hero-char { justify-content: center; margin-top: 3rem; }
+  .biagio-intro-grid { grid-template-columns: 1fr; }
+  .biagio-showcase-grid { grid-template-columns: repeat(2, 1fr); }
+  .biagio-features-grid { grid-template-columns: repeat(2, 1fr); }
+  .biagio-avail-wrap { grid-template-columns: 1fr; gap: 1.2rem; }
+  .biagio-sibling { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .biagio-hero h1 { font-size: clamp(2.6rem, 12vw, 3.6rem); }
+  .biagio-showcase-grid { grid-template-columns: 1fr; }
+  .biagio-features-grid { grid-template-columns: 1fr; }
+  .msg { max-width: 92%; }
+  .biagio-float { right: .8rem; bottom: .8rem; padding: .55rem .55rem .55rem 1rem; }
+  .biagio-float-label small { display: none; }
+}

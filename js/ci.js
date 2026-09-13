@@ -166,3 +166,63 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '200px 0px', threshold: 0.05 });
   videos.forEach(function(v){ obs.observe(v); });
 })();
+
+/* ===== BIAGIO · Hear-me buttons + FAQ accordion ===== */
+(function(){
+  // Say buttons — click plays the mapped audio, stops others
+  var buttons = document.querySelectorAll('.biagio-say-btn');
+  var audios = new WeakMap();
+  buttons.forEach(function(btn){
+    var src = btn.getAttribute('data-audio');
+    if(!src) return;
+    var audio = new Audio(src);
+    audio.preload = 'metadata';
+    audios.set(btn, audio);
+    btn.addEventListener('click', function(){
+      // Stop every other Biagio audio
+      buttons.forEach(function(b){
+        if(b === btn) return;
+        var a = audios.get(b);
+        if(a){ try{ a.pause(); a.currentTime = 0; }catch(e){} }
+        b.setAttribute('aria-pressed','false');
+      });
+      if(btn.getAttribute('aria-pressed') === 'true'){
+        try{ audio.pause(); audio.currentTime = 0; }catch(e){}
+        btn.setAttribute('aria-pressed','false');
+      } else {
+        audio.currentTime = 0;
+        var p = audio.play();
+        if(p && p.then){ p.then(function(){ btn.setAttribute('aria-pressed','true'); }).catch(function(err){ console.warn('Biagio audio play failed', err); }); }
+        audio.onended = function(){ btn.setAttribute('aria-pressed','false'); };
+      }
+    });
+  });
+
+  // FAQ accordion (button + aria-controls target)
+  document.querySelectorAll('.biagio-faq .faq-item .faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.closest('.faq-item');
+      var open = item.classList.toggle('is-open');
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // Floating Try Biagio widget — play/link
+  var floatPlay = document.querySelector('.biagio-float-play');
+  if(floatPlay){
+    var src = floatPlay.getAttribute('data-audio') || 'assets/audio/biagio-intro.mp3';
+    var floatAudio = new Audio(src); floatAudio.preload = 'metadata';
+    floatPlay.addEventListener('click', function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      if(floatPlay.getAttribute('aria-pressed') === 'true'){
+        try{ floatAudio.pause(); floatAudio.currentTime = 0; }catch(e){}
+        floatPlay.setAttribute('aria-pressed','false');
+      } else {
+        floatAudio.currentTime = 0;
+        var p = floatAudio.play();
+        if(p && p.then){ p.then(function(){ floatPlay.setAttribute('aria-pressed','true'); }).catch(function(){}); }
+        floatAudio.onended = function(){ floatPlay.setAttribute('aria-pressed','false'); };
+      }
+    });
+  }
+})();
