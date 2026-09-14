@@ -3,20 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Club Italia. Live Italian classes from Italy.</title>
-<meta name="description" content="Live, small-group Italian classes taught by native teachers in Rome, Florence, Bologna, Milan, Venice, Naples and Palermo. Twenty lessons per course. CEFR-aligned certificate on completion. Tuition from $62 per week.">
+<title>Club Italia. Learn Italian, live from Italy.</title>
+<meta name="description" content="Live Italian classes with a native teacher in Italy. Small groups of ten to twelve. Twenty ninety-minute lessons per course. CEFR certificate. Tuition from $62 per week.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ci.css">
+<link rel="stylesheet" href="css/v16-laws.css">
 </head>
-<body>
+<body class="v16-body">
 <header class="site-header">
   <div class="wrap nav">
     <a class="nav-logo" href="index.html" aria-label="Club Italia · home">
       <span class="logo-text">
         <span class="lt-main">Club Italia</span>
-        <span class="lt-sub-img"><span class="lt-sub-label">by</span><img src="assets/img/eteacher-real-logo.png" alt="eTeacher Group" class="lt-eteacher-logo" onerror="this.src='../../assets/img/eteacher-real-logo.png'"></span>
+        <span class="lt-sub-img"><span class="lt-sub-label">by</span><img src="assets/img/eteacher-real-logo.png" alt="eTeacher Group" class="lt-eteacher-logo"></span>
       </span>
     </a>
     <nav class="nav-menu" aria-label="Primary">
@@ -53,514 +54,438 @@
 </aside>
 
 
-<!-- HERO ================================================================ -->
-<section class="hero">
-  <div class="hero-bg">
-    <video autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-roma-statue-poster.jpg">
-      <source src="assets/video/ag-roma-statue.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-content">
-    <span class="hero-tag">A live Italian school. By eTeacher Group.</span>
-    <h1>Learn Italian. Live from Italy.</h1>
-    <p class="hero-sub">Live classes with a native teacher in Italy. Ten to twelve learners in your class. Twenty ninety-minute lessons per course. A CEFR certificate at the end.</p>
-    <div class="hero-ctas">
-      <a class="btn-gold" href="pricing.html">Reserve my seat. $62 a week.</a>
-      <a class="btn-ghost" href="sample-class.html">See a real class</a>
+<!-- 01 HERO · INK GROUND, FULL-BLEED ROMA STATUE FOOTAGE -->
+<section class="v16-hero fold-ink">
+  <video class="v16-hero-video" autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-roma-statue-poster.jpg">
+    <source src="assets/video/ag-roma-statue.mp4" type="video/mp4">
+  </video>
+  <div class="v16-hero-scrim"></div>
+  <div class="v16-hero-inner">
+    <div class="v16-badges">
+      <span class="v16-badge live"><span class="v16-live-dot"></span>Live from Italy</span>
+      <span class="v16-badge">Accredited by eTeacher</span>
+      <span class="v16-badge">Autumn cohort. Six seats.</span>
     </div>
-    <div class="hero-meta">
-      <div class="item"><span class="k">12,847</span><span class="l">learners since 2004</span></div>
-      <div class="item"><span class="k">4.8/5</span><span class="l">Trustpilot verified</span></div>
-      <div class="item"><span class="k">7</span><span class="l">Italian cities</span></div>
-      <div class="item"><span class="k">A0 to B1</span><span class="l">CEFR ladder</span></div>
+    <h1 class="v16-h1"><em>Learn Italian.</em><br>Live from Italy.</h1>
+    <p class="v16-sub">Live classes with a native teacher in Italy. Ten to twelve learners in your class. Twenty ninety-minute lessons per course. A CEFR certificate at the end.</p>
+    <div class="v16-ctas">
+      <a class="v16-btn-gold" href="pricing.html">Reserve my seat. $62 a week.</a>
+      <a class="v16-btn-ghost" href="sample-class.html">See a real class</a>
+    </div>
+    <div class="v16-meta">
+      <div class="v16-mm"><span class="v16-mmk">12,847</span><span class="v16-mml">learners since 2004</span></div>
+      <div class="v16-mm"><span class="v16-mmk">4.8 star</span><span class="v16-mml">Trustpilot verified</span></div>
+      <div class="v16-mm"><span class="v16-mmk">7</span><span class="v16-mml">Italian cities</span></div>
+      <div class="v16-mm"><span class="v16-mmk">A0 to B1</span><span class="v16-mml">CEFR ladder</span></div>
     </div>
   </div>
   <audio id="hero-audio" loop preload="metadata">
     <source src="assets/audio/hero-italian-theme.mp3" type="audio/mpeg">
   </audio>
-  <button id="hero-sound-toggle" class="hero-sound-btn" aria-label="Toggle Italian music" data-state="off">
+  <button id="hero-sound-toggle" class="v16-sound-btn" aria-label="Toggle Italian music" data-state="off">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
-    <span class="hero-sound-label">Music on</span>
+    <span>Music on</span>
   </button>
 </section>
 
-<!-- ACCREDITATION ======================================================== -->
-<section class="accred-strip">
-  <div class="wrap">
-    <div class="a-item"><strong>eTeacher</strong> Since 2004</div>
-    <div class="a-sep"></div>
-    <div class="a-item"><strong>CEFR</strong> A0 to B1</div>
-    <div class="a-sep"></div>
-    <div class="a-item"><strong>12,847</strong> learners</div>
-    <div class="a-sep"></div>
-    <div class="a-item"><strong>4.8 star</strong> Trustpilot</div>
-    <div class="a-sep"></div>
-    <div class="a-item"><strong>ISO 9001</strong> quality</div>
-    <div class="a-sep"></div>
-    <div class="a-item"><strong>Native</strong> Italian faculty</div>
+<!-- 02 ACCREDITATION STRIP · CREAM GROUND -->
+<section class="v16-accred fold-cream">
+  <div class="v16-accred-inner">
+    <div class="v16-a-item"><strong>eTeacher</strong> Since 2004</div>
+    <div class="v16-a-item"><strong>CEFR</strong> A0 to B1</div>
+    <div class="v16-a-item"><strong>12,847</strong> learners</div>
+    <div class="v16-a-item"><strong>4.8 star</strong> Trustpilot</div>
+    <div class="v16-a-item"><strong>ISO 9001</strong> quality</div>
+    <div class="v16-a-item"><strong>Native</strong> Italian faculty</div>
   </div>
 </section>
 
-<!-- WHAT YOU GET (Apple-simple) ========================================== -->
-<section class="section-travertine v8-fold" style="padding:clamp(5rem,10vh,8rem) 0">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow">What you get</span>
-      <h2 class="v8-h2">A real Italian classroom. In your living room.</h2>
-      <p class="lead">One class. Twenty live lessons. A native teacher. A group of ten to twelve. Every session recorded. A certificate at the end.</p>
+<!-- 03 WHAT YOU GET · VERONA BURGUNDY GROUND -->
+<section class="v16-fold fold-verona">
+  <div class="v16-fold-inner">
+    <span class="v16-eyebrow">Six things you get</span>
+    <h2 class="v16-h2"><em>A real Italian classroom.</em> In your living room.</h2>
+    <p class="v16-lead">Live from Italy. Ten to twelve learners. Twenty lessons. Native teacher. Recorded for life. A CEFR certificate at the end.</p>
+    <div class="v16-slider v16-wyg">
+      <article class="v16-wyg-card v16-c-01"><span class="v16-n">01</span><h3>Live from Italy</h3><p>Your teacher is in Rome, Florence, Bologna, Milan, Venice, Naples or Palermo. Every lesson broadcast from the city. You hear the accent that lives there.</p></article>
+      <article class="v16-wyg-card v16-c-02"><span class="v16-n">02</span><h3>Small groups</h3><p>Ten to twelve learners in your class. No exception. You speak in every lesson, not once a term.</p></article>
+      <article class="v16-wyg-card v16-c-03"><span class="v16-n">03</span><h3>Twenty lessons</h3><p>Each course is twenty ninety-minute live lessons. Once or twice a week for ten to twenty weeks. You choose the pace.</p></article>
+      <article class="v16-wyg-card v16-c-04"><span class="v16-n">04</span><h3>Real Italian from lesson one</h3><p>You order, you argue, you tell a story. Grammar is a tool, not a lecture.</p></article>
+      <article class="v16-wyg-card v16-c-05"><span class="v16-n">05</span><h3>Lifetime recordings</h3><p>Every class is recorded. You keep the library for life.</p></article>
+      <article class="v16-wyg-card v16-c-06"><span class="v16-n">06</span><h3>CEFR certificate</h3><p>An eTeacher signed, CEFR aligned certificate on completion.</p></article>
     </div>
-    <div class="wyg-grid">
-      <div class="wyg-card"><div class="wyg-n">01</div><h3>Live from Italy</h3><p>Your teacher is in Rome, Florence, Bologna, Milan, Venice, Naples or Palermo. Every lesson is broadcast from the city. You hear the accent that lives there.</p></div>
-      <div class="wyg-card"><div class="wyg-n">02</div><h3>Small groups</h3><p>Ten to twelve learners in your class. No exception. You speak in every lesson, not once a term.</p></div>
-      <div class="wyg-card"><div class="wyg-n">03</div><h3>Twenty lessons</h3><p>Each course is twenty ninety-minute live lessons. Once or twice a week for ten to twenty weeks. You choose the pace.</p></div>
-      <div class="wyg-card"><div class="wyg-n">04</div><h3>Real Italian, from lesson one</h3><p>You order, you argue, you tell a story. Grammar is a tool, not a lecture.</p></div>
-      <div class="wyg-card"><div class="wyg-n">05</div><h3>Lifetime recordings</h3><p>Every class is recorded. You keep the library for life.</p></div>
-      <div class="wyg-card"><div class="wyg-n">06</div><h3>CEFR certificate</h3><p>An eTeacher-signed, CEFR-aligned certificate when you complete the course.</p></div>
-    </div>
+    <div class="v16-cue">Swipe six cards</div>
   </div>
 </section>
 
-<!-- CHAPTER 01 · THE ELEVEN COURSES ====================================== -->
-<section class="chapter left">
-  <div class="chapter-stage">
-    <div class="bgvid">
-      <video autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-medieval-aerial-poster.jpg">
-        <source src="assets/video/ag-medieval-aerial.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="wrap">
-      <div class="ch-card">
-        <span class="ch-index">The programme</span>
-        <h2 class="ch-title">Eleven courses. One CEFR ladder.</h2>
-        <p class="ch-lede">Four courses take you from zero to intermediate. Four teach conversation. Three take you into cooking, art or opera. Pick one to start.</p>
-        <a class="ch-cta" href="courses.html">See every course</a>
-      </div>
-    </div>
+<!-- 04 FULL-BLEED MEDIEVAL FOOTAGE · INK-DEEP GROUND -->
+<section class="v16-chapter fold-ink">
+  <video class="v16-chapter-video" autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-medieval-aerial-poster.jpg">
+    <source src="assets/video/ag-medieval-aerial.mp4" type="video/mp4">
+  </video>
+  <div class="v16-chapter-scrim"></div>
+  <div class="v16-chapter-inner">
+    <span class="v16-eyebrow gold">The programme</span>
+    <h2 class="v16-h2 light"><em>Eleven courses.</em><br>One CEFR ladder.</h2>
+    <p class="v16-lead light">Four courses take you from zero to intermediate. Four teach conversation. Three take you into cooking, art or opera.</p>
+    <a class="v16-btn-gold" href="courses.html">See every course</a>
   </div>
 </section>
 
-<!-- OFFICIAL COURSE CATALOG (structured cards) =========================== -->
-<section class="section-ink v8-fold" style="padding:clamp(4rem,8vh,6rem) 0">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow">Course catalog. Autumn 2026 cohort.</span>
-      <h2 class="v8-h2">Choose your course</h2>
-      <p class="lead">Every course has the same core structure: twenty live lessons, ten to twelve learners, a defined CEFR jump, a certificate at the end.</p>
+<!-- 05 COURSE CATALOG · CREAM GROUND -->
+<section class="v16-fold fold-cream">
+  <div class="v16-fold-inner">
+    <span class="v16-eyebrow dark">Autumn 2026 catalog</span>
+    <h2 class="v16-h2 dark"><em>Choose</em> your course</h2>
+    <p class="v16-lead dark">Every card shows the CEFR level, faculty, lessons, prerequisites, start date and tuition. Nothing hidden.</p>
+    <div class="v16-slider v16-cat">
+      <a class="v16-cat" href="pages/courses/ci1.html">
+        <div class="v16-cat-img"><img src="assets/img/course-ci1.jpg" alt="CI Principiante in Rome"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">CI 01</span><span class="v16-cat-city">Rome</span></div>
+          <h3 class="v16-cat-name">CI Principiante</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">A0 to A1.1</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Marco Rinaldi</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">20 lessons over 20 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 6, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$62 a week</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/courses/ci2.html">
+        <div class="v16-cat-img"><img src="assets/img/course-ci2.jpg" alt="CI Elementare in Florence"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">CI 02</span><span class="v16-cat-city">Florence</span></div>
+          <h3 class="v16-cat-name">CI Elementare</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">A1.1 to A1.2</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Chiara Bellini</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">20 lessons over 20 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 6, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$62 a week</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/courses/ci3.html">
+        <div class="v16-cat-img"><img src="assets/img/course-ci3.jpg" alt="CI Intermedio in Bologna"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">CI 03</span><span class="v16-cat-city">Bologna</span></div>
+          <h3 class="v16-cat-name">CI Intermedio</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">A1.2 to A2.1</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Giulia Moretti</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">20 lessons over 20 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 6, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$62 a week</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/courses/ci4.html">
+        <div class="v16-cat-img"><img src="assets/img/course-ci4.jpg" alt="CI Avanzato in Naples"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">CI 04</span><span class="v16-cat-city">Naples</span></div>
+          <h3 class="v16-cat-name">CI Avanzato</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">A2.1 to A2.2</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Luca De Simone</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">20 lessons over 20 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 6, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$62 a week</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/spoken/ps1.html">
+        <div class="v16-cat-img"><img src="assets/img/spoken-ps1.jpg" alt="Al Caffe in Rome"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">PS 01</span><span class="v16-cat-city">Rome</span></div>
+          <h3 class="v16-cat-name">Al Caffe</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">Spoken A0 to A1</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Marco Rinaldi</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">20 lessons over 20 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 6, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$62 a week</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/spoken/ps2.html">
+        <div class="v16-cat-img"><img src="assets/img/spoken-ps2.jpg" alt="A Tavola in Florence"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">PS 02</span><span class="v16-cat-city">Florence</span></div>
+          <h3 class="v16-cat-name">A Tavola</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">Spoken A1 to A2</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Chiara Bellini</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">20 lessons over 20 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 6, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$62 a week</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/spoken/ps3.html">
+        <div class="v16-cat-img"><img src="assets/img/spoken-ps3.jpg" alt="In Viaggio in Venice"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">PS 03</span><span class="v16-cat-city">Venice</span></div>
+          <h3 class="v16-cat-name">In Viaggio</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">Spoken A2</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Francesca Zeno</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">20 lessons over 20 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 6, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$62 a week</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/spoken/ps4.html">
+        <div class="v16-cat-img"><img src="assets/img/spoken-ps4.jpg" alt="Chiacchierando in Milan"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">PS 04</span><span class="v16-cat-city">Milan</span></div>
+          <h3 class="v16-cat-name">Chiacchierando</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">Spoken A2 to B1</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Alessandro Ferri</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">20 lessons over 20 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 6, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$62 a week</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/culture/cap-food.html">
+        <div class="v16-cat-img"><img src="assets/img/cap-food.jpg" alt="La Cucina in Bologna"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">CAP 01</span><span class="v16-cat-city">Bologna</span></div>
+          <h3 class="v16-cat-name">La Cucina</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">Cultural. Any level</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Giulia Moretti</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">6 lessons over 6 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 20, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$390</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/culture/cap-art.html">
+        <div class="v16-cat-img"><img src="assets/img/cap-art.jpg" alt="L'Arte in Florence"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">CAP 02</span><span class="v16-cat-city">Florence</span></div>
+          <h3 class="v16-cat-name">L'Arte</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">Cultural. Any level</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Chiara Bellini</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">6 lessons over 6 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 20, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$390</span></div>
+          </div>
+        </div>
+      </a>
+      <a class="v16-cat" href="pages/culture/cap-opera.html">
+        <div class="v16-cat-img"><img src="assets/img/cap-opera.jpg" alt="L'Opera in Milan"></div>
+        <div class="v16-cat-body">
+          <div class="v16-cat-top"><span class="v16-cat-code">CAP 03</span><span class="v16-cat-city">Milan</span></div>
+          <h3 class="v16-cat-name">L'Opera</h3>
+          <div class="v16-cat-spec">
+            <div class="v16-cs"><span class="v16-cs-k">CEFR</span><span class="v16-cs-v">Cultural. Any level</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Faculty</span><span class="v16-cs-v">Alessandro Ferri</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Format</span><span class="v16-cs-v">6 lessons over 6 weeks</span></div>
+            <div class="v16-cs"><span class="v16-cs-k">Starts</span><span class="v16-cs-v">Oct 20, 2026</span></div>
+            <div class="v16-cs v16-cs-price"><span class="v16-cs-k">Tuition</span><span class="v16-cs-v">$390</span></div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="cat-grid">
-      <a class="cat-card" href="pages/courses/ci1.html">
-      <div class="cat-img"><img src="assets/img/course-ci1.jpg" alt="CI Principiante in Rome"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">CI. 01</span>
-          <span class="cat-city">Rome</span>
-        </div>
-        <h3 class="cat-name">CI Principiante</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">A0 to A1.1</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Marco Rinaldi</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">20 lessons over 20 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">90 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">No prior Italian required</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 6, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$62/wk</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/courses/ci2.html">
-      <div class="cat-img"><img src="assets/img/course-ci2.jpg" alt="CI Elementare in Florence"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">CI. 02</span>
-          <span class="cat-city">Florence</span>
-        </div>
-        <h3 class="cat-name">CI Elementare</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">A1.1 to A1.2</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Chiara Bellini</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">20 lessons over 20 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">90 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">CI Principiante or A1.1</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 6, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$62/wk</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/courses/ci3.html">
-      <div class="cat-img"><img src="assets/img/course-ci3.jpg" alt="CI Intermedio in Bologna"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">CI. 03</span>
-          <span class="cat-city">Bologna</span>
-        </div>
-        <h3 class="cat-name">CI Intermedio</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">A1.2 to A2.1</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Giulia Moretti</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">20 lessons over 20 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">90 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">CI Elementare or A1.2</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 6, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$62/wk</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/courses/ci4.html">
-      <div class="cat-img"><img src="assets/img/course-ci4.jpg" alt="CI Avanzato in Naples"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">CI. 04</span>
-          <span class="cat-city">Naples</span>
-        </div>
-        <h3 class="cat-name">CI Avanzato</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">A2.1 to A2.2</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Luca De Simone</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">20 lessons over 20 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">90 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">CI Intermedio or A2.1</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 6, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$62/wk</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/spoken/ps1.html">
-      <div class="cat-img"><img src="assets/img/spoken-ps1.jpg" alt="Al Caffe in Rome"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">PS. 01</span>
-          <span class="cat-city">Rome</span>
-        </div>
-        <h3 class="cat-name">Al Caffe</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">Spoken A0 to A1</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Marco Rinaldi</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">20 lessons over 20 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">90 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">No prior Italian required</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 6, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$62/wk</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/spoken/ps2.html">
-      <div class="cat-img"><img src="assets/img/spoken-ps2.jpg" alt="A Tavola in Florence"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">PS. 02</span>
-          <span class="cat-city">Florence</span>
-        </div>
-        <h3 class="cat-name">A Tavola</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">Spoken A1 to A2</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Chiara Bellini</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">20 lessons over 20 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">90 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">Al Caffe or A1</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 6, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$62/wk</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/spoken/ps3.html">
-      <div class="cat-img"><img src="assets/img/spoken-ps3.jpg" alt="In Viaggio in Venice"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">PS. 03</span>
-          <span class="cat-city">Venice</span>
-        </div>
-        <h3 class="cat-name">In Viaggio</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">Spoken A2</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Francesca Zeno</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">20 lessons over 20 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">90 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">A Tavola or A2</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 6, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$62/wk</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/spoken/ps4.html">
-      <div class="cat-img"><img src="assets/img/spoken-ps4.jpg" alt="Chiacchierando in Milan"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">PS. 04</span>
-          <span class="cat-city">Milan</span>
-        </div>
-        <h3 class="cat-name">Chiacchierando</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">Spoken A2 to B1</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Alessandro Ferri</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">20 lessons over 20 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">90 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">In Viaggio or A2</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 6, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$62/wk</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/culture/cap-food.html">
-      <div class="cat-img"><img src="assets/img/cap-food.jpg" alt="La Cucina in Bologna"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">CAP. 01</span>
-          <span class="cat-city">Bologna</span>
-        </div>
-        <h3 class="cat-name">La Cucina</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">Cultural. Any level</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Giulia Moretti</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">6 lessons over 6 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">60 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">None</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 20, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$390</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/culture/cap-art.html">
-      <div class="cat-img"><img src="assets/img/cap-art.jpg" alt="L'Arte in Florence"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">CAP. 02</span>
-          <span class="cat-city">Florence</span>
-        </div>
-        <h3 class="cat-name">L'Arte</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">Cultural. Any level</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Chiara Bellini</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">6 lessons over 6 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">60 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">None</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 20, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$390</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
-      <a class="cat-card" href="pages/culture/cap-opera.html">
-      <div class="cat-img"><img src="assets/img/cap-opera.jpg" alt="L'Opera in Milan"></div>
-      <div class="cat-body">
-        <div class="cat-topline">
-          <span class="cat-code">CAP. 03</span>
-          <span class="cat-city">Milan</span>
-        </div>
-        <h3 class="cat-name">L'Opera</h3>
-        <div class="cat-spec">
-          <div class="cs-row"><span class="cs-k">CEFR</span><span class="cs-v">Cultural. Any level</span></div>
-          <div class="cs-row"><span class="cs-k">Faculty</span><span class="cs-v">Alessandro Ferri</span></div>
-          <div class="cs-row"><span class="cs-k">Lessons</span><span class="cs-v">6 lessons over 6 weeks</span></div>
-          <div class="cs-row"><span class="cs-k">Length</span><span class="cs-v">60 min per lesson</span></div>
-          <div class="cs-row"><span class="cs-k">Prerequisite</span><span class="cs-v">None</span></div>
-          <div class="cs-row"><span class="cs-k">Starts</span><span class="cs-v">Oct 20, 2026</span></div>
-          <div class="cs-row cs-price"><span class="cs-k">Tuition</span><span class="cs-v">$390</span></div>
-        </div>
-        <span class="cat-view">View course details</span>
-      </div>
-    </a>
+    <div class="v16-cue dark">Swipe eleven courses</div>
+  </div>
+</section>
+
+<!-- 06 FULL-BLEED TUSCANY FOOTAGE · INK GROUND -->
+<section class="v16-chapter fold-ink">
+  <video class="v16-chapter-video" autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-tuscany-drone-poster.jpg">
+    <source src="assets/video/ag-tuscany-drone.mp4" type="video/mp4">
+  </video>
+  <div class="v16-chapter-scrim"></div>
+  <div class="v16-chapter-inner">
+    <span class="v16-eyebrow gold">The method</span>
+    <h2 class="v16-h2 light">You speak <em>from the first lesson.</em></h2>
+    <p class="v16-lead light">Every class is a live conversation. You order, you argue, you tell a story. The city is part of the syllabus.</p>
+    <a class="v16-btn-gold" href="method.html">Read the method</a>
+  </div>
+</section>
+
+<!-- 07 BIAGIO PREVIEW · OLIVE GROUND -->
+<section class="v16-fold fold-olive">
+  <div class="v16-biagio-preview">
+    <div class="v16-biagio-copy">
+      <span class="v16-eyebrow gold">Biagio. 24/7 AI Italian tutor.</span>
+      <h2 class="v16-h2 light">Practise Italian <em>at any hour.</em></h2>
+      <p class="v16-lead light">A 3D animated Italian character. Real Italian voice. Corrects your grammar. Explains in your accent. Included with every course.</p>
+      <a class="v16-btn-gold" href="biagio.html">Meet Biagio</a>
+    </div>
+    <div class="v16-biagio-portrait">
+      <img src="assets/img/biagio-3d-hero.png" alt="Biagio, the animated Club Italia AI tutor" onerror="this.src='assets/img/biagio.png'">
+      <span class="v16-biagio-badge"><span class="v16-live-dot"></span>Sempre online</span>
     </div>
   </div>
 </section>
 
-<!-- SEE A REAL CLASS (Zoom mockup) ======================================= -->
-<section class="masterclass-fold">
-  <div class="wrap">
-    <div class="mc-left">
-      <span class="sec-head eyebrow" style="color:#DDB86A">Inside the classroom</span>
-      <h2>See a real class before you enrol</h2>
-      <p>Book a free five-minute drop-in on a real live class. You meet the teacher. You meet the class. You decide if it is for you.</p>
-      <a class="btn-gold" href="sample-class.html">Book a free drop-in</a>
+<!-- 08 FULL-BLEED CHEFS FOOTAGE · INK GROUND -->
+<section class="v16-chapter fold-ink">
+  <video class="v16-chapter-video" autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-chefs-street-poster.jpg">
+    <source src="assets/video/ag-chefs-street.mp4" type="video/mp4">
+  </video>
+  <div class="v16-chapter-scrim"></div>
+  <div class="v16-chapter-inner">
+    <span class="v16-eyebrow gold">Cultural capsules</span>
+    <h2 class="v16-h2 light"><em>Cook, look, listen.</em><br>In Italian.</h2>
+    <p class="v16-lead light">Three six-lesson capsules. La cucina in Bologna. L'arte in Florence. L'opera in Milan.</p>
+    <a class="v16-btn-gold" href="culture.html">See the capsules</a>
+  </div>
+</section>
+
+<!-- 09 ZOOM MOCKUP · VERONA BURGUNDY GROUND -->
+<section class="v16-fold fold-verona">
+  <div class="v16-mc">
+    <div class="v16-mc-copy">
+      <span class="v16-eyebrow gold">See a real class</span>
+      <h2 class="v16-h2 light"><em>Ten to twelve learners.</em><br>One native teacher.</h2>
+      <p class="v16-lead light">Book a free five-minute drop-in on a real live class. You meet the teacher. You meet the class. You decide.</p>
+      <a class="v16-btn-gold" href="sample-class.html">Book a free drop-in</a>
     </div>
-    <div class="mc-right">
-      <img src="assets/img/zoom-classroom-luxury.jpg" alt="A live Club Italia class: Marco teaching from Rome, five American learners on the call">
+    <div class="v16-mc-mockup">
+      <img src="assets/img/zoom-classroom-luxury.jpg" alt="A live Club Italia class with Marco teaching from Rome and 5 American learners on the call">
     </div>
   </div>
 </section>
 
-<!-- ACADEMIC CREDIBILITY ================================================= -->
-<section class="section-travertine v8-fold" style="padding:clamp(5rem,10vh,8rem) 0">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow">Academic credibility</span>
-      <h2 class="v8-h2">A serious school. Not an app.</h2>
-      <p class="lead">Club Italia is a live language school inside eTeacher Group, a twenty-year academic operator with 200,000 alumni across sixteen languages.</p>
+<!-- 10 ACADEMIC CREDIBILITY · CREAM GROUND -->
+<section class="v16-fold fold-cream">
+  <div class="v16-fold-inner">
+    <span class="v16-eyebrow dark">Academic credibility</span>
+    <h2 class="v16-h2 dark"><em>A serious school.</em> Not an app.</h2>
+    <p class="v16-lead dark">Club Italia is a live language school inside eTeacher Group. Twenty years, 200,000 alumni, sixteen languages.</p>
+    <div class="v16-slider v16-cred">
+      <article class="v16-cred-card"><div class="v16-cred-k">2004</div><h3>Licensed academic institution</h3><p>eTeacher Group is registered in Israel and the United States. Accredited under the CEFR framework of the Council of Europe.</p></article>
+      <article class="v16-cred-card"><div class="v16-cred-k">200,000</div><h3>Alumni in sixteen languages</h3><p>Hebrew, Arabic, Spanish, French, Chinese, Japanese, German, Russian, Italian and more. Featured in the WSJ and NYT.</p></article>
+      <article class="v16-cred-card"><div class="v16-cred-k">ISO 9001</div><h3>Certified quality management</h3><p>Teacher recruitment, class delivery and student outcomes are ISO 9001:2015 certified and audited annually.</p></article>
+      <article class="v16-cred-card"><div class="v16-cred-k">CEFR</div><h3>Aligned to the European standard</h3><p>Every course leads to a defined CEFR outcome A0 to B1. Certificate accepted for citizenship and university applications in Italy.</p></article>
     </div>
-    <div class="cred-grid">
-      <div class="cred-card"><div class="cred-k">2004</div><h3>Founded as a licensed academic institution</h3><p>eTeacher Group is registered in Israel and the United States. Our programme is accredited under the CEFR (Common European Framework of Reference for Languages) framework of the Council of Europe.</p></div>
-      <div class="cred-card"><div class="cred-k">200,000</div><h3>Alumni across sixteen languages</h3><p>Hebrew, Arabic, Spanish, French, Chinese, Japanese, German, Russian, Polish, Latin, Greek, Italian and more. Featured in The Wall Street Journal, The New York Times and The Times of Israel.</p></div>
-      <div class="cred-card"><div class="cred-k">ISO 9001</div><h3>Certified quality management</h3><p>Our teacher recruitment, class delivery and student-outcome processes are ISO 9001:2015 certified and audited annually.</p></div>
-      <div class="cred-card"><div class="cred-k">CEFR</div><h3>Aligned to the European standard</h3><p>Every course leads to a defined CEFR outcome (A0 to B1). Your certificate is accepted for citizenship and university applications in Italy and across the EU.</p></div>
-    </div>
+    <div class="v16-cue dark">Swipe four credentials</div>
   </div>
 </section>
 
-<!-- FACULTY (with credentials) =========================================== -->
-<section class="section-ink v8-fold" style="padding:clamp(5rem,10vh,8rem) 0">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow">Faculty</span>
-      <h2 class="v8-h2">Seven native teachers. Seven Italian cities.</h2>
-      <p class="lead">Every faculty member holds a university degree in Italian language teaching (DITALS or CEDILS) and at least five years teaching adults.</p>
+<!-- 11 FACULTY · OLIVE GROUND -->
+<section class="v16-fold fold-olive">
+  <div class="v16-fold-inner">
+    <span class="v16-eyebrow gold">Faculty</span>
+    <h2 class="v16-h2 light"><em>Seven native teachers.</em><br>Seven Italian cities.</h2>
+    <p class="v16-lead light">Every faculty member holds a university degree in Italian language teaching (DITALS or CEDILS) and at least five years teaching adults.</p>
+    <div class="v16-slider v16-faculty">
+      <a class="v16-fac" href="pages/teachers/marco.html"><img src="assets/img/teacher-marco.jpg" alt="Marco Rinaldi"><div><h4>Marco Rinaldi</h4><p>Rome. La Sapienza, DITALS II.</p></div></a>
+      <a class="v16-fac" href="pages/teachers/chiara.html"><img src="assets/img/teacher-chiara.jpg" alt="Chiara Bellini"><div><h4>Chiara Bellini</h4><p>Florence. Firenze, art history.</p></div></a>
+      <a class="v16-fac" href="pages/teachers/giulia.html"><img src="assets/img/teacher-giulia.jpg" alt="Giulia Moretti"><div><h4>Giulia Moretti</h4><p>Bologna. DITALS I, la cucina.</p></div></a>
+      <a class="v16-fac" href="pages/teachers/alessandro.html"><img src="assets/img/teacher-alessandro.jpg" alt="Alessandro Ferri"><div><h4>Alessandro Ferri</h4><p>Milan. Cattolica, opera studies.</p></div></a>
+      <a class="v16-fac" href="pages/teachers/francesca.html"><img src="assets/img/teacher-francesca.jpg" alt="Francesca Zeno"><div><h4>Francesca Zeno</h4><p>Venice. Ca Foscari, linguistics.</p></div></a>
+      <a class="v16-fac" href="pages/teachers/luca.html"><img src="assets/img/teacher-luca.jpg" alt="Luca De Simone"><div><h4>Luca De Simone</h4><p>Naples. Federico II, DITALS II.</p></div></a>
+      <a class="v16-fac" href="pages/teachers/sofia.html"><img src="assets/img/teacher-sofia.jpg" alt="Sofia Mazzara"><div><h4>Sofia Mazzara</h4><p>Palermo. Sicilian culture.</p></div></a>
     </div>
-    <div class="faculty-row">
-      <a class="fac-real" href="pages/teachers/marco.html"><img src="assets/img/teacher-marco.jpg" alt="Marco Rinaldi"><div><h4>Marco Rinaldi</h4><p>Rome. La Sapienza, DITALS II. CEFR examiner.</p></div></a>
-      <a class="fac-real" href="pages/teachers/chiara.html"><img src="assets/img/teacher-chiara.jpg" alt="Chiara Bellini"><div><h4>Chiara Bellini</h4><p>Florence. Universita di Firenze, art history.</p></div></a>
-      <a class="fac-real" href="pages/teachers/giulia.html"><img src="assets/img/teacher-giulia.jpg" alt="Giulia Moretti"><div><h4>Giulia Moretti</h4><p>Bologna. Universita di Bologna, DITALS I.</p></div></a>
-      <a class="fac-real" href="pages/teachers/alessandro.html"><img src="assets/img/teacher-alessandro.jpg" alt="Alessandro Ferri"><div><h4>Alessandro Ferri</h4><p>Milan. Universita Cattolica, opera studies.</p></div></a>
-      <a class="fac-real" href="pages/teachers/francesca.html"><img src="assets/img/teacher-francesca.jpg" alt="Francesca Zeno"><div><h4>Francesca Zeno</h4><p>Venice. Ca' Foscari, linguistics.</p></div></a>
-      <a class="fac-real" href="pages/teachers/luca.html"><img src="assets/img/teacher-luca.jpg" alt="Luca De Simone"><div><h4>Luca De Simone</h4><p>Naples. Universita Federico II, DITALS II.</p></div></a>
-      <a class="fac-real" href="pages/teachers/sofia.html"><img src="assets/img/teacher-sofia.jpg" alt="Sofia Mazzara"><div><h4>Sofia Mazzara</h4><p>Palermo. Universita di Palermo, Sicilian culture.</p></div></a>
-    </div>
-    <div class="slider-cue">Swipe to meet every teacher</div>
+    <div class="v16-cue">Swipe seven teachers</div>
   </div>
 </section>
 
-<!-- CHAPTER 02 · CULTURAL CAPSULES ======================================= -->
-<section class="chapter right alt">
-  <div class="chapter-stage">
-    <div class="bgvid">
-      <video autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-chefs-street-poster.jpg">
-        <source src="assets/video/ag-chefs-street.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="wrap">
-      <div class="ch-card">
-        <span class="ch-index">Cultural capsules</span>
-        <h2 class="ch-title">Cook, look, listen. In Italian.</h2>
-        <p class="ch-lede">Three six-lesson capsules go deep into one part of Italian life. La cucina in Bologna with Giulia. L'arte in Florence with Chiara. L'opera in Milan with Alessandro.</p>
-        <a class="ch-cta" href="culture.html">See the capsules</a>
-      </div>
-    </div>
+<!-- 12 FULL-BLEED VENICE FOOTAGE · INK GROUND -->
+<section class="v16-chapter fold-ink">
+  <video class="v16-chapter-video" autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-venice-gondola-poster.jpg">
+    <source src="assets/video/ag-venice-gondola.mp4" type="video/mp4">
+  </video>
+  <div class="v16-chapter-scrim"></div>
+  <div class="v16-chapter-inner">
+    <span class="v16-eyebrow gold">Every city, your classroom</span>
+    <h2 class="v16-h2 light"><em>In viaggio.</em><br>Through seven cities.</h2>
+    <p class="v16-lead light">Francesca in Venice. Luca in Naples. Sofia in Palermo. In Viaggio takes you through seven cities, seven accents, one Italian.</p>
+    <a class="v16-btn-gold" href="pages/spoken/ps3.html">Board In Viaggio</a>
   </div>
 </section>
 
-<!-- CEFR LADDER ========================================================== -->
-<section class="section-travertine v8-fold" style="padding:clamp(5rem,10vh,8rem) 0">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow">The CEFR ladder</span>
-      <h2 class="v8-h2">From first ciao to full fluency.</h2>
-      <p class="lead">Every course sits on a defined rung of the Common European Framework. You climb the ladder in order. Or you start where you already are.</p>
+<!-- 13 CEFR LADDER · CREAM GROUND -->
+<section class="v16-fold fold-cream">
+  <div class="v16-fold-inner">
+    <span class="v16-eyebrow dark">The CEFR ladder</span>
+    <h2 class="v16-h2 dark"><em>From first ciao</em> to full fluency</h2>
+    <p class="v16-lead dark">Every course sits on a defined rung of the Common European Framework. You climb the ladder in order, or you start where you already are.</p>
+    <div class="v16-slider v16-cefr">
+      <article class="v16-cefr-node"><span class="v16-cefr-k">A0</span><span class="v16-cefr-t">Ciao</span><span class="v16-cefr-d">First words, sounds, greetings.</span></article>
+      <article class="v16-cefr-node"><span class="v16-cefr-k">A1.1</span><span class="v16-cefr-t">Prime parole</span><span class="v16-cefr-d">Introduce yourself. Talk about your day.</span></article>
+      <article class="v16-cefr-node"><span class="v16-cefr-k">A1.2</span><span class="v16-cefr-t">Vita quotidiana</span><span class="v16-cefr-d">Order, ask directions, small talk.</span></article>
+      <article class="v16-cefr-node"><span class="v16-cefr-k">A2.1</span><span class="v16-cefr-t">Sicuro</span><span class="v16-cefr-d">Past, future, opinions.</span></article>
+      <article class="v16-cefr-node"><span class="v16-cefr-k">A2.2</span><span class="v16-cefr-t">Certificato</span><span class="v16-cefr-d">Independent everyday Italian.</span></article>
+      <article class="v16-cefr-node"><span class="v16-cefr-k">B1</span><span class="v16-cefr-t">Fluente</span><span class="v16-cefr-d">Speak with confidence about work and life.</span></article>
     </div>
-    <div class="cefr-ladder">
-      <div class="cefr-node"><span class="cn-k">A0</span><span class="cn-t">Ciao</span><span class="cn-d">First words, sounds, greetings.</span></div>
-      <div class="cefr-node"><span class="cn-k">A1.1</span><span class="cn-t">Prime parole</span><span class="cn-d">Introduce yourself. Talk about your day.</span></div>
-      <div class="cefr-node"><span class="cn-k">A1.2</span><span class="cn-t">Vita quotidiana</span><span class="cn-d">Order, ask directions, small talk.</span></div>
-      <div class="cefr-node"><span class="cn-k">A2.1</span><span class="cn-t">Sicuro</span><span class="cn-d">Past, future, opinions.</span></div>
-      <div class="cefr-node"><span class="cn-k">A2.2</span><span class="cn-t">Certificato</span><span class="cn-d">Independent everyday Italian.</span></div>
-      <div class="cefr-node"><span class="cn-k">B1</span><span class="cn-t">Fluente</span><span class="cn-d">Speak with confidence about work and life.</span></div>
-    </div>
+    <div class="v16-cue dark">Swipe six levels</div>
   </div>
 </section>
 
-<!-- TRUSTPILOT =========================================================== -->
-<section class="trustpilot-band">
-  <div class="wrap">
-    <div class="tp-header">
-      <div class="tp-logo">Trustpilot</div>
-      <h2>Excellent. 4.8 out of 5.</h2>
-      <p class="tp-rating"><strong>Based on 3,247 verified reviews.</strong></p>
+<!-- 14 TRUSTPILOT · SISTINE-DEEP GROUND -->
+<section class="v16-fold fold-sistine">
+  <div class="v16-fold-inner">
+    <div class="v16-tp-header">
+      <div class="v16-tp-logo">Trustpilot</div>
+      <h2 class="v16-h2 light"><em>Excellent.</em> 4.8 out of 5.</h2>
+      <p class="v16-lead light">Based on 3,247 verified reviews.</p>
     </div>
-    <div class="tp-grid">
-      <div class="tp-card"><div class="tp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tp-name">Sarah T. <span class="tp-verified">Verified</span></div><p class="tp-quote">"Marco is a great teacher. Small class, everyone speaks, and you actually leave every lesson able to say something new."</p></div>
-      <div class="tp-card"><div class="tp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tp-name">David L. <span class="tp-verified">Verified</span></div><p class="tp-quote">"Twelve people in class, all adults, all serious. Best language school I have used, and I have tried a few."</p></div>
-      <div class="tp-card"><div class="tp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tp-name">Elena R. <span class="tp-verified">Verified</span></div><p class="tp-quote">"Chiara teaches from a Florentine studio. You hear the city. The accent training is unreal."</p></div>
-      <div class="tp-card"><div class="tp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tp-name">Michael K. <span class="tp-verified">Verified</span></div><p class="tp-quote">"The CEFR certificate got me an Italian citizenship interview. Real, official, worked."</p></div>
+    <div class="v16-slider v16-tp">
+      <article class="v16-tp-card"><div class="v16-tp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="v16-tp-name">Sarah T. <span class="v16-tp-verified">Verified</span></div><p class="v16-tp-quote">"Marco is a great teacher. Small class, everyone speaks, and you actually leave every lesson able to say something new."</p></article>
+      <article class="v16-tp-card"><div class="v16-tp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="v16-tp-name">David L. <span class="v16-tp-verified">Verified</span></div><p class="v16-tp-quote">"Twelve people in class, all adults, all serious. Best language school I have used, and I have tried a few."</p></article>
+      <article class="v16-tp-card"><div class="v16-tp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="v16-tp-name">Elena R. <span class="v16-tp-verified">Verified</span></div><p class="v16-tp-quote">"Chiara teaches from a Florentine studio. You hear the city. The accent training is unreal."</p></article>
+      <article class="v16-tp-card"><div class="v16-tp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="v16-tp-name">Michael K. <span class="v16-tp-verified">Verified</span></div><p class="v16-tp-quote">"The CEFR certificate got me an Italian citizenship interview. Real, official, worked."</p></article>
     </div>
-    <div class="slider-cue">Swipe to see more reviews</div>
+    <div class="v16-cue">Swipe four reviews</div>
   </div>
 </section>
 
-<!-- BIAGIO HERO PREVIEW ==================================================== -->
-<section class="section-pad biagio-fold biagio-fold-navy-r" aria-labelledby="home-biagio-h2">
-  <div class="wrap biagio-intro-grid" style="align-items:center">
-    <div class="biagio-intro-text reveal">
-      <span class="eyebrow eyebrow-gold" style="color:var(--sistine-gold-soft)">Il tuo tutor AI</span>
-      <h2 id="home-biagio-h2" class="display-md" style="margin:1.4rem 0;color:var(--on-dark)">Meet <span class="gold-ital">Biagio</span>. Your Italian tutor at <span class="gold-ital">3 a.m.</span></h2>
-      <p class="lead" style="color:var(--on-dark-soft)">A warm Roman voice trained on the Club Italia syllabus. Biagio drills your pronunciation, corrects your grammar and rehearses tomorrow's lesson with you, in Italian, whenever you have ten minutes.</p>
-      <div class="cta-row" style="display:flex;gap:1rem;margin-top:1.6rem;flex-wrap:wrap">
-        <a class="btn btn-3d btn-3d-primary btn-lg" href="biagio.html">Meet Biagio</a>
-        <button type="button" class="biagio-say-btn" data-audio="assets/audio/biagio-intro.mp3" aria-pressed="false" aria-label="Hear Biagio introduce himself"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 8a5 5 0 010 8M19 5a9 9 0 010 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hear Biagio</span></button>
-      </div>
+<!-- 15 PRICING · VERONA BURGUNDY GROUND -->
+<section class="v16-fold fold-verona">
+  <div class="v16-fold-inner">
+    <span class="v16-eyebrow gold">Tuition</span>
+    <h2 class="v16-h2 light"><em>Three ways</em> in.</h2>
+    <p class="v16-lead light">Every plan includes the live class, the recording library, Biagio the AI tutor and the CEFR certificate.</p>
+    <div class="v16-slider v16-pricing">
+      <article class="v16-pp-card"><span class="v16-pp-k">Monthly</span><span class="v16-pp-p">$249</span><span class="v16-pp-per">per month</span><ul class="v16-pp-list"><li>One live course</li><li>Lifetime recordings</li><li>Biagio AI tutor</li><li>CEFR certificate</li></ul><a class="v16-btn-gold" href="pricing.html">Start monthly</a></article>
+      <article class="v16-pp-card v16-pp-featured"><span class="v16-pp-k">Annual. Save 22%.</span><span class="v16-pp-p">$1,999</span><span class="v16-pp-per">per year</span><ul class="v16-pp-list"><li>All four CEFR courses</li><li>All four conversation courses</li><li>All three cultural capsules</li><li>Biagio AI tutor</li><li>CEFR certificate</li></ul><a class="v16-btn-gold" href="pricing.html">Reserve annual</a></article>
+      <article class="v16-pp-card"><span class="v16-pp-k">Founder</span><span class="v16-pp-p">$3,499</span><span class="v16-pp-per">lifetime</span><ul class="v16-pp-list"><li>Every course, forever</li><li>Annual live retreat in Italy</li><li>Private hours with faculty</li></ul><a class="v16-btn-gold" href="pricing.html">Claim founder</a></article>
     </div>
-    <div class="biagio-intro-media reveal reveal-d1">
-      <div class="biagio-cutout-wrap">
-        <span class="biagio-cutout-badge"><span class="biagio-cutout-dot"></span> Biagio · Roma</span>
-        <img src="assets/img/biagio-pose1.jpg" alt="Biagio, your Club Italia Italian tutor" class="biagio-cutout" width="800" height="1000" loading="lazy" decoding="async">
-        <div class="biagio-say">
-          <button type="button" class="biagio-say-btn" data-audio="assets/audio/biagio-line-caffe.mp3" aria-pressed="false" aria-label="Hear Biagio"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 8a5 5 0 010 8M19 5a9 9 0 010 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hear Biagio</span></button>
-          <p class="biagio-say-it">« Un cappuccino e un cornetto, per favore. »</p>
-          <p class="biagio-say-en">A cappuccino and a cornetto, please.</p>
-        </div>
-      </div>
-    </div>
+    <div class="v16-cue">Swipe three plans</div>
   </div>
 </section>
 
-<!-- PRICING ============================================================== -->
-<section class="section-ink v8-fold" style="padding:clamp(5rem,10vh,8rem) 0">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow">Tuition</span>
-      <h2 class="v8-h2">Three ways in.</h2>
-      <p class="lead">Every plan includes the live class, the recording library, the AI tutor and the CEFR certificate.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pp-card"><span class="pp-k">Monthly</span><span class="pp-p">$249</span><span class="pp-per">per month</span><ul class="pp-list"><li>One live course</li><li>Lifetime recordings</li><li>AI tutor</li><li>CEFR certificate</li></ul><a class="btn-gold" href="pricing.html">Start monthly</a></div>
-      <div class="pp-card pp-featured"><span class="pp-k">Annual. Save 22%.</span><span class="pp-p">$1,999</span><span class="pp-per">per year</span><ul class="pp-list"><li>All four CEFR courses</li><li>All four conversation courses</li><li>All three cultural capsules</li><li>AI tutor</li><li>CEFR certificate</li></ul><a class="btn-gold" href="pricing.html">Reserve annual</a></div>
-      <div class="pp-card"><span class="pp-k">Founder</span><span class="pp-p">$3,499</span><span class="pp-per">lifetime</span><ul class="pp-list"><li>Every course, forever</li><li>Annual live retreat in Italy</li><li>Private hours with faculty</li></ul><a class="btn-gold" href="pricing.html">Claim founder</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ ================================================================== -->
-<section class="section-travertine v8-fold" style="padding:clamp(5rem,10vh,8rem) 0">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow">Questions</span>
-      <h2 class="v8-h2">The questions we hear most.</h2>
-    </div>
-    <div class="faq-list">
-      <details><summary>How is this different from Duolingo or Rosetta Stone?</summary><p>Those are self-serve apps. Club Italia is a live small-group class with a native teacher broadcasting from Italy. You speak every lesson.</p></details>
+<!-- 16 FAQ · CREAM GROUND -->
+<section class="v16-fold fold-cream">
+  <div class="v16-fold-inner">
+    <span class="v16-eyebrow dark">Questions</span>
+    <h2 class="v16-h2 dark"><em>The questions</em> we hear most.</h2>
+    <div class="v16-faq">
+      <details><summary>How is this different from Duolingo or Rosetta Stone?</summary><p>Those are self serve apps. Club Italia is a live small group class with a native teacher broadcasting from Italy. You speak every lesson.</p></details>
       <details><summary>What if I already speak some Italian?</summary><p>Book a free placement call. We put you on the correct CEFR rung so you neither repeat nor drown.</p></details>
       <details><summary>What if I miss a class?</summary><p>Every class is recorded. You keep the library for life.</p></details>
       <details><summary>How large are the groups?</summary><p>Ten to twelve learners. No exception.</p></details>
-      <details><summary>Is the certificate official?</summary><p>Yes. eTeacher-signed, CEFR-aligned. Accepted for citizenship and university applications in Italy.</p></details>
-      <details><summary>Can I get a refund?</summary><p>Seven-day full refund from your first live lesson. No questions.</p></details>
-      <details><summary>What times are classes?</summary><p>Morning Italy, evening Italy and evening US East. You pick at enrolment.</p></details>
-      <details><summary>Do I need to speak any Italian to start?</summary><p>No. CI Principiante starts at A0. The sound of the language itself.</p></details>
+      <details><summary>Is the certificate official?</summary><p>Yes. eTeacher signed, CEFR aligned. Accepted for citizenship and university applications in Italy.</p></details>
+      <details><summary>Can I get a refund?</summary><p>Seven day full refund from your first live lesson. No questions.</p></details>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA ============================================================ -->
-<section class="chapter left">
-  <div class="chapter-stage">
-    <div class="bgvid">
-      <video autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-cypress-road-poster.jpg">
-        <source src="assets/video/ag-cypress-road.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="wrap">
-      <div class="ch-card">
-        <span class="ch-index">Autumn cohort. Six seats remain.</span>
-        <h2 class="ch-title">Enrol before 6 October.</h2>
-        <p class="ch-lede">Live from Italy. Small groups of ten to twelve. eTeacher CEFR certificate. Seven-day refund.</p>
-        <div class="hero-ctas" style="margin-top:2rem">
-          <a class="btn-gold" href="pricing.html">Reserve my seat</a>
-          <a class="btn-ghost" href="sample-class.html">See a real class first</a>
-        </div>
-      </div>
+<!-- 17 FINAL FULL-BLEED CTA -->
+<section class="v16-chapter fold-ink">
+  <video class="v16-chapter-video" autoplay muted="muted" loop playsinline webkit-playsinline preload="auto" poster="assets/img/ag-cypress-road-poster.jpg">
+    <source src="assets/video/ag-cypress-road.mp4" type="video/mp4">
+  </video>
+  <div class="v16-chapter-scrim"></div>
+  <div class="v16-chapter-inner">
+    <span class="v16-eyebrow gold">Autumn cohort. Six seats remain.</span>
+    <h2 class="v16-h2 light"><em>Enrol</em> before 6 October.</h2>
+    <p class="v16-lead light">Live from Italy. Small groups of ten to twelve. eTeacher CEFR certificate. Seven day refund.</p>
+    <div class="v16-ctas">
+      <a class="v16-btn-gold" href="pricing.html">Reserve my seat</a>
+      <a class="v16-btn-ghost" href="sample-class.html">See a real class first</a>
     </div>
   </div>
 </section>
@@ -569,8 +494,8 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="lt-main" style="font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft);margin-bottom:.4rem">Club Italia</div>
-        <div class="lt-sub" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:1.2rem">by eTeacher</div>
+        <div class="lt-main" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#DDB86A;margin-bottom:.6rem">Club Italia</div>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1.2rem"><span style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(245,238,217,.55)">by</span><img src="assets/img/eteacher-real-logo-white.png" alt="eTeacher Group" style="height:20px;width:auto;filter:brightness(1.3)"></div>
         <p>Club Italia by eTeacher · a culturally immersive, certified, live Italian language school for adult lifelong learners in the United States and around the world.</p>
         <p style="margin-top:1.2rem">
           <a href="mailto:advisor@eTeacherGroup.com" style="display:inline-flex;align-items:center;gap:.55rem;color:var(--gold-soft)">✉ advisor@eTeacherGroup.com</a>
@@ -654,16 +579,9 @@
   </div>
 </div>
 
-<!-- Floating Try Biagio widget -->
-<a class="biagio-float" href="biagio.html" aria-label="Try Biagio, the AI Italian tutor">
-  <img src="assets/img/biagio-pose1.jpg" alt="" class="biagio-float-avatar">
-  <span class="biagio-float-label"><small>Try Biagio</small><strong>Il tuo tutor AI</strong></span>
-  <button type="button" class="biagio-float-play" data-audio="assets/audio/biagio-intro.mp3" aria-pressed="false" aria-label="Hear Biagio introduce himself"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
-</a>
-
 <script src="js/ci.js"></script>
 <script>
-(function(){var btn=document.getElementById('hero-sound-toggle');var audio=document.getElementById('hero-audio');if(!btn||!audio)return;audio.volume=0.35;btn.addEventListener('click',function(){if(audio.paused){audio.play().then(function(){btn.setAttribute('data-state','on');var lbl=btn.querySelector('.hero-sound-label');if(lbl)lbl.textContent='Music off';}).catch(function(e){console.warn('audio blocked',e);});}else{audio.pause();btn.setAttribute('data-state','off');var lbl=btn.querySelector('.hero-sound-label');if(lbl)lbl.textContent='Music on';}});})();
+(function(){var btn=document.getElementById('hero-sound-toggle');var audio=document.getElementById('hero-audio');if(!btn||!audio)return;audio.volume=0.35;btn.addEventListener('click',function(){if(audio.paused){audio.play().then(function(){btn.setAttribute('data-state','on');var lbl=btn.querySelector('span');if(lbl)lbl.textContent='Music off';}).catch(function(e){console.warn('audio blocked',e);});}else{audio.pause();btn.setAttribute('data-state','off');var lbl=btn.querySelector('span');if(lbl)lbl.textContent='Music on';}});})();
 </script>
 </body>
 </html>
