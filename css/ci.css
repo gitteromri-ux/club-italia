@@ -2366,3 +2366,68 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var
   .biagio-float { right: .8rem; bottom: .8rem; padding: .55rem .55rem .55rem 1rem; }
   .biagio-float-label small { display: none; }
 }
+
+/* ============ v15: real eTeacher logo + high-contrast fonts + universal mobile sliders ============ */
+
+/* Real eTeacher logo styling in nav */
+.lt-sub-img{display:inline-flex;align-items:center;gap:.5rem;margin-top:.2rem}
+.lt-sub-label{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:600}
+.lt-eteacher-logo{height:16px;width:auto;filter:brightness(1.4) saturate(1.1);vertical-align:middle;display:inline-block}
+@media(max-width:860px){
+  .lt-eteacher-logo{height:14px}
+  .lt-sub-label{font-size:.58rem;letter-spacing:.22em}
+}
+
+/* Force high-contrast body text everywhere for readability */
+.hero-sub,.pb-sub,.ch-lede,.lead,.sec-head .lead,.wyg-card p,.cred-card p,.cat-body,.cs-v,.faq-list p,.pp-list li,.hero-meta .l,.wyg-card,.method-block p,.mb-p,.tp-quote,.u-body p{
+  color-scheme:only dark;
+}
+/* Kill any accidental low-opacity text */
+.hero-sub{opacity:1 !important; color:#FFFBF2 !important}
+.ch-lede{opacity:1 !important; color:#FFFBF2 !important}
+.pb-sub{opacity:1 !important; color:#FFFBF2 !important}
+.lead{opacity:1 !important}
+.section-ink .lead,.section-ink p{color:rgba(255,253,246,.9) !important}
+.section-travertine .lead,.section-travertine p{color:rgba(15,14,12,.85) !important}
+.wyg-card p{color:rgba(255,253,246,.85) !important; font-size:1.05rem !important; line-height:1.55 !important}
+.u-body p{color:rgba(255,253,246,.85) !important; font-size:1rem !important}
+.cred-card p{color:rgba(15,14,12,.85) !important; font-size:1rem !important; line-height:1.6 !important}
+.tp-quote{color:rgba(15,14,12,.9) !important; font-size:1rem !important}
+.faq-list p{color:rgba(255,253,246,.88) !important; font-size:1.05rem !important; line-height:1.6 !important}
+
+/* Universal mobile card sliders — ensures every card grid on every page becomes swipeable at ≤860px */
+@media(max-width:860px){
+  /* Universal slider treatment for any .grid, .row, .cards-row etc. */
+  .cg-row,.faculty-row,.tp-grid,.pricing-grid,.cat-grid,.cred-grid,.wyg-grid,.unit-grid,.pillar-grid,.cap-grid,.reviews-grid,.method-grid,.course-grid,.gallery-grid,.article-grid,.blog-grid{
+    display:flex !important;
+    grid-template-columns:none !important;
+    overflow-x:auto !important;
+    scroll-snap-type:x mandatory !important;
+    -webkit-overflow-scrolling:touch !important;
+    gap:1rem !important;
+    padding:0 1.4rem !important;
+    scrollbar-width:none !important;
+    -ms-overflow-style:none !important;
+    scroll-behavior:smooth;
+  }
+  .cg-row::-webkit-scrollbar,.faculty-row::-webkit-scrollbar,.tp-grid::-webkit-scrollbar,.pricing-grid::-webkit-scrollbar,.cat-grid::-webkit-scrollbar,.cred-grid::-webkit-scrollbar,.wyg-grid::-webkit-scrollbar,.unit-grid::-webkit-scrollbar,.pillar-grid::-webkit-scrollbar,.cap-grid::-webkit-scrollbar,.reviews-grid::-webkit-scrollbar,.method-grid::-webkit-scrollbar,.course-grid::-webkit-scrollbar,.gallery-grid::-webkit-scrollbar,.article-grid::-webkit-scrollbar,.blog-grid::-webkit-scrollbar{display:none !important}
+
+  /* Card sizing inside sliders */
+  .cg-row > *,.faculty-row > *,.tp-grid > *,.pricing-grid > *,.cat-grid > *,.cred-grid > *,.wyg-grid > *,.unit-grid > *,.pillar-grid > *,.cap-grid > *,.reviews-grid > *,.method-grid > *,.course-grid > *,.article-grid > *,.blog-grid > *{
+    flex:0 0 82vw !important;
+    scroll-snap-align:start !important;
+    min-width:82vw !important;
+    max-width:82vw !important;
+  }
+  .faculty-row > *{flex-basis:65vw !important;min-width:65vw !important;max-width:65vw !important}
+
+  /* Auto-append a "Swipe" cue after every slider */
+  .cg-row::after,.faculty-row::after,.tp-grid::after,.pricing-grid::after,.cat-grid::after,.unit-grid::after{
+    content:"";
+  }
+}
+
+/* Add visible slider cue element via existing .slider-cue if not present */
+.slider-cue{text-align:center;font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(221,184,106,.75);margin-top:1.4rem;padding:0 1.4rem}
+.slider-cue::before{content:"← ";color:#DDB86A}
+.slider-cue::after{content:" →";color:#DDB86A}
