@@ -59,3 +59,25 @@ video{filter:brightness(1.04) contrast(1.05) saturate(1.08)!important}
 .cls-card,.cls-course,.hiw3-card,.s5-card,.etg3-card,.lm-card,.lg-form,.pillar-card,.unit-card,.price-card,.sib-card,.counter-card,.faq-item{box-shadow:0 18px 40px -30px rgba(10,20,50,.35)!important}
 .gold-ital,h1 em,h2 em{filter:none}
 .cta-band .gold-ital,.final-cta .gold-ital{filter:drop-shadow(0 0 14px rgba(232,200,122,.5))!important}
+.cls-card-light .cls-card-action,.cls-card-action.light,.cls-card:not(.cls-card-dark) .cls-card-action{border-color:#C8A96B!important;color:#6E5A2E!important}
+@media(max-width:800px){.ed-film .ed-line{font-size:clamp(2.7rem,12vw,3.6rem)}.ed-film .ed-in{padding:0 6vw 9vh}.ed-type p{font-size:clamp(3.4rem,15vw,4.6rem)}.ed-type span{margin-top:2rem}.ed-mag{padding:10vh 6vw}.ed-mag .mh{flex-direction:column;gap:.4rem}.ed-mag .cap{flex-direction:column;gap:.2rem}.ed-split figure video{aspect-ratio:4/4.4}.ed-split figcaption{padding:0 6vw}.ed-book .pg p:first-of-type::first-letter{font-size:3.8rem}}
+html body section.ed-mag,html body section#culture.ed-mag{background:#FAF7F1!important;color:#1A1E33!important}
+html body section.ed-mag .cap span,html body section.ed-mag .more{color:#3A3F55!important}
+html body section.ed-film video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;transform:scale(1.08)}
+html body section.ed-film p.ed-line{font-family:'Cormorant Garamond',serif!important;font-size:clamp(3.4rem,8.6vw,9.6rem)!important;line-height:.92!important;color:#FFF8EA!important}
+html body section.ed-type p{font-family:'Cormorant Garamond',serif!important;font-size:clamp(4.4rem,10.4vw,11rem)!important;line-height:.92!important}
+@media(max-width:800px){html body section.ed-film p.ed-line{font-size:clamp(2.8rem,12.5vw,3.8rem)!important}html body section.ed-type p{font-size:clamp(3.4rem,15vw,4.6rem)!important}html body section.ed-split h2{font-size:2.6rem!important}}
+html:root:root:root:root:root body section.ed-mag{padding:14vh 6vw 16vh!important}
+html:root:root:root:root:root body section.ed-type{padding:20vh 6vw!important}
+html:root:root:root:root:root body section.ed-film p.ed-line{font-size:clamp(3.4rem,8.6vw,9.6rem)!important;line-height:.92!important}
+html:root:root:root:root:root body section.ed-type p{font-size:clamp(4.4rem,10.4vw,11rem)!important;line-height:.92!important}
+html:root:root:root:root:root body section.ed-mag .mh h2{font-size:clamp(2.8rem,5vw,5.4rem)!important}
+@media(max-width:800px){html:root:root:root:root:root body section.ed-film p.ed-line{font-size:clamp(2.8rem,12.5vw,3.8rem)!important}html:root:root:root:root:root body section.ed-type p{font-size:clamp(3.4rem,15vw,4.6rem)!important}html:root:root:root:root:root body section.ed-mag{padding:10vh 6vw!important}html:root:root:root:root:root body section.ed-type{padding:14vh 6vw!important}html:root:root:root:root:root body section.ed-mag .mh h2{font-size:2.6rem!important}}
+
+html:root:root:root:root:root body#fa section.ed-mag{padding:14vh 6vw 16vh!important}
+html:root:root:root:root:root body#fa section.ed-type{padding:20vh 6vw!important}
+html:root:root:root:root:root body#fa section.ed-film p.ed-line{font-size:clamp(3.4rem,8.6vw,9.6rem)!important;line-height:.92!important}
+html:root:root:root:root:root body#fa section.ed-type p{font-size:clamp(4.4rem,10.4vw,11rem)!important;line-height:.92!important}
+html:root:root:root:root:root body#fa section.ed-mag .mh h2{font-size:clamp(2.8rem,5vw,5.4rem)!important}
+@media(max-width:800px){html:root:root:root:root:root body#fa section.ed-film p.ed-line{font-size:clamp(2.8rem,12.5vw,3.8rem)!important}html:root:root:root:root:root body#fa section.ed-type p{font-size:clamp(3.4rem,15vw,4.6rem)!important}html:root:root:root:root:root body#fa section.ed-mag{padding:10vh 6vw!important}html:root:root:root:root:root body#fa section.ed-type{padding:14vh 6vw!important}html:root:root:root:root:root body#fa section.ed-mag .mh h2{font-size:2.6rem!important}}
+.ed-book.nodrop .pg p:first-of-type::first-letter{float:none;font-size:inherit;padding:0;color:inherit}

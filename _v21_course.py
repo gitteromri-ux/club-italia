@@ -59,7 +59,7 @@ def build(k):
     rb=secs[3]; v=rb.video; v['poster']=f'{P}assets/img/ag-rome-basilica-poster.jpg'; v.source['src']=f'{P}assets/video/ag-rome-basilica.mp4'
     rb.select_one('.eyebrow').string=f'Filmed in {city}'; rb.h2.string='From Fiumicino to the seven hills'
     rb.p.string='The course is a journey through Rome. Arrival, the bar, the market, the piazza, the trattoria: your Italian grows with every stop.'
-    # syllabus
+    hero0=secs[0]; secs[4]['id']='syllabus'
     sy=secs[4]; sy.select_one('.eyebrow').string='The full syllabus'; sy.h2.string='Twenty units, one city'
     sy.select_one('.sec-head p').string=f'A structured {L} syllabus. Each 85 minute live unit pairs one communicative goal with the grammar and vocabulary it needs.'
     g=sy.select_one('.unit-grid'); g.clear()
@@ -102,6 +102,18 @@ def build(k):
     fq=[x for x in secs if x.select_one('.faq-list')][0]; fq.select_one('.eyebrow').string='Questions'; fq.h2.string='Everything you might be wondering'
     QA=[(f'Is {n} right for me?','Yes, if you are starting from zero or know only a few words. The course assumes no Italian.'),('How big are the groups?','Ten to twelve adults per live class, so you speak in every lesson.'),('How many hours is the course?','Twenty live lessons of 85 minutes: 28 hours 20 minutes of contact time.'),('Will I get a certificate?',f'Yes. A certificate of completion stating CEFR {b_}.'),('What comes next?',f'{CO["ci2"][1]}, taught from Florence by {TN["chiara"][0]}.')]
     for it,(qq,aa) in zip(fq.select('.faq-item'),QA): it.select_one('.faq-q span').string=qq; it.select_one('.faq-a-inner').string=aa
+    if k=='ci1':
+        def vv(n): return f'<video autoplay loop muted playsinline preload="metadata" poster="{P}assets/img/{n}-poster.jpg"><source src="{P}assets/video/{n}.mp4" type="video/mp4"></video>'
+        hero0.insert_after(F(f'<section class="ed ed-film" aria-label="Rome">{vv("ag-rome-basilica")}<div class="ed-in"><p class="ed-line">Twenty lessons. One city. Rome.</p><span class="ed-cap">Unit 1 lands at Fiumicino. Unit 20 ends in a piazza, in Italian.</span></div></section>'))
+        rb.replace_with(F(f"""<section class="ed ed-split"><div class="ed-grid"><figure>{vv('ag-roma-statue')}<figcaption>Marble and morning light, filmed in Rome.</figcaption></figure>
+<div class="ed-txt"><span class="ed-k">Filmed in Rome</span><h2>From Fiumicino to the seven hills.</h2><p>Arrivals hall, a standing bar, Campo de’ Fiori in the morning, a trattoria at night.</p><p>Each unit is one real place, and the Italian you need to get through it.</p><a href="#syllabus">See the twenty units</a></div></div></section>"""))
+        sy.find_next_sibling('section').insert_after(F(f"""<section class="ed ed-mag"><div class="mh"><h2>Roma, in three scenes.</h2><span>CI Principiante · A1</span></div>
+<div class="mg"><div class="big">{vv('roma-piazza')}<p class="cap"><b>La piazza</b><span>Meeting points, directions, and the time in Italian.</span></p></div>
+<div class="side"><div>{vv('ag-market-produce')}<p class="cap"><b>Il mercato</b><span>Unit 12, Campo de’ Fiori. Polite requests and «mezzo chilo».</span></p></div>
+<div>{vv('ag-pizza-oven')}<p class="cap"><b>La trattoria</b><span>Ordering, and asking for the bill.</span></p></div></div></div></section>"""))
+        tb.insert_after(F('<section class="ed ed-type"><p>«Nonno» is not <em>«nono».</em></p><span>One doubled consonant turns a grandfather into the number nine. Marco corrects it in lesson one, and every lesson after.</span></section>'))
+        tb.insert_before(F('<!-- TODO(owner): replace composite teacher photo with a real eTeacher portrait -->'))
+        fq.insert_before(F('<section class="ed ed-book nodrop"><div class="pg"><p>«Buongiorno. Un caffè, per favore.» «Al banco?» «Sì, al banco.» You pay first, you hand over the receipt, and you drink it standing up, in under a minute.</p><p>That is unit 4, at a Roman bar, before eleven in the morning. After eleven you order a cappuccino and the barista says nothing, but you will know.</p><p class="sig">From the CI Principiante syllabus · unit 4</p></div></section>'))
     # siblings
     sb=S.select_one('.sibling-nav'); sb.clear()
     sb.append(F(f'<a class="sib-card glass-light" href="{P}courses.html"><span class="sib-dir">All courses</span><span class="sib-title">The full collection</span><span class="sib-cefr">Il Corso and Parliamo</span></a><a class="sib-card glass-light" href="ci2.html"><span class="sib-dir">Next level</span><span class="sib-title">{CO["ci2"][1]}</span><span class="sib-cefr">{lv("ci2")} · Firenze</span></a>'))

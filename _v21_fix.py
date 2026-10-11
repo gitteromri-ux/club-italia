@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup, NavigableString, Comment
 FIXT=[
 ("The sound system of Italian, open vowels and double consonants, from the first lesson.","Lesson one: the difference between «nono» and «nonno». You will hear it by the end of the hour."),
-("Each unit is set in a real Roman place, from Fiumicino to a bar in Prati.","Unit 1 lands at Fiumicino. Unit 4 is a cappuccino at a bar in Prati, before 11am."),
+("Each unit is set in a real Roman place, from Fiumicino to a bar in Prati.","Unit 1 lands at Fiumicino. Unit 4 is a coffee at the counter of a Roman bar."),
 ("The course is a journey through Rome. Arrival, the bar, the market, the piazza, the trattoria: your Italian grows with every stop.","Arrivals hall, a standing bar, Campo de’ Fiori at nine, a trattoria in Testaccio. Twenty stops, one city."),
 
 ("Live Italian courses for adults, taught by DITALS certified teachers in seven Italian cities.","Live Italian for adults. Your teacher is in Rome, Florence, Bologna, Venice, Milan, Naples or Palermo, and holds the DITALS certificate."),
