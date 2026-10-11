@@ -138,3 +138,14 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 .crumbs{font:600 .66rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#f1ece2;margin-bottom:1rem}.crumbs a{text-decoration:none;opacity:.85}
 .h18 h1 em{text-shadow:0 2px 30px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.4)}
 @media(max-width:700px){.h18 .meta{display:none}.h18 .w{padding-bottom:120px}.h18 .lede{font-size:1rem}}
+.cgrid18{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}.cgrid18 .rc{width:auto;height:480px}
+.tline{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0;border-top:2px solid var(--oro)}.tline>div{padding:1.2rem 1rem 0 0;position:relative}.tline>div::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--oro)}
+.tline b{font:600 .62rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--oro3)}.tline h4{font:italic 500 1.3rem var(--serif);margin:.3rem 0}.tline p{font-size:.88rem;color:var(--mut)}
+.sec.dark .tline p{color:#cfc8b8}
+.lvl summary{grid-template-columns:70px 1fr auto}.lvl .n{font-size:2rem}.lvl .t small{display:block;font:600 .6rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}.lvb{padding:0 0 1.6rem 86px}@media(max-width:700px){.lvb{padding-left:0}.lvl summary{grid-template-columns:50px 1fr}.lvl .m{display:none}}
+.tlist{display:grid;gap:60px}.tfull{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center}.tfull img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px}.tfull:nth-child(even){grid-template-columns:1fr 300px}.tfull:nth-child(even) img{order:2}
+.tfull h3{font-size:2.2rem;margin:.4rem 0 .8rem}.tfull p{color:var(--ink2)}.tfull blockquote{font:italic 400 1.15rem/1.5 var(--serif);color:var(--oro3);margin:1rem 0}
+@media(max-width:800px){.tfull,.tfull:nth-child(even){grid-template-columns:1fr}.tfull:nth-child(even) img{order:0}}
+.legacy .reveal,.legacy [class*=reveal]{opacity:1!important;transform:none!important}
+.legacy .wrap-narrow{max-width:760px;margin-left:auto;margin-right:auto}
+.legacy img{max-width:100%;height:auto}

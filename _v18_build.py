@@ -97,6 +97,7 @@ home=head('Club Italia · Learn Italian, live from Italy','Live Italian classes 
 <div class="cset"><div class="clabel"><span class="k">Collection 03 · Culture</span><h3>Capsule culturali</h3><p>Six sessions inside one Italian passion: the table, the Renaissance, the opera. Open to every level.</p><div class="st"><div><b>3</b>capsules</div><div><b>Any</b>level</div><div><b>6</b>sessions</div></div></div>{''.join(rc(k,P) for k in ['cap-food','cap-art','cap-opera'])}</div>
 </div><div class="prog"><i></i></div></section>
 
+'''+open('_partials/journey.html').read()+f'''
 <section class="mapsec" id="map"><div class="w"><div class="head rv"><span class="eb">The map of Club Italia</span>{h2('Follow your teacher','across Italy.')}<p>Seven cities, seven native teachers. Hover or tap a city to meet its teacher, open its course and see the first units of the syllabus.</p></div>
 <div class="mapgrid"><svg id="italy" class="italy" viewBox="-40 -20 {M['w']+80} {M['h']+40}" role="group" aria-label="Interactive map of Italy with seven Club Italia cities">
 <defs><linearGradient id="landg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d3f74"/><stop offset="1" stop-color="#0f2246"/></linearGradient><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="blur"><feGaussianBlur stdDeviation="6"/></filter></defs>
@@ -139,6 +140,7 @@ home=head('Club Italia · Learn Italian, live from Italy','Live Italian classes 
 <div class="fac">{''.join(f'<a class="ft rv" href="pages/teachers/{s}.html" data-cursor="Meet"><img loading="lazy" src="assets/img/teacher-{s}.jpg" alt="{n}"><div><b>{n}</b><small>{c}</small></div></a>' for s,(n,c) in TN.items())}</div>
 <p class="center mt"><a class="btn btn-ghost" href="teachers.html">Meet the full faculty <span class="arr">→</span></a></p></div></section>
 
+'''+open('_partials/taste.html').read()+f'''
 <section class="vfold sec" id="biagio">{V('ag-rome-basilica',P)}<div class="tint"></div><div class="w bia"><div class="bimg rv"><span class="badge">Biagio · AI tutor</span><img src="assets/img/biagio-3d-hero.png" alt="Biagio, the Club Italia AI tutor"></div>
 <div class="glass rv" style="padding:2.2rem"><span class="eb">Practise between classes</span>{h2('Meet Biagio,','your Italian coach, always online.')}
 <p style="margin-top:1rem;color:#f1ece2">Not a chatbot. A language coach trained on the Club Italia syllabus. He prepares you before class, consolidates after, and never replaces your teacher.</p>
@@ -151,6 +153,7 @@ home=head('Club Italia · Learn Italian, live from Italy','Live Italian classes 
 <section class="sec dark" id="stories" style="background:#0a0f1b"><div class="w"><div class="head rv"><span class="tp2"><span class="stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span> Excellent on Trustpilot</span>{h2('Learner stories.','Real progress.')}</div></div>
 <div class="tmq"><div class="row">{tcards}{tcards}</div></div></section>
 
+'''+open('_partials/platform.html').read()+f'''
 <section class="sec ivory" id="tuition"><div class="w"><div class="head rv"><span class="eb">Tuition</span>{h2('One live curriculum.','Three ways to pay.')}<p>Every plan includes live lessons, recordings, Biagio and the certificate. Billed in US dollars. Seven day full refund.</p></div>
 <!-- TODO(owner): tuition figures are v16 placeholders. -->
 <div class="plans"><div class="plan rv"><span class="k">Monthly</span><h3>Monthly</h3><div class="p">$84 <small>/ week</small></div><p>Billed $336 monthly.</p><ul><li>All live lessons on your track</li><li>Biagio, the AI tutor</li><li>Class recordings</li></ul><a class="btn btn-ghost" href="#enrol">Start monthly</a></div>
