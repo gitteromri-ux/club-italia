@@ -1,0 +1,24 @@
+/* Club Italia layer on the French Atelier system: same tokens, Italian identity, house red lines */
+*{text-transform:none!important}
+.eyebrow,.s5-eyebrow,.lg-eyebrow,.ac-power-eyebrow,.lm-eyebrow,.footer-col h4,.nav-dd-head,.drawer-group-label,.cls-card-eyebrow,.hiw3-kick,.tvid-region,.breadcrumb,.hm-k,.pc-tag,.sib-dir,.power-strip-eyebrow,.ec-eyebrow{font-family:'Cormorant Garamond',Georgia,serif!important;font-style:italic!important;font-weight:500!important;letter-spacing:.01em!important;font-size:1.22rem!important}
+.footer-col h4{font-size:1.15rem!important}
+.etg3-pill,.lm-meta span,.hiw3-tag,.h-badge,.cls-bestseller,.lm-cover-badge,.jul-cutout-badge,.tctr-badge,.tp-badge{background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;letter-spacing:.01em!important;font-weight:500!important}
+.cls-bestseller{color:#E8C77A!important;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem!important}
+.lm-meta{gap:1.4rem!important}.lm-meta span::before{content:none!important}
+.lm-cover-badge{color:#fff!important;text-shadow:0 1px 12px rgba(0,0,0,.5);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem!important}
+.jul-cutout-badge{color:#E8C77A!important;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem!important}
+.ci-lock{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1}
+.ci-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.9rem;letter-spacing:.005em;color:#F3EEE3}
+.ci-by{display:flex;align-items:center;gap:.45rem;margin-top:.3rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:#D8BC85}
+.ci-by img{height:14px;width:auto;display:block}
+.ci-lock-ft .ci-name{font-size:2.3rem}.ci-lock-ft{margin-bottom:1rem}
+.hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.92)}
+.ci-hero-note{color:rgba(243,238,227,.78);font-size:.95rem;font-weight:300;align-self:center}
+.ci-facts{text-align:center;color:#8C7040;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;margin:1.6rem 0 2.4rem}
+.jul-cutout{object-fit:contain}
+.tst-card.ci-q{background:#fff!important;border-radius:16px!important;overflow:hidden!important;padding:0 0 1.8rem!important;height:auto!important;text-align:center;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-top:2px solid #C8A96B}
+.ci-q-top{background:#0B1D3F;height:118px;position:relative;margin-bottom:62px}
+.ci-q-top img{position:absolute;left:50%;bottom:-56px;transform:translateX(-50%);width:112px;height:112px;border-radius:50%;object-fit:cover;border:4px solid #fff}
+.ci-q-who{font:600 1rem Inter,sans-serif;color:#1a1e33;margin:0}.ci-q-ctx{font-size:.82rem;color:#8C7040;margin:.15rem 0 .9rem}
+.ci-q blockquote{font:400 1.32rem/1.35 'Cormorant Garamond',serif;color:#1a1e33;margin:0;padding:0 1.6rem}
+.course-hero .h-badge{color:#F3EEE3!important}.course-hero .h-badge.lvl{color:#E8C77A!important}
