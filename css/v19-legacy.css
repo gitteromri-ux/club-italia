@@ -1,0 +1,16 @@
+/* legacy content inside the v19 shell */
+.legacy{background:var(--cream);color:var(--ink);font-size:1.15rem}
+.legacy *{text-transform:none!important}
+.legacy .kick{display:block;font:italic 400 1.3rem var(--serif)!important;letter-spacing:0!important;color:var(--terra)!important;background:none!important;border:0!important;padding:0!important;border-radius:0!important;margin-bottom:.6rem}
+.legacy .dark .kick,.legacy .sec.dark .kick,.legacy .vfold .kick,.legacy .glass .kick{color:var(--gold)!important}
+.legacy h1,.legacy h2,.legacy h3{font-family:var(--serif)!important;font-weight:400;letter-spacing:-.02em}
+.legacy h2{font-size:clamp(2.6rem,4.6vw,4.6rem)!important;line-height:1}
+.legacy p,.legacy li{font-family:var(--sans)}
+.legacy .sec.dark,.legacy .dark{background:var(--night);color:var(--ivory)}
+.legacy .sec.dark h2,.legacy .sec.dark h3,.legacy .vfold h2{color:#fff}
+.legacy .lnk{color:inherit}
+.legacy .wave{display:flex}
+.legacy .voice .pl::after{content:""}
+.legacy li::before{content:""!important}
+.legacy .panel li,.legacy .can li{padding-left:1.4rem;position:relative}.legacy .panel li::after{content:"";position:absolute;left:0;top:.75em;width:.7rem;height:1px;background:var(--terra)}
+.legacy .mapf,.legacy .cefr{color:var(--ivory)}
