@@ -15,7 +15,7 @@ def build(k):
         h=l['href']
         if h.startswith('../css/'): l['href']=P+'fa/css/'+h[7:].split('?')[0]
         if 'favicon' in h or 'fonts.googleapis.com/css2' in h: l.decompose()
-    S.head.append(F(f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"><link rel="stylesheet" href="{P}fa/css/ci.css">'))
+    S.head.append(F(f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"><link rel="stylesheet" href="{P}fa/css/ci.css"><link rel="stylesheet" href="{P}fa/css/ci-light.css">'))
     for sc in S.find_all('script'):
         s=sc.get('src','')
         if 'eteacher-leads' in s or 'serviceWorker' in (sc.string or '') or 'CRM' in (sc.string or ''): sc.decompose(); continue

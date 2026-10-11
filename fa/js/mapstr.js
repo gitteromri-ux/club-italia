@@ -265,24 +265,24 @@
         // 1) Dim the rest of Europe so France reads brighter by contrast.
         map.addLayer({
           id: 'world-dim', type: 'background',
-          paint: { 'background-color': '#00001F', 'background-opacity': 0.42 }
+          paint: { 'background-color': '#06112A', 'background-opacity': 0.25 }
         });
         // 2) Soft luminous blue fill inside France.
         map.addLayer({
           id: 'france-fill', type: 'fill', source: 'france',
-          paint: { 'fill-color': '#C8A96B', 'fill-opacity': 0.16 }
+          paint: { 'fill-color': '#409CFF', 'fill-opacity': 0.22 }
         });
         // 3) Wide soft glow outline.
         map.addLayer({
           id: 'france-glow', type: 'line', source: 'france',
           layout: { 'line-join': 'round', 'line-cap': 'round' },
-          paint: { 'line-color': '#E8C77A', 'line-width': 9, 'line-blur': 8, 'line-opacity': 0.55 }
+          paint: { 'line-color': '#E8C77A', 'line-width': 14, 'line-blur': 10, 'line-opacity': 0.8 }
         });
         // 4) Crisp bright neon border.
         map.addLayer({
           id: 'france-line', type: 'line', source: 'france',
           layout: { 'line-join': 'round', 'line-cap': 'round' },
-          paint: { 'line-color': '#BFE4FF', 'line-width': 2, 'line-opacity': 0.95 }
+          paint: { 'line-color': '#FFF1C9', 'line-width': 2.2, 'line-opacity': 0.95 }
         });
       } catch (e) { /* highlight is non-fatal */ }
       // NO route lines anywhere, only the blue dot markers. Per design,

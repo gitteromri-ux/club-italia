@@ -21,7 +21,7 @@ for sc in S.find_all('script'):
     if 'eteacher-leads' in s or 'serviceWorker' in (sc.string or ''): sc.decompose(); continue
     if s.startswith('js/'): sc['src']='fa/'+s.split('?')[0]
 for m in S.find_all('meta',attrs={'http-equiv':True}): m.decompose()
-S.head.append(F('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"><link rel="stylesheet" href="fa/css/ci.css">'))
+S.head.append(F('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"><link rel="stylesheet" href="fa/css/ci.css"><link rel="stylesheet" href="fa/css/ci-light.css">'))
 # ---------- header / nav
 LOCK='<span class="ci-lock"><span class="ci-name">Club Italia</span><span class="ci-by">by <img src="assets/img/eteacher-real-logo-white.png" alt="eTeacher Group"></span></span>'
 for a in S.select('a.nav-logo'): a.clear(); a.append(F(LOCK)); a['aria-label']='Club Italia by eTeacher, home'
