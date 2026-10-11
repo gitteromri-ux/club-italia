@@ -248,6 +248,7 @@ out=str(S).replace('assets/gen/hero-original.webp','assets/img/ag-roma-statue-po
 out=re.sub(r'Merci\W*!','Grazie.',out).replace(' — ',', ').replace('—',', ').replace('–',' to ')
 exec(open('_v21_fix.py').read(),globals());out=fix_html(out)
 out=out.replace('>enroll</span>','>enrol</span>')
+exec(open('_brand.py').read(),globals());out=brand(out,'')
 open('index.html','w').write(out)
 left=[m for m in re.findall(r'[^<>]{0,40}(?:French|France|Acadomia|Atelier|Julien|Paris)[^<>]{0,40}',BeautifulSoup(out,'html.parser').get_text(' '))]
 print('leftovers',len(left),left[:15])

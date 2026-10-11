@@ -125,6 +125,7 @@ def build(k):
     out=re.sub(r'Merci\W*!','Grazie.',out).replace(' — ',', ').replace('—',', ').replace('–',' to ').replace('→',' to ')
     out=out.replace('View course  to ','View course →')
     exec(open('_v21_fix.py').read(),globals());out=fix_html(out)
+    exec(open('_brand.py').read(),globals());out=brand(out,P)
     open(f'pages/courses/{k}.html','w').write(out)
     left=re.findall(r'[^<>]{0,40}(?:French|France|Acadomia|Atelier|Julien|Paris|Normandy)[^<>]{0,40}',BeautifulSoup(out,'html.parser').get_text(' '))
     print(k,'leftovers',left[:8])
