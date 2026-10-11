@@ -163,12 +163,12 @@
   }
   /* Poster fallback bg for slow load */
   #culture .pillar{ position: relative; background-color: #0a1128; }
-  #culture .pillar:nth-child(1){ background-image: url('../assets/video/pillar-art-poster.jpg'); }
-  #culture .pillar:nth-child(2){ background-image: url('../assets/video/wine-tasting-poster.jpg'); }
-  #culture .pillar:nth-child(3){ background-image: url('../assets/video/pillar-travel-poster.jpg'); }
-  #culture .pillar:nth-child(4){ background-image: url('../assets/video/pillar-fashion-poster.jpg'); }
-  #culture .pillar:nth-child(5){ background-image: url('../assets/video/pillar-music-poster.jpg'); }
-  #culture .pillar:nth-child(6){ background-image: url('../assets/video/pillar-tradition-poster.jpg'); }
+  #culture .pillar:nth-child(1){ background-image: url('../../assets/img/ag-medieval-aerial-poster.jpg'); }
+  #culture .pillar:nth-child(2){ background-image: url('../../assets/img/ag-wine-bottles-poster.jpg'); }
+  #culture .pillar:nth-child(3){ background-image: url('../../assets/img/ag-venice-gondola-poster.jpg'); }
+  #culture .pillar:nth-child(4){ background-image: url('../../assets/img/ag-luxury-car-poster.jpg'); }
+  #culture .pillar:nth-child(5){ background-image: url('../../assets/img/opera-scala-poster.jpg'); }
+  #culture .pillar:nth-child(6){ background-image: url('../../assets/img/ag-tradition-festival-poster.jpg'); }
 
   /* Research citations alternate cream/ivory/pale-rose */
   .sorb-v4 .sorb-cite:nth-child(1){ background: #FFFCF4 !important; border-color:#C8A96B !important; }

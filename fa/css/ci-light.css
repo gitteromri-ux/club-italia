@@ -63,3 +63,4 @@ body>section+section::before{content:"";position:absolute;left:8%;right:8%;top:0
 .hero-bg::before,.hero-media::before{background:radial-gradient(40% 60% at 100% 0%,rgba(var(--neon-gold),.32),transparent 70%),radial-gradient(30% 40% at 85% 100%,rgba(255,190,120,.18),transparent 70%)!important}
 .course-hero .hero-scrim{background:linear-gradient(90deg,rgba(8,22,56,.8) 0%,rgba(8,22,56,.55) 40%,rgba(8,22,56,.1) 70%,transparent)!important}
 .tst-fold{background:radial-gradient(55% 45% at 50% 0%,rgba(var(--neon-gold),.18),transparent 70%),radial-gradient(50% 50% at 50% 100%,rgba(var(--neon-blue),.25),transparent 70%),linear-gradient(180deg,#0E2756,#0A1B44)!important}
+.hero .hero-bg::after,.hero-shift .hero-bg::after{background:linear-gradient(90deg,rgba(8,22,56,.8) 0%,rgba(8,22,56,.62) 45%,rgba(8,22,56,.12) 70%,transparent 85%)!important}
