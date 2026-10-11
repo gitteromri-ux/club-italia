@@ -6,6 +6,7 @@ files=[f for f in glob.glob('*.html')+glob.glob('pages/*/*.html') if f not in SK
 VID={'about':'ag-rome-basilica','blog':'ag-chefs-street','community':'ag-tradition-festival','contact':'ag-venice-docked','culture':'ag-medieval-aerial','eteacher':'ag-zoom-student','events':'ag-tradition-festival','sample-class':'class-demo','privacy':'ag-cypress-road','terms':'ag-cypress-road','courses':'ag-tuscany-drone','curriculum':'ag-medieval-aerial','method':'ag-camogli-coast','certifications':'ag-san-gimignano','teachers':'ag-traveler-woman','biagio':'ag-roma-statue','pricing':'ag-wine-bottles','faq':'ag-venice-docked','map':'ag-tuscany-drone','how-it-works':'ag-zoom-student','capsules':'ag-pizza-oven',
 'pillar-art':'ag-medieval-aerial','pillar-cinema':'ag-catania-statues','pillar-food':'ag-chefs-street','pillar-opera':'ag-rome-basilica','pillar-tradition':'ag-tradition-festival','pillar-travel':'ag-venice-gondola','carnevale':'ag-venice-gondola','festa-repubblica':'ag-rome-basilica','palio-siena':'ag-san-gimignano'}
 VID.update(FACV)
+ROTF=['ag-tuscany-drone','ag-camogli-coast','ag-san-gimignano','ag-venice-docked','ag-cypress-road','ag-medieval-aerial','ag-wine-bottles','ag-market-produce','ag-rome-basilica','firenze-arno','bologna-portici','napoli-mare']
 ROT=['ag-market-produce','ag-pizza-toppings','ag-wine-bottles','ag-camogli-coast','ag-tuscany-drone','ag-traveler-man','ag-cypress-road']
 EMO=re.compile('[\U0001F000-\U0001FAFF\u2600-\u27BF\u2B00-\u2BFF\uFE0F\u2190-\u21FF\u2605\u2606\u2713\u2714\u25B6\u266A\u266B\u275A]')
 def clean_text(t):
@@ -49,7 +50,22 @@ for i,f in enumerate(files):
     from bs4 import Comment
     for cm in body.find_all(string=lambda t:isinstance(t,Comment)):
         if 'TODO' not in cm: cm.extract()
-    inner=''.join(str(c) for c in body.contents)
+    # ===== fold-ify: every top-level block becomes a full-bleed video fold
+    top=[c for c in body.children if getattr(c,'name',None)]
+    while len(top)==1 and top[0].name in('div','article') and len([c for c in top[0].children if getattr(c,'name',None)])>1:
+        top=[c for c in top[0].children if getattr(c,'name',None)]
+    POOL=[v_]+[x for x in ROTF if x!=v_]
+    out=[];n=0
+    for c in top:
+        cls=' '.join(c.get('class') or [])
+        if c.name=='script' or re.search(r'\b(mapf|cefr|stage|vfold|fold)\b',cls) or c.find('video') is not None and re.search(r'vfold|band|hero',cls):
+            out.append(str(c));continue
+        if not c.get_text(strip=True) and not c.find('img'): continue
+        dark=bool(re.search(r'dark|navy|notte',cls))
+        n+=1;vv=POOL[(n+i)%len(POOL)]
+        inner_html=''.join(str(x) for x in c.children) if c.name in('section','div') else str(c)
+        out.append(f'<section class="fold lf">{bg(vv,P,"wt" if not dark else "wl")}<div class="w"><div class="fp {"glass" if dark else "paper"} rv">{inner_html}</div></div></section>')
+    inner=''.join(out)
     a,b=(h1t.split('. ',1)+[''])[:2] if '. ' in h1t else ((' '.join(h1t.split()[:-2]),' '.join(h1t.split()[-2:])) if len(h1t.split())>3 else (h1t,''))
     if b and not a.endswith('.') and '. ' in h1t: a+='.'
     extra=oldcss+(MAPHEAD if hasmap else '')
