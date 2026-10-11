@@ -52,8 +52,8 @@ def ccard(btn,eb,title,sub,n,lv_,act):
     btn.select_one('.cls-card-action-text').string=act
 bs=cs.select('button.cls-card')
 ccard(bs[0],'Collection 01 · Structured','Il Corso','Grammar, vocabulary and culture, city by city.',4,'A0 to A2.2','Explore the four courses')
-bs[0].select_one('.cls-bestseller').string='Most chosen'
-ccard(bs[1],'Collection 02 · Spoken','Parliamo','Speaking first. Four Italian scenes, one per course.',4,'A1 to B1','Explore the four courses')
+bs[0].select_one('.cls-bestseller').decompose()
+ccard(bs[1],'Collection 02 · Spoken','Parliamo','Speaking first. Four Italian scenes, one per course.',4,'A0 to B1','Explore the four courses')
 def course_art(art,k,cls):
     t,n,u,img,te,hv,st,tu=CO[k]
     art.clear(); art.append(F(f'<div class="cls-course-media"><img loading="lazy" decoding="async" src="assets/img/{img}" alt="{E(n)}, taught live from {TN[te][1]}"></div><div class="cls-course-body"><span class="cls-course-level">{lv(k)}</span><h4 class="cls-course-name">{E(n)}</h4><span class="cls-course-region">{TN[te][1]} · with {TN[te][0].split()[0]}</span><p class="cls-course-hook">{E(promise(k))}</p><a class="cls-course-link" href="{u}">View course <span aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" style="vertical-align:-2px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>'))
@@ -95,7 +95,7 @@ m.select_one('.s5-disc').string='Club Italia is independent and is not affiliate
 c=byc('culture-dark')
 c.select_one('h2').clear(); c.select_one('h2').append(F('Culture speaks Italian.<br><span class="gold-ital">What about you?</span>'))
 c.select_one('p.lede').string='Six pillars of Italian life run through every course, taught by people who live them.'
-PIL=[('ag-medieval-aerial','Arte e architettura','From the Roman forum to the Renaissance dome.'),('ag-wine-bottles','Cucina e vino','A Bolognese market, a Neapolitan oven, a Tuscan cellar.'),('ag-venice-gondola','Viaggio','From the canals of Venice to the Amalfi coast.'),('ag-luxury-car','Moda e cinema','Milanese tailoring, Roman cinema, la bella figura.'),('opera-scala','Musica e opera','Verdi, Puccini and Rossini, in the language they wrote in.'),('ag-tradition-festival','Tradizione','Carnevale, the Palio and the feast days of each city.')]
+PIL=[('ag-medieval-aerial','Arte e architettura','From the Roman forum to the Renaissance dome.'),('cucina-pasta','Cucina e vino','A Bolognese market, a Neapolitan oven, a Tuscan cellar.'),('ag-venice-gondola','Viaggio','From the canals of Venice to the Amalfi coast.'),('ag-luxury-car','Moda e cinema','Milanese tailoring, Roman cinema, la bella figura.'),('opera-scala','Musica e opera','Verdi, Puccini and Rossini, in the language they wrote in.'),('ag-catania-statues','Tradizione','Baroque Sicily, the Palio, Carnevale and the feast days of each city.')]
 for i,(p_,(v,t,d)) in enumerate(zip(c.select('a.pillar'),PIL)):
     p_['href']='culture.html'; vv=p_.select_one('video'); vv['poster']=f'assets/img/{v}-poster.jpg'; vv.source['src']=f'assets/video/{v}.mp4'
     p_.select_one('.pillar-title').string=t; p_.select_one('.pillar-desc').string=d
@@ -154,8 +154,8 @@ tr=tf.select_one('.tst-track'); tr.clear()
 QQ=QS+[(n,r,q) for (_,n,r,q) in [(a_,b_,c_,d_) for a_,b_,c_,d_ in TS]][:2] if 'TS' in dir() else QS
 PH={'Diane Weller':'student-diane.jpg','Robert Hensley':'student-robert.jpg','Sarah Kim':'student-sarah.jpg'}
 for n_,r_,q_ in QS[:3]:
-    tr.append(F(f'<article class="tst-card ci-q"><div class="ci-q-top"><img src="assets/img/{PH.get(n_,"student-sarah.jpg")}" alt="{E(n_)}" loading="lazy"></div><p class="ci-q-who">{E(n_)}</p><p class="ci-q-ctx">{E(r_)}</p><blockquote>«{E(q_)}»</blockquote></article>'))
-tf.select_one('.tst-source').string='Learner placeholders for the presentation.'
+    tr.append(F(f'<article class="tst-card ci-q"><blockquote>«{E(q_)}»</blockquote><p class="ci-q-who">{E(n_)}</p><p class="ci-q-ctx">{E(r_)}</p></article>'))
+tf.select_one('.tst-source').string='From learners of Club Italia'
 tf.select_one('.tst-source').insert_before(F('<!-- TODO: replace with real, verified learner reviews -->'))
 # ---------- platform etg2
 e2=byc('etg2-section')
@@ -173,7 +173,7 @@ lm.select_one('.lm-cover-badge').string='Free · five minutes'
 im=lm.select_one('.lm-cover img'); im['src']='assets/img/life-amalfi-coast.jpg'; im['alt']='The Amalfi coast at golden hour'
 lm.select_one('.lm-eyebrow').string='Find your level'
 lm.select_one('h2').clear(); lm.select_one('h2').append(F('Which Italian course is <em>right for you?</em>'))
-lm.select_one('.lm-body > p:not(.eyebrow)').clear(); lm.select_one('.lm-body > p:not(.eyebrow)').append(F('A short placement conversation finds your CEFR level and the right course, from your first <em>buongiorno</em> to confident conversation.'))
+lm.select_one('.lm-body > p:not(.eyebrow)').clear(); lm.select_one('.lm-body > p:not(.eyebrow)').append(F('A short placement conversation finds your CEFR level and the right course, from your first «<em>buongiorno</em>» to confident conversation.'))
 for s_,t_ in zip(lm.select('.lm-meta span'),['CEFR aligned','A personal recommendation','No commitment']): s_.string=t_
 b_=lm.select_one('.lm-actions button'); sv=b_.svg; b_.clear(); b_.append('Find my Italian level '); sv and b_.append(sv)
 a=lm.select_one('.lm-actions a'); sv=a.svg; a.clear(); a.append('Talk to an advisor instead '); sv and a.append(sv)
@@ -226,6 +226,7 @@ document.querySelectorAll('form').forEach(function(f){f.addEventListener('submit
 out=str(S).replace('assets/gen/hero-original.webp','assets/img/ag-roma-statue-poster.jpg').replace('assets/gen/hero-paris.webp','assets/img/life-amalfi-coast.jpg')
 # global clean: dashes, leftover brand words
 out=re.sub(r'Merci\W*!','Grazie.',out).replace(' — ',', ').replace('—',', ').replace('–',' to ')
+exec(open('_v21_fix.py').read(),globals());out=fix_html(out)
 open('index.html','w').write(out)
 left=[m for m in re.findall(r'[^<>]{0,40}(?:French|France|Acadomia|Atelier|Julien|Paris)[^<>]{0,40}',BeautifulSoup(out,'html.parser').get_text(' '))]
 print('leftovers',len(left),left[:15])

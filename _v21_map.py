@@ -33,6 +33,6 @@ for x,y in [('[2.6, 46.6]','[12.6, 42.0]'),('FRANCE_ZOOM = 5.1','FRANCE_ZOOM = 5
 s=re.sub(r'(?<=[\'"])([^\'"\n]*?)France([^\'"\n]*?)(?=[\'"])',lambda m:m.group(0).replace('France','Italy'),s)
 s=s.replace('French','Italian').replace('&middot;',' · ')
 s=s.replace('all 7 courses','all 6 courses').replace('7 courses','6 courses').replace(' — ',', ').replace('—',',').replace('Acadomia','eTeacher').replace('The Italian Atelier','Club Italia')
-s=s.replace("'background-color': '#00001F', 'background-opacity': 0.42","'background-color': '#06112A', 'background-opacity': 0.25").replace("'fill-color': '#C8A96B', 'fill-opacity': 0.16","'fill-color': '#409CFF', 'fill-opacity': 0.22").replace("'line-width': 9, 'line-blur': 8, 'line-opacity': 0.55","'line-width': 14, 'line-blur': 10, 'line-opacity': 0.8").replace("'line-color': '#BFE4FF', 'line-width': 2,","'line-color': '#FFF1C9', 'line-width': 2.2,")
+s=s.replace("'background-color': '#00001F', 'background-opacity': 0.42","'background-color': '#06112A', 'background-opacity': 0.25").replace("'fill-color': '#C8A96B', 'fill-opacity': 0.16","'fill-color': '#409CFF', 'fill-opacity': 0.22").replace("'line-width': 9, 'line-blur': 8, 'line-opacity': 0.55","'line-width': 8, 'line-blur': 7, 'line-opacity': 0.55").replace("'line-color': '#BFE4FF', 'line-width': 2,","'line-color': '#FFF1C9', 'line-width': 2.2,")
 open('fa/js/mapstr.js','w').write(s)
 print(len(courses),sum(len(c['pins']) for c in courses))

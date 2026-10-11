@@ -276,7 +276,7 @@
         map.addLayer({
           id: 'france-glow', type: 'line', source: 'france',
           layout: { 'line-join': 'round', 'line-cap': 'round' },
-          paint: { 'line-color': '#E8C77A', 'line-width': 14, 'line-blur': 10, 'line-opacity': 0.8 }
+          paint: { 'line-color': '#E8C77A', 'line-width': 8, 'line-blur': 7, 'line-opacity': 0.55 }
         });
         // 4) Crisp bright neon border.
         map.addLayer({

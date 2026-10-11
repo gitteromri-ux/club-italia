@@ -56,7 +56,7 @@ def build(k):
         im_ = im_ if k=='ci1' else img
         it['src']=P+'assets/img/'+im_; it['alt']='Rome, the setting of '+n
     # region band
-    rb=secs[3]; v=rb.video; v['poster']=f'{P}assets/img/ag-roma-statue-poster.jpg'; v.source['src']=f'{P}assets/video/ag-roma-statue.mp4'
+    rb=secs[3]; v=rb.video; v['poster']=f'{P}assets/img/ag-rome-basilica-poster.jpg'; v.source['src']=f'{P}assets/video/ag-rome-basilica.mp4'
     rb.select_one('.eyebrow').string=f'Filmed in {city}'; rb.h2.string='From Fiumicino to the seven hills'
     rb.p.string='The course is a journey through Rome. Arrival, the bar, the market, the piazza, the trattoria: your Italian grows with every stop.'
     # syllabus
@@ -85,7 +85,7 @@ def build(k):
         x=c.select_one('.c-num'); x['data-count']=nn; x['data-suffix']=sf; x.attrs.pop('data-prefix',None); x.string=nn+sf; c.select_one('.c-label').string=lb
     ps=ab.select_one('.power-strip'); ps and ps.decompose()
     # pricing
-    pr=S.select_one('#pricing'); pr.select_one('.eyebrow').string='Tuition'; pr.h2.string='One curriculum. A plan for your rhythm.'
+    pr=S.select_one('#pricing'); pr.select_one('.eyebrow').string='Tuition'; pr.h2.string='One curriculum. Two ways to pay.'
     pr.select_one('.sec-head p').string=f'Every plan includes the live lessons from {city}, recordings, Biagio and your certificate.'
     pc=pr.select('.price-card')
     pc[0].select_one('.pc-tag').string='Annual · best value'; pc[0].select_one('.pc-amt').contents[0].replace_with('$62')
@@ -112,6 +112,7 @@ def build(k):
     out=str(S).replace('../assets/',P+'assets/') if False else str(S)
     out=re.sub(r'Merci\W*!','Grazie.',out).replace(' — ',', ').replace('—',', ').replace('–',' to ').replace('→',' to ')
     out=out.replace('View course  to ','View course →')
+    exec(open('_v21_fix.py').read(),globals());out=fix_html(out)
     open(f'pages/courses/{k}.html','w').write(out)
     left=re.findall(r'[^<>]{0,40}(?:French|France|Acadomia|Atelier|Julien|Paris|Normandy)[^<>]{0,40}',BeautifulSoup(out,'html.parser').get_text(' '))
     print(k,'leftovers',left[:8])
