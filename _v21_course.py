@@ -15,7 +15,7 @@ def build(k):
         h=l['href']
         if h.startswith('../css/'): l['href']=P+'fa/css/'+h[7:].split('?')[0]
         if 'favicon' in h or 'fonts.googleapis.com/css2' in h: l.decompose()
-    S.head.append(F(f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"><link rel="stylesheet" href="{P}fa/css/ci.css"><link rel="stylesheet" href="{P}fa/css/ci-light.css">'))
+    S.head.append(F(f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"><link rel="stylesheet" href="{P}fa/css/ci.css"><link rel="stylesheet" href="{P}fa/css/ci-calm.css">'))
     for sc in S.find_all('script'):
         s=sc.get('src','')
         if 'eteacher-leads' in s or 'serviceWorker' in (sc.string or '') or 'CRM' in (sc.string or ''): sc.decompose(); continue
@@ -52,8 +52,8 @@ def build(k):
     s2.select_one('.sec-head p').string='Can-do statements aligned with the CEFR descriptors for '+b_+'.'
     ul=s2.select_one('ul.learn-list'); tick=str(ul.select_one('.tick')); ul.clear()
     ul.append(F(''.join(f'<li>{tick}<span>{E(cl(o))}</span></li>' for o in d['outcomes'])))
-    for it,im_ in zip(s2.select('.img-trio img'),['city-roma.jpg','life-caffe-roma.jpg','course-ci1.jpg']):
-        im_ = im_ if k=='ci1' else img
+    for it,im_ in zip(s2.select('.img-trio img'),['roma-piazza-poster.jpg','ag-rome-basilica-poster.jpg','ag-roma-statue-poster.jpg']):
+        
         it['src']=P+'assets/img/'+im_; it['alt']='Rome, the setting of '+n
     # region band
     rb=secs[3]; v=rb.video; v['poster']=f'{P}assets/img/ag-rome-basilica-poster.jpg'; v.source['src']=f'{P}assets/video/ag-rome-basilica.mp4'

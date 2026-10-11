@@ -21,7 +21,7 @@ for sc in S.find_all('script'):
     if 'eteacher-leads' in s or 'serviceWorker' in (sc.string or ''): sc.decompose(); continue
     if s.startswith('js/'): sc['src']='fa/'+s.split('?')[0]
 for m in S.find_all('meta',attrs={'http-equiv':True}): m.decompose()
-S.head.append(F('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"><link rel="stylesheet" href="fa/css/ci.css"><link rel="stylesheet" href="fa/css/ci-light.css">'))
+S.head.append(F('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"><link rel="stylesheet" href="fa/css/ci.css"><link rel="stylesheet" href="fa/css/ci-calm.css">'))
 # ---------- header / nav
 LOCK='<span class="ci-lock"><span class="ci-name">Club Italia</span><span class="ci-by">by <img src="assets/img/eteacher-real-logo-white.png" alt="eTeacher Group"></span></span>'
 for a in S.select('a.nav-logo'): a.clear(); a.append(F(LOCK)); a['aria-label']='Club Italia by eTeacher, home'
@@ -56,7 +56,7 @@ bs[0].select_one('.cls-bestseller').decompose()
 ccard(bs[1],'Collection 02 · Spoken','Parliamo','Speaking first. Four Italian scenes, one per course.',4,'A0 to B1','Explore the four courses')
 def course_art(art,k,cls):
     t,n,u,img,te,hv,st,tu=CO[k]
-    art.clear(); art.append(F(f'<div class="cls-course-media"><img loading="lazy" decoding="async" src="assets/img/{img}" alt="{E(n)}, taught live from {TN[te][1]}"></div><div class="cls-course-body"><span class="cls-course-level">{lv(k)}</span><h4 class="cls-course-name">{E(n)}</h4><span class="cls-course-region">{TN[te][1]} · with {TN[te][0].split()[0]}</span><p class="cls-course-hook">{E(promise(k))}</p><a class="cls-course-link" href="{u}">View course <span aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" style="vertical-align:-2px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>'))
+    art.clear(); art.append(F(f'<div class="cls-course-media"><img loading="lazy" decoding="async" src="assets/img/{CVID[k]}-poster.jpg" alt="{E(n)}, taught live from {TN[te][1]}"></div><div class="cls-course-body"><span class="cls-course-level">{lv(k)}</span><h4 class="cls-course-name">{E(n)}</h4><span class="cls-course-region">{TN[te][1]} · with {TN[te][0].split()[0]}</span><p class="cls-course-hook">{E(promise(k))}</p><a class="cls-course-link" href="{u}">View course <span aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" style="vertical-align:-2px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>'))
 rails=cs.select('.cls-rail')
 for rail,keys,cls in [(rails[0],['ci1','ci2','ci3','ci4'],'cls-course-fa'),(rails[1],['ps1','ps2','ps3','ps4'],'cls-course-lsf')]:
     arts=rail.select('article'); tmpl=str(arts[0])
@@ -130,6 +130,26 @@ for card,(v,l,w) in zip(ts.select('.taste-card'),[('class-demo','Every lesson is
     b_=card.select_one('.sound-toggle'); b_ and b_.decompose()
     card.select_one('.taste-line').string=l; card.select_one('.taste-who').string=w
 a=ts.select_one('a.btn'); a.string='How classes work'; a['href']='how-it-works.html'
+
+# ===== editorial folds (de-AI pass)
+def vv(n,extra=''): return f'<video autoplay loop muted playsinline preload="metadata" poster="assets/img/{n}-poster.jpg"{extra}><source src="assets/video/{n}.mp4" type="video/mp4"></video>'
+FILM=F(f'<section class="ed ed-film" aria-label="Rome at seven">{vv("roma-piazza")}<div class="ed-in"><p class="ed-line">Seven o’clock over Rome. Your lesson starts.</p><span class="ed-cap">St Peter’s from the rooftops of Prati, where Marco teaches CI Principiante.</span></div></section>')
+cs.insert_after(FILM)
+TYPE=F('<section class="ed ed-type"><p>Nobody sits in the <em>back row.</em></p><span>Ten to twelve adults on one screen. Your teacher calls your name in the first five minutes, and keeps calling it.</span></section>')
+m.insert_after(TYPE)
+# culture -> magazine spread
+c.replace_with(F(f"""<section class="ed ed-mag" id="culture"><div class="mh"><h2>Culture speaks Italian.</h2><span>Numero 01 · autunno</span></div>
+<div class="mg"><div class="big">{vv('cucina-pasta')}<p class="cap"><b>La cucina</b><span>Fresh pasta on a wooden board. In CI Intermedio, Giulia teaches the imperative from her kitchen in Bologna: «tira, piega, taglia».</span></p></div>
+<div class="side"><div>{vv('opera-scala')}<p class="cap"><b>L’opera</b><span>La Scala, Milan. Six evenings on Verdi and Puccini with Alessandro.</span></p></div>
+<div>{vv('ag-venice-gondola')}<p class="cap"><b>Il viaggio</b><span>Cannaregio, Venice. Francesca rehearses your arrival before you book it.</span></p></div></div></div>
+<p class="more"><b>Arte.</b> The Roman forum, the Florentine dome. <b>Moda e cinema.</b> Milanese tailoring, Fellini’s Rome. <b>Tradizione.</b> The Palio, Carnevale, a saint’s day in Palermo. <a href="culture.html">All six pillars</a></p></section>"""))
+# taste -> asymmetric split
+ts.replace_with(F(f"""<section class="ed ed-split" id="classroom"><div class="ed-grid"><figure>{vv('class-demo')}<figcaption>A live lesson, recorded for the class archive.</figcaption></figure>
+<div class="ed-txt"><span class="ed-k">Inside a live lesson</span><h2>«Anno», not «ano».</h2><p>Minute twelve. Marco stops the class to fix one double consonant, then has all eleven of you say it back.</p><p>It is live, on screen, from Rome. The recording waits in your dashboard afterwards.</p><a href="how-it-works.html">How classes work</a></div></div></section>"""))
+# book page after faculty
+BOOK=F('<section class="ed ed-book"><div class="pg"><p>I teach adults. Adults come with a life already written in another language, and my job is not to erase it. My job is to give them a second interior voice, one that speaks Italian back to them when they are washing dishes or driving home.</p><p>So I move slowly in the first weeks. I resist the temptation to fill silence. I ask questions I actually want the answer to. Grammar is a bookshelf. Speech is a house you live in. I build the house first.</p><p class="sig">Chiara Bellini, Firenze · CI Elementare</p></div></section>')
+fsec.insert_after(BOOK)
+fsec.insert_before(F('<!-- TODO(owner): faculty photos are composites; replace with real eTeacher teacher portraits -->'))
 # ---------- map
 mp=S.select_one('#mapstr'); mp['aria-label']='Interactive map of Italy'
 # ---------- Biagio
@@ -170,7 +190,7 @@ e2.select_one('.etg2-foot').string='Live lessons, recordings, practice and progr
 # ---------- lead magnet
 lm=byc('lead-magnet')
 lm.select_one('.lm-cover-badge').string='Free · five minutes'
-im=lm.select_one('.lm-cover img'); im['src']='assets/img/life-amalfi-coast.jpg'; im['alt']='The Amalfi coast at golden hour'
+im=lm.select_one('.lm-cover img'); im['src']='assets/img/ag-camogli-coast-poster.jpg'; im['alt']='Camogli on the Ligurian coast'
 lm.select_one('.lm-eyebrow').string='Find your level'
 lm.select_one('h2').clear(); lm.select_one('h2').append(F('Which Italian course is <em>right for you?</em>'))
 lm.select_one('.lm-body > p:not(.eyebrow)').clear(); lm.select_one('.lm-body > p:not(.eyebrow)').append(F('A short placement conversation finds your CEFR level and the right course, from your first «<em>buongiorno</em>» to confident conversation.'))

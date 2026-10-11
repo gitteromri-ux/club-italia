@@ -1,6 +1,17 @@
 # QA text fixes applied to visible text nodes only
 from bs4 import BeautifulSoup, NavigableString, Comment
 FIXT=[
+("The sound system of Italian, open vowels and double consonants, from the first lesson.","Lesson one: the difference between «nono» and «nonno». You will hear it by the end of the hour."),
+("Each unit is set in a real Roman place, from Fiumicino to a bar in Prati.","Unit 1 lands at Fiumicino. Unit 4 is a cappuccino at a bar in Prati, before 11am."),
+("The course is a journey through Rome. Arrival, the bar, the market, the piazza, the trattoria: your Italian grows with every stop.","Arrivals hall, a standing bar, Campo de’ Fiori at nine, a trattoria in Testaccio. Twenty stops, one city."),
+
+("Live Italian courses for adults, taught by DITALS certified teachers in seven Italian cities.","Live Italian for adults. Your teacher is in Rome, Florence, Bologna, Venice, Milan, Naples or Palermo, and holds the DITALS certificate."),
+("Two collections of CEFR aligned courses, each taught live by one teacher from one Italian city.","Eight courses, A0 to B1. One teacher and one city per course."),
+("One clear route, from your first lesson to a documented CEFR level.","Five steps, from a placement call to a certificate with your level on it."),
+("Six pillars of Italian life run through every course, taught by people who live them.",""),
+("Between live lessons, Biagio works inside the platform on exactly what your teacher covered that week.","At 11pm, when the class is asleep, Biagio replays this week’s lesson with you and listens to your «gl»."),
+("Join a live class broadcasting from Italy and begin with your first lesson.","Your first lesson is an evening in Italy. Bring a coffee."),
+
 ("Club Italia by eTeacher. Live Italian courses for adults, taught by DITALS certified teachers from seven Italian cities.","Live Italian courses for adults, taught by DITALS certified teachers in seven Italian cities."),
 ("28 contact hours per level","28 h 20 min of live teaching"),
 ("Monthly and term plans are also available.","A monthly plan is also available."),

@@ -1,0 +1,61 @@
+/* De-AI pass: light only in signature moments */
+video{filter:brightness(1.04) contrast(1.05) saturate(1.08)!important}
+.hero-bg video,.hero-media video{filter:brightness(1.06) contrast(1.05) saturate(1.1)!important}
+.bg-navy-deep,.bg-navy-grad,.culture-dark,.s5,.tst-fold,.etg2-section,.lg-fold,.cta-band,#mapstr,.site-footer,.closing-nav,.final-cta,.pricing-band,.ac-power{background:linear-gradient(180deg,#0D2350 0%,#0A1B44 100%)!important}
+.tst-fold::before,.tst-fold::after{display:none!important}
+.site-header{background:rgba(10,27,68,.9)!important;box-shadow:none!important}
+/* signature 1: hero light leak */
+.hero .hero-bg::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(38% 55% at 100% 0%,rgba(232,200,122,.30),transparent 70%)}
+.hero .hero-bg::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,22,56,.8) 0%,rgba(8,22,56,.6) 42%,rgba(8,22,56,.1) 70%,transparent 85%)!important}
+.hero .hero-content{position:relative;z-index:3}
+.ci-hero-note{color:#FFF8EA!important;text-shadow:0 1px 12px rgba(6,17,42,.9)}
+.course-hero .hero-scrim{background:linear-gradient(90deg,rgba(8,22,56,.82),rgba(8,22,56,.5) 42%,rgba(8,22,56,.08) 72%,transparent)!important;opacity:1!important}
+.region-band .rb-scrim{background:linear-gradient(90deg,rgba(8,22,56,.86),rgba(8,22,56,.6) 45%,rgba(8,22,56,.12) 75%)!important}
+/* signature 3: one gold accent glow per page */
+.cta-band .gold-ital,.final-cta .gold-ital{filter:drop-shadow(0 0 14px rgba(232,200,122,.5))}
+/* ===== editorial folds ===== */
+.ed{position:relative;overflow:hidden}
+.ed-film{height:92vh;min-height:560px;display:flex;align-items:flex-end;color:#FFF8EA}
+.ed-film video{position:absolute;inset:-6% -4% -6% -4%;width:108%;height:112%;object-fit:cover;object-position:30% 40%}
+.ed-film::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,17,42,.7) 0%,rgba(6,17,42,0) 45%)}
+.ed-film .ed-in{position:relative;z-index:2;padding:0 6vw 7vh;width:100%}
+.ed-film .ed-line{font:400 clamp(3.4rem,8.6vw,9.6rem)/.92 'Cormorant Garamond',serif;letter-spacing:-.025em;max-width:13ch;margin:0}
+.ed-film .ed-cap{font:400 .9rem Inter,sans-serif;letter-spacing:.02em;color:rgba(255,248,234,.8);margin-top:1.6rem;display:block}
+.ed-split{background:#FAF7F1;color:#1A1E33;padding:16vh 0 18vh}
+.ed-split .ed-grid{display:grid;grid-template-columns:1fr 7fr 1fr 4fr 1fr;align-items:end}
+.ed-split figure{grid-column:1 / 3;margin:0;position:relative}
+.ed-split figure video{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;margin-top:-26vh}
+.ed-split figcaption{font:italic 1rem 'Cormorant Garamond',serif;color:#6E5A2E;margin-top:.8rem;padding-left:6vw}
+.ed-split .ed-txt{grid-column:4 / 5;padding-bottom:4vh}
+.ed-split .ed-k{font:italic 500 1.25rem 'Cormorant Garamond',serif;color:#3E5B35}
+.ed-split h2{font:500 clamp(2.6rem,4.2vw,4.4rem)/1.02 'Cormorant Garamond',serif;letter-spacing:-.012em;margin:.6rem 0 1.4rem;color:#0B1D3F}
+.ed-split p{font:300 1.12rem/1.65 Inter,sans-serif;color:#3A3F55;margin:0 0 1rem;max-width:34ch}
+.ed-split a{color:#6E5A2E;font:600 .9rem Inter,sans-serif;text-decoration:none;border-bottom:1px solid #C8A96B;padding-bottom:2px}
+.ed-type{background:#F3EFE9;padding:20vh 6vw}
+.ed-type p{font:400 clamp(4.4rem,10.4vw,11rem)/.9 'Cormorant Garamond',serif;letter-spacing:-.03em;color:#0B1D3F;margin:0;max-width:12ch}
+.ed-type p em{color:#A98D52}
+.ed-type span{display:block;margin:3rem 0 0 auto;max-width:30ch;font:300 1.08rem/1.6 Inter,sans-serif;color:#4A4F66}
+.ed-mag{background:#FAF7F1;color:#1A1E33;padding:14vh 6vw 16vh}
+.ed-mag .mh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #1A1E33;padding-bottom:1rem;margin-bottom:3rem}
+.ed-mag .mh h2{font:500 clamp(2.8rem,5vw,5.4rem)/1 'Cormorant Garamond',serif;margin:0;color:#0B1D3F}
+.ed-mag .mh span{font:italic 1.1rem 'Cormorant Garamond',serif;color:#6E5A2E}
+.ed-mag .mg{display:grid;grid-template-columns:7fr 4fr;gap:2.2rem}
+.ed-mag .mg .big video{width:100%;aspect-ratio:16/11;object-fit:cover;display:block}
+.ed-mag .mg .side{display:grid;grid-template-rows:1fr 1fr;gap:2.2rem}
+.ed-mag .mg .side video{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.ed-mag .cap{display:flex;gap:1rem;margin-top:.9rem;font:400 .92rem/1.5 Inter,sans-serif;color:#3A3F55}
+.ed-mag .cap b{font:italic 500 1.25rem/1.2 'Cormorant Garamond',serif;color:#0B1D3F;white-space:nowrap}
+.ed-mag .cap i{font-style:normal;color:#8C7040;white-space:nowrap}
+.ed-mag .more{margin-top:3.4rem;font:400 1rem Inter,sans-serif;color:#3A3F55;columns:3;column-gap:2.2rem}
+.ed-mag .more b{font:italic 500 1.15rem 'Cormorant Garamond',serif;color:#0B1D3F}
+.ed-book{background:#FBF8F2;padding:20vh 0}
+.ed-book .pg{max-width:34rem;margin:0 auto;padding:0 1.6rem;color:#2A2522}
+.ed-book .pg p{font:400 1.5rem/1.62 'Cormorant Garamond',serif;margin:0 0 1.1rem;text-indent:1.6em;hyphens:auto}
+.ed-book .pg p:first-of-type{text-indent:0}
+.ed-book .pg p:first-of-type::first-letter{float:left;font-size:4.6rem;line-height:.82;padding:.35rem .5rem 0 0;color:#8C7040}
+.ed-book .sig{margin-top:2.4rem;font:italic 1.15rem 'Cormorant Garamond',serif;color:#6E5A2E;text-align:right}
+@media(max-width:800px){.ed-split .ed-grid{grid-template-columns:1fr}.ed-split figure,.ed-split .ed-txt{grid-column:1}.ed-split figure video{margin-top:0}.ed-split .ed-txt{padding:3rem 6vw 0}.ed-split{padding:0 0 10vh}.ed-mag .mg{grid-template-columns:1fr}.ed-mag .more{columns:1}.ed-type{padding:14vh 6vw}.ed-book{padding:12vh 0}.ed-book .pg p{font-size:1.32rem}.ed-film{height:78vh}}
+.btn,.btn-gold,.btn-outline,.lg-submit,.btn-3d-primary,.ec-cta,.nav-cta,.cls-card-action{box-shadow:none!important}
+.cls-card,.cls-course,.hiw3-card,.s5-card,.etg3-card,.lm-card,.lg-form,.pillar-card,.unit-card,.price-card,.sib-card,.counter-card,.faq-item{box-shadow:0 18px 40px -30px rgba(10,20,50,.35)!important}
+.gold-ital,h1 em,h2 em{filter:none}
+.cta-band .gold-ital,.final-cta .gold-ital{filter:drop-shadow(0 0 14px rgba(232,200,122,.5))!important}
